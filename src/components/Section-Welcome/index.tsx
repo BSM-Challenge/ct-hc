@@ -1,4 +1,4 @@
-export default function sectionWelcome() {
+export default function SectionWelcome() {
     return (
         <section>
 
