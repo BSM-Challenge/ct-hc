@@ -1,7 +1,11 @@
+import { Header } from "./components/Header"
+
 function App() {
 
   return (
-    <div>ct-hc</div>
+    <div className="bg-[#C3D9FF] h-screen">
+      <Header />
+    </div>
   )
 }
 
