@@ -5,9 +5,10 @@ import App from './App.tsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home/index.tsx'
+import Error from './routes/Error/index.tsx'
 
 const router = createBrowserRouter([
-  {path: "/", element: <App />, errorElement: <div>Erro!</div>, children: [
+  {path: "/", element: <App />, errorElement: <Error />, children: [
     {path: "/", element: <Home />}
   ]},
 ])
