@@ -2,4 +2,15 @@
 
 :root {
     --light-blue: #C3D9FF;
+    --dark-blue-title: #1C2E5D;
+    --color-blue: #2563EB;
+    --shadow-blue: 8px 8px 22px #2563EB;
+}
+
+/* Section Welcome */
+
+@layer {
+    .container-welcome {
+        @apply ml-3 mt-9 
+    }
 }
