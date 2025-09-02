@@ -4,7 +4,7 @@ import Main from "./components/Main"
 function App() {
 
   return (
-    <div className="bg-[var(--light-blue)] h-screen">
+    <div>
       <Header />
       <Main />
     </div>
