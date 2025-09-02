@@ -19,11 +19,3 @@
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
 }
-
-/* Section Welcome */
-
-@layer {
-    .container-welcome {
-        @apply ml-3 mt-9 
-    }
-}
