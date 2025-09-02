@@ -2,7 +2,7 @@ import { FaCircleArrowRight } from "react-icons/fa6";
 
 export default function SectionWelcome() {
   return (
-    <section>
+    <section className="flex">
       <div className="container-welcome w-1/2">
         <h1
           className="text-[3.75rem] text-center text-[var(--dark-blue-title)] font-bold"
@@ -30,7 +30,13 @@ export default function SectionWelcome() {
           </a>
         </div>
       </div>
-      <div className="w-1/2"></div>
+      <div className="w-1/2 flex justify-center mt-[-5rem]">
+        <img 
+        src="/banner-ct.png" 
+        alt="" 
+        className="h-[700px] mt-5 ml-10"
+        />
+      </div>
     </section>
   );
 }
