@@ -1,9 +1,19 @@
+// Menu.tsx
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export function Menu() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Função para rolar suavemente até a section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false); // Fecha o menu mobile
+  };
 
   return (
     <>
@@ -16,19 +26,64 @@ export function Menu() {
             </Link>
           </li>
           <li className="ml-8 xl:ml-15 text-lg xl:text-2xl">
-            <Link to="/" className="hover:text-[var(--color-blue)] transition-colors">Home</Link>
+            <a 
+              href="#home" 
+              className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('home');
+              }}
+            >
+              Home
+            </a>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl">
-            <Link to="/sobre" className="hover:text-[var(--color-blue)] transition-colors">Sobre</Link>
+            <a 
+              href="#sobre" 
+              className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('sobre');
+              }}
+            >
+              Sobre
+            </a>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl">
-            <Link to="/contato" className="hover:text-[var(--color-blue)] transition-colors">Contato</Link>
+            <a 
+              href="#contato" 
+              className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contato');
+              }}
+            >
+              Contato
+            </a>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl">
-            <Link to="/integrantes" className="hover:text-[var(--color-blue)] transition-colors">Integrantes</Link>
+            <a 
+              href="#integrantes" 
+              className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('integrantes');
+              }}
+            >
+              Integrantes
+            </a>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl mr-4 xl:mr-6">
-            <Link to="/faq" className="hover:text-[var(--color-blue)] transition-colors">FAQ</Link>
+            <a 
+              href="#faq" 
+              className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('faq');
+              }}
+            >
+              FAQ
+            </a>
           </li>
         </ul>
       </nav>
@@ -39,7 +94,6 @@ export function Menu() {
           <img src="/logo.png" alt="Logo do CT-HC" className="h-10" />
         </Link>
         
-        {/* Botão Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-2xl text-[var(--color-blue)] p-2"
@@ -48,54 +102,68 @@ export function Menu() {
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Menu Mobile Aberto */}
         {isOpen && (
           <div className="absolute top-full left-0 right-0 bg-[var(--color-white)] w-[40%] shadow-lg z-50">
             <ul className="flex flex-col items-center py-4 h-screen w-[100%]">
               <li className="w-full text-center border-b border-gray-200">
-                <Link 
-                  to="/" 
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors"
-                  onClick={() => setIsOpen(false)}
+                <a 
+                  href="#home" 
+                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('home');
+                  }}
                 >
                   Home
-                </Link>
+                </a>
               </li>
               <li className="w-full text-center border-b border-gray-200">
-                <Link 
-                  to="/sobre" 
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors"
-                  onClick={() => setIsOpen(false)}
+                <a 
+                  href="#sobre" 
+                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('sobre');
+                  }}
                 >
                   Sobre
-                </Link>
+                </a>
               </li>
               <li className="w-full text-center border-b border-gray-200">
-                <Link 
-                  to="/contato" 
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors"
-                  onClick={() => setIsOpen(false)}
+                <a 
+                  href="#contato" 
+                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('contato');
+                  }}
                 >
                   Contato
-                </Link>
+                </a>
               </li>
               <li className="w-full text-center border-b border-gray-200">
-                <Link 
-                  to="/integrantes" 
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors"
-                  onClick={() => setIsOpen(false)}
+                <a 
+                  href="#integrantes" 
+                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('integrantes');
+                  }}
                 >
                   Integrantes
-                </Link>
+                </a>
               </li>
               <li className="w-full text-center">
-                <Link 
-                  to="/faq" 
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors"
-                  onClick={() => setIsOpen(false)}
+                <a 
+                  href="#faq" 
+                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('faq');
+                  }}
                 >
                   FAQ
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
