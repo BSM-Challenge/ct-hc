@@ -5,16 +5,16 @@ export default function SectionWelcome() {
     <div className="flex flex-col pt-30 lg:pt-50 lg:flex-row">
       <div className="flex justify-center flex-col w-full gap-3 lg:w-1/2 opacity-0 animate-fade-in lg: px-4 lg:px-0">
         <h1
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.30rem] xl:text-[60px] 2xl:text-[70px] text-center text-[var(--dark-blue-title)] font-bold"
+          className="text-2xl text-center sm:text-3xl md:text-4xl lg:text-[2.30rem] xl:text-[60px] 2xl:text-[70px]  text-[var(--dark-blue-title)] font-bold"
           style={{ fontFamily: "Inter" }}
         >
           Bem-vindo ao Centro de Treinamento do Hospital das Clínicas!
         </h1>
-        <p className="text-base sm:text-lg md:text-xl md:text-center lg:text-1xl 2xl:2xl mt-4 lg:mt-8 lg:ml-10 indent-4 lg:indent-8 text-justify lg:text-left  xl:text-2xl">
+        <p className="text-base sm:text-lg md:text-xl md:text-left lg:text-1xl 2xl:2xl mt-4 lg:mt-8 lg:ml-10 indent-4 lg:indent-8 text-justify lg:text-left  xl:text-2xl">
           Um ambiente interativo criado para ajudar você a usar o Portal
           do Paciente HC de forma simples, segura e sem preocupações.
         </p>
-        <p className="text-base sm:text-lg md:text-xl lg:text-1xl mt-3 lg:mt-5 lg:ml-10 indent-4 lg:indent-8 text-justify lg:text-left xl:text-2xl">
+        <p className="text-base sm:text-lg md:text-xl md:text-left lg:text-1xl mt-3 lg:mt-5 lg:ml-10 indent-4 lg:indent-8 text-justify lg:text-left xl:text-2xl">
           Um tutorial passo a passo em tempo real com instruções destacadas para
           guiar cada ação.
         </p>
@@ -35,7 +35,7 @@ export default function SectionWelcome() {
         <img 
           src="/banner-ct.png" 
           alt="Banner Centro de Treinamento" 
-          className="w-full max-w-[320px] sm:max-w-lg md:max-w-xl lg:max-w-none lg:h-[600px] lg:mt-30 lg:ml-10 xl:h-[700px] xl:mt-15 opacity-0 animate-fade-in object-contain"
+          className="w-full max-w-[220px] md:max-w-[250px] lg:max-w-none lg:h-[600px] lg:mt-30 lg:ml-10 xl:h-[700px] xl:mt-15 opacity-0 animate-fade-in object-contain"
         />
       </div>
     </div>
