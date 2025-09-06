@@ -1,18 +1,43 @@
 // Menu.tsx
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export function Menu() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-  // Função para rolar suavemente até a section
+  // Função para rolar até a section
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView(); 
     }
-    setIsOpen(false); // Fecha o menu mobile
+    setIsOpen(false); 
+  };
+
+  // Garantir que estamos na Home antes de tentar rolar
+  const handleScrollLink = (sectionId: string) => {
+    if (window.location.pathname !== "/") {
+      navigate("/"); // vai pra Home
+      setTimeout(() => scrollToSection(sectionId), 100); // espera renderizar
+    } else {
+      // Verifica se já está na seção alvo
+      const currentSection = document.getElementById(sectionId);
+      if (currentSection) {
+        const rect = currentSection.getBoundingClientRect();
+        // Se a seção já está visível na tela (pelo menos 50% visível)
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          // Se já está na seção, volta para o topo (welcome)
+          scrollToSection("welcome");
+        } else {
+          // Se não está na seção, vai para ela
+          scrollToSection(sectionId);
+        }
+      } else {
+        scrollToSection(sectionId);
+      }
+    }
   };
 
   return (
@@ -26,64 +51,48 @@ export function Menu() {
             </Link>
           </li>
           <li className="ml-8 xl:ml-15 text-lg xl:text-2xl">
-            <a 
-              href="#home" 
+            <Link
+              to="/"
               className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('home');
-              }}
+              onClick={() => handleScrollLink("home")}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl">
-            <a 
-              href="#sobre" 
+            <Link
+              to="/"
+              onClick={() => handleScrollLink("sobre")}
               className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('sobre');
-              }}
             >
               Sobre
-            </a>
+            </Link>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl">
-            <a 
-              href="#contato" 
+            <Link
+              to="/contato"
               className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('contato');
-              }}
             >
               Contato
-            </a>
+            </Link>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl">
-            <a 
-              href="#integrantes" 
+            <Link
+              to="/"
+              onClick={() => handleScrollLink("integrantes")}
               className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('integrantes');
-              }}
             >
               Integrantes
-            </a>
+            </Link>
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl mr-4 xl:mr-6">
-            <a 
-              href="#faq" 
+            <Link
+              to="/"
+              onClick={() => handleScrollLink("faq")}
               className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('faq');
-              }}
             >
               FAQ
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
@@ -93,7 +102,7 @@ export function Menu() {
         <Link to="/">
           <img src="/logo.png" alt="Logo do CT-HC" className="h-10" />
         </Link>
-        
+
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-2xl text-[var(--color-blue)] p-2"
@@ -106,64 +115,49 @@ export function Menu() {
           <div className="absolute top-full left-0 right-0 bg-[var(--color-white)] w-[40%] shadow-lg z-50">
             <ul className="flex flex-col items-center py-4 h-screen w-[100%]">
               <li className="w-full text-center border-b border-gray-200">
-                <a 
-                  href="#home" 
+                <Link
+                  to="/"
                   className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('home');
-                  }}
+                  onClick={() => handleScrollLink("home")}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="w-full text-center border-b border-gray-200">
-                <a 
-                  href="#sobre" 
+                <Link
+                  to="/"
                   className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('sobre');
-                  }}
+                  onClick={() => handleScrollLink("sobre")}
                 >
                   Sobre
-                </a>
+                </Link>
               </li>
               <li className="w-full text-center border-b border-gray-200">
-                <a 
-                  href="#contato" 
+                <Link
+                  to="/contato"
                   className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('contato');
-                  }}
+                  onClick={() => setIsOpen(false)}
                 >
                   Contato
-                </a>
+                </Link>
               </li>
               <li className="w-full text-center border-b border-gray-200">
-                <a 
-                  href="#integrantes" 
+                <Link
+                  to="/"
                   className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('integrantes');
-                  }}
+                  onClick={() => handleScrollLink("integrantes")}
                 >
                   Integrantes
-                </a>
+                </Link>
               </li>
               <li className="w-full text-center">
-                <a 
-                  href="#faq" 
+                <Link
+                  to="/"
                   className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('faq');
-                  }}
+                  onClick={() => handleScrollLink("faq")}
                 >
                   FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
