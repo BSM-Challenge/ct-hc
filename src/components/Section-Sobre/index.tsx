@@ -1,6 +1,6 @@
 export default function SectionSobre() {
     return (
-        <div className="flex flex-col gap-5 md:gap-7">
+        <div className="flex flex-col gap-1">
             <div className="w-full flex flex-col gap-7 lg:w-[45%]">
                 <h2 
                 className="text-6xl text-[var(--dark-blue-title)] text-start font-bold lg:text-center"
