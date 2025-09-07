@@ -3,14 +3,19 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer
-      className="w-full bg-[var(--Color-blue-709CFF)] text-[var(--color-white)] px-5 py-4 lg:py-2"
+      className="w-full px-5 py-4
+      bg-[var(--Color-blue-709CFF)] text-[var(--color-white)]  
+      lg:py-2"
       style={{ fontFamily: "Inter" }}
     >
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <figcaption className="flex justify-center lg:justify-start">
           <img src="/logo-com-texto.png" alt="" />
         </figcaption>
-        <div className="flex flex-wrap items-start gap-10 mt-5 justify-between lg:gap-20 lg:flex-row lg:mr-20 lg:mt-0">
+        <div className="
+        flex flex-wrap items-start gap-10 mt-5 justify-between 
+        lg:gap-20 lg:flex-row lg:mr-20 lg:mt-0"
+        >
           <ul className="flex flex-col items-start gap-2 lg:items-center">
             <h4 className="font-bold text-2xl">Links Rápidos</h4>
             <li>
