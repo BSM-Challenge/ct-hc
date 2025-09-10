@@ -16,7 +16,6 @@ export default function SectionWelcome() {
           lg:text-[2.30rem] lg:text-center  lg:w-full
           xl:text-[60px] 
           2xl:text-[70px]"
-          style={{ fontFamily: "Inter" }}
         >
           Bem-vindo ao Centro de Treinamento do Hospital das Clínicas!
         </h1>
@@ -50,7 +49,7 @@ export default function SectionWelcome() {
             text-sm bg-[var(--color-blue)] text-[var(--color-white)]
             lg:px-7 lg:py-3 rounded-full   
             md:text-base "
-            style={{ fontFamily: "Inter", fontWeight: "600", boxShadow: "var(--shadow-blue)" }}
+            style={{ fontWeight: "600", boxShadow: "var(--shadow-blue)" }}
           >
             Clique aqui e <br className="hidden sm:block" />
             Saiba mais!

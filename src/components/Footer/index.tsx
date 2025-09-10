@@ -6,7 +6,6 @@ export default function Footer() {
       className="w-full px-5 py-4
       bg-[var(--Color-blue-709CFF)] text-[var(--color-white)]  
       lg:py-2"
-      style={{ fontFamily: "Inter" }}
     >
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <figcaption className="flex justify-center lg:justify-start">

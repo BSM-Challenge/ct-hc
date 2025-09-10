@@ -87,7 +87,7 @@ export function Menu() {
           </li>
           <li className="ml-6 xl:ml-14 text-lg xl:text-2xl mr-4 xl:mr-6">
             <Link
-              to="/"
+              to="/faq"
               onClick={() => handleScrollLink("faq")}
               className="hover:text-[var(--color-blue)] transition-colors cursor-pointer"
             >
@@ -152,7 +152,7 @@ export function Menu() {
               </li>
               <li className="w-full text-center">
                 <Link
-                  to="/"
+                  to="/faq"
                   className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
                   onClick={() => handleScrollLink("faq")}
                 >
