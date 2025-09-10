@@ -1,16 +1,90 @@
+import { Link } from "react-router-dom";
+
 export default function FAQ() {
-    return (
-        <main>
-            <section 
-            className="bg-[var(--light-blue)] pt-50 px-80 h-screen"
+  return (
+    <main>
+      <section className="bg-[var(--light-blue)] pt-40 px-20 min-h-screen">
+        <div className="w-full flex flex-col gap-4">
+          <div className="h-[100%] flex justify-center items-center">
+            <h1 className="text-6xl text-[var(--dark-blue-title)] font-bold">
+              Perguntas Frequentes
+            </h1>
+          </div>
+          <div>
+            <nav className="
+            flex flex-col gap-3 w-[30%] pl-7 pr-10 py-7
+            bg-[var(--Color-blue-709CFF)] rounded-[40px]"
             >
-                <div className="w-full h-10">
-                    <div className="h-[100%] flex justify-center items-center">
-                        <h1 className="text-6xl text-[var(--dark-blue-title)]">Perguntas Frequentes</h1>
-                    </div>
-                    <div></div>
-                </div>
-            </section>
-        </main>
-    )
+              <ul className="flex flex-col gap-2 text-[var(--color-white)]">
+                <li className="border-b-2 border-[var(--color-white)]">
+                  <h2 className="text-2xl font-bold">Sobre o Projeto</h2>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    CT-HC e Portal HC
+                  </Link>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    CT-HC gratuito
+                  </Link>
+                </li>
+              </ul>
+              <ul className="flex flex-col gap-2 text-[var(--color-white)]">
+                <li className="border-b-2 border-[var(--color-white)]">
+                  <h2 className="text-2xl font-bold">Dados e Segurança</h2>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Dados do paciente
+                  </Link>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Informações pessoais
+                  </Link>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Informações no tutorial
+                  </Link>
+                </li>
+              </ul>
+              <ul className="flex flex-col gap-2 text-[var(--color-white)]">
+                <li className="border-b-2 border-[var(--color-white)]">
+                  <h2 className="text-2xl font-bold">Uso do tutorial</h2>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Pular tutorial
+                  </Link>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Uso no celular
+                  </Link>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Repetir tutorial
+                  </Link>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Cria conta CT-HC
+                  </Link>
+                </li>
+                <li className="ml-2">
+                  <Link to="" className="text-xl">
+                    Uso em dispositivos móveis
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
