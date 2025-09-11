@@ -8,6 +8,7 @@ html {
 :root {
     /* Colors */
     --color-white: #FFFFFF;
+    --color-gray: #4B5563;
     --light-blue: #C3D9FF;
     --dark-blue-title: #1C2E5D;
     --color-blue: #2563EB;
