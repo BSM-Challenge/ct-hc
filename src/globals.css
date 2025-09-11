@@ -12,9 +12,13 @@ html {
     --dark-blue-title: #1C2E5D;
     --color-blue: #2563EB;
     --Color-blue-709CFF: #709CFF;
+    --light-blue-2: #A8C4FA;
     
     /* Shadows */
     --shadow-blue: 8px 8px 22px #2563EB;
+
+    /* Borders */
+    --border-black: #000000;
 }
 
 @keyframes fade-in {
