@@ -134,7 +134,7 @@ export default function FAQ() {
         </div>
       </section>
       <section className="min-h-screen px-43 pt-30">
-        <div>
+        <div className="flex flex-col gap-32 py-40">
           <ul className="flex flex-col gap-8">
             <li>
               <h3 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Sobre o projeto</h3>
@@ -156,6 +156,44 @@ export default function FAQ() {
             ">
               <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
                   O CT-HC é gratuito para todos os pacientes?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+          </ul>
+          <ul className="flex flex-col gap-8">
+            <li>
+              <h4 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Dados e Segurança</h4>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  Posso acessar meus dados de paciente no CT-HC?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  O tutorial salva minhas informações pessoais?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  O tutorial pode alterar meus dados no Portal HC?
               </p>
               <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
                   <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
