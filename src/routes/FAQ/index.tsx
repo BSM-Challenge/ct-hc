@@ -200,6 +200,66 @@ export default function FAQ() {
               </div>
             </li>
           </ul>
+          <ul className="flex flex-col gap-8">
+            <li>
+              <h5 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Uso do Tutorial</h5>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  O que acontece se eu clicar em “pular tutorial”?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  Posso acessar o tutorial pelo celular?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  Posso repetir o tutorial quantas vezes quiser?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  Preciso criar conta para usar o CT-HC?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  Como faço para acessar o Portal real depois do treinamento?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
