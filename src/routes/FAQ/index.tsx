@@ -1,19 +1,39 @@
 import { Link } from "react-router-dom";
+import { FaAngleDown } from 'react-icons/fa';
+
 
 export default function FAQ() {
   return (
     <main className="bg-[var(--light-blue)]">
-      <section className="pt-40 px-20 min-h-screen">
+      <section className="
+      pt-30 px-10 min-h-screen
+      max-[500px]:px-5
+      lg:pt-35 
+      xl:px-20 xl:pt-40"
+      >
         <div className="w-full flex flex-col gap-5">
-          <div className="h-[100%] flex justify-center items-center">
-            <h1 className="text-5xl text-[var(--dark-blue-title)] font-bold">
+          <div className="
+          h-full flex justify-center items-center 
+          xl:justify-center"
+          >
+            <h1 className="
+            text-3xl text-[var(--dark-blue-title)] font-bold 
+            sm:text-4xl 
+            xl:text-5xl"
+            >
               Perguntas Frequentes
             </h1>
           </div>
-          <div className="flex justify-around gap-20">
-            <nav className="w-[30%]
-            flex flex-col gap-4 pl-7 pr-10 py-7
-            bg-[var(--Color-blue-709CFF)] rounded-[40px]"
+          <div className="
+          flex flex-col justify-around gap-20 
+          lg:flex-row
+          xl:flex-row"
+          >
+            <nav className="
+            w-[100%] flex flex-col gap-4 pl-7 pr-10 py-7
+            bg-[var(--Color-blue-709CFF)] rounded-[40px]
+            lg:w-[50%]
+            xl:w-[35%]"
             >
               <ul className="flex flex-col gap-[.6rem] text-[var(--color-white)]">
                 <li className="border-b-2 border-[var(--color-white)]">
@@ -113,7 +133,36 @@ export default function FAQ() {
           </div>
         </div>
       </section>
-      <section className="h-screen">
+      <section className="min-h-screen px-43 pt-30">
+        <div>
+          <ul className="flex flex-col gap-8">
+            <li>
+              <h3 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Sobre o projeto</h3>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  Qual é a diferença entre o CT-HC para o Portal HC?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+            <li className="
+            flex items-center justify-between
+            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
+            ">
+              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                  O CT-HC é gratuito para todos os pacientes?
+              </p>
+              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
+                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
   );
