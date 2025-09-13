@@ -20,6 +20,9 @@ html {
 
     /* Borders */
     --border-black: #000000;
+
+    /* Hovers */
+    --hover-light-blue: #82abff;
 }
 
 @keyframes fade-in {
