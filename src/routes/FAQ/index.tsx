@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDown } from 'react-icons/fa';
-
+import { faqData } from '../../data/faqData';
 
 export default function FAQ() {
+  const [openItem, setOpenItem] = useState<string | null>(null);
+
+  const toggleItem = (id: string) => {
+    setOpenItem(openItem === id ? null : id);
+  };
+
+  const handleLinkClick = (id: string, elementId: string) => {
+    toggleItem(id);
+    setTimeout(() => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView();
+      }
+    }, 100);
+  };
+
   return (
     <main className="bg-[var(--light-blue)]">
       <section className="
@@ -40,12 +57,26 @@ export default function FAQ() {
                   <h2 className="text-xl font-bold">Sobre o Projeto</h2>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#sobre-0" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('0-0', 'sobre-0');
+                    }}
+                  >
                     CT-HC e Portal HC
                   </Link>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#sobre-1" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('0-1', 'sobre-1');
+                    }}
+                  >
                     CT-HC gratuito
                   </Link>
                 </li>
@@ -55,17 +86,38 @@ export default function FAQ() {
                   <h2 className="text-xl font-bold">Dados e Segurança</h2>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#dados-0" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('1-0', 'dados-0');
+                    }}
+                  >
                     Dados do paciente
                   </Link>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#dados-1" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('1-1', 'dados-1');
+                    }}
+                  >
                     Informações pessoais
                   </Link>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#dados-2" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('1-2', 'dados-2');
+                    }}
+                  >
                     Informações no tutorial
                   </Link>
                 </li>
@@ -75,36 +127,73 @@ export default function FAQ() {
                   <h2 className="text-xl font-bold">Uso do tutorial</h2>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#tutorial-0" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('2-0', 'tutorial-0');
+                    }}
+                  >
                     Pular tutorial
                   </Link>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#tutorial-1" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('2-1', 'tutorial-1');
+                    }}
+                  >
                     Uso no celular
                   </Link>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#tutorial-2" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('2-2', 'tutorial-2');
+                    }}
+                  >
                     Repetir tutorial
                   </Link>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#tutorial-3" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('2-3', 'tutorial-3');
+                    }}
+                  >
                     Cria conta CT-HC
                   </Link>
                 </li>
                 <li className="ml-2">
-                  <Link to="" className="text-[1.1rem]">
+                  <Link 
+                    to="#tutorial-4" 
+                    className="text-[1.1rem] hover:underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('2-4', 'tutorial-4');
+                    }}
+                  >
                     Uso em dispositivos móveis
                   </Link>
                 </li>
               </ul>
             </nav>
+            
+            {/* Resto do código permanece igual */}
             <div className="bg-[var(--light-blue-2)] w-full rounded-[60px] h-[10%] mt-7">
               <div className=" flex flex-col items-center gap-5 h-full py-5">
                 <figcaption>
-                  <img src="./public/icon-pergunta.png" alt="" />
+                  <img src="./public/icon-pergunta.png" alt="Ícone de pergunta" />
                 </figcaption>
                 <form 
                 method="POST"
@@ -123,6 +212,7 @@ export default function FAQ() {
                   bg-[var(--color-blue)] p-2 w-[30%] text-[var(--color-white)]
                   rounded-full font-bold text-2xl cursor-pointer
                   shadow-[4px_4px_15px_var(--color-blue)]
+                  hover:bg-[var(--color-blue-dark)] transition-colors duration-300
                   "
                   >
                     Enviar
@@ -133,132 +223,147 @@ export default function FAQ() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen px-43 pt-30">
+      <section className="min-h-screen px-10 pt-30 lg:px-20 xl:px-43">
         <div className="flex flex-col gap-32 py-40">
+          {/* Categoria: Sobre o projeto */}
           <ul className="flex flex-col gap-8">
             <li>
               <h3 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Sobre o projeto</h3>
             </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  Qual é a diferença entre o CT-HC para o Portal HC?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  O CT-HC é gratuito para todos os pacientes?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
+            
+            {faqData[0].itens.map((item, index) => {
+              const itemId = `0-${index}`;
+              const isOpen = openItem === itemId;
+              
+              return (
+                <li 
+                  key={index}
+                  id={`sobre-${index}`}
+                  className="
+                  flex flex-col bg-[var(--Color-blue-709CFF)] rounded-3xl p-5 
+                  cursor-pointer transition-all duration-300 
+                  hover:bg-[var(--hover-light-blue)]
+                  "
+                  onClick={() => toggleItem(itemId)}
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                      {item.pergunta}
+                    </p>
+                    <div className={`
+                      mr-4 p-2 bg-[var(--color-blue)] rounded-full 
+                      transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
+                      `}>
+                      <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+                    </div>
+                  </div>
+                  
+                  {/* Resposta que aparece quando o item está aberto */}
+                  <div className={`
+                    overflow-hidden transition-all duration-500 ease-in-out 
+                    ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
+                    `}>
+                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-white">
+                      <p className="text-lg">{item.resposta}</p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
+
+          {/* Categoria: Dados e Segurança */}
           <ul className="flex flex-col gap-8">
             <li>
               <h4 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Dados e Segurança</h4>
             </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  Posso acessar meus dados de paciente no CT-HC?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  O tutorial salva minhas informações pessoais?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  O tutorial pode alterar meus dados no Portal HC?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
+            
+            {faqData[1].itens.map((item, index) => {
+              const itemId = `1-${index}`;
+              const isOpen = openItem === itemId;
+              
+              return (
+                <li 
+                  key={index}
+                  id={`dados-${index}`}
+                  className="
+                  flex flex-col bg-[var(--Color-blue-709CFF)] rounded-3xl p-5 
+                  cursor-pointer transition-all duration-300 
+                  hover:bg-[var(--hover-light-blue)]
+                  "
+                  onClick={() => toggleItem(itemId)}
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                      {item.pergunta}
+                    </p>
+                    <div className={`
+                      mr-4 p-2 bg-[var(--color-blue)] rounded-full 
+                      transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
+                      `}>
+                      <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+                    </div>
+                  </div>
+                  
+                  {/* Resposta que aparece quando o item está aberto */}
+                  <div className={`
+                    overflow-hidden transition-all duration-500 ease-in-out 
+                    ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
+                    `}>
+                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-white">
+                      <p className="text-lg">{item.resposta}</p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
+
+          {/* Categoria: Uso do Tutorial */}
           <ul className="flex flex-col gap-8">
             <li>
               <h5 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Uso do Tutorial</h5>
             </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  O que acontece se eu clicar em “pular tutorial”?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  Posso acessar o tutorial pelo celular?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  Posso repetir o tutorial quantas vezes quiser?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  Preciso criar conta para usar o CT-HC?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
-            <li className="
-            flex items-center justify-between
-            bg-[var(--Color-blue-709CFF)] rounded-3xl p-3
-            ">
-              <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
-                  Como faço para acessar o Portal real depois do treinamento?
-              </p>
-              <div className="mr-4 p-2 bg-[var(--color-blue)] rounded-full">
-                  <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
-              </div>
-            </li>
+            
+            {faqData[2].itens.map((item, index) => {
+              const itemId = `2-${index}`;
+              const isOpen = openItem === itemId;
+              
+              return (
+                <li 
+                  key={index}
+                  id={`tutorial-${index}`}
+                  className="
+                  flex flex-col bg-[var(--Color-blue-709CFF)] rounded-3xl p-5 
+                  cursor-pointer transition-all duration-300 
+                  hover:bg-[var(--hover-light-blue)]
+                  "
+                  onClick={() => toggleItem(itemId)}
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                      {item.pergunta}
+                    </p>
+                    <div className={`
+                      mr-4 p-2 bg-[var(--color-blue)] rounded-full 
+                      transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
+                      `}>
+                      <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+                    </div>
+                  </div>
+                  
+                  {/* Resposta que aparece quando o item está aberto */}
+                  <div className={`
+                    overflow-hidden transition-all duration-500 ease-in-out 
+                    ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
+                    `}>
+                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-white">
+                      <p className="text-lg">{item.resposta}</p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
