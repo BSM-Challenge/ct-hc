@@ -25,7 +25,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-transform duration-300 ${
+      className={`fixed w-full z-50 transition-transform duration-500 ${
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
