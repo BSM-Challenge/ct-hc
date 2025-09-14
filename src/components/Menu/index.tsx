@@ -46,7 +46,7 @@ export function Menu() {
         <ul className="bg-[var(--color-white)] flex items-center mt-[55px] rounded-full shadow-lg">
           <li className="ml-4">
             <Link to="/">
-              <img src="/logo.png" alt="Logo do CT-HC" className="h-12 m-2" />
+              <img src="/logo.png" alt="CT-HC" className="h-12 m-2" />
             </Link>
           </li>
           <li className="ml-8 xl:ml-15 text-lg xl:text-2xl">
