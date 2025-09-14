@@ -5,12 +5,12 @@ import './globals.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Error from './routes/Error/index.tsx'
-import Main from './components/Main/index.tsx'
+import Home from './routes/Home/index.tsx'
 import FAQ from './routes/FAQ/index.tsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <App />, errorElement: <Error />, children: [
-    {path: "/", element: <Main />}, 
+    {path: "/", element: <Home />}, 
     {path: "/faq", element: <FAQ />}, 
   ]},
 ])

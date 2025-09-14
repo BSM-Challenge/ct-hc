@@ -1,7 +1,7 @@
-import SectionSobre from "../Section-Sobre";
-import SectionWelcome from "../Section-Welcome";
+import SectionSobre from "../../components/Section-Sobre";
+import SectionWelcome from "../../components/Section-Welcome";
 
-export default function Main() {
+export default function Home() {
   return (
     <main>
       <section id="home" className="bg-[var(--light-blue)] min-h-screen">
