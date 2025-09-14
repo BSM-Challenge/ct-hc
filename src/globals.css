@@ -23,6 +23,7 @@ html {
 
     /* Hovers */
     --hover-light-blue: #82abff;
+    --hover-button: #274285;
 }
 
 @keyframes fade-in {
