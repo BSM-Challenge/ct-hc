@@ -10,9 +10,9 @@ export function Menu() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView(); 
+      element.scrollIntoView();
     }
-    setIsOpen(false); 
+    setIsOpen(false);
   };
 
   // Garantir que estamos na Home antes de tentar rolar
@@ -26,7 +26,10 @@ export function Menu() {
       if (currentSection) {
         const rect = currentSection.getBoundingClientRect();
         // Se a seção já está visível na tela (pelo menos 50% visível)
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        if (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        ) {
           // Se já está na seção, volta para o topo (welcome)
           scrollToSection("welcome");
         } else {
@@ -97,70 +100,74 @@ export function Menu() {
       </nav>
 
       {/* Menu Mobile */}
-      <nav className="lg:hidden flex justify-between items-center p-4 bg-[var(--color-white)] shadow-md">
+      <nav className="lg:hidden flex justify-between items-center p-4 bg-[var(--color-white)] shadow-md relative">
         <Link to="/">
           <img src="/logo.png" alt="Logo do CT-HC" className="h-10" />
         </Link>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-2xl text-[var(--color-blue)] p-2"
+          className="text-2xl text-[var(--color-blue)] p-2 z-50"
           aria-label="Abrir menu"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-[var(--color-white)] w-[40%] shadow-lg z-50">
-            <ul className="flex flex-col items-center py-4 h-screen w-[100%]">
-              <li className="w-full text-center border-b border-gray-200">
-                <Link
-                  to="/"
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={() => handleScrollLink("home")}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="w-full text-center border-b border-gray-200">
-                <Link
-                  to="/"
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={() => handleScrollLink("sobre")}
-                >
-                  Sobre
-                </Link>
-              </li>
-              <li className="w-full text-center border-b border-gray-200">
-                <Link
-                  to="/contato"
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Contato
-                </Link>
-              </li>
-              <li className="w-full text-center border-b border-gray-200">
-                <Link
-                  to="/"
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={() => handleScrollLink("integrantes")}
-                >
-                  Integrantes
-                </Link>
-              </li>
-              <li className="w-full text-center">
-                <Link
-                  to="/faq"
-                  className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
-                  onClick={() => handleScrollLink("faq")}
-                >
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
+        <div
+          className={`
+          absolute top-full left-0 z-50 bg-[var(--color-white)] w-[50%] shadow-lg
+          transform transition-transform duration-300 ease-in-out
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
+        `}
+        >
+          <ul className="flex flex-col items-center py-4 h-screen w-[100%]">
+            <li className="w-full text-center border-b border-gray-200">
+              <Link
+                to="/"
+                className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                onClick={() => handleScrollLink("home")}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="w-full text-center border-b border-gray-200">
+              <Link
+                to="/"
+                className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                onClick={() => handleScrollLink("sobre")}
+              >
+                Sobre
+              </Link>
+            </li>
+            <li className="w-full text-center border-b border-gray-200">
+              <Link
+                to="/contato"
+                className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                onClick={() => setIsOpen(false)}
+              >
+                Contato
+              </Link>
+            </li>
+            <li className="w-full text-center border-b border-gray-200">
+              <Link
+                to="/"
+                className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                onClick={() => handleScrollLink("integrantes")}
+              >
+                Integrantes
+              </Link>
+            </li>
+            <li className="w-full text-center">
+              <Link
+                to="/faq"
+                className="block py-3 text-lg hover:text-[var(--color-blue)] transition-colors cursor-pointer"
+                onClick={() => handleScrollLink("faq")}
+              >
+                FAQ
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </>
   );
