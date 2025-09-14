@@ -212,7 +212,7 @@ export default function FAQ() {
                   bg-[var(--color-blue)] p-2 w-[30%] text-[var(--color-white)]
                   rounded-full font-bold text-2xl cursor-pointer
                   shadow-[4px_4px_15px_var(--color-blue)]
-                  hover:bg-[var(--color-blue-dark)] transition-colors duration-300
+                  hover:bg-[var(--hover-button)] transition-colors duration-300
                   "
                   >
                     Enviar
