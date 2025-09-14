@@ -7,10 +7,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Error from './routes/Error/index.tsx'
 import Home from './routes/Home/index.tsx'
 import FAQ from './routes/FAQ/index.tsx'
+import Integrantes from './routes/Integrantes/index.tsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <App />, errorElement: <Error />, children: [
     {path: "/", element: <Home />}, 
+    {path: "/integrantes", element: <Integrantes />}, 
     {path: "/faq", element: <FAQ />}, 
   ]},
 ])
