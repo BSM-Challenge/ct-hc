@@ -263,8 +263,8 @@ export default function FAQ() {
                     overflow-hidden transition-all duration-500 ease-in-out 
                     ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
                     `}>
-                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-white">
-                      <p className="text-lg">{item.resposta}</p>
+                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-[var(--color-white)]">
+                      <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
                   </div>
                 </li>
@@ -310,8 +310,8 @@ export default function FAQ() {
                     overflow-hidden transition-all duration-500 ease-in-out 
                     ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
                     `}>
-                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-white">
-                      <p className="text-lg">{item.resposta}</p>
+                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-[var(--color-white)]">
+                      <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
                   </div>
                 </li>
@@ -357,7 +357,7 @@ export default function FAQ() {
                     overflow-hidden transition-all duration-500 ease-in-out 
                     ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
                     `}>
-                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-white">
+                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl font-bold text-[var(--color-white)]">
                       <p className="text-lg">{item.resposta}</p>
                     </div>
                   </div>
