@@ -24,6 +24,9 @@ html {
     /* Hovers */
     --hover-light-blue: #82abff;
     --hover-button: #274285;
+
+    /* Shadows */
+    --shadow-blue-70: #2564eb97;
 }
 
 @keyframes fade-in {
