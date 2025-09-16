@@ -6,15 +6,17 @@ export default function Error() {
         <h1
           className="
           mt-5 mb-15 text-9xl font-semibold text-[var(--dark-blue-title)]
-            sm:mb-10"
+            sm:mb-14"
         >
           Ops!
         </h1>
+
         <img src="./error-icon.png" alt="Imagem representando que a página não encontrada."
           className="
-          ml-20 mb-11
-          sm:w-xs sm:mb-8"
+          ml-15 mb-11
+          sm:w-xs sm:mb-10"
         />
+
         <p className="
         text-[var(--dark-blue-title)] text-4xl text-center mb-23
         sm:text-3xl sm:p-3 sm:mb-15"
@@ -24,7 +26,7 @@ export default function Error() {
           inicial.
         </p>
       </div>
-
+      
       <div className=" flex justify-end">
         <button
         className="
