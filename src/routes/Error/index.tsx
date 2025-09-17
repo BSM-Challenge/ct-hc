@@ -23,7 +23,8 @@ export default function Error() {
         text-[var(--dark-blue-title)] text-4xl text-center mb-23 p-3
         sm:text-3xl 
         sm:p-8 sm:mb-8
-        md:mb-2 md:p-10"
+        md:mb-2 md:p-10
+        lg:p-15 lg:text-4xl"
         >
           A página que você procurava não foi encontrada, ou não existe! <br />
           Tente novamente ou clique no botão abaixo para voltar para a página
@@ -34,7 +35,8 @@ export default function Error() {
       <div className="flex justify-end">
         <button
         className="
-        text-[var(--color-blue)] rounded-4xl w-40 h-14 font-semibold text-3xl bottom-12 right-4 cursor-pointer mb-5 mr-5 border-4 border-solid border-[var(--color-blue)] hover:bg-[var(--light-blue-2)] hover:text-[var(--color-white)] hover:border-solid hover:border-[var(--Color-blue-709CFF)]"
+        text-[var(--color-blue)] rounded-4xl w-40 h-14 font-semibold text-3xl bottom-12 right-4 cursor-pointer mb-5 mr-5 border-4 border-solid border-[var(--color-blue)] hover:bg-[var(--light-blue-2)] hover:text-[var(--color-white)] hover:border-solid hover:border-[var(--Color-blue-709CFF)]
+        lg:mb-13"
         onClick={() => (window.location.href = "/")}
       >
         Voltar
