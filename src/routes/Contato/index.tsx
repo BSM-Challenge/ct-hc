@@ -23,8 +23,20 @@ export default function Contato() {
                 <img src="" alt="Ícone do Facebook" />
                 <img src="" alt="Ícone do Twitter"/>
                 <img src="" alt="Ícone do Youtube"/>
-
             </div>
+        </section>
+
+        <section className="bg-[var(--color-white)]">
+            <h1>Mande uma mensagem!</h1>
+            <form>
+                <label htmlFor="nome">Nome:</label>
+                <input type="text" placeholder="Digte o seu nome" />
+                <label htmlFor="email">E-mail:</label>
+                <input type="email" placeholder="Digte o seu e-mail" />
+                <label htmlFor="mensagem">Mensagem:</label>
+                <textarea placeholder="Digte sua mensagem..." />
+                <button>Enviar</button>
+            </form>
         </section>
         
         
