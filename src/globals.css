@@ -17,6 +17,7 @@ html {
     
     /* Shadows */
     --shadow-blue: 8px 8px 22px #2563EB;
+    --shadow-blue-70: #2564eb97;
 
     /* Borders */
     --border-black: #000000;
@@ -24,9 +25,6 @@ html {
     /* Hovers */
     --hover-light-blue: #82abff;
     --hover-button: #274285;
-
-    /* Shadows */
-    --shadow-blue-70: #2564eb97;
 }
 
 @keyframes fade-in {
@@ -38,6 +36,21 @@ html {
   }
 }
 
+@keyframes fade-in-up {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
 }
