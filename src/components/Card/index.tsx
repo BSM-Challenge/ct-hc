@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import type { Integrante } from "../../types/integrante";
 
@@ -11,14 +12,37 @@ export default function Card({
   linkGithub,
   linkLinkedin,
 }: Integrante) {
+  useEffect(() => {
+    function handleScroll() {
+      const cards = document.querySelectorAll(".card-observe");
+
+      setTimeout(() => {
+        cards.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.classList.add("animate-fade-in-up");
+            el.classList.remove("opacity-0");
+          }
+        });
+
+      }, 200);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div>
       {/* Card */}
       <div
         className="
-        relative flex items-center max-w-6xl w-full p-8
-        bg-[var(--Color-blue-709CFF)] rounded-[60px]
-        shadow-[15px_15px_20px_var(--shadow-blue-70)]"
+          relative flex items-center max-w-6xl w-full p-8
+          bg-[var(--Color-blue-709CFF)] rounded-[60px]
+          shadow-[15px_15px_20px_var(--shadow-blue-70)]
+          opacity-0 card-observe"
       >
         {/* Foto */}
         <div
