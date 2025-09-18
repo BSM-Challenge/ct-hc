@@ -1,3 +1,4 @@
+import SectionPitch from "../../components/Section-Pitch";
 import SectionSobre from "../../components/Section-Sobre";
 import SectionWelcome from "../../components/Section-Welcome";
 
@@ -9,6 +10,9 @@ export default function Home() {
       </section>
       <section id="sobre" className="bg-[var(--color-white)] min-h-screen p-4">
         <SectionSobre />
+      </section>
+      <section id="pitch" className="bg-[var(--color-white)] h-screen py-20 pl-9">
+        <SectionPitch />
       </section>
     </main>
   );
