@@ -9,30 +9,65 @@ export default function Contato() {
       </p>
 
       <div className="flex flex-row justify-center mt-10">
-        <section className="bg-[var(--light-blue-2)]">
-            <div className="flex  flex-col">
-              <img className="w-20" src="./icon-local.png" alt="Ícone de localização" />
-              <h2>Endereço - HC</h2>
-              <p>
+        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1">
+          <div className="flex flex-col">
+          
+            {/* card endereço */}
+            <div className="flex flex-row items-center">
+              <img className="w-17" src="./icon-local.png" alt="Ícone de localização"/>
+            <div className="flex flex-col items-center">
+              <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+                Endereço - HC
+              </h2>
+              <p className="font-bold text-sm text-[var(--dark-blue-title)]">
                 Av. Dr. Enéas de Carvalho Aguiar, <br /> Nº 255 <br /> Cerqueira
                 César <br /> 05403-000 <br /> São Paulo Brasil
               </p>
+            </div>
+            </div>
 
-              <img className="w-20" src="./icon-telefone.png" alt="Ícone de telefone" />
-              <h2>Telefone - HC</h2>
-              <p>Telefone: (11) 2661-0000</p>
+            {/* card telefone */}
+            <div className="flex flex-row items-center">
+              <div>
+                <img className="w-20" src="./icon-telefone.png" alt="Ícone de telefone"/>
+              </div>
+              <div>
+                <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+                  Telefone - HC
+                </h2>
+                <p className="font-bold text-sm text-[var(--dark-blue-title)]">
+                  Telefone: (11) 2661-0000
+                  </p>
+              </div>
+            </div>
+            
 
-              <img className="w-20" src="./icon-whatsapp.png" alt="Ícone de WhatsApp" />
-              <h2>WhatsApp - HC</h2>
-              <p>WhatsApp: (19) 3521-2121 </p>
+            {/* card whatsapp */}
+            <div className="flex flex-row items-center">
+              <div>
+                <img className="w-20" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
+              </div>
 
+              <div>
+                <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+                  WhatsApp - HC
+                </h2>
+                <p className="font-bold text-sm text-[var(--dark-blue-title)]">
+                  WhatsApp: (19) 3521-2121{" "}
+                </p>
+              </div>
+            </div>
+
+            {/* card redes */}
             <div className="border-[var(--dark-blue-title)] w-100 border-2 border-dotted"></div>
-            <h2>Siga o HC nas Redes Sociais:</h2>
+            <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+              Siga o HC nas Redes Sociais:
+            </h2>
             <div className="flex flex-row">
-                <img src="./instagram-icon.png" alt="Ícone do Instagram" />
-                <img src="./facebook-icon.png" alt="Ícone do Facebook" />
-                <img src="./twitter-icon.png" alt="Ícone do Twitter" />
-                <img src="./youtube-icon.png" alt="Ícone do Youtube" />
+              <img src="./icon-instagram.png" alt="Ícone do Instagram" />
+              <img src="./icon-facebook.png" alt="Ícone do Facebook" />
+              <img src="./icon-twitter.png" alt="Ícone do Twitter" />
+              <img src="./icon-youtube.png" alt="Ícone do Youtube" />
             </div>
           </div>
         </section>
