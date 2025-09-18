@@ -1,6 +1,10 @@
 export default function SectionSobre() {
     return (
-        <div className="flex flex-col gap-1">
+        <section className="
+        bg-[var(--color-white)] min-h-screen p-4
+         flex flex-col gap-1"
+         id="sobre"
+         >
             <div className="w-full flex flex-col gap-7 lg:w-[45%]">
                 <h2 
                 className="text-6xl text-[var(--dark-blue-title)] text-start font-bold lg:text-center"
@@ -54,6 +58,6 @@ export default function SectionSobre() {
                     de forma autônoma e sem medo.
                 </p>
             </div>
-        </div>
+        </section>
     )
 }

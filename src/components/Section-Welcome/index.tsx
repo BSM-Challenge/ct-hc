@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 
 export default function SectionWelcome() {
   return (
-    <div className="flex flex-col pt-30 lg:pt-50 lg:flex-row">
+    <section className="
+      bg-[var(--light-blue)] min-h-screen 
+      flex flex-col pt-30 lg:pt-50 lg:flex-row"
+      id="home"
+    >
       <div className="
           flex justify-center flex-col w-full gap-3 px-4
           lg:w-1/2 lg:px-0
@@ -68,6 +72,6 @@ export default function SectionWelcome() {
           opacity-0 animate-fade-in object-contain"
         />
       </div>
-    </div>
+    </section>
   );
 }

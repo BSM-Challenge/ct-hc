@@ -27,6 +27,21 @@ html {
     --hover-button: #274285;
 }
 
+/* Barra de Rolagem */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--light-blue);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-blue);
+  border-radius: 20px;
+}
+
+/* Animações */
 @keyframes fade-in {
   0% {
     opacity: 0;
