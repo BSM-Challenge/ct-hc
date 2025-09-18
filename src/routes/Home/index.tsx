@@ -11,7 +11,7 @@ export default function Home() {
       <section id="sobre" className="bg-[var(--color-white)] min-h-screen p-4">
         <SectionSobre />
       </section>
-      <section id="pitch" className="bg-[var(--color-white)] h-screen py-20 pl-9">
+      <section id="pitch" className="bg-[var(--color-white)] min-h-screen py-20 pl-9">
         <SectionPitch />
       </section>
     </main>
