@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--light-blue);
+  background: #709bffa2;
 }
 
 body::-webkit-scrollbar-thumb {
