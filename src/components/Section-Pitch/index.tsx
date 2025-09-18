@@ -1,6 +1,9 @@
 export default function SectionPitch() {
   return (
-    <div className="flex flex-col gap-5">
+    <section className="
+    bg-[var(--color-white)] min-h-screen py-20 pl-9
+     flex flex-col gap-5"
+     >
       <h4 className="text-7xl font-bold text-[var(--dark-blue-title)]">
         Vídeo Pitch
       </h4>
@@ -40,6 +43,6 @@ export default function SectionPitch() {
             Clique aqui
           </a>
       </aside>
-    </div>
+    </section>
   );
 }
