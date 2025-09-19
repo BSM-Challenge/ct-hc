@@ -13,9 +13,9 @@ export default function Contato() {
           <div className="flex flex-col">
           
             {/* card endereço */}
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center gap-3">
               <img className="w-17" src="./icon-local.png" alt="Ícone de localização"/>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-start gap-0.5">
               <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
                 Endereço - HC
               </h2>
@@ -27,11 +27,11 @@ export default function Contato() {
             </div>
 
             {/* card telefone */}
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center gap-3">
               <div>
-                <img className="w-20" src="./icon-telefone.png" alt="Ícone de telefone"/>
+                <img className="w-17" src="./icon-telefone.png" alt="Ícone de telefone"/>
               </div>
-              <div>
+              <div className="flex flex-col items-start gap-0.5">
                 <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
                   Telefone - HC
                 </h2>
@@ -43,12 +43,12 @@ export default function Contato() {
             
 
             {/* card whatsapp */}
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center gap-3 mb-7">
               <div>
-                <img className="w-20" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
+                <img className="w-17" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
               </div>
 
-              <div>
+              <div className="flex flex-col items-start gap-0.5">
                 <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
                   WhatsApp - HC
                 </h2>
