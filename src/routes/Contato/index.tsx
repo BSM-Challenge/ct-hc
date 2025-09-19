@@ -1,6 +1,6 @@
 export default function Contato() {
   return (
-    <main className="pt-40 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px]">
+    <main className="pt-40 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px]">
       <h1 className="text-6xl text-center text-[var(--dark-blue-title)] font-bold">
         Contate-nos!
       </h1>
@@ -8,7 +8,7 @@ export default function Contato() {
         Ficou com alguma dúvida ou precisa de ajuda?
       </p>
 
-      <div className="flex flex-row justify-center mt-10">
+      <div className="flex flex-row justify-center mt-10 mb-10">
         <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2">
           <div className="flex flex-col">
           
@@ -59,7 +59,7 @@ export default function Contato() {
             </div>
 
             {/* card redes */}
-            <hr className="border-[var(--dark-blue-title)] w-90 border-2 border-dotted mb-2"/>
+            <hr className="border-[var(--dark-blue-title)] w-95 border-2 border-dotted mb-2"/>
             <div className="flex flex-col items-center gap-1">
               <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
                 Siga o HC nas Redes Sociais:
@@ -76,18 +76,18 @@ export default function Contato() {
         </section>
 
         <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2">
-          <div className=" flex flex-col items-start w-[100%] h-[100%]">
-            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold">Mande uma mensagem!</h2>
-            <form className="flex flex-col">
-              <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold ">Nome:</label>
-              <input type="text" placeholder="Digite o seu nome" />
+          <div className="flex flex-col items-start w-[100%] h-[100%] pt-6 pl-8">
+            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold mb-8">Mande uma mensagem!</h2>
+            <form className="flex flex-col w-[50%] h-[100%]">
+              <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
+              <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5"/>
 
-              <label htmlFor="email" className="text-[var(--dark-blue-title)] font-bold">E-mail:</label>
-              <input type="email" placeholder="Digite o seu e-mail" />
+              <label htmlFor="email" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">E-mail:</label>
+              <input type="email" placeholder="Digite o seu e-mail" className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5" />
 
-              <label htmlFor="mensagem" className="text-[var(--dark-blue-title)] font-bold">Mensagem:</label>
-              <textarea placeholder="Digite sua mensagem..." />
-              <button className="text-[var(--dark-blue-title)] font-bold border-2 rounded-lg p-2">Enviar</button>
+              <label htmlFor="mensagem" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Mensagem:</label>
+              <textarea placeholder="Digite sua mensagem..." className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none" />
+              <button className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[35%] mb-10 self-center">Enviar</button>
             </form>
           </div>
           
