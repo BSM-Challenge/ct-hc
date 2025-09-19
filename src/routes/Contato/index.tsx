@@ -1,6 +1,6 @@
 export default function Contato() {
   return (
-    <main className="pt-40 bg-[var(--light-blue)] flex-grow">
+    <main className="pt-40 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px]">
       <h1 className="text-6xl text-center text-[var(--dark-blue-title)] font-bold">
         Contate-nos!
       </h1>
@@ -9,7 +9,7 @@ export default function Contato() {
       </p>
 
       <div className="flex flex-row justify-center mt-10">
-        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1">
+        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2">
           <div className="flex flex-col">
           
             {/* card endereço */}
@@ -53,7 +53,7 @@ export default function Contato() {
                   WhatsApp - HC
                 </h2>
                 <p className="font-bold text-2sm text-[var(--dark-blue-title)]">
-                  WhatsApp: (19) 3521-2121{" "}
+                  WhatsApp: (19) 3521-2121
                 </p>
               </div>
             </div>
@@ -75,17 +75,22 @@ export default function Contato() {
           </div>
         </section>
 
-        <section className="bg-[var(--color-white)]">
-          <h2>Mande uma mensagem!</h2>
-          <form>
-            <label htmlFor="nome">Nome:</label>
-            <input type="text" placeholder="Digte o seu nome" />
-            <label htmlFor="email">E-mail:</label>
-            <input type="email" placeholder="Digte o seu e-mail" />
-            <label htmlFor="mensagem">Mensagem:</label>
-            <textarea placeholder="Digte sua mensagem..." />
-            <button>Enviar</button>
-          </form>
+        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2">
+          <div className=" flex flex-col items-start w-[100%] h-[100%]">
+            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold">Mande uma mensagem!</h2>
+            <form className="flex flex-col">
+              <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold ">Nome:</label>
+              <input type="text" placeholder="Digite o seu nome" />
+
+              <label htmlFor="email" className="text-[var(--dark-blue-title)] font-bold">E-mail:</label>
+              <input type="email" placeholder="Digite o seu e-mail" />
+
+              <label htmlFor="mensagem" className="text-[var(--dark-blue-title)] font-bold">Mensagem:</label>
+              <textarea placeholder="Digite sua mensagem..." />
+              <button className="text-[var(--dark-blue-title)] font-bold border-2 rounded-lg p-2">Enviar</button>
+            </form>
+          </div>
+          
         </section>
       </div>
     </main>
