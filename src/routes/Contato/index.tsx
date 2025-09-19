@@ -13,13 +13,13 @@ export default function Contato() {
           <div className="flex flex-col">
           
             {/* card endereço */}
-            <div className="flex flex-row items-center gap-3">
+            <div className="flex flex-row items-center gap-3 mb-5">
               <img className="w-17" src="./icon-local.png" alt="Ícone de localização"/>
             <div className="flex flex-col items-start gap-0.5">
-              <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+              <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
                 Endereço - HC
               </h2>
-              <p className="font-bold text-sm text-[var(--dark-blue-title)]">
+              <p className="font-bold text-2sm text-[var(--dark-blue-title)]">
                 Av. Dr. Enéas de Carvalho Aguiar, <br /> Nº 255 <br /> Cerqueira
                 César <br /> 05403-000 <br /> São Paulo Brasil
               </p>
@@ -27,15 +27,15 @@ export default function Contato() {
             </div>
 
             {/* card telefone */}
-            <div className="flex flex-row items-center gap-3">
+            <div className="flex flex-row items-center gap-3 mb-5">
               <div>
                 <img className="w-17" src="./icon-telefone.png" alt="Ícone de telefone"/>
               </div>
               <div className="flex flex-col items-start gap-0.5">
-                <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+                <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
                   Telefone - HC
                 </h2>
-                <p className="font-bold text-sm text-[var(--dark-blue-title)]">
+                <p className="font-bold text-2sm text-[var(--dark-blue-title)]">
                   Telefone: (11) 2661-0000
                   </p>
               </div>
@@ -43,32 +43,35 @@ export default function Contato() {
             
 
             {/* card whatsapp */}
-            <div className="flex flex-row items-center gap-3 mb-7">
+            <div className="flex flex-row items-center gap-3 mb-5">
               <div>
                 <img className="w-17" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
               </div>
 
               <div className="flex flex-col items-start gap-0.5">
-                <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+                <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
                   WhatsApp - HC
                 </h2>
-                <p className="font-bold text-sm text-[var(--dark-blue-title)]">
+                <p className="font-bold text-2sm text-[var(--dark-blue-title)]">
                   WhatsApp: (19) 3521-2121{" "}
                 </p>
               </div>
             </div>
 
             {/* card redes */}
-            <div className="border-[var(--dark-blue-title)] w-100 border-2 border-dotted"></div>
-            <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
-              Siga o HC nas Redes Sociais:
-            </h2>
-            <div className="flex flex-row">
-              <img src="./icon-instagram.png" alt="Ícone do Instagram" />
-              <img src="./icon-facebook.png" alt="Ícone do Facebook" />
-              <img src="./icon-twitter.png" alt="Ícone do Twitter" />
-              <img src="./icon-youtube.png" alt="Ícone do Youtube" />
+            <hr className="border-[var(--dark-blue-title)] w-90 border-2 border-dotted mb-2"/>
+            <div className="flex flex-col items-center gap-1">
+              <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+                Siga o HC nas Redes Sociais:
+              </h2>
+              <div className="flex flex-row items-center gap-3">
+                <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
+                <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
+                <img src="./icon-twitter.png" alt="Ícone do Twitter" className="w-13 h-13" />
+                <img src="./icon-youtube.png" alt="Ícone do Youtube" className="w-13 h-13" />
+              </div>
             </div>
+            
           </div>
         </section>
 
