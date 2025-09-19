@@ -9,7 +9,7 @@ export default function Contato() {
       </p>
 
       <div className="flex flex-row justify-center mt-10 mb-10">
-        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2">
+        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2 shadow-xl/20">
           <div className="flex flex-col">
           
             {/* card endereço */}
@@ -75,18 +75,18 @@ export default function Contato() {
           </div>
         </section>
 
-        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2">
+        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2 shadow-xl/20">
           <div className="flex flex-col items-start w-[100%] h-[100%] pt-6 pl-8">
             <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold mb-8">Mande uma mensagem!</h2>
             <form className="flex flex-col w-[50%] h-[100%]">
               <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
-              <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5"/>
+              <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]"/>
 
               <label htmlFor="email" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">E-mail:</label>
-              <input type="email" placeholder="Digite o seu e-mail" className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5" />
+              <input type="email" placeholder="Digite o seu e-mail" className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]" />
 
               <label htmlFor="mensagem" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Mensagem:</label>
-              <textarea placeholder="Digite sua mensagem..." className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none" />
+              <textarea placeholder="Digite sua mensagem..." className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none border-b-4 border-[var(--dark-blue-title)]" />
               <button className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[35%] mb-10 self-center hover:bg-[var(--light-blue)] hover:text-[var(--color-blue-2)] hover:border-[var(--color-blue-2)] cursor-pointer transition-colors duration-300">Enviar</button>
             </form>
           </div>
