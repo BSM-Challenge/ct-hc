@@ -1,20 +1,20 @@
 export default function Contato() {
   return (
-    <main className="pt-40 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px]
+    <main className="pt-30 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[40px]
     sm:pt-30 sm:px-15 lg:pt-40 2xl:px-40">
-      <h1 className="text-6xl text-center text-[var(--dark-blue-title)] font-bold">
+      <h1 className="text-5xl text-center text-[var(--dark-blue-title)] font-bold">
         Contate-nos!
       </h1>
-      <p className="text-3xl text-center text-[var(--dark-blue-title)] font-semibold mt-2 sm:text-2xl sm:w-[100%]">
+      <p className="text-2xl text-center text-[var(--dark-blue-title)] font-semibold mt-2 sm:text-2xl sm:w-[100%]">
         Ficou com alguma dúvida ou precisa de ajuda?
       </p>
 
-      <div className="flex flex-row justify-center mt-10 mb-10
+      <div className="flex flex-col justify-center mt-10 mb-10
       sm:flex-col lg:flex-row 2xl:h-[100%] 2xl:w-[100%]">
-        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2 shadow-xl/20 
+        <section className="bg-[var(--light-blue-2)] rounded-3xl p-6 flex-1 w-[100%] shadow-xl/20 mb-10
         sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10
         lg:rounded-br-none lg:rounded-tr-none lg:mb-0 lg:w-[100%]">
-          <div className="flex flex-col sm:ml-4 md:items-center lg:px-1 lg:py-3 lg:items-start">
+          <div className="flex flex-col sm:ml-4 md:items-center lg:px-1 lg:py-6 lg:items-start">
           
             {/* card endereço */}
             <div className="flex flex-row items-start gap-3 mb-5
@@ -67,11 +67,11 @@ export default function Contato() {
             </div>
 
             {/* card redes */}
-            <hr className="border-[var(--dark-blue-title)] w-85 border-2 mb-2 self-center md:w-[90%]"/>
+            <hr className="border-[var(--dark-blue-title)] w-70 border-2 mb-2 self-center md:w-[90%] lg:mt-5"/>
 
             <div className="flex flex-col items-center gap-1
             sm:self-center sm:mr-4">
-              <h2 className="font-bold text-xl text-[var(--dark-blue-title)] xl:text-2xl">
+              <h2 className="font-bold text-xl text-[var(--dark-blue-title)] xl:text-2xl lg:mt-2">
                 Siga o HC nas Redes Sociais:
               </h2>
 
@@ -86,15 +86,16 @@ export default function Contato() {
           </div>
         </section>
 
-        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2 shadow-xl/20
+        <section className="bg-[var(--color-white)] rounded-3xl w-[100%] shadow-xl/20
         sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10
-        lg:rounded-bl-none lg:rounded-tl-none lg:mb-0 lg:w-1/2 lg:h-132">
-          <div className="flex flex-col items-start w-[100%] h-[100%] pt-6 sm:items-center lg:items-start">
-            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold mb-8
+        lg:rounded-bl-none lg:rounded-tl-none lg:mb-0 lg:w-1/2">
+          
+          <div className="flex flex-col items-center w-[100%] h-[100%] pt-6 sm:items-center xl:py-13">
+            <h2 className="text-[var(--dark-blue-title)] text-4xl text-center font-bold mb-8
             sm:text-center sm:text-3xl md:text-4xl lg:self-center lg:mb-5">Mande uma mensagem!</h2>
 
-            <form className="flex flex-col w-[50%] h-[100%]
-            sm:w-[80%] md:w-[70%] lg:py-0 lg:px-10 lg:w-[100%]">
+            <form className="flex flex-col w-[80%] h-[100%]
+            sm:w-[80%] md:w-[70%] lg:py-0 lg:px-10 lg:w-[100%] xl:w-[90%]">
               <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
               <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)] "/>
 
@@ -103,9 +104,9 @@ export default function Contato() {
 
               <label htmlFor="mensagem" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Mensagem:</label>
               <textarea placeholder="Digite sua mensagem..."
-              className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none border-b-4 border-[var(--dark-blue-title)] lg:h-30 lg:mb-4" />
+              className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none border-b-4 border-[var(--dark-blue-title)] lg:h-40 lg:mb-5 xl:mb-8" />
 
-              <button className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[35%] mb-10 self-center hover:bg-[var(--light-blue)] hover:text-[var(--color-blue-2)] hover:border-[var(--color-blue-2)] cursor-pointer transition-colors duration-300">Enviar</button>
+              <button className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[45%] mb-5 self-center hover:bg-[var(--light-blue)] hover:text-[var(--color-blue-2)] hover:border-[var(--color-blue-2)] cursor-pointer transition-colors duration-300 xl:mb-0 xl:text-3xl">Enviar</button>
             </form>
           </div>
           
