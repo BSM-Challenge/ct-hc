@@ -1,20 +1,22 @@
 export default function Contato() {
   return (
-    <main className="pt-40 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px]">
+    <main className="pt-40 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px] sm:pt-30 sm:px-15">
       <h1 className="text-6xl text-center text-[var(--dark-blue-title)] font-bold">
         Contate-nos!
       </h1>
-      <p className="text-3xl text-center text-[var(--dark-blue-title)] font-semibold mt-2">
+      <p className="text-3xl text-center text-[var(--dark-blue-title)] font-semibold mt-2 sm:text-2xl sm:w-[100%]">
         Ficou com alguma dúvida ou precisa de ajuda?
       </p>
 
-      <div className="flex flex-row justify-center mt-10 mb-10">
-        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2 shadow-xl/20">
-          <div className="flex flex-col">
+      <div className="flex flex-row justify-center mt-10 mb-10 sm:flex-col lg:flex-row ">
+        <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2 shadow-xl/20 
+        sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10">
+          <div className="flex flex-col sm:ml-4 md:ml-15">
           
             {/* card endereço */}
-            <div className="flex flex-row items-center gap-3 mb-5">
-              <img className="w-17" src="./icon-local.png" alt="Ícone de localização"/>
+            <div className="flex flex-row items-start gap-3 mb-5
+            sm:gap-5 md:mb-6">
+              <img className="w-17 sm:w-13" src="./icon-local.png" alt="Ícone de localização"/>
             <div className="flex flex-col items-start gap-0.5">
               <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
                 Endereço - HC
@@ -27,9 +29,10 @@ export default function Contato() {
             </div>
 
             {/* card telefone */}
-            <div className="flex flex-row items-center gap-3 mb-5">
+            <div className="flex flex-row items-center gap-3 mb-5 
+            sm:gap-5 md:mb-6">
               <div>
-                <img className="w-17" src="./icon-telefone.png" alt="Ícone de telefone"/>
+                <img className="w-17 sm:w-13" src="./icon-telefone.png" alt="Ícone de telefone"/>
               </div>
               <div className="flex flex-col items-start gap-0.5">
                 <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
@@ -43,9 +46,9 @@ export default function Contato() {
             
 
             {/* card whatsapp */}
-            <div className="flex flex-row items-center gap-3 mb-5">
+            <div className="flex flex-row items-center gap-3 mb-5 md:mb-6">
               <div>
-                <img className="w-17" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
+                <img className="w-17 sm:w-13" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
               </div>
 
               <div className="flex flex-col items-start gap-0.5">
@@ -59,12 +62,12 @@ export default function Contato() {
             </div>
 
             {/* card redes */}
-            <hr className="border-[var(--dark-blue-title)] w-95 border-2 border-dotted mb-2"/>
-            <div className="flex flex-col items-center gap-1">
+            <hr className="border-[var(--dark-blue-title)] w-85 border-2 mb-2 self-center md:mr-15 md:w-[100%]"/>
+            <div className="flex flex-col items-center gap-1 sm:self-center sm:mr-4 md:mr-15">
               <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
                 Siga o HC nas Redes Sociais:
               </h2>
-              <div className="flex flex-row items-center gap-3">
+              <div className="flex flex-row items-center gap-5">
                 <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
                 <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
                 <img src="./icon-twitter.png" alt="Ícone do Twitter" className="w-13 h-13" />
