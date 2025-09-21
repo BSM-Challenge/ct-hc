@@ -76,20 +76,21 @@ export default function Contato() {
               </h2>
 
               <div className="flex flex-row items-center gap-5 lg:mt-2">
-                <a href="">
+                <a href="https://www.instagram.com/hospitalhcfmusp/" target="_blank" rel="noopener noreferrer"> 
                   <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
                 </a>
-                <a href="">
+                <a href="https://www.facebook.com/hospitaldasclinicasdafmusp/" target="_blank" rel="noopener noreferrer">
                   <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
                 </a>
                 
-                <a href="">
+                <a href="" target="_blank" rel="noopener noreferrer">
                   <img src="./icon-twitter.png" alt="Ícone do Twitter" className="w-13 h-13" />
                 </a>
                 
-                <a href="">
+                <a href="https://www.youtube.com/channel/UC_DUjcI35Hm0ix74KDQ67Jw" target="_blank" rel="noopener noreferrer">
                   <img src="./icon-youtube.png" alt="Ícone do Youtube" className="w-13 h-13" />
                 </a>
+
               </div>
             </div>
             
