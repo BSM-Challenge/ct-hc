@@ -83,8 +83,8 @@ export default function Contato() {
                   <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
                 </a>
                 
-                <a href="" target="_blank" rel="noopener noreferrer">
-                  <img src="./icon-twitter.png" alt="Ícone do Twitter" className="w-13 h-13" />
+                <a href="https://www.linkedin.com/company/hcfmusp/" target="_blank" rel="noopener noreferrer">
+                  <img src="./icon-linkedin.png" alt="Ícone do LinkedIn" className="w-13 h-13" />
                 </a>
                 
                 <a href="https://www.youtube.com/channel/UC_DUjcI35Hm0ix74KDQ67Jw" target="_blank" rel="noopener noreferrer">
