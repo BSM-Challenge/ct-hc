@@ -1,6 +1,7 @@
 export default function Contato() {
   return (
-    <main className="pt-40 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px] sm:pt-30 sm:px-15">
+    <main className="pt-40 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px]
+    sm:pt-30 sm:px-15 lg:pt-40">
       <h1 className="text-6xl text-center text-[var(--dark-blue-title)] font-bold">
         Contate-nos!
       </h1>
@@ -10,12 +11,15 @@ export default function Contato() {
 
       <div className="flex flex-row justify-center mt-10 mb-10 sm:flex-col lg:flex-row ">
         <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2 shadow-xl/20 
-        sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10">
-          <div className="flex flex-col sm:ml-4 md:ml-15">
+        sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10
+        lg:rounded-br-none lg:rounded-tr-none lg:mb-0">
+          <div className="flex flex-col
+          sm:ml-4 md:items-center lg:px-1 lg:py-3 lg:items-start">
           
             {/* card endereço */}
             <div className="flex flex-row items-start gap-3 mb-5
-            sm:gap-5 md:mb-6">
+            sm:gap-5 md:mb-6 md:ml-16
+            lg:ml-0">
               <img className="w-17 sm:w-13" src="./icon-local.png" alt="Ícone de localização"/>
             <div className="flex flex-col items-start gap-0.5">
               <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
@@ -46,7 +50,8 @@ export default function Contato() {
             
 
             {/* card whatsapp */}
-            <div className="flex flex-row items-center gap-3 mb-5 md:mb-6">
+            <div className="flex flex-row items-center gap-3 mb-5
+            md:mb-6 lg:mb-8">
               <div>
                 <img className="w-17 sm:w-13" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
               </div>
@@ -62,12 +67,14 @@ export default function Contato() {
             </div>
 
             {/* card redes */}
-            <hr className="border-[var(--dark-blue-title)] w-85 border-2 mb-2 self-center md:mr-15 md:w-[100%]"/>
-            <div className="flex flex-col items-center gap-1 sm:self-center sm:mr-4 md:mr-15">
+            <hr className="border-[var(--dark-blue-title)] w-85 border-2 mb-2 self-center
+            md:w-[90%]"/>
+            <div className="flex flex-col items-center gap-1
+            sm:self-center sm:mr-4">
               <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
                 Siga o HC nas Redes Sociais:
               </h2>
-              <div className="flex flex-row items-center gap-5">
+              <div className="flex flex-row items-center gap-5 lg:mt-2">
                 <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
                 <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
                 <img src="./icon-twitter.png" alt="Ícone do Twitter" className="w-13 h-13" />
