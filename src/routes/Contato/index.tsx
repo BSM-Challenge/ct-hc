@@ -1,7 +1,7 @@
 export default function Contato() {
   return (
     <main className="pt-40 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[90px]
-    sm:pt-30 sm:px-15 lg:pt-40">
+    sm:pt-30 sm:px-15 lg:pt-40 2xl:px-40">
       <h1 className="text-6xl text-center text-[var(--dark-blue-title)] font-bold">
         Contate-nos!
       </h1>
@@ -9,7 +9,8 @@ export default function Contato() {
         Ficou com alguma dúvida ou precisa de ajuda?
       </p>
 
-      <div className="flex flex-row justify-center mt-10 mb-10 sm:flex-col lg:flex-row ">
+      <div className="flex flex-row justify-center mt-10 mb-10
+      sm:flex-col lg:flex-row ">
         <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2 shadow-xl/20 
         sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10
         lg:rounded-br-none lg:rounded-tr-none lg:mb-0">
@@ -85,10 +86,11 @@ export default function Contato() {
           </div>
         </section>
 
-        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2 shadow-xl/20">
-          <div className="flex flex-col items-start w-[100%] h-[100%] pt-6 pl-8">
-            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold mb-8">Mande uma mensagem!</h2>
-            <form className="flex flex-col w-[50%] h-[100%]">
+        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2 shadow-xl/20 sm:w-[80%]
+        sm:rounded-3xl sm:self-center sm:mb-10">
+          <div className="flex flex-col items-start w-[100%] h-[100%] pt-6 sm:items-center">
+            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold mb-8 sm:text-3xl sm:w-[100%] sm:mt-3 sm:text-center">Mande uma mensagem!</h2>
+            <form className="flex flex-col w-[50%] h-[100%] sm:w-[80%] md:">
               <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
               <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]"/>
 
