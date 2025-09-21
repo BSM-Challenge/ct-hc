@@ -10,12 +10,11 @@ export default function Contato() {
       </p>
 
       <div className="flex flex-row justify-center mt-10 mb-10
-      sm:flex-col lg:flex-row ">
+      sm:flex-col lg:flex-row 2xl:h-[100%] 2xl:w-[100%]">
         <section className="bg-[var(--light-blue-2)] rounded-bl-3xl rounded-tl-3xl p-6 flex-1 w-1/2 shadow-xl/20 
         sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10
         lg:rounded-br-none lg:rounded-tr-none lg:mb-0">
-          <div className="flex flex-col
-          sm:ml-4 md:items-center lg:px-1 lg:py-3 lg:items-start">
+          <div className="flex flex-col sm:ml-4 md:items-center lg:px-1 lg:py-3 lg:items-start">
           
             {/* card endereço */}
             <div className="flex flex-row items-start gap-3 mb-5
@@ -68,13 +67,14 @@ export default function Contato() {
             </div>
 
             {/* card redes */}
-            <hr className="border-[var(--dark-blue-title)] w-85 border-2 mb-2 self-center
-            md:w-[90%]"/>
+            <hr className="border-[var(--dark-blue-title)] w-85 border-2 mb-2 self-center md:w-[90%]"/>
+
             <div className="flex flex-col items-center gap-1
             sm:self-center sm:mr-4">
               <h2 className="font-bold text-xl text-[var(--dark-blue-title)] xl:text-2xl">
                 Siga o HC nas Redes Sociais:
               </h2>
+
               <div className="flex flex-row items-center gap-5 lg:mt-2">
                 <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
                 <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
@@ -86,11 +86,14 @@ export default function Contato() {
           </div>
         </section>
 
-        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2 shadow-xl/20 sm:w-[80%]
-        sm:rounded-3xl sm:self-center sm:mb-10">
+        <section className="bg-[var(--color-white)] rounded-br-3xl rounded-tr-3xl w-1/2 shadow-xl/20
+        sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10
+        lg:rounded-bl-none lg:rounded-tl-none lg:mb-0 lg:w-1/2">
           <div className="flex flex-col items-start w-[100%] h-[100%] pt-6 sm:items-center">
-            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold mb-8 sm:text-3xl sm:w-[100%] sm:mt-3 sm:text-center">Mande uma mensagem!</h2>
-            <form className="flex flex-col w-[50%] h-[100%] sm:w-[80%] md:">
+            <h2 className="text-[var(--dark-blue-title)] text-4xl font-bold mb-8
+            sm:text-center sm:text-3xl md:text-4xl">Mande uma mensagem!</h2>
+
+            <form className="flex flex-col w-[50%] h-[100%] sm:w-[80%] md:w-[70%]">
               <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
               <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]"/>
 
