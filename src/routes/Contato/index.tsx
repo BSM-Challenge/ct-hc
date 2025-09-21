@@ -76,10 +76,20 @@ export default function Contato() {
               </h2>
 
               <div className="flex flex-row items-center gap-5 lg:mt-2">
-                <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
-                <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
-                <img src="./icon-twitter.png" alt="Ícone do Twitter" className="w-13 h-13" />
-                <img src="./icon-youtube.png" alt="Ícone do Youtube" className="w-13 h-13" />
+                <a href="">
+                  <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
+                </a>
+                <a href="">
+                  <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
+                </a>
+                
+                <a href="">
+                  <img src="./icon-twitter.png" alt="Ícone do Twitter" className="w-13 h-13" />
+                </a>
+                
+                <a href="">
+                  <img src="./icon-youtube.png" alt="Ícone do Youtube" className="w-13 h-13" />
+                </a>
               </div>
             </div>
             
