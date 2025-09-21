@@ -18,14 +18,14 @@ export default function Contato() {
           
             {/* card endereço */}
             <div className="flex flex-row items-start gap-3 mb-5
-            sm:gap-5 md:mb-6 md:ml-16
-            lg:ml-0">
-              <img className="w-17 sm:w-13" src="./icon-local.png" alt="Ícone de localização"/>
+            sm:gap-5 md:mb-6 md:ml-16 lg:ml-0 xl:mb-8">
+              <img className="w-17 sm:w-13 xl:w-18" src="./icon-local.png" alt="Ícone de localização"/>
             <div className="flex flex-col items-start gap-0.5">
-              <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
+              <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]
+              xl:text-3xl">
                 Endereço - HC
               </h2>
-              <p className="font-bold text-2sm text-[var(--dark-blue-title)]">
+              <p className="font-bold text-2sm text-[var(--dark-blue-title)] xl:text-lg">
                 Av. Dr. Enéas de Carvalho Aguiar, <br /> Nº 255 <br /> Cerqueira
                 César <br /> 05403-000 <br /> São Paulo Brasil
               </p>
@@ -34,15 +34,15 @@ export default function Contato() {
 
             {/* card telefone */}
             <div className="flex flex-row items-center gap-3 mb-5 
-            sm:gap-5 md:mb-6">
+            sm:gap-5 md:mb-6 xl:mb-8">
               <div>
-                <img className="w-17 sm:w-13" src="./icon-telefone.png" alt="Ícone de telefone"/>
+                <img className="w-17 sm:w-13 xl:w-18" src="./icon-telefone.png" alt="Ícone de telefone"/>
               </div>
               <div className="flex flex-col items-start gap-0.5">
-                <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                <h2 className="font-bold text-2xl text-[var(--dark-blue-title)] xl:text-3xl">
                   Telefone - HC
                 </h2>
-                <p className="font-bold text-2sm text-[var(--dark-blue-title)]">
+                <p className="font-bold text-2sm text-[var(--dark-blue-title)] xl:text-lg">
                   Telefone: (11) 2661-0000
                   </p>
               </div>
@@ -53,14 +53,14 @@ export default function Contato() {
             <div className="flex flex-row items-center gap-3 mb-5
             md:mb-6 lg:mb-8">
               <div>
-                <img className="w-17 sm:w-13" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
+                <img className="w-17 sm:w-13 xl:w-18" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
               </div>
 
               <div className="flex flex-col items-start gap-0.5">
-                <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                <h2 className="font-bold text-2xl text-[var(--dark-blue-title)] xl:text-3xl">
                   WhatsApp - HC
                 </h2>
-                <p className="font-bold text-2sm text-[var(--dark-blue-title)]">
+                <p className="font-bold text-2sm text-[var(--dark-blue-title)] xl:text-lg">
                   WhatsApp: (19) 3521-2121
                 </p>
               </div>
@@ -71,7 +71,7 @@ export default function Contato() {
             md:w-[90%]"/>
             <div className="flex flex-col items-center gap-1
             sm:self-center sm:mr-4">
-              <h2 className="font-bold text-xl text-[var(--dark-blue-title)]">
+              <h2 className="font-bold text-xl text-[var(--dark-blue-title)] xl:text-2xl">
                 Siga o HC nas Redes Sociais:
               </h2>
               <div className="flex flex-row items-center gap-5 lg:mt-2">
