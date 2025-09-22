@@ -43,7 +43,7 @@ export default function Integrantes() {
             nome="Felipe Kirschner Modesto"
             img="/public/foto-felipe.jpg"
             posicaoImg=""
-            descricao="Sou aluno da Fiap, atualmente cursando Análise e Desenvolvimento de Sistemas. Desde quando ingressei-me no meio tecnológico, passei a admirar grandemente a área da programação, assim como diversos outros sistemas e tecnologias fundadas. O que me fez enxergar uma oportunidade de transformar ideias em soluções que façam a diferença. Tenho interesse em aprender e desenvolver constantemente minhas habilidades, para assim crescer tanto no ramo acadêmico, e me desenvolver profissionalmente."
+            descricao="Sou estudante de Análise e Desenvolvimento de Sistemas na Fiap e desde que ingressei na área tecnológica desenvolvi grande admiração pela programação e pelas diversas possibilidades que ela oferece. Vejo na tecnologia uma forma de transformar ideias em soluções que fazem a diferença, por isso busco constantemente aprender e evoluir para crescer tanto academicamente quanto profissionalmente."
             rm="561810"
             turma="1TDSPG"
             linkGithub=""
