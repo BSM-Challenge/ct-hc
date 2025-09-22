@@ -24,7 +24,7 @@ export default function Integrantes() {
         </div>
       </section>
       <section className="py-10">
-        <div className="flex justify-start mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
+        <div className="flex justify-end mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
           <Card
             nome="Sofia Siqueira Fontes"
             img="/public/foto-sofia.jpg"
