@@ -10,7 +10,7 @@ export default function Integrantes() {
         </h1>
         <div className="w-20 sm:w-32 md:w-48 h-1.5 md:h-2 bg-[var(--color-blue)] mt-4 sm:mt-6 md:mt-8"></div>
 
-        <div className="flex justify-start mt-10 sm:mt-16 md: mt-20 w-full px-6 sm:px-10 md:px-30">
+        <div className="flex justify-start mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
           <Card
             nome="Moisés Barsoti Andrade de Oliveira"
             img="/public/foto-moises.jpg"
@@ -24,7 +24,7 @@ export default function Integrantes() {
         </div>
       </section>
       <section className="py-10">
-        <div className="flex justify-start mt-20 w-full px-30">
+        <div className="flex justify-start mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
           <Card
             nome="Sofia Siqueira Fontes"
             img="/public/foto-sofia.jpg"
@@ -38,11 +38,11 @@ export default function Integrantes() {
         </div>
       </section>
       <section className="py-10">
-        <div className="flex justify-end mt-20 w-full px-20">
+        <div className="flex justify-start mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
           <Card
             nome="Felipe Kirschner Modesto"
             img="/public/foto-felipe.jpg"
-            posicaoImg=""
+            posicaoImg="left"
             descricao="Sou estudante de Análise e Desenvolvimento de Sistemas na Fiap e desde que ingressei na área tecnológica desenvolvi grande admiração pela programação e pelas diversas possibilidades que ela oferece. Vejo na tecnologia uma forma de transformar ideias em soluções que fazem a diferença, por isso busco constantemente aprender e evoluir para crescer tanto academicamente quanto profissionalmente."
             rm="561810"
             turma="1TDSPG"
