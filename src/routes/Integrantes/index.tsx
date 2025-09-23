@@ -2,15 +2,15 @@ import Card from "../../components/Card";
 
 export default function Integrantes() {
   return (
-    <main className="pt-28 sm:px-32 md:px-40 bg-[var(--light-blue)] min-h-screen">
-      <section className="flex flex-col items-center px-6 sm:px-12 md:px-20">
+    <main className="pt-40 bg-[var(--light-blue)] min-h-screen">
+      <section className="flex flex-col items-center px-20">
         {/* Título */}
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[var(--dark-blue-title)] text-center">
+        <h1 className="text-5xl font-bold text-[var(--dark-blue-title)]">
           Conheça nossa equipe
         </h1>
-        <div className="w-20 sm:w-32 md:w-48 h-1.5 md:h-2 bg-[var(--color-blue)] mt-4 sm:mt-6 md:mt-8"></div>
+        <div className="w-48 h-2 bg-[var(--color-blue)] mt-7"></div>
 
-        <div className="flex justify-start mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
+        <div className="flex justify-end mt-20 w-full">
           <Card
             nome="Moisés Barsoti Andrade de Oliveira"
             img="/public/foto-moises.jpg"
@@ -24,7 +24,7 @@ export default function Integrantes() {
         </div>
       </section>
       <section className="py-10">
-        <div className="flex justify-end mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
+        <div className="flex justify-start mt-20 w-full px-30">
           <Card
             nome="Sofia Siqueira Fontes"
             img="/public/foto-sofia.jpg"
@@ -38,12 +38,12 @@ export default function Integrantes() {
         </div>
       </section>
       <section className="py-10">
-        <div className="flex justify-start mt-10 sm:mt-16 md:mt-20 w-full px-6 sm:px-10 md:px-30">
+        <div className="flex justify-end mt-20 w-full px-20">
           <Card
             nome="Felipe Kirschner Modesto"
             img="/public/foto-felipe.jpg"
-            posicaoImg="left"
-            descricao="Sou estudante de Análise e Desenvolvimento de Sistemas na Fiap e desde que ingressei na área tecnológica desenvolvi grande admiração pela programação e pelas diversas possibilidades que ela oferece. Vejo na tecnologia uma forma de transformar ideias em soluções que fazem a diferença, por isso busco constantemente aprender e evoluir para crescer tanto academicamente quanto profissionalmente."
+            posicaoImg=""
+            descricao="Sou aluno da Fiap, atualmente cursando Análise e Desenvolvimento de Sistemas. Desde quando ingressei-me no meio tecnológico, passei a admirar grandemente a área da programação, assim como diversos outros sistemas e tecnologias fundadas. O que me fez enxergar uma oportunidade de transformar ideias em soluções que façam a diferença. Tenho interesse em aprender e desenvolver constantemente minhas habilidades, para assim crescer tanto no ramo acadêmico, e me desenvolver profissionalmente."
             rm="561810"
             turma="1TDSPG"
             linkGithub=""

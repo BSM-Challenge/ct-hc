@@ -39,15 +39,15 @@ export default function Card({
       {/* Card */}
       <div
         className="
-          relative flex items-center max-w-6xl w-full p-8
-          bg-[var(--Color-blue-709CFF)] rounded-[60px]
+          relative flex flex-col lg:flex-row items-center lg:items-start max-w-6xl w-full p-6 sm:p-8
+          bg-[var(--Color-blue-709CFF)] rounded-[40px] sm:rounded-[60px]
           shadow-[15px_15px_20px_var(--shadow-blue-70)]
-          opacity-0 card-observe"
+          opacity-0 card-observe transition-all"
       >
         {/* Foto */}
         <div
-          className={`absolute ${
-            posicaoImg === "right" ? "right-[-130px]" : "left-[-130px]"
+          className={`relative flex-shrink-0 mb-6 lg:mb-0 ${
+            posicaoImg === "right" ? "lg:order-2 lg:ml-[-130px]" : "lg:mr-[-130px]"
           }`}
         >
           <img
