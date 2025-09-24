@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDown } from 'react-icons/fa';
-import { faqData } from '../../data/faqData';
+import { faqData } from '../../../data/CT-HC/faqData';
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState<string | null>(null);

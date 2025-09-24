@@ -1,4 +1,4 @@
-import Card from "../../components/Card";
+import Card from "../../../components/CT-HC/Card";
 
 export default function Integrantes() {
   return (

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import type { Integrante } from "../../types/integrante";
+import type { Integrante } from "../../../types/CT-HC/integrante";
 
 export default function Card({
   nome,

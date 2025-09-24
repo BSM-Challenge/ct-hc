@@ -1,4 +1,4 @@
-import type { FAQCategory } from "../types/faq";
+import type { FAQCategory } from "../../types/CT-HC/faq";
 
 export const faqData: FAQCategory[] = [
   {
