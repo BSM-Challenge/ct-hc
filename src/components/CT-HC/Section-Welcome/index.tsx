@@ -45,7 +45,7 @@ export default function SectionWelcome() {
         </p>
         <div className="flex justify-center mt-6 lg:mt-10">
           <Link
-            to=""
+            to="/hc"
             className="
             inline-flex items-center justify-center px-5 py-2 font-semibold
             text-sm bg-[var(--color-blue)] text-[var(--color-white)]
