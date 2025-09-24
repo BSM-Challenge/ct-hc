@@ -2,13 +2,13 @@ import Card from "../../../components/CT-HC/Card";
 
 export default function Integrantes() {
   return (
-    <main className="pt-40 bg-[var(--light-blue)] min-h-screen">
-      <section className="flex flex-col items-center px-20">
+    <main className="pt-28 sm:pt-32 md:pt-40 bg-[var(--light-blue)] min-h-screen">
+      <section className="flex flex-col items-center px-6 sm:px-12 md:px-20">
         {/* Título */}
-        <h1 className="text-5xl font-bold text-[var(--dark-blue-title)]">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[var(--dark-blue-title)]">
           Conheça nossa equipe
         </h1>
-        <div className="w-48 h-2 bg-[var(--color-blue)] mt-7"></div>
+        <div className="w-20 sm:w-32 md:w-48 h-1.5 md:h-2 bg-[var(--color-blue)] mt-4 sm:mt-6 md:mt-8"></div>
 
         <div className="flex justify-end mt-20 w-full">
           <Card
