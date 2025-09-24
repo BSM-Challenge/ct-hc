@@ -1,13 +1,13 @@
-import SectionPitch from "../../components/Section-Pitch";
-import SectionSobre from "../../components/Section-Sobre";
-import SectionWelcome from "../../components/Section-Welcome";
+import SectionWelcome from "../../../components/CT-HC/Section-Welcome";
+import SectionPitch from "../../../components/CT-HC/Section-Sobre";
+import SectionSobre from "../../../components/CT-HC/Section-Pitch";
 
 export default function Home() {
   return (
     <main>
       <SectionWelcome />
-      <SectionSobre />
       <SectionPitch />
+      <SectionSobre />
     </main>
   );
 }

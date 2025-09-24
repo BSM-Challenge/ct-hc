@@ -1,3 +1,4 @@
+import Footer from "./components/CT-HC/Footer"
 import { Header } from "./components/CT-HC/Header"
 import { Outlet } from "react-router-dom"
 
@@ -8,6 +9,7 @@ function App() {
       <div className="flex-grow">
         <Outlet />
       </div>
+      <Footer />
     </div>
   )
 }
