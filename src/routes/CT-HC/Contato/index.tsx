@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Contato() {
   return (
     <main className="pt-30 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[40px]
@@ -9,7 +11,7 @@ export default function Contato() {
         Ficou com alguma dúvida ou precisa de ajuda?
       </p>
 
-      <div className="flex flex-col justify-center mt-10 mb-10
+      <div className="flex flex-col justify-center my-10
       sm:flex-col lg:flex-row 2xl:h-[100%] 2xl:w-[100%]">
         <section className="bg-[var(--light-blue-2)] rounded-3xl p-6 flex-1 w-[100%] shadow-xl/20 mb-10
         sm:w-[80%] sm:rounded-3xl sm:self-center sm:mb-10
@@ -66,7 +68,7 @@ export default function Contato() {
               </div>
             </div>
 
-            {/* card redes */}
+            {/* redes sociais */}
             <hr className="border-[var(--dark-blue-title)] w-70 border-2 mb-2 self-center md:w-[90%] lg:mt-5"/>
 
             <div className="flex flex-col items-center gap-1
@@ -75,21 +77,32 @@ export default function Contato() {
                 Siga o HC nas Redes Sociais:
               </h2>
 
-              <div className="flex flex-row items-center gap-5 lg:mt-2">
-                <a href="https://www.instagram.com/hospitalhcfmusp/" target="_blank" rel="noopener noreferrer"> 
-                  <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
-                </a>
-                <a href="https://www.facebook.com/hospitaldasclinicasdafmusp/" target="_blank" rel="noopener noreferrer">
-                  <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
-                </a>
-                
-                <a href="https://www.linkedin.com/company/hcfmusp/" target="_blank" rel="noopener noreferrer">
-                  <img src="./icon-linkedin.png" alt="Ícone do LinkedIn" className="w-13 h-13" />
-                </a>
-                
-                <a href="https://www.youtube.com/channel/UC_DUjcI35Hm0ix74KDQ67Jw" target="_blank" rel="noopener noreferrer">
-                  <img src="./icon-youtube.png" alt="Ícone do Youtube" className="w-13 h-13" />
-                </a>
+              <div>
+                <ul className="flex flex-row gap-5">
+                  <li>
+                    <Link to="https://www.instagram.com/hospitalhcfmusp/" target="_blank" rel="noopener noreferrer">
+                    <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="https://www.facebook.com/hospitaldasclinicasdafmusp/" target="_blank" rel="noopener noreferrer">
+                    <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="https://www.linkedin.com/company/hcfmusp/" target="_blank" rel="noopener noreferrer">
+                    <img src="./icon-linkedin.png" alt="Ícone do LinkedIn" className="w-13 h-13" />
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="https://www.youtube.com/channel/UC_DUjcI35Hm0ix74KDQ67Jw" target="_blank" rel="noopener noreferrer">
+                    <img src="./icon-youtube.png" alt="Ícone do Youtube" className="w-13 h-13" />
+                    </Link>
+                  </li>
+                </ul>
 
               </div>
             </div>
