@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 
 function AppHC() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--background)]">
       <HeaderHC />
       <div className="flex-grow">
         <Outlet />
