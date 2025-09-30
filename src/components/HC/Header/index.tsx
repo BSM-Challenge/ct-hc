@@ -4,7 +4,7 @@ import { IoPersonCircle } from "react-icons/io5";
 
 export default function HeaderHC() {
   return (
-    <header className="h-screen w-[20%] px-[20px] bg-white">
+    <header className="h-screen w-[20%] px-[20px]">
       <div className="flex items-center">
         <Link to="/hc">
           <img src="/logoHC.png" alt="" className="w-[90%]" />
@@ -127,6 +127,19 @@ export default function HeaderHC() {
           </Link>
         </div>
       </nav>
+      <hr className="my-4"/>
+      <Link to="/">
+        <ul className="flex gap-6 items-center">
+          <li>
+            <img
+             src="/icon-sair.png" 
+             alt=""
+             className="w-[35px]" 
+             />
+          </li>
+          <li>Sair</li>
+        </ul>
+      </Link>
     </header>
   );
 }
