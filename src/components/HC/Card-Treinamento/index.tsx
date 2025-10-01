@@ -30,7 +30,7 @@ export default function CardTreinamento() {
             </p>
             <div className=" flex justify-around">
                 <Link 
-                    to=""
+                    to="/"
                     className="
                     py-4 px-10
                     bg-[var(--color-blue-1277BD)] text-[var(--color-white)] rounded-2xl
