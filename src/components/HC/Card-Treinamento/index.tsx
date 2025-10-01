@@ -6,6 +6,7 @@ export default function CardTreinamento() {
       className="
         flex gap-15
         bg-[var(--light-blue)] rounded-4xl px-8 py-11
+        border-b-8 border-[var(--color-blue-82abff)]
         "
     >
       <figcaption>
