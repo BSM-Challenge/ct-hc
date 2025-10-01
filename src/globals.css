@@ -20,19 +20,19 @@ html {
     /* Shadows */
     --shadow-blue: 8px 8px 22px #2563EB;
     --shadow-blue-70: #2564eb97;
-
+    
     /* Borders */
     --border-black: #000000;
-
+    
     /* Hovers */
     --hover-light-blue: #82abff;
     --hover-button: #274285;
-
+    
     /* HC */
     /* Backgrounds */
     --background: #edefef;
     --background-white: #ffffff;
-
+    
     /* Colors */
     --color-active: #0175C2;
     --color-blue: #0077C8;
@@ -40,6 +40,8 @@ html {
     --color-black: #000000;
     --color-green: #169DA6;
     --color-grey: #616161;
+    --color-blue-1D509F: #1D509F;
+    --color-blue-1277BD: #1277BD;
     
 
     /* Components */
