@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SectionPitch() {
   return (
     <section className="
@@ -48,8 +50,8 @@ export default function SectionPitch() {
             Problemas para visualizar? <br />
             Assista no <span className="font-bold">YouTube</span>.
           </p>
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          <Link
+            to="https://youtu.be/36Rl0yBepwU"
             className="
             w-[50%]
             bg-[var(--dark-blue-title)] text-[var(--color-white)]
@@ -62,7 +64,7 @@ export default function SectionPitch() {
             "
           >
             Clique aqui
-          </a>
+          </Link>
       </aside>
     </section>
   );
