@@ -1,4 +1,4 @@
-import HeaderHC from "./components/HC/Header";
+import HeaderHC from "./components/HC/HeaderHC";
 import { Outlet } from "react-router-dom"
 
 function AppHC() {
