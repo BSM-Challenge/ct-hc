@@ -4,13 +4,19 @@ export default function CardTreinamento() {
   return (
     <div
       className="
-        flex gap-15
-        bg-[var(--light-blue)] rounded-4xl px-8 py-11
+        flex flex-col gap-15
+        bg-[var(--light-blue)] rounded-4xl px-6 py-5
         border-b-8 border-[var(--color-blue-82abff)]
+        lg:flex-row
         "
     >
-      <figcaption>
-        <img src="/logo-ct-hc-azul.png" alt="Logo do CTHC" className="w-100" />
+      <figcaption className="flex justify-center items-center">
+        <img src="/logo-ct-hc-azul.png" alt="Logo do CTHC" 
+        className="
+        w-[30%]
+        lg:w-[100%]
+        "
+         />
       </figcaption>
       <div className="flex flex-col w-full gap-8">
             <div className="flex justify-center">
