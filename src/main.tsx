@@ -11,7 +11,7 @@ import Integrantes from './routes//CT-HC/Integrantes/index.tsx'
 import Contato from './routes/CT-HC/Contato/index.tsx'
 // HC
 import AppHC from './AppHC.tsx'
-import HomeHC from './routes/HC/Home/index.tsx'
+import HomeHC from './routes/HC/HomeHC/index.tsx'
 
 const router = createBrowserRouter([
   {
