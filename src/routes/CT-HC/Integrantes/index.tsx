@@ -47,7 +47,7 @@ export default function Integrantes() {
             rm="561810"
             turma="1TDSPG"
             linkGithub="https://github.com/FeKiModesto"
-            linkLinkedin=""
+            linkLinkedin="https://www.linkedin.com/in/felipe-modesto-348986366/"
           />
         </div>
       </section>
