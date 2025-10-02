@@ -70,7 +70,7 @@
  ┃ ┃ ┃ ┗ 📂 TitleHC
  ┃ ┣ 📂 data
  ┃ ┃ ┣ 📂 CT-HC
- ┃ ┃ ┃ ┗ 📜 faqData.ts
+ ┃ ┃ ┃ ┗ 📄 faqData.ts
  ┃ ┣ 📂 routes
  ┃ ┃ ┣ 📂 CT-HC
  ┃ ┃ ┃ ┣ 📂 Contato
@@ -99,7 +99,7 @@
  ┣ 📄 package.json
  ┣ 📄 README.md
  ┣ 📄 tsconfig.app.json
- ┣ 📄tsconfig.json
+ ┣ 📄 tsconfig.json
  ┣ 📄 tsconfig.node.json
  ┗ 📄 vite.config.ts
 
@@ -150,5 +150,13 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
    npm run dev -- --host
    ```
    Digite o link no navegador do seu celular, tablet, etc.
+
+---
+
+## 🌐 Acesse o Projeto Online
+
+Você pode visualizar o projeto acessando o link abaixo:
+
+🔗 [Clique aqui para acessar o projeto no GitHub!](https://github.com/BSM-Challenge/ct-hc)
 
 ---
