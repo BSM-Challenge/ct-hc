@@ -26,7 +26,7 @@
 
 ---
 
-## 🛠️ Imagens do projeto 
+##  📷 Imagens do projeto 
 🔹 **Logo**:   
 <img width="200" height="200" alt="logo-ct-hc" src="https://github.com/user-attachments/assets/7e4f1626-2efc-46c9-a784-5c4c2c430d09" />
 
@@ -46,5 +46,62 @@
 🔹 **Integrante 3 (Felipe Kirschner)**:   
 <img width="200" height="200" alt="foto-felipe" src="https://github.com/user-attachments/assets/15f18cf7-070a-4faa-8fb0-d0c36aab98a1" />
 
+---
 
+## 📁 Estrutura de Pastas do Projeto
+
+```bash
+📦 ct-hc/
+ ┣ 📂 public
+ ┣ 📂 src
+ ┃ ┣ 📂 components
+ ┃ ┃ ┣ 📂 CT-HC
+ ┃ ┃ ┃ ┣ 📂 Card
+ ┃ ┃ ┃ ┣ 📂 Footer
+ ┃ ┃ ┃ ┣ 📂 Header
+ ┃ ┃ ┃ ┣ 📂 Menu
+ ┃ ┃ ┃ ┣ 📂 Section-Pitch
+ ┃ ┃ ┃ ┣ 📂 Section-Sobre
+ ┃ ┃ ┃ ┗ 📂 Section-Welcome
+ ┃ ┃ ┣ 📂 HC
+ ┃ ┃ ┃ ┣ 📂 Card-Acessibilidade
+ ┃ ┃ ┃ ┣ 📂 Card-Treinamento
+ ┃ ┃ ┃ ┣ 📂 HeaderHC
+ ┃ ┃ ┃ ┗ 📂 TitleHC
+ ┃ ┣ 📂 data
+ ┃ ┃ ┣ 📂 CT-HC
+ ┃ ┃ ┃ ┗ 📜 faqData.ts
+ ┃ ┣ 📂 routes
+ ┃ ┃ ┣ 📂 CT-HC
+ ┃ ┃ ┃ ┣ 📂 Contato
+ ┃ ┃ ┃ ┣ 📂 Error
+ ┃ ┃ ┃ ┣ 📂 FAQ
+ ┃ ┃ ┃ ┣ 📂 Home
+ ┃ ┃ ┃ ┗ 📂 Integrantes
+ ┃ ┃ ┣ 📂 HC
+ ┃ ┃ ┃ ┣ 📂 HomeHC
+ ┃ ┃ ┃ ┃ ┗ 📄 index.tsx
+ ┃ ┣ 📂 types
+ ┃ ┃ ┣ 📂 CT-HC
+ ┃ ┃ ┃ ┗ 📄 faq.ts
+ ┃ ┃ ┣ 📂 HC
+ ┃ ┃ ┃ ┗ 📄 card-acessibilidade.ts
+ ┃ ┃ ┗ 📄 integrante.ts
+ ┃ ┣ 📄 App.tsx
+ ┃ ┣ 📄 AppHC.tsx
+ ┃ ┣ 📄 global.css
+ ┃ ┣ 📄 main.tsx
+ ┃ ┣ 📄 vite-env.d.ts
+ ┣ 📄 .gitignore
+ ┣ 📄 eslint.config.js
+ ┣ 📄 index.html
+ ┣ 📄 package-lock.json
+ ┣ 📄 package.json
+ ┣ 📄 README.md
+ ┣ 📄 tsconfig.app.json
+ ┣ 📄tsconfig.json
+ ┣ 📄 tsconfig.node.json
+ ┗ 📄 vite.config.ts
+
+```
 ---
