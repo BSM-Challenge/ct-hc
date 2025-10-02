@@ -105,3 +105,50 @@
 
 ```
 ---
+
+# ▶️ Como Executar o Projeto
+
+Siga os passos abaixo para executar o projeto em sua máquina local:
+
+### ⚠️ Pré-requisitos
+
+- Navegador atualizado (Google Chrome, Firefox, Edge, etc.);
+- Editor de código (opcional, ex: VS Code);
+
+### ✅ Passos para execução
+
+1. **Clone o repositório**  
+   Se ainda não tiver o repositório localmente, execute:
+
+   ```bash
+   git clone https://github.com/BSM-Challenge/ct-hc.git
+   ```
+   Após clonar, entre na parta do projeto:
+   ```bash
+   cd ct-hc
+   ```
+   Abra a pasta em seu editor de código.
+<br/>
+
+2. **Instale os pacotes necessários**  
+   No terminal, execute o comando:
+
+   ```bash
+   npm install ou npm i
+   ```
+<br/>
+
+3. **Visualize o projeto**  
+   Para visualizar o projeto no seu navegador, execute o comando no terminal:
+
+   ```bash
+   npm run dev
+   ```
+   Para a visualização em dispositivos móveis, execute o seguinte comando no terminal:
+
+   ```bash
+   npm run dev -- --host
+   ```
+   Digite o link no navegador do seu celular, tablet, etc.
+
+---
