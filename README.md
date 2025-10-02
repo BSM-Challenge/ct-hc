@@ -160,3 +160,11 @@ Você pode visualizar o projeto acessando o link abaixo:
 🔗 [Clique aqui para acessar o projeto no GitHub!](https://github.com/BSM-Challenge/ct-hc)
 
 ---
+
+## 🎥 Veja um vídeo curto sobre o projeto:
+
+Assista ao nosso vídeo no youtube acessando o link abaixo:
+
+🔗 [Clique aqui para visualizar nosso vídeo no Youtube!](https://www.youtube.com/watch?v=4v42aD2maU0)
+
+---
