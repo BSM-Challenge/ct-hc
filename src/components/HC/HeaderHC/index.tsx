@@ -47,7 +47,7 @@ export default function HeaderHC() {
                 title="Ir para a página do usuário"
               >
                 <IoPersonCircle className="text-gray-600 text-5xl" />
-                {isOpen && <span id="user">Olá, Usuário</span>}
+                {isOpen && <span id="user">Olá, Seja bem vindo</span>}
               </Link>
             </li>
 
