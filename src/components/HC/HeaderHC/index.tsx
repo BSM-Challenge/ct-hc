@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { MdMenuOpen } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 
+import { menuItems } from "../../../data/HC/menuItem";
+
 export default function HeaderHC() {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -19,7 +21,6 @@ export default function HeaderHC() {
         `}
       >
         <nav aria-label="Menu de navegação">
-          {/* Logo + botão de menu */}
           <figure className="flex items-center justify-between">
             <Link to="/hc">
               <img
@@ -37,9 +38,7 @@ export default function HeaderHC() {
             />
           </figure>
 
-          {/* Menu principal */}
           <ul className="mt-2 flex flex-col gap-5.5 text-lg font-medium">
-            {/* Usuário */}
             <li>
               <Link
                 to="/perfil"
@@ -53,18 +52,7 @@ export default function HeaderHC() {
 
             <hr />
 
-            {/* Itens do menu */}
-            {[
-              { to: "/resultados", icon: "/icon-meus-resultados.png", label: "Meus Resultados" },
-              { to: "/receitas", icon: "/icon-receitas.png", label: "Minhas Receitas" },
-              { to: "/agenda", icon: "/icon-minha-agenda.png", label: "Minhas Agendas" },
-              { to: "/teleconsulta", icon: "/icon-teleconsulta.png", label: "Teleconsulta" },
-              { to: "/exames", icon: "/icon-solicitacao-de-exames.png", label: "Solicitação de Exames" },
-              { to: "/documentos", icon: "/icon-documentos.png", label: "Documentos" },
-              { to: "/pesquisa", icon: "/icon-pesquisa-de-satisfacao.png", label: "Pesquisa de Satisfação" },
-              { to: "/termos", icon: "/icon-termos-de-aceite.png", label: "Termos de Aceite" },
-              { to: "/acessibilidade", icon: "/icon-acessibilidade.png", label: "Acessibilidade" },
-            ].map((item) => (
+            {menuItems.map((item) => (
               <li key={item.to}>
                 <Link to={item.to} className="flex gap-4 items-center">
                   <img src={item.icon} alt={item.label} className="w-8" />
@@ -75,7 +63,6 @@ export default function HeaderHC() {
 
             <hr />
 
-            {/* Sair */}
             <li>
               <Link to="/" className="flex gap-4 items-center">
                 <img src="/icon-sair.png" alt="Sair" className="w-8" />
