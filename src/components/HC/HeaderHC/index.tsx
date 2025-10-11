@@ -48,7 +48,7 @@ export default function HeaderHC() {
 
           </figure>
 
-          <ul className="mt-2 flex flex-col gap-3.5 text-lg font-medium">
+          <ul className={`mt-2 flex flex-col ${isOpen ? "gap-3.5" : "gap-5"} text-lg font-medium`}>
             <li>
               <Link
                 to="/perfil"
@@ -93,7 +93,6 @@ export default function HeaderHC() {
 
       {/* Header Mobile */}
       <header
-        id="header__mobile"
         className="
         fixed bottom-0 left-0 w-full
         bg-white shadow-2xl
