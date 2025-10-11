@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MdMenuOpen } from "react-icons/md";
+import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 
 import { menuItems } from "../../../data/HC/menuItem";
@@ -31,11 +31,21 @@ export default function HeaderHC() {
                 }`}
               />
             </Link>
-            <MdMenuOpen
-              onClick={toggleMenu}
-              className="text-8xl cursor-pointer text-gray-700"
-              title={isOpen ? "Fechar o menu" : "Abrir o menu"}
-            />
+
+            {isOpen ? (
+                <MdMenuOpen
+                  onClick={toggleMenu}
+                  className="text-8xl cursor-pointer text-[var(--color-grey)]"
+                  title="Fechar o menu"
+                />
+            ) : (
+                <MdMenu
+                  onClick={toggleMenu}
+                  className="text-8xl cursor-pointer text-[var(--color-grey)]"
+                  title={isOpen ? "Fechar o menu" : "Abrir o menu"}
+                />
+            )}    
+
           </figure>
 
           <ul className="mt-2 flex flex-col gap-5.5 text-lg font-medium">
@@ -45,8 +55,8 @@ export default function HeaderHC() {
                 className="flex gap-4 items-center pagina__nao__desenvolvida"
                 title="Ir para a página do usuário"
               >
-                <IoPersonCircle className="text-gray-600 text-5xl" />
-                {isOpen && <span id="user">Olá, Seja bem vindo</span>}
+                <IoPersonCircle className="text-[var(--color-grey)] text-5xl" />
+                {isOpen && <span id="user">Olá, Moisés</span>}
               </Link>
             </li>
 
