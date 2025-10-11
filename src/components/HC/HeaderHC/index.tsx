@@ -48,7 +48,7 @@ export default function HeaderHC() {
 
           </figure>
 
-          <ul className="mt-2 flex flex-col gap-5.5 text-lg font-medium">
+          <ul className="mt-2 flex flex-col gap-3.5 text-lg font-medium">
             <li>
               <Link
                 to="/perfil"
@@ -64,7 +64,15 @@ export default function HeaderHC() {
 
             {menuItems.map((item) => (
               <li key={item.to}>
-                <Link to={item.to} className="flex gap-4 items-center">
+                <Link
+                  to={item.to}
+                  className="
+                    flex gap-4 items-center
+                    rounded-xl px-2 py-1.5
+                    transition-colors duration-300
+                    hover:bg-[var(--color-grey-hover)]
+                  "
+                >
                   <img src={item.icon} alt={item.label} className="w-8" />
                   {isOpen && <span>{item.label}</span>}
                 </Link>
