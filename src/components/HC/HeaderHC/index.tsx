@@ -82,7 +82,16 @@ export default function HeaderHC() {
             <hr />
 
             <li>
-              <Link to="/" className="flex gap-4 items-center">
+              <Link 
+              to="/" 
+              className="
+                    flex gap-4 items-center
+                    rounded-xl px-2 py-1
+                    transition-colors duration-300
+                    hover:bg-[var(--color-grey-hover)]
+                  "
+              title="Sair do Portal HC"
+                  >
                 <img src="/icon-sair.png" alt="Sair" className="w-8" />
                 {isOpen && <span>Sair</span>}
               </Link>
