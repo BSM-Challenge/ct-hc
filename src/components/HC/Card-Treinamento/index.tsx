@@ -34,9 +34,10 @@ export default function CardTreinamento() {
                     className="
                     py-4 px-10
                     bg-[var(--color-blue-1277BD)] text-[var(--color-white)] rounded-2xl
-                    text-xl
-                    font-imprima font-bold
+                    text-xl font-imprima font-bold
+                    hover:bg-[var(--color-blue-1D509F)] duration-300
                 "
+                  title="Ver o que é o CT-HC"
                 >
                     O que é o CT-HC?
                 </Link>
@@ -45,9 +46,10 @@ export default function CardTreinamento() {
                     className="
                     py-4 px-10
                     bg-[var(--color-blue-1277BD)] text-[var(--color-white)] rounded-2xl
-                    text-xl
-                    font-imprima font-bold
+                    text-xl font-imprima font-bold
+                    hover:bg-[var(--color-blue-1D509F)] duration-300
                 "
+                    title="Clique para iniciar o treinamento"
                 >
                     Iniciar Treinamento
                 </Link>
