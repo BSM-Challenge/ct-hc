@@ -23,7 +23,10 @@ export default function CardAcessibilidade( {img, title, description, link}: Car
             <div className="flex justify-center">
                 <Link 
                 to={link}
-                className="px-8 py-2 border-2 border-[var(--color-white)] rounded-full">
+                className="
+                px-8 py-2 border-2 border-[var(--color-white)] rounded-full
+                hover:bg-[var(--color-white-button-hover)] duration-300
+                ">
                     Clique aqui
                 </Link>
             </div>
