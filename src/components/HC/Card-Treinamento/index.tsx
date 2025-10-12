@@ -4,10 +4,9 @@ export default function CardTreinamento() {
   return (
     <div
       className="
-        flex flex-col gap-10
+        flex flex-col gap-10 w-full
         bg-[var(--light-blue)] rounded-4xl px-6 py-5
         border-b-8 border-[var(--color-blue-82abff)]
-        w-full max-w-[1200px] mx-auto
         lg:flex-row lg:items-center
       "
     >
@@ -65,7 +64,7 @@ export default function CardTreinamento() {
               bg-[var(--color-blue-1277BD)] text-[var(--color-white)] rounded-2xl
               text-base font-imprima font-bold
               hover:bg-[var(--color-blue-1D509F)] duration-300
-              sm:text-lg
+              max-lg:text-lg
             "
             title="Ver o que é o CT-HC"
           >
@@ -79,7 +78,7 @@ export default function CardTreinamento() {
               bg-[var(--color-blue-1277BD)] text-[var(--color-white)] rounded-2xl
               text-base font-imprima font-bold
               hover:bg-[var(--color-blue-1D509F)] duration-300
-              sm:text-lg
+              max-lg:text-lg
             "
             title="Clique para iniciar o treinamento"
           >
