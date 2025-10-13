@@ -5,8 +5,8 @@ export default function CardAcessibilidade( {img, title, description, link}: Car
     return (
         <div className="
             flex flex-col gap-7 pl-5 pr-2 py-5
-            bg-[var(--color-blue-1277BD)] max-w-2xs rounded-4xl
-            text-[var(--color-white)]
+            bg-[var(--color-blue-1277BD)] rounded-4xl text-[var(--color-white)] w-full
+            sm:w-[40%] lg:w-[32%]
         "
         >
             <figcaption className="flex flex-col items-center ">
