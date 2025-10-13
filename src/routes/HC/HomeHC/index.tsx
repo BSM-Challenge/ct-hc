@@ -23,7 +23,7 @@ export default function HomeHC() {
                 <CardAcessibilidade 
                     img="img-aumentar-fonte.png"
                     title="Aumentar Fonte"
-                    description="Aumente ou diminua o tamanho das letras."
+                    description="Melhore a leitura ajustando o tamanho das letras."
                     link="/hc/recursos"
                 />
             </div>
