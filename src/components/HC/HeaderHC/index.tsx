@@ -17,7 +17,7 @@ export default function HeaderHC() {
         className={`
         hidden lg:block h-screen px-[20px]
         transition-all duration-500 ease-in-out
-        ${isOpen ? "w-[70%] md:w-[30%] lg:w-[27%] xl:w-[21%]" : "w-[80px]"}
+        ${isOpen ? "lg:w-[35%] xl:w-[32%]" : "w-[80px]"}
         `}
       >
         <nav aria-label="Menu de navegação">
@@ -35,7 +35,7 @@ export default function HeaderHC() {
             {isOpen ? (
                 <MdMenuOpen
                   onClick={toggleMenu}
-                  className="text-8xl cursor-pointer text-[var(--color-grey)]"
+                  className="text-9xl cursor-pointer text-[var(--color-grey)]"
                   title="Fechar o menu"
                 />
             ) : (
@@ -68,9 +68,11 @@ export default function HeaderHC() {
                   to={item.to}
                   className="
                     flex gap-4 items-center
-                    rounded-xl px-2 py-1.5
+                    rounded-xl px-2 py-1
                     transition-colors duration-300
                     hover:bg-[var(--color-grey-hover)]
+                    lg:text-[.79rem] 
+                    xl:py-1.4 xl:text-[1.1rem]
                   "
                 >
                   <img src={item.icon} alt={item.label} className="w-8" />
