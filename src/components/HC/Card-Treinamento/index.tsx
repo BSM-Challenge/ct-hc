@@ -43,8 +43,8 @@ export default function CardTreinamento() {
 
         <p
           className="
-            text-lg font-imprima max-w-[70ch] mx-auto
-            sm:text-xl
+            text-lg font-imprima max-w-[70ch]
+            sm:text-2xl
           "
         >
           Clique aqui para iniciar o tutorial do CT-HC, escolha a página que
