@@ -74,6 +74,7 @@ export default function HeaderHC() {
                     lg:text-[.79rem] 
                     xl:py-1.4 xl:text-[1.1rem]
                   "
+                  title={item.title}
                 >
                   <img src={item.icon} alt={item.label} className="w-8" />
                   {isOpen && <span>{item.label}</span>}
