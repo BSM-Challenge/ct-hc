@@ -12,6 +12,7 @@ import Contato from './routes/CT-HC/Contato/index.tsx'
 // HC
 import AppHC from './AppHC.tsx'
 import HomeHC from './routes/HC/HomeHC/index.tsx'
+import MaisRecursos from './routes/HC/MaisRecursos/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
     element: <AppHC />,
     errorElement: <Error />,
     children: [
-      { path: "/hc", element: <HomeHC /> },
+      { path: "", element: <HomeHC /> },
+      { path: "maisRecursos", element: <MaisRecursos /> },
     ],
   },
 ]);
