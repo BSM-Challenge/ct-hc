@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { CardAcessibilidadeProps } from "../../../types/HC/card-acessibilidade";
 
-export default function CardAcessibilidade( {img, title, description, link}: CardAcessibilidadeProps ) {
+export default function CardAcessibilidade( {img, title, description, link, titleMessage}: CardAcessibilidadeProps ) {
     return (
         <div className="
             flex flex-col gap-7 pl-5 pr-2 py-5
@@ -26,7 +26,9 @@ export default function CardAcessibilidade( {img, title, description, link}: Car
                 className="
                 px-8 py-2 border-2 border-[var(--color-white)] rounded-full
                 hover:bg-[var(--color-white-button-hover)] duration-300
-                ">
+                "
+                title={titleMessage}
+                >
                     Clique aqui
                 </Link>
             </div>
