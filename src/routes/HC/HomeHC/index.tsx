@@ -12,19 +12,19 @@ export default function HomeHC() {
                     img="img-acessibilidade.png"
                     title="Acessibilidade"
                     description="Veja mais recursos de acessibilidade disponíveis."
-                    link="/hc/recursos"
+                    link="/hc/maisRecursos"
                 />
                 <CardAcessibilidade 
                     img="img-voz.png"
                     title="Navegação por Voz"
                     description="Navegue pelo site com a sua voz, clique para ativar."
-                    link="/hc/recursos"
+                    link="/hc/maisRecursos"
                 />
                 <CardAcessibilidade 
                     img="img-aumentar-fonte.png"
                     title="Aumentar Fonte"
                     description="Melhore a leitura ajustando o tamanho das letras."
-                    link="/hc/recursos"
+                    link="/hc/maisRecursos"
                 />
             </div>
         </div>
