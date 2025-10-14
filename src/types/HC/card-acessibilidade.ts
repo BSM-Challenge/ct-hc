@@ -3,4 +3,5 @@ export interface CardAcessibilidadeProps {
     title: string;
     description: string;
     link: string;
+    titleMessage: string;
 }
