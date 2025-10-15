@@ -23,7 +23,7 @@ export default function MaisRecursos() {
                 />
                 <CardMaisRecursos 
                     titleMessage="Clique aqui para mudar o contraste"
-                    img="/img-aumentar-fonte-2.png"
+                    img="/img-contraste.png"
                     title="Mudar contraste"
                     text="Ajusta o contraste da tela para melhorar a visibilidade."
                 />
