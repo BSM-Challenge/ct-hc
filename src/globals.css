@@ -16,7 +16,7 @@ html {
     --light-blue-2: #A8C4FA;
     --dark-blue-2: #5268A1;
     --color-blue-2: #0844C8;
-    
+
     /* Shadows */
     --shadow-blue: 8px 8px 22px #2563EB;
     --shadow-blue-70: #2564eb97;
@@ -56,6 +56,9 @@ html {
     --color-white-button-hover: rgba(255, 255, 255, 0.3);
     --color-white-placeholder-hover: rgba(255, 255, 255, 0.6);
     --color-grey-hover: #b0b0b0;
+
+    /* Shadows */
+     --shadow-black-03: rgba(0, 0, 0, 0.3);
 }
 
 /* Fontes */
