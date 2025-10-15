@@ -1,5 +1,24 @@
-export default function CardMaisRecursos() {
+import type { CardMaisRecursosProps } from "../../../types/HC/cardMaisRecursos";
+
+export default function CardMaisRecursos( {titleMessage, img, title, text}: CardMaisRecursosProps ) {
   return (
-     <div></div>
+    <div
+      className="
+            bg-[var(--light-blue)] px-3 py-3 rounded-[10px]
+            shadow-[4px_4px_10px_var(--shadow-black-03)]
+            flex flex-col gap-3
+            cursor-pointer hover:bg-[var(--light-blue-2)]
+            duration-300
+            "
+      title={titleMessage}
+    >
+      <figure className="flex items-center gap-5">
+        <img src={img} alt="" className="w-[18%]" />
+        <figcaption className="font-bold text-xl">{title}</figcaption>
+      </figure>
+      <p className="ml-3">
+        {text}
+      </p>
+    </div>
   );
 }
