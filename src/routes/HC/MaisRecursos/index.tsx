@@ -8,7 +8,7 @@ export default function MaisRecursos() {
                 title="Acessibilidade > Mais recursos"
                 subtitle="Saiba o que cada funcionalidade faz, e torne sua experiência mais acessível!"
             />
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
                 <CardMaisRecursos 
                     titleMessage="Clique aqui para aumentar a fonte"
                     img="/img-aumentar-fonte-2.png"
@@ -27,6 +27,26 @@ export default function MaisRecursos() {
                     title="Mudar contraste"
                     text="Ajusta o contraste da tela para melhorar a visibilidade."
                 />
+            </div>
+            <div className="hidden lg:flex flex-col gap-3">
+                <figure className="flex items-center gap-4">
+                    <img src="/img-teclado.png" alt="ícone de teclado" />
+                    <figcaption className="text-3xl font-bold">Atalhos de teclado:</figcaption>
+                </figure>
+                <ul className="flex flex-col gap-4">
+                    <li className="text-xl">
+                        <span className="font-bold">Ctrl + Alt + 1:</span> Aumenta o tamanho das letras.
+                    </li>
+                    <li className="text-xl">
+                        <span className="font-bold">Ctrl + Alt + 2:</span> Diminui o tamanho das letras.
+                    </li>
+                    <li className="text-xl">
+                        <span className="font-bold">Ctrl + Alt + 3:</span> Ativa a navegação por voz.
+                    </li>
+                    <li className="text-xl">
+                        <span className="font-bold">Ctrl + Alt + 4:</span> Abre as configurações de contraste.
+                    </li>
+                </ul>
             </div>
         </div>
     )
