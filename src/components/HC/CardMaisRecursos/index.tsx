@@ -13,10 +13,16 @@ export default function CardMaisRecursos( {titleMessage, img, title, text}: Card
       title={titleMessage}
     >
       <figure className="flex items-center gap-5">
-        <img src={img} alt="" className="w-[18%]" />
-        <figcaption className="font-bold text-xl">{title}</figcaption>
+        <img src={img} alt="" className="w-[18%] max-lg:w-[12%] max-md:w-[15%]" />
+        <figcaption className="
+          font-bold text-xl 
+          max-md:text-xl
+          max-lg:text-3xl
+          ">
+           {title}
+          </figcaption>
       </figure>
-      <p className="ml-3">
+      <p className="ml-3 max-lg:text-xl max-md:text-lg">
         {text}
       </p>
     </div>
