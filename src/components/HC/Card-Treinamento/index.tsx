@@ -72,7 +72,7 @@ export default function CardTreinamento() {
           </Link>
 
           <Link
-            to=""
+            to="centroDeTreinamento"
             className="
               py-3 px-6
               bg-[var(--color-blue-1277BD)] text-[var(--color-white)] rounded-2xl
