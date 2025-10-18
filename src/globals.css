@@ -32,6 +32,7 @@ html {
     /* Backgrounds */
     --background: #edefef;
     --background-white: #ffffff;
+    --background-linear: linear-gradient(90deg, #0077c8 34%, #009BA6 62%);
     
     /* Colors */
     --color-active: #0175C2;
@@ -60,6 +61,12 @@ html {
     /* Shadows */
      --shadow-black-03: rgba(0, 0, 0, 0.3);
 }
+
+/* Backgrounds Lineares */
+.bg-background-linear {
+  background: var(--background-linear);
+}
+
 
 /* Fontes */
 .font-julius {
