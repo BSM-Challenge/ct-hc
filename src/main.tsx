@@ -3,17 +3,20 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './globals.css'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+
 import Error from './routes/CT-HC/Error/index.tsx'
-import Home from './routes//CT-HC/Home/index.tsx'
+import Home from './routes/CT-HC/Home/index.tsx'
 import FAQ from './routes/CT-HC/FAQ/index.tsx'
-import Integrantes from './routes//CT-HC/Integrantes/index.tsx'
+import Integrantes from './routes/CT-HC/Integrantes/index.tsx'
 import Contato from './routes/CT-HC/Contato/index.tsx'
+
 // HC
 import AppHC from './AppHC.tsx'
 import HomeHC from './routes/HC/HomeHC/index.tsx'
 import MaisRecursos from './routes/HC/MaisRecursos/index.tsx'
 import CentroDeTreinamento from './routes/HC/CentroDeTreinamento/index.tsx'
+import ErrorHC from './routes/HC/ErrorHC/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -30,18 +33,21 @@ const router = createBrowserRouter([
   {
     path: "/hc",
     element: <AppHC />,
-    errorElement: <Error />,
     children: [
       { path: "", element: <HomeHC /> },
       { path: "maisRecursos", element: <MaisRecursos /> },
-      { path: "centroDeTreinamento", element: <CentroDeTreinamento /> }
+      { path: "centroDeTreinamento", element: <CentroDeTreinamento /> },
+      { path: "*", element: <Navigate to="/hc/erro" replace /> },
     ],
   },
+  {
+    path: "/hc/erro",
+    element: <ErrorHC />,
+  },
 ]);
-
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 )
