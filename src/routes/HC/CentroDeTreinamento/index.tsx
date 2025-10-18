@@ -19,14 +19,14 @@ export default function CentroDeTreinamento() {
                         key={i.label}
                         className="
                         bg-[var(--light-blue)] rounded-[10px]
-                        flex justify-center items-center py-4 min-w-[200px]
+                        flex justify-center items-center 
                         hover:bg-[var(--light-blue-2)] duration-300
                         max-[474px]:w-full"
                     >
-                    <Link to={i.link || ""} title={i.titleMessage}>
+                    <Link to={i.link || ""} title={i.titleMessage} className="py-4 min-w-[200px]">
                         <figure className="flex flex-col items-center gap-2">
                             <img src={`/${i.img}`} alt="" className="w-[5rem]" />
-                            <figcaption className="w-[95%] text-center font-bold text-lg">
+                            <figcaption className="w-[70%] text-center font-bold text-lg">
                             {i.label}
                             </figcaption>
                         </figure>
