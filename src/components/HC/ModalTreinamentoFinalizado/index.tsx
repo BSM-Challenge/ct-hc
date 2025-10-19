@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import ButtonAzul from "../ButtonAzul";
 import ButtonCinza from "../ButtonCinza";
 
