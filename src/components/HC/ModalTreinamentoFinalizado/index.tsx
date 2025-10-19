@@ -5,10 +5,27 @@ export default function ModalTreinamentoFinalizado() {
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    dialog.current?.showModal();
+    if (dialog.current) {
+      dialog.current.style.display = "flex";
+      dialog.current.showModal();
+
+      const fecharComESC = () => {
+        if (dialog.current) {
+          dialog.current.style.display = "none";
+        }
+      };
+
+      dialog.current.addEventListener("close", fecharComESC);
+
+      return () => dialog.current?.removeEventListener("close", fecharComESC);
+    }
   }, []);
 
-  const fecharModal = () => dialog.current?.close();
+  const fecharModal = () => {
+    if (dialog.current) {
+        dialog.current.close();
+    }
+};
 
   return (
     <dialog
