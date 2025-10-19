@@ -53,6 +53,7 @@ html {
 
     /* Hovers */
     --color-black-04: rgba(0, 0, 0, 0.1);
+    --color-black-06: rgba(0, 0, 0, 0.6);
     --color-green-hover: rgba(7, 160, 168, 0.164);
     --color-white-button-hover: rgba(255, 255, 255, 0.3);
     --color-white-placeholder-hover: rgba(255, 255, 255, 0.6);
@@ -67,6 +68,11 @@ html {
   background: var(--background-linear);
 }
 
+/* Backdrop do Modal */
+
+.dialog-modal::backdrop {
+  background-color: var(--color-black-06);
+}
 
 /* Fontes */
 .font-julius {
