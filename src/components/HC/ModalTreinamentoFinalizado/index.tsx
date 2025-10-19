@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import ButtonAzul from "../ButtonAzul";
+import ButtonCinza from "../ButtonCinza";
 
 export default function ModalTreinamentoFinalizado() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -69,18 +70,12 @@ export default function ModalTreinamentoFinalizado() {
                 </ButtonAzul>
             </li>
             <li>
-                <button
-                className="
-                bg-[var(--color-grey-818181)] text-[var(--color-gray)]
-                px-4 py-1.5 rounded-[10px] border-2 border-[var(--color-grey)]
-                hover:bg-[var(--color-grey)] duration-300 outline-none
-                hover:text-[var(--color-white)] cursor-pointer
-                "
+                <ButtonCinza
                 onClick={fecharModal}
-                title="Clique aqui para fechar"
+                titleMessage="Clique aqui para fechar o modal"
                 >
                     Agora não
-                </button>
+                </ButtonCinza>
             </li>
         </ul>
       </div>
