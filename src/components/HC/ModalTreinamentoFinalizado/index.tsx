@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import ButtonAzul from "../ButtonAzul";
 
 export default function ModalTreinamentoFinalizado() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -60,17 +61,12 @@ export default function ModalTreinamentoFinalizado() {
         max-[437px]:flex-col
         ">
             <li>
-                <Link 
-                to=""
-                className="
-                bg-[var(--Color-blue-709CFF)] text-[var(--color-white)]
-                px-5 py-2 rounded-[10px] border-2 border-[var(--color-blue)]
-                hover:bg-[var(--color-blue)] duration-300 outline-none
-                "
-                title="Clique aqui para dar o Feedback"
+                <ButtonAzul
+                rota="*"
+                titleMessage="Clique aqui para deixar seu feedback"
                 >
                     Sim, quero contribuir!
-                </Link>
+                </ButtonAzul>
             </li>
             <li>
                 <button
