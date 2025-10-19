@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { avaliacoes } from "../../../data/HC/avaliacoes";
 
 export default function ModalAvaliacao() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -31,13 +32,28 @@ export default function ModalAvaliacao() {
       ref={dialog}
       className="
             dialog-modal 
-            min-w-150 p-6 rounded-2xl 
-            inset-0 m-auto
-            flex flex-col
+            min-w-150 px-15 py-7 rounded-2xl 
+            inset-0 m-auto outline-none
+            flex flex-col items-center gap-3
         "
     >
-        <h2>Avalie-nos!</h2>
-        <p>Como foi sua experiência durante o tutorial?</p>
+        <h2 className="text-4xl font-bold text-[var(--color-blue)]">
+            Avalie-nos!
+        </h2>
+        <p className="text-xl">Como foi sua experiência durante o tutorial?</p>
+        <ul className="flex gap-10 mt-6">
+            {avaliacoes.map((avaliacao) => (
+              <li>
+                <figure 
+                className="flex flex-col items-center gap-1 cursor-pointer" 
+                title={avaliacao.titleMessage}
+                >
+                  <img src={avaliacao.img} alt="" />
+                  <figcaption>{avaliacao.text}</figcaption>
+                </figure>
+              </li>
+            ))}
+        </ul>
     </dialog>
   );
 }
