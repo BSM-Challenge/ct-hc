@@ -4,4 +4,5 @@ export interface ButtonCinzaProps {
   py?: number;
   titleMessage: string;
   children: React.ReactNode;
+  className?: string;
 }
