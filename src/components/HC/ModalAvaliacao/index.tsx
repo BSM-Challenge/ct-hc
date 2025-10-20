@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { avaliacoes } from "../../../data/HC/avaliacoes";
+import ButtonCinza from "../ButtonCinza";
 
 export default function ModalAvaliacao() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -53,6 +54,44 @@ export default function ModalAvaliacao() {
                 </figure>
               </li>
             ))}
+        </ul>
+        <div className="flex flex-col w-full mt-10 gap-2">
+          <h3 className="text-xl">Gostaria de deixar um comentário?</h3>
+          <textarea
+          className="
+          resize-none w-full max-h-12 px-2 py-1 rounded-[10px] outline-none
+          bg-[var(--color-blue-C3D9FF)] border-3 border-[var(--color-blue)]
+          shadow-[0_4px_8px_var(--light-blue)]
+          "
+          placeholder="Digite uma mensagem">
+          </textarea>
+        </div>
+        <ul className="flex justify-around w-full mt-5">
+          <li>
+            <ButtonCinza
+              onClick={fecharModal}
+              px={10}
+              py={2}
+              titleMessage="Cancelar avaliação"
+              className="text-2xl"
+            >
+              Cancelar
+            </ButtonCinza>
+          </li>
+          <li>
+            <button
+              className="
+                  bg-[var(--Color-blue-709CFF)] text-[var(--color-white)]
+                  px-10 py-2 rounded-[10px] border-2 border-[var(--color-blue)]
+                  hover:bg-[var(--color-blue)] duration-300 outline-none font-bold
+                  text-2xl cursor-pointer
+                  "
+                title="Enviar avaliação"
+                onClick={fecharModal}
+              >
+                Enviar
+             </button>
+          </li>
         </ul>
     </dialog>
   );
