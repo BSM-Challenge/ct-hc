@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { avaliacoes } from "../../../data/HC/avaliacoes";
 import ButtonCinza from "../ButtonCinza";
 
 export default function ModalAvaliacao() {
   const dialog = useRef<HTMLDialogElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (dialog.current) {
@@ -43,13 +44,23 @@ export default function ModalAvaliacao() {
         </h2>
         <p className="text-xl">Como foi sua experiência durante o tutorial?</p>
         <ul className="flex gap-10 mt-6">
-            {avaliacoes.map((avaliacao) => (
-              <li>
-                <figure 
-                className="flex flex-col items-center gap-1 cursor-pointer" 
-                title={avaliacao.titleMessage}
+            {avaliacoes.map((avaliacao, index) => (
+              <li key={index}>
+                <figure
+                  className="flex flex-col items-center gap-1 cursor-pointer"
+                  title={avaliacao.titleMessage}
+                  onClick={() => setSelectedIndex(index)}
                 >
-                  <img src={avaliacao.img} alt="" />
+                  {/* Ícone com cor condicional */}
+                  <div
+                    className={`text-4xl duration-200 ${
+                      selectedIndex === index
+                        ? avaliacao.activeColor
+                        : "text-[var(--color-white-emoji)] hover:" + avaliacao.hoverColor
+                    }`}
+                  >
+                    {avaliacao.icon}
+                  </div>
                   <figcaption>{avaliacao.text}</figcaption>
                 </figure>
               </li>
@@ -59,7 +70,7 @@ export default function ModalAvaliacao() {
           <h3 className="text-xl">Gostaria de deixar um comentário?</h3>
           <textarea
           className="
-          resize-none w-full max-h-12 px-2 py-1 rounded-[10px] outline-none
+          resize-none w-full max-h-12 px-2 py-2 rounded-[10px] outline-none
           bg-[var(--color-blue-C3D9FF)] border-3 border-[var(--color-blue)]
           shadow-[0_4px_8px_var(--light-blue)]
           "
