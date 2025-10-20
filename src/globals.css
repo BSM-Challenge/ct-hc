@@ -46,7 +46,12 @@ html {
     --color-blue-1277BD: #1277BD;
     --color-blue-82abff: #82abff;
     --color-blue-C3D9FF: rgba(195, 217, 255, .2);
-    
+    --color-red: #fb2c36; 
+    --color-orange: #FF5722; 
+    --color-yellow: #FFC107; 
+    --color-green: #12d740 ; 
+    --color-blue-emoji: #1490e3; 
+    --color-white-emoji: #453b3b81; 
 
     /* Components */
     --border-line: #08080877;
