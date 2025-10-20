@@ -1,6 +1,6 @@
 import type { ButtonCinzaProps } from "../../../types/HC/buttonCinza";
 
-export default function ButtonCinza({onClick, px = 4, py = 1.5, titleMessage, children}: ButtonCinzaProps) {
+export default function ButtonCinza({onClick, px = 4, py = 1.5, titleMessage, children, className}: ButtonCinzaProps) {
     return (
         <button
             className={`
@@ -8,6 +8,7 @@ export default function ButtonCinza({onClick, px = 4, py = 1.5, titleMessage, ch
             px-${px} py-${py} rounded-[10px] border-2 border-[var(--color-grey)]
             hover:bg-[var(--color-grey)] duration-300 outline-none
             hover:text-[var(--color-white)] cursor-pointer
+            ${className ?? ''} 
             `}
             onClick={onClick}
             title={titleMessage}
