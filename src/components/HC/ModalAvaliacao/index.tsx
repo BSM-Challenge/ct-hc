@@ -66,7 +66,7 @@ export default function ModalAvaliacao() {
                     className={`text-4xl duration-200 ${
                       selectedIndex === index
                         ? avaliacao.activeColor
-                        : `text-[var(--color-white-emoji)] hover:${avaliacao.hoverColor}`
+                        : `text-[var(--color-white-emoji)] ${avaliacao.hoverColor}`
                     }
                     max-sm:text-2xl
                     
