@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 
@@ -7,6 +7,7 @@ import { menuItems } from "../../../data/HC/menuItem";
 
 export default function HeaderHC() {
   const [isOpen, setIsOpen] = useState(true);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -15,9 +16,9 @@ export default function HeaderHC() {
       {/* Header Desktop */}
       <header
         className={`
-        hidden lg:block h-screen px-[20px]
-        transition-all duration-500 ease-in-out
-        ${isOpen ? "w-[360px] xl:w-[320px]" : "w-[80px]"}
+          hidden lg:block h-screen px-[20px]
+          transition-all duration-500 ease-in-out
+          ${isOpen ? "w-[360px] xl:w-[320px]" : "w-[80px]"}
         `}
       >
         <nav aria-label="Menu de navegação">
@@ -64,24 +65,32 @@ export default function HeaderHC() {
 
             <hr className="my-2" />
 
-            {menuItems.map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  className="
-                    flex gap-3 items-center
-                    rounded-lg px-2 py-2
-                    transition-colors duration-300
-                    hover:bg-[var(--color-grey-hover)]
-                    text-sm font-medium
-                  "
-                  title={item.title}
-                >
-                  <img src={item.icon} alt={item.label} className="w-6 h-6" />
-                  {isOpen && <span className="text-sm">{item.label}</span>}
-                </Link>
-              </li>
-            ))}
+            {menuItems.map((item, index) => {
+              const isActive = location.pathname === item.to;
+
+              return (
+                <li key={index}>
+                  <Link
+                    to={item.to}
+                    className={`
+                      flex gap-3 items-center
+                      rounded-lg px-2 py-2
+                      transition-colors duration-300
+                      hover:bg-[var(--color-grey-hover)]
+                      text-sm font-medium
+                      ${isActive
+                        ? item.activeColor
+                        : "text-[var(--color-grey)]"
+                      }
+                    `}
+                    title={item.title}
+                  >
+                    <img src={item.icon} alt={item.label} className="w-6 h-6" />
+                    {isOpen && <span className="text-sm">{item.label}</span>}
+                  </Link>
+                </li>
+              );
+            })}
 
             <hr className="my-2" />
 
@@ -99,44 +108,6 @@ export default function HeaderHC() {
               >
                 <img src="/icon-sair.png" alt="Sair" className="w-6 h-6" />
                 {isOpen && <span className="text-sm">Sair</span>}
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Header Mobile */}
-      <header className="lg:hidden fixed bottom-0 left-0 w-full bg-white shadow-2xl z-50">
-        <nav>
-          <ul className="flex justify-around py-3">
-            <li>
-              <Link to="/hc" className="flex flex-col items-center gap-1">
-                <img
-                  src="/icon-home-ativado-mobile.png"
-                  alt="Ícone do Início"
-                  className="w-6 h-6"
-                />
-                <span className="text-xs font-medium">Início</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/menu" className="flex flex-col items-center gap-1">
-                <img
-                  src="/icon-menu-fechado.png"
-                  alt="Ícone do menu"
-                  className="w-6 h-6"
-                />
-                <span className="text-xs">Menu</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/avisos" className="flex flex-col items-center gap-1">
-                <img
-                  src="/icon-notificacoes.png"
-                  alt="Ícone de notificações"
-                  className="w-6 h-6"
-                />
-                <span className="text-xs">Avisos</span>
               </Link>
             </li>
           </ul>
