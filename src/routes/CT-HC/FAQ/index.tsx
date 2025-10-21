@@ -206,15 +206,14 @@ export default function FAQ() {
                   bg-[var(--light-blue)] border-2 border-[var(--border-black)] 
                   placeholder-[--color-gray] placeholder:font-bold
                   outline-none
-                  "
-                  />
+                  "/>
+                
                   <button className="
-                  bg-[var(--color-blue)] p-2 w-[30%] text-[var(--color-white)]
-                  rounded-full font-bold text-2xl cursor-pointer
-                  shadow-[4px_4px_15px_var(--color-blue)]
+                  bg-[var(--color-blue-2)] py-3 w-[20%] text-[var(--color-white)]
+                  rounded-[10px] font-bold text-2xl cursor-pointer
+                  shadow-[4px_4px_15px_var(--color-blue-2)]
                   hover:bg-[var(--hover-button)] transition-colors duration-300
-                  "
-                  >
+                  ">
                     Enviar
                   </button>
                 </form>
@@ -228,7 +227,8 @@ export default function FAQ() {
           {/* Categoria: Sobre o projeto */}
           <ul className="flex flex-col gap-8">
             <li>
-              <h3 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Sobre o projeto</h3>
+              <h3 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">Sobre o projeto</h3>
+              <hr className="border-b-4 border-[var(--dark-blue-title)]"/>
             </li>
             
             {faqData[0].itens.map((item, index) => {
@@ -240,21 +240,21 @@ export default function FAQ() {
                   key={index}
                   id={`sobre-${index}`}
                   className="
-                  flex flex-col bg-[var(--Color-blue-709CFF)] rounded-3xl p-5 
-                  cursor-pointer transition-all duration-300 
-                  hover:bg-[var(--hover-light-blue)]
+                  flex flex-col bg-[var(--color-blue)] rounded-[20px] border-[var(--color-blue-2)] border-b-5 px-3 py-2 
+                  cursor-pointer transition-all duration-300 text-[var(--color-white)]
+                  hover:bg-[var(--color-blue-2)]
                   "
                   onClick={() => toggleItem(itemId)}
                 >
                   <div className="flex items-center justify-between">
-                    <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                    <p className="font-bold text-2xl text-[var(--color-white)]">
                       {item.pergunta}
                     </p>
                     <div className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
                       transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
                       `}>
-                      <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+                      <FaAngleDown className="text-[var(--color-white)] text-4xl"/>
                     </div>
                   </div>
                   
@@ -263,7 +263,7 @@ export default function FAQ() {
                     overflow-hidden transition-all duration-500 ease-in-out 
                     ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
                     `}>
-                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-[var(--color-white)]">
+                    <div className="p-4 bg-[var(--light-blue-2)] rounded-2xl text-[var(--dark-blue-title)]">
                       <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
                   </div>
@@ -275,7 +275,8 @@ export default function FAQ() {
           {/* Categoria: Dados e Segurança */}
           <ul className="flex flex-col gap-8">
             <li>
-              <h4 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Dados e Segurança</h4>
+              <h4 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">Dados e Segurança</h4>
+              <hr className="border-b-4 border-[var(--dark-blue-title)]"/>
             </li>
             
             {faqData[1].itens.map((item, index) => {
@@ -287,21 +288,21 @@ export default function FAQ() {
                   key={index}
                   id={`dados-${index}`}
                   className="
-                  flex flex-col bg-[var(--Color-blue-709CFF)] rounded-3xl p-5 
-                  cursor-pointer transition-all duration-300 
-                  hover:bg-[var(--hover-light-blue)]
+                  flex flex-col bg-[var(--color-blue)] rounded-[20px] border-[var(--color-blue-2)] border-b-5 px-3 py-2 
+                  cursor-pointer transition-all duration-300 text-[var(--color-white)]
+                  hover:bg-[var(--color-blue-2)]
                   "
                   onClick={() => toggleItem(itemId)}
                 >
                   <div className="flex items-center justify-between">
-                    <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                    <p className="font-bold text-2xl text-[var(--color-white)]">
                       {item.pergunta}
                     </p>
                     <div className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
                       transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
                       `}>
-                      <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+                      <FaAngleDown className="text-[var(--color-white)] text-4xl"/>
                     </div>
                   </div>
                   
@@ -310,7 +311,7 @@ export default function FAQ() {
                     overflow-hidden transition-all duration-500 ease-in-out 
                     ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
                     `}>
-                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl text-[var(--color-white)]">
+                    <div className="p-4 bg-[var(--light-blue-2)] rounded-2xl text-[var(--dark-blue-title)]">
                       <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
                   </div>
@@ -322,7 +323,8 @@ export default function FAQ() {
           {/* Categoria: Uso do Tutorial */}
           <ul className="flex flex-col gap-8">
             <li>
-              <h5 className="text-4xl font-bold border-b-4 border-[var(--dark-blue-title)]">Uso do Tutorial</h5>
+              <h5 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">Uso do Tutorial</h5>
+              <hr className="border-b-4 border-[var(--dark-blue-title)]"/>
             </li>
             
             {faqData[2].itens.map((item, index) => {
@@ -334,14 +336,14 @@ export default function FAQ() {
                   key={index}
                   id={`tutorial-${index}`}
                   className="
-                  flex flex-col bg-[var(--Color-blue-709CFF)] rounded-3xl p-5 
-                  cursor-pointer transition-all duration-300 
-                  hover:bg-[var(--hover-light-blue)]
+                  flex flex-col bg-[var(--color-blue)] rounded-[20px] border-[var(--color-blue-2)] border-b-5 px-3 py-2 
+                  cursor-pointer transition-all duration-300 text-[var(--color-white)]
+                  hover:bg-[var(--color-blue-2)]
                   "
                   onClick={() => toggleItem(itemId)}
                 >
                   <div className="flex items-center justify-between">
-                    <p className="font-bold text-2xl text-[var(--dark-blue-title)]">
+                    <p className="font-bold text-2xl text-[var(--color-white)]">
                       {item.pergunta}
                     </p>
                     <div className={`
@@ -357,8 +359,8 @@ export default function FAQ() {
                     overflow-hidden transition-all duration-500 ease-in-out 
                     ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
                     `}>
-                    <div className="p-4 bg-[var(--color-blue)] rounded-2xl font-bold text-[var(--color-white)]">
-                      <p className="text-lg">{item.resposta}</p>
+                    <div className="p-4 bg-[var(--light-blue-2)] rounded-2xl text-[var(--dark-blue-title)]">
+                      <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
                   </div>
                 </li>
