@@ -36,11 +36,11 @@ export const faqData: FAQCategory[] = [
     itens: [
       {
         pergunta: "O que acontece se eu clicar em 'pular tutorial'?",
-        resposta: "Você será redirecionado diretamente para a página inicial do CT-HC, sem passar pelo tutorial."
+        resposta: "O tutorial encerrará e você será direcionado para o Portal do Paciente HC, sem precisar passar pelo tutorial."
       },
       {
         pergunta: "Posso acessar o tutorial pelo celular?",
-        resposta: "Sim, o CT-HC é responsivo e pode ser acessado por dispositivos móveis."
+        resposta: "Sim! O nosso tutorial funciona normalmente em celulares, tablets, computadores, entre outros."
       },
       {
         pergunta: "Posso repetir o tutorial quantas vezes quiser?",
@@ -48,11 +48,11 @@ export const faqData: FAQCategory[] = [
       },
       {
         pergunta: "Preciso criar conta para usar o CT-HC?",
-        resposta: "Não, o CT-HC não requer criação de conta para acessar o tutorial."
+        resposta: "Não. O acesso ao CT-HC é livre e não exige cadastro nem criação de conta."
       },
       {
-        pergunta: "Como faço para acessar o Portal real depois do treinamento?",
-        resposta: "Após o treinamento, você pode acessar o Portal HC real através do site oficial do hospital."
+        pergunta: "Como faço para acessar o Portal real depois do tutorial?",
+        resposta: "Após o termino do tutorial, você pode acessar o Portal do Paciente HC que está disponível no site oficial do hospital."
       }
     ]
   }
