@@ -1,46 +1,29 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { avaliacoes } from "../../../data/HC/avaliacoes";
 import ButtonCinza from "../ButtonCinza";
+import ModalBase from "../ModalBase";
 
 export default function ModalAvaliacao() {
-  const dialog = useRef<HTMLDialogElement>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    if (dialog.current) {
-      dialog.current.style.display = "flex";
-      dialog.current.showModal();
+  const [aberto, setAberto] = useState(true);
 
-      const fecharComESC = () => {
-        if (dialog.current) {
-          dialog.current.style.display = "none";
-        }
-      };
+  const fecharModal = () => setAberto(false);
 
-      dialog.current.addEventListener("close", fecharComESC);
-
-      return () => dialog.current?.removeEventListener("close", fecharComESC);
-    }
-  }, []);
-
-  const fecharModal = () => {
-    if (dialog.current) {
-        dialog.current.close();
-    }
-};
+  if (!aberto) return null;
 
   return (
-    <dialog
-      ref={dialog}
+    <ModalBase
+      minW={150}
+      px={15}
+      py={7}
       className="
-            dialog-modal 
-            min-w-150 px-15 py-7 rounded-2xl 
-            inset-0 m-auto outline-none
-            flex flex-col items-center gap-3
-            max-md:px-10
-            max-sm:min-w-90 max-sm:px-5
-            max-[448px]:min-w-20
-        "
+          flex flex-col items-center gap-3
+          max-md:px-10
+          max-sm:min-w-90 max-sm:px-5
+          max-[448px]:min-w-20
+      "
+      onClose={fecharModal}
     >
         <h2 className="text-4xl font-bold text-[var(--color-blue)]">
             Avalie-nos!
@@ -122,6 +105,6 @@ export default function ModalAvaliacao() {
              </button>
           </li>
         </ul>
-    </dialog>
+    </ModalBase>
   );
 }
