@@ -252,7 +252,7 @@ export default function FAQ() {
                     </p>
                     <div className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
-                      transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
+                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${isOpen ? 'rotate-180' : ''}
                       `}>
                       <FaAngleDown className="text-[var(--color-white)] text-4xl"/>
                     </div>
@@ -300,7 +300,7 @@ export default function FAQ() {
                     </p>
                     <div className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
-                      transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
+                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${isOpen ? 'rotate-180' : ''}
                       `}>
                       <FaAngleDown className="text-[var(--color-white)] text-4xl"/>
                     </div>
@@ -348,7 +348,7 @@ export default function FAQ() {
                     </p>
                     <div className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
-                      transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}
+                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${isOpen ? 'rotate-180' : ''}
                       `}>
                       <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
                     </div>
