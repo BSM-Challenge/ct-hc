@@ -10,7 +10,7 @@ export const faqData: FAQCategory[] = [
       },
       {
         pergunta: "O CT-HC é gratuito para todos os pacientes?",
-        resposta: "Sim! O CT-HC é 100% gratuito e pode ser acessado por qualquer paciente que queira aprender a usar o Portal HC."
+        resposta: "Sim! O CT-HC é 100% gratuito e pode ser acessado por qualquer paciente que queira aprender a usar o Portal do Paciente HC."
       }
     ]
   },
@@ -19,15 +19,15 @@ export const faqData: FAQCategory[] = [
     itens: [
       {
         pergunta: "Posso acessar meus dados de paciente no CT-HC?",
-        resposta: "Não. O CT-HC é apenas um ambiente de treinamento, portanto não acessa dados reais de pacientes."
+        resposta: "Não. O CT-HC não acessa e nem armazena os dados reais do paciente dentro do Portal do Paciente HC. Ele serve apenas como guia de navegação."
       },
       {
         pergunta: "O tutorial salva minhas informações pessoais?",
-        resposta: "Não. Nenhuma informação pessoal é salva no tutorial do CT-HC."
+        resposta: "Não. Nenhuma informação pessoal sua será salva durante o uso do tutorial."
       },
       {
         pergunta: "O tutorial pode alterar meus dados no Portal HC?",
-        resposta: "Não, o CT-HC é um ambiente separado e não tem acesso ao Portal HC real."
+        resposta: "Não. O CT-HC é apenas um ambiente de simulação que mostra como utilizar o Portal do Paciente HC. Ele não faz nenhuma alteração nos seus dados pessoais ou informações médicas."
       }
     ]
   },
