@@ -6,11 +6,11 @@ export const faqData: FAQCategory[] = [
     itens: [
       {
         pergunta: "Qual é a diferença entre o CT-HC para o Portal HC?",
-        resposta: "O CT-HC é um ambiente de treinamento, enquanto o Portal HC é o sistema real usado pelos pacientes."
+        resposta: "O CT-HC é apenas um tutorial interativo que ensina, passo a passo, como usar o Portal. Já o Portal do Paciente HC é o sistema oficial onde os pacientes acessam seus dados e utilizam os serviços do hospital."
       },
       {
         pergunta: "O CT-HC é gratuito para todos os pacientes?",
-        resposta: "Sim, o CT-HC é totalmente gratuito e acessível a todos."
+        resposta: "Sim! O CT-HC é 100% gratuito e pode ser acessado por qualquer paciente que queira aprender a usar o Portal HC."
       }
     ]
   },
