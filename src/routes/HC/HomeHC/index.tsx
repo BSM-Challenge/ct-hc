@@ -5,7 +5,12 @@ import TitleHC from "../../../components/HC/TitleHC";
 export default function HomeHC() {
     return (
         <div className="flex flex-col gap-5">
-            <TitleHC title="Acessibilidade" />
+            <TitleHC 
+            title="Acessibilidade" 
+            tamanho="4xl" 
+            font="bold" 
+            line={true}
+             />
             <CardTreinamento />
             <div className="flex flex-wrap gap-3 justify-between">
                 <CardAcessibilidade 
