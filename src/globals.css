@@ -65,6 +65,8 @@ html {
     --color-white-button-hover: rgba(255, 255, 255, 0.3);
     --color-white-placeholder-hover: rgba(255, 255, 255, 0.6);
     --color-grey-hover: #b0b0b0;
+    --color-grey-hover-2: #b0b0b054;
+    --color-blue-hover: #0991eb26;
 
     /* Shadows */
      --shadow-black-03: rgba(0, 0, 0, 0.3);
