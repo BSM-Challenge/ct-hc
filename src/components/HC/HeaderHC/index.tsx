@@ -25,7 +25,7 @@ export default function HeaderHC() {
           <figure className="flex items-center justify-between py-4">
             <Link to="/hc">
               <img
-                src="/logoHC.png"
+                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431082/logo-hc_l7m35z.png"
                 alt="Logo do Hospital das Clínicas"
                 className={`transition-all duration-300 ${
                   isOpen ? "w-[70%] opacity-100" : "w-0 opacity-0"
