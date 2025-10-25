@@ -189,53 +189,37 @@ export default function FAQ() {
             </div>
 
             <div
-              className="bg-[var(--color-white)] flex flex-col items-center w-[60%]
+              className="bg-[var(--color-white)] flex flex-col items-center w-full p-8
             border-[4px] border-[var(--color-blue-2)] rounded-[20px] h-full"
             >
-              <h3 className="text-3xl w-[75%] text-center font-bold text-[var(--dark-blue-title)]">
+              <h3 className="text-3xl text-center font-bold text-[var(--dark-blue-title)] mb-5">
                 Tem alguma outra pergunta? Mande para nós!
               </h3>
 
-              <div className="flex flex-row justify-center items-center">
-                <form
-                  method="POST"
-                  className="flex flex-col h-fit justify-center gap-10"
-                >
-                  <label htmlFor="name">Nome:</label>
-                  <input
-                    type="text"
-                    placeholder="Digite seu nome"
-                    className="w-[70%] px-4 py-3 rounded-[20px]
-                bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
-                placeholder-[--color-gray] placeholder:font-semibold outline-none"
-                  />
+              <div className="flex justify-center items-center flex-col-reverse md:flex-row">
+                <form method="POST" className="flex flex-col h-fit mt-10">
 
-                  <label htmlFor="e-mail">E-mail:</label>
-                  <input
-                    type="text"
-                    placeholder="Digite seu e-mail"
-                    className="w-[70%] px-4 py-3 rounded-[20px]
-                bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
-                placeholder-[--color-gray] placeholder:font-semibold outline-none"
-                  />
+                  <label htmlFor="name" className="text-2xl font-bold text-[var(--dark-blue-title)] mb-2">Nome:</label>
+                  <input type="text" placeholder="Digite seu nome" className="w-full px-4 py-3 rounded-[10px]
+                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
+                  placeholder-[--color-gray] placeholder:font-semibold outline-none"/>
 
-                  <label htmlFor="pergunta">Qual a sua pergunta?</label>
-                  <textarea
-                    placeholder="Digite sua mensagem..."
-                    className="w-[70%] px-4 py-3 rounded-[20px]
-                bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
-                placeholder-[--color-gray] placeholder:font-semibold outline-none"
-                  />
+                  <label htmlFor="e-mail" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">E-mail:</label>
+                  <input type="text" placeholder="Digite seu e-mail" className="w-full px-4 py-3 rounded-[10px]
+                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
+                  placeholder-[--color-gray] placeholder:font-semibold outline-none"/>
 
-                  <button className="bg-[var(--color-blue-2)] p-2 w-[25%] text-[var(--color-white)] rounded-full font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)] hover:bg-[var(--hover-button)] transition-colors duration-300">
+                  <label htmlFor="pergunta" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">Qual a sua pergunta?</label>
+                  <textarea placeholder="Digite sua mensagem..." className=" resize-none w-full h-[120px] px-4 py-3 rounded-[10px]
+                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-l-3 border-r-3 border-[var(--dark-blue-title)]
+                  placeholder-[--color-gray] placeholder:font-semibold outline-none"/>
+
+                  <button className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)] mt-8 rounded-full font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)] hover:bg-[var(--hover-button)] transition-colors duration-300">
                     Enviar
                   </button>
                 </form>
                 <figcaption>
-                  <img
-                    src="./question-img.png"
-                    alt="Pessoa fazendo uma pergunta."
-                  />
+                  <img src="./question-img.png" alt="Pessoa fazendo uma pergunta."/>
                 </figcaption>
               </div>
             </div>
