@@ -7,15 +7,15 @@ type Filtro = "3" | "6" | "12" | "6a";
 export default function MinhasAgendas() {
   const [filtroAtivo, setFiltroAtivo] = useState<Filtro>("3");
 
-  const botoes: { label: string; value: Filtro }[] = [
-    { label: "Próximos 3 meses", value: "3" },
-    { label: "Próximos 6 meses", value: "6" },
-    { label: "Próximos 12 meses", value: "12" },
-    { label: "Últimos 6 meses", value: "6a" },
+  const botoes: { label: string; value: Filtro; mensagem:string }[] = [
+    { label: "Próximos 3 meses", value: "3", mensagem: "Você não possui agendas nos próximos 3 meses." },
+    { label: "Próximos 6 meses", value: "6", mensagem: "Você não possui agendas nos próximos 6 meses." },
+    { label: "Próximos 12 meses", value: "12", mensagem: "Você não possui agendas nos próximos 12 meses." },
+    { label: "Últimos 6 meses", value: "6a", mensagem: "Você não possui agendas nos últimos 6 meses." },
   ];
 
   return (
-    <div>
+    <div className="flex flex-col min-h-full">
       <TitleHC title="Minhas agendas e reagendamentos" />
       <ul className="flex justify-center gap-7">
         {botoes.map((botao) => (
@@ -43,6 +43,11 @@ export default function MinhasAgendas() {
           </li>
         ))}
       </ul>
+      <div className="flex justify-center items-center flex-grow">
+        <p>
+            {botoes.find(botao => botao.value === filtroAtivo)?.mensagem}
+        </p>
+      </div>
     </div>
   );
 }
