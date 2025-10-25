@@ -214,16 +214,17 @@ export default function FAQ() {
                   <input
                     type="text"
                     placeholder="Digite seu e-mail"
-                    className="w-[80%] p-4 rounded-[20px]
-                bg-[var(--light-blue)] border-2 border-[var(--border-black)] placeholder-[--color-gray]
-                placeholder:font-bold outline-none"
+                    className="w-[70%] px-4 py-3 rounded-[20px]
+                bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
+                placeholder-[--color-gray] placeholder:font-semibold outline-none"
                   />
 
                   <label htmlFor="pergunta">Qual a sua pergunta?</label>
                   <textarea
                     placeholder="Digite sua mensagem..."
-                    className="resize-none rounded-[20px] border-b-3 border-r-3
-                border-l-3 border-[var(--dark-blue-title)]"
+                    className="w-[70%] px-4 py-3 rounded-[20px]
+                bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
+                placeholder-[--color-gray] placeholder:font-semibold outline-none"
                   />
 
                   <button className="bg-[var(--color-blue-2)] p-2 w-[25%] text-[var(--color-white)] rounded-full font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)] hover:bg-[var(--hover-button)] transition-colors duration-300">
