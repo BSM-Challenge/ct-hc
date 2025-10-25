@@ -102,7 +102,7 @@ export function Menu() {
       {/* Menu Mobile */}
       <nav className="lg:hidden flex justify-between items-center p-4 bg-[var(--color-white)] shadow-md relative">
         <Link to="/">
-          <img src="/logo.png" alt="Logo do CT-HC" className="h-10" />
+          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png" alt="Logo do CT-HC" className="h-10" />
         </Link>
 
         <button
