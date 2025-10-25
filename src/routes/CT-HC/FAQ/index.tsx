@@ -231,7 +231,7 @@ export default function FAQ() {
                   </button>
                 </form>
                 <figcaption>
-                  <img src="./question-img.png" alt="Pessoa fazendo uma pergunta."/>
+                  <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761434429/img-question_m7yane.png" alt="Pessoa fazendo uma pergunta."/>
                 </figcaption>
               </div>
             </div>
