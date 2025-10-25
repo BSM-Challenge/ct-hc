@@ -15,7 +15,7 @@ export default function MinhasAgendas() {
   ];
 
   return (
-    <div className="flex flex-col min-h-full">
+    <section className="flex flex-col min-h-full">
       <TitleHC title="Minhas agendas e reagendamentos" />
       <ul className="flex justify-center gap-7">
         {botoes.map((botao) => (
@@ -48,6 +48,6 @@ export default function MinhasAgendas() {
             {botoes.find(botao => botao.value === filtroAtivo)?.mensagem}
         </p>
       </div>
-    </div>
+    </section>
   );
 }
