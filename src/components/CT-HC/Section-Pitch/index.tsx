@@ -33,7 +33,7 @@ export default function SectionPitch() {
         ">
             <video
             className="w-full h-full object-cover"
-            src="/video-pitch.mp4"
+            src="https://res.cloudinary.com/dt26mfzpw/video/upload/v1761425921/video-pitch_jgvfq0.mp4"
             controls
             ></video>
         </div>
@@ -51,18 +51,13 @@ export default function SectionPitch() {
             Assista no <span className="font-bold">YouTube</span>.
           </p>
           <Link
-            to="https://youtu.be/36Rl0yBepwU"
-            className="
-            w-[50%]
-            bg-[var(--dark-blue-title)] text-[var(--color-white)]
-            py-2 text-center rounded-full font-bold
-            shadow-[6px_6px_11px_var(--dark-blue-title)]
+            to="https://youtu.be/36Rl0yBepwU" target="_blank" rel="noopener noreferrer"
+            className="w-[50%] bg-[var(--dark-blue-title)] text-[var(--color-white)] py-2
+            text-center rounded-full font-bold shadow-[6px_6px_11px_var(--dark-blue-title)]
             sm:w-[40%]
             md:w-[40%]
             lg:w-[38%]
-            xl:w-[32%]
-            "
-          >
+            xl:w-[32%]">
             Clique aqui
           </Link>
       </aside>
