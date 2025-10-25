@@ -33,7 +33,7 @@ export default function MeusResultados() {
                 : "text-[--color-gray] hover:bg-[var(--color-grey-hover-2)]"
             }`}
         >
-          <FaMicroscope size={28} />
+          <FaMicroscope size={24} />
           <span>Laboratório</span>
         </button>
 
@@ -46,7 +46,7 @@ export default function MeusResultados() {
                 : "text-[--color-gray] hover:bg-[var(--color-grey-hover-2)]"
             }`}
         >
-          <BiSolidImageAlt size={28} />
+          <BiSolidImageAlt size={24} />
           <span>Imagem</span>
         </button>
       </div>
