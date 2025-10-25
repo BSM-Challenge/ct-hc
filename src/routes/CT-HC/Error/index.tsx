@@ -10,7 +10,7 @@ export default function Error() {
             Ops!
           </h1>
         
-        <img src="./error-icon.png"
+        <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761435032/img-error_g2wu0j.png"
         alt="Imagem representando que a página não encontrada."
         className="ml-9 w-80 sm:w-xs md:w-95 lg:w-100 2xl:w-120"/>
 

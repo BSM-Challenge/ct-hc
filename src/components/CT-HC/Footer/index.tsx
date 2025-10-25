@@ -9,7 +9,7 @@ export default function Footer() {
     >
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <figcaption className="flex justify-center lg:justify-start">
-          <img src="/logo-com-texto.png" alt="" />
+          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431081/logo-ct-hc-com-texto_hokz7m.png" alt="" />
         </figcaption>
         <div className="
         flex flex-wrap items-start gap-10 mt-5 justify-between 

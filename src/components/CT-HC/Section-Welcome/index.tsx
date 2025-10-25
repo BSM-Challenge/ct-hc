@@ -62,7 +62,7 @@ export default function SectionWelcome() {
 
       <div className="w-full flex justify-center px-4 lg:w-1/2 lg:-mt-50  lg:px-0">
         <img 
-          src="/banner-ct.png" 
+          src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761430828/banner-ct_jyju1p.png" 
           alt="Banner Centro de Treinamento" 
           className="
           w-full max-w-[260px] 

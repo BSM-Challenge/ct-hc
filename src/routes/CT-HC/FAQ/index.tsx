@@ -23,33 +23,32 @@ export default function FAQ() {
   return (
     <main className="bg-[var(--light-blue)]">
       <section
-        className="pt-30 min-h-screen max-[500px]:px-5
-      lg:pt-35 
-      xl:pt-45"
-      >
+        className="px-10 pt-30 min-h-screen max-[500px]:px-5
+      lg:pt-40 lg:px-0 lg:pr-10
+      xl:pt-45 2xl:pr-35">
         <div className="w-full flex flex-col gap-5">
           <div
             className="h-full flex justify-center items-center 
           xl:justify-center"
           >
             <h1
-              className="text-3xl text-[var(--dark-blue-title)] font-bold mb-15
+              className="text-4xl text-center text-[var(--dark-blue-title)] font-bold mb-10
             sm:text-4xl 
-            xl:text-5xl"
+            xl:text-5xl
+            2xl:ml-45"
             >
               Perguntas Frequentes
             </h1>
           </div>
           <div
-            className="flex flex-col justify-between gap-10 items-start w-full
-          lg:flex-row
-          xl:flex-row"
+            className="flex flex-col justify-between gap-20 items-center w-full
+            lg:flex-row lg:gap-10
+            xl:flex-row"
           >
-            <div className="w-full lg:w-[30%] xl:w-[25%]">
+            <div className="w-full md:w-[70%] lg:w-[50%] xl:w-[25%] 2xl:w-[20%]">
               <nav
-                className="bg-[var(--color-blue-2)] rounded-[20px] rounded-tl-[0] rounded-bl-[0]
-              p-6 text-[var(--color-white)] flex flex-col gap-4 w-[70%]"
-              >
+                className="bg-[var(--color-blue-2)] rounded-[20px] p-6 text-[var(--color-white)] flex flex-col gap-8 w-full
+                lg:rounded-l-[0]">
                 <ul className="flex flex-col gap-[.6rem] text-[var(--color-white)]">
                   <li className="border-b-2 border-[var(--color-white)]">
                     <h2 className="text-xl font-bold">Sobre o Projeto</h2>
@@ -188,60 +187,58 @@ export default function FAQ() {
               </nav>
             </div>
 
-            <div
-              className="bg-[var(--color-white)] flex flex-col items-center w-[60%]
-            border-[4px] border-[var(--color-blue-2)] rounded-[20px] h-full"
-            >
-              <h3 className="text-3xl w-[75%] text-center font-bold text-[var(--dark-blue-title)]">
+            <div className="bg-[var(--color-white)] flex flex-col items-center w-full p-8
+            border-[4px] border-[var(--color-blue-2)] rounded-[20px] h-full xl:w-[70%]">
+              <h3 className="text-3xl text-center font-bold text-[var(--dark-blue-title)] mb-5 
+              md:w-[80%] 2xl:text-4xl 2xl:w-[50%]">
                 Tem alguma outra pergunta? Mande para nós!
               </h3>
 
-              <div className="flex flex-row justify-center items-center">
-                <form
-                  method="POST"
-                  className="flex flex-col h-fit justify-center gap-10"
-                >
-                  <label htmlFor="name">Nome:</label>
-                  <input
-                    type="text"
-                    placeholder="Digite seu nome"
-                    className="w-[70%] px-4 py-3 rounded-[20px]
-                bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
-                placeholder-[--color-gray] placeholder:font-semibold outline-none"
-                  />
+              <div className="flex justify-center items-center flex-col-reverse
+              lg:flex-row lg:w-full">
+                <form method="POST" className="flex flex-col h-fit mt-10
+                xl:w-[50%]">
 
-                  <label htmlFor="e-mail">E-mail:</label>
-                  <input
-                    type="text"
-                    placeholder="Digite seu e-mail"
-                    className="w-[80%] p-4 rounded-[20px]
-                bg-[var(--light-blue)] border-2 border-[var(--border-black)] placeholder-[--color-gray]
-                placeholder:font-bold outline-none"
-                  />
+                  <label htmlFor="name" className="text-2xl font-bold text-[var(--dark-blue-title)] mb-2">Nome:</label>
+                  <input type="text" placeholder="Digite seu nome" className="w-full px-4 py-3 rounded-[10px]
+                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
+                  placeholder-[--color-gray] placeholder:font-semibold outline-none
+                  min-[450px]:w-[340px]
+                  sm:w-[450px]
+                  lg:w-[250px]
+                  xl:w-[90%]"/>
 
-                  <label htmlFor="pergunta">Qual a sua pergunta?</label>
-                  <textarea
-                    placeholder="Digite sua mensagem..."
-                    className="resize-none rounded-[20px] border-b-3 border-r-3
-                border-l-3 border-[var(--dark-blue-title)]"
-                  />
+                  <label htmlFor="e-mail" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">E-mail:</label>
+                  <input type="text" placeholder="Digite seu e-mail" className="w-full px-4 py-3 rounded-[10px]
+                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
+                  placeholder-[--color-gray] placeholder:font-semibold outline-none
+                  lg:w-[250px]
+                  xl:w-[90%]"/>
 
-                  <button className="bg-[var(--color-blue-2)] p-2 w-[25%] text-[var(--color-white)] rounded-full font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)] hover:bg-[var(--hover-button)] transition-colors duration-300">
+                  <label htmlFor="pergunta" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">Qual a sua pergunta?</label>
+                  <textarea placeholder="Digite sua mensagem..." className=" resize-none w-full h-[120px] px-4 py-3 rounded-[10px]
+                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-l-3 border-r-3 border-[var(--dark-blue-title)]
+                  placeholder-[--color-gray] placeholder:font-semibold outline-none
+                  lg:w-[250px]
+                  xl:w-[90%]"/>
+
+                  <button className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)] mt-8 rounded-[10px]
+                  font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)] hover:bg-[var(--hover-button)] transition-colors duration-300
+                  sm:w-[30%]
+                  lg:w-[60%]
+                  xl:w-[30%] xl:self-start xl:ml-35">
                     Enviar
                   </button>
                 </form>
                 <figcaption>
-                  <img
-                    src="./question-img.png"
-                    alt="Pessoa fazendo uma pergunta."
-                  />
+                  <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761434429/img-question_m7yane.png" alt="Pessoa fazendo uma pergunta."/>
                 </figcaption>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="min-h-screen px-10 pt-30 lg:px-20 xl:px-43">
+      <section className="min-h-screen px-10 lg:px-20 xl:px-43">
         <div className="flex flex-col gap-32 py-40">
           {/* Categoria: Sobre o projeto */}
           <ul className="flex flex-col gap-8">
@@ -260,9 +257,7 @@ export default function FAQ() {
                   id={`sobre-${index}`}
                   className="
                   flex flex-col bg-[var(--color-blue)] rounded-[20px] border-[var(--color-blue-2)] border-b-5 px-3 py-2 
-                  cursor-pointer transition-all duration-300 text-[var(--color-white)]
-                  hover:bg-[var(--color-blue-2)]
-                  "
+                  cursor-pointer transition-all duration-300 text-[var(--color-white)] hover:bg-[var(--color-blue-2)]"
                   onClick={() => toggleItem(itemId)}
                 >
                   <div className="flex items-center justify-between">
@@ -310,9 +305,7 @@ export default function FAQ() {
                   id={`dados-${index}`}
                   className="
                   flex flex-col bg-[var(--color-blue)] rounded-[20px] border-[var(--color-blue-2)] border-b-5 px-3 py-2 
-                  cursor-pointer transition-all duration-300 text-[var(--color-white)]
-                  hover:bg-[var(--color-blue-2)]
-                  "
+                  cursor-pointer transition-all duration-300 text-[var(--color-white)] hover:bg-[var(--color-blue-2)]"
                   onClick={() => toggleItem(itemId)}
                 >
                   <div className="flex items-center justify-between">
@@ -359,10 +352,8 @@ export default function FAQ() {
                   key={index}
                   id={`tutorial-${index}`}
                   className="
-                  flex flex-col bg-[var(--color-blue)] rounded-[20px] border-[var(--color-blue-2)] border-b-5 px-3 py-2 
-                  cursor-pointer transition-all duration-300 text-[var(--color-white)]
-                  hover:bg-[var(--color-blue-2)]
-                  "
+                  flex flex-col bg-[var(--color-blue)] rounded-[20px] border-[var(--color-blue-2)] border-b-5 px-3 py-2
+                  cursor-pointer transition-all duration-300 text-[var(--color-white)] hover:bg-[var(--color-blue-2)]"
                   onClick={() => toggleItem(itemId)}
                 >
                   <div className="flex items-center justify-between">

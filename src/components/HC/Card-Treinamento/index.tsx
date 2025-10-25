@@ -17,7 +17,7 @@ export default function CardTreinamento() {
         "
       >
         <img
-          src="/logo-ct-hc-azul.png"
+          src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png"
           alt="Logo do CTHC"
           className="
             w-1/2
