@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
-import { BiSolidImageAlt } from "react-icons/bi";
 import { LuSquareMenu } from "react-icons/lu";
+import { AiFillCloseSquare } from "react-icons/ai";
 
 export default function MeusResultados() {
   type Filtro = "3" | "6" | "12"
@@ -29,7 +29,7 @@ export default function MeusResultados() {
                 : "text-[--color-gray] hover:bg-[var(--color-grey-hover-2)]"
             }`}
         >
-          <LuSquareMenu size={28} />
+          <LuSquareMenu size={24} />
           <span>Ativas</span>
         </button>
 
@@ -42,7 +42,7 @@ export default function MeusResultados() {
                 : "text-[--color-gray] hover:bg-[var(--color-grey-hover-2)]"
             }`}
         >
-          <BiSolidImageAlt size={28} />
+          <AiFillCloseSquare size={24} />
           <span>Inativas</span>
         </button>
       </div>
