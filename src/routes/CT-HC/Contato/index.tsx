@@ -21,7 +21,7 @@ export default function Contato() {
             {/* card endereço */}
             <div className="flex flex-row items-start gap-3 mb-5
             sm:gap-5 md:mb-6 md:ml-16 lg:ml-0 xl:mb-8">
-              <img className="w-17 sm:w-13 xl:w-18" src="./icon-local.png" alt="Ícone de localização"/>
+              <img className="w-17 sm:w-13 xl:w-18" src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761432366/icon-local_rcdozb.png" alt="Ícone de localização"/>
             <div className="flex flex-col items-start gap-0.5">
               <h2 className="font-bold text-2xl text-[var(--dark-blue-title)]
               xl:text-3xl">
@@ -38,7 +38,7 @@ export default function Contato() {
             <div className="flex flex-row items-center gap-3 mb-5 
             sm:gap-5 md:mb-6 xl:mb-8">
               <div>
-                <img className="w-17 sm:w-13 xl:w-18" src="./icon-telefone.png" alt="Ícone de telefone"/>
+                <img className="w-17 sm:w-13 xl:w-18" src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761432369/icon-telefone_tm6anc.png" alt="Ícone de telefone"/>
               </div>
               <div className="flex flex-col items-start gap-0.5">
                 <h2 className="font-bold text-2xl text-[var(--dark-blue-title)] xl:text-3xl">
@@ -55,7 +55,7 @@ export default function Contato() {
             <div className="flex flex-row items-center gap-3 mb-5
             md:mb-6 lg:mb-8">
               <div>
-                <img className="w-17 sm:w-13 xl:w-18" src="./icon-whatsapp.png" alt="Ícone de WhatsApp"/>
+                <img className="w-17 sm:w-13 xl:w-18" src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761432385/icon-whatsapp_j0e7nw.png" alt="Ícone de WhatsApp"/>
               </div>
 
               <div className="flex flex-col items-start gap-0.5">
@@ -81,25 +81,25 @@ export default function Contato() {
                 <ul className="flex flex-row gap-5">
                   <li>
                     <Link to="https://www.instagram.com/hospitalhcfmusp/" target="_blank" rel="noopener noreferrer">
-                    <img src="./icon-instagram.png" alt="Ícone do Instagram" className="w-13 h-13" />
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761432436/icon-instagram_g6f3so.png" alt="Ícone do Instagram" className="w-13 h-13" />
                     </Link>
                   </li>
 
                   <li>
                     <Link to="https://www.facebook.com/hospitaldasclinicasdafmusp/" target="_blank" rel="noopener noreferrer">
-                    <img src="./icon-facebook.png" alt="Ícone do Facebook" className="w-13 h-13" />
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761432474/icon-facebook_kuw6yc.png" alt="Ícone do Facebook" className="w-13 h-13" />
                     </Link>
                   </li>
 
                   <li>
                     <Link to="https://www.linkedin.com/company/hcfmusp/" target="_blank" rel="noopener noreferrer">
-                    <img src="./icon-linkedin.png" alt="Ícone do LinkedIn" className="w-13 h-13" />
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761432439/icon-linkedin_lifvzo.png" alt="Ícone do LinkedIn" className="w-13 h-13" />
                     </Link>
                   </li>
 
                   <li>
                     <Link to="https://www.youtube.com/channel/UC_DUjcI35Hm0ix74KDQ67Jw" target="_blank" rel="noopener noreferrer">
-                    <img src="./icon-youtube.png" alt="Ícone do Youtube" className="w-13 h-13" />
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761432453/icon-youtube_lql8bu.png" alt="Ícone do Youtube" className="w-13 h-13" />
                     </Link>
                   </li>
                 </ul>
