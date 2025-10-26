@@ -20,6 +20,7 @@ import ErrorHC from './routes/HC/ErrorHC/index.tsx'
 import MeusResultados from './routes/HC/MeusResultados/index.tsx'
 import MinhasReceitas from './routes/HC/MinhasReceitas/index.tsx'
 import MinhasAgendas from './routes/HC/MinhasAgendas/index.tsx'
+import Teleconsulta from './routes/HC/Teleconsulta/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: "resultados", element: <MeusResultados /> },
       { path: "receitas", element: <MinhasReceitas /> },
       { path: "agenda", element: <MinhasAgendas /> },
+      { path: "teleconsulta", element: <Teleconsulta /> },
       { path: "*", element: <Navigate to="/hc/erro" replace /> },
     ],
   },
