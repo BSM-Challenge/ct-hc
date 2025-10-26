@@ -21,6 +21,7 @@ import MeusResultados from './routes/HC/MeusResultados/index.tsx'
 import MinhasReceitas from './routes/HC/MinhasReceitas/index.tsx'
 import MinhasAgendas from './routes/HC/MinhasAgendas/index.tsx'
 import Teleconsulta from './routes/HC/Teleconsulta/index.tsx'
+import SolcitacaoExames from './routes/HC/SolicitacaoExames/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
       { path: "receitas", element: <MinhasReceitas /> },
       { path: "agenda", element: <MinhasAgendas /> },
       { path: "teleconsulta", element: <Teleconsulta /> },
+      { path: "exames", element: <SolcitacaoExames /> },
       { path: "*", element: <Navigate to="/hc/erro" replace /> },
     ],
   },
