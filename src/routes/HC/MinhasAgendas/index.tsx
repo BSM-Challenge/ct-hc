@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
 import { RiCheckLine } from "react-icons/ri";
+import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
 
 type Filtro = "3" | "6" | "12" | "6a";
 
@@ -43,11 +44,12 @@ export default function MinhasAgendas() {
           </li>
         ))}
       </ul>
-      <div className="flex justify-center items-center flex-grow">
+
+      <ConteudoDinamico>
         <p>
             {botoes.find(botao => botao.value === filtroAtivo)?.mensagem}
         </p>
-      </div>
+      </ConteudoDinamico>
     </section>
   );
 }

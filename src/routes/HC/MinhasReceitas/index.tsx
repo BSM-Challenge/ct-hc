@@ -2,6 +2,7 @@ import { useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
 import { LuSquareMenu } from "react-icons/lu";
 import { AiFillCloseSquare } from "react-icons/ai";
+import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
 
 export default function MeusResultados() {
   type Filtro = "3" | "6" | "12"
@@ -64,9 +65,8 @@ export default function MeusResultados() {
         ))}
       </ul>
 
-      <div className="w-full flex justify-center flex-grow items-center">
-        <p className="text-center">
-          {abaAtiva === "ativas"
+      <ConteudoDinamico>
+        {abaAtiva === "ativas"
             ? {
                 "3": "Não foi localizado nada no momento.",
                 "6": "Não foi localizado nada no momento.",
@@ -77,8 +77,7 @@ export default function MeusResultados() {
                 "6": "Nenhuma receita inativa disponível no momento.",
                 "12": "Nenhuma receita inativa disponível no momento.",
               }[filtroAtivo]}
-        </p>
-      </div>
+      </ConteudoDinamico>
     </section>
   );
 }

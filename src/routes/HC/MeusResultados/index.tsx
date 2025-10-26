@@ -2,6 +2,7 @@ import { useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
 import { FaMicroscope } from "react-icons/fa";
 import { BiSolidImageAlt } from "react-icons/bi";
+import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
 
 export default function MeusResultados() {
   const [abaAtiva, setAbaAtiva] = useState<"laboratorio" | "imagem">("laboratorio");
@@ -68,7 +69,7 @@ export default function MeusResultados() {
         ))}
       </ul>
 
-      <div className="w-full flex justify-center flex-grow items-center">
+      <ConteudoDinamico>
         <p>
           {abaAtiva === "laboratorio"
             ? {
@@ -83,7 +84,7 @@ export default function MeusResultados() {
               }[filtroAtivo]
           }
         </p>
-      </div>
+      </ConteudoDinamico>
     </section>
   );
 }
