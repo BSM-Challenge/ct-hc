@@ -13,7 +13,7 @@ export default function SolcitacaoExames() {
                 <div className="w-full bg-[var(--color-blue-4383B4)] px-4">
                     <span>
                         <img 
-                        src="/testelogohc.png"
+                        src="/logo-hc-bg-branco.png"
                         alt="" 
                         className="w-[7%] max-md:w-[20%]"/>
                     </span>
