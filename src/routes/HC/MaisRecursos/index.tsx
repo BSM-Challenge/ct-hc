@@ -11,26 +11,26 @@ export default function MaisRecursos() {
             <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
                 <CardMaisRecursos 
                     titleMessage="Clique aqui para aumentar a fonte"
-                    img="/img-aumentar-fonte-2.png"
+                    img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573149/icon-aumentar-fonte-2_japh83.png"
                     title="Aumentar Fonte"
                     text="Amplia ou diminui o tamanho do texto para facilitar a leitura."
                 />
                 <CardMaisRecursos 
                     titleMessage="Clique aqui para ativar a navegação por Voz"
-                    img="/img-navegacao-voz.png"
+                    img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573302/icon-navegacao-voz_gpky4m.png"
                     title="Navegação por Voz"
                     text="Navegue pelo site usando comandos de voz."
                 />
                 <CardMaisRecursos 
                     titleMessage="Clique aqui para mudar o contraste"
-                    img="/img-contraste.png"
+                    img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573295/icon-contraste_txxb1t.png"
                     title="Mudar contraste"
                     text="Ajusta o contraste da tela para melhorar a visibilidade."
                 />
             </div>
             <div className="hidden lg:flex flex-col gap-3">
                 <figure className="flex items-center gap-4">
-                    <img src="/img-teclado.png" alt="ícone de teclado" />
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573306/icon-teclado_tjyl7n.png" alt="ícone de teclado" />
                     <figcaption className="text-3xl font-bold">Atalhos de teclado:</figcaption>
                 </figure>
                 <ul className="flex flex-col gap-4">
