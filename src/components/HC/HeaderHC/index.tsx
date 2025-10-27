@@ -106,7 +106,7 @@ export default function HeaderHC() {
                 "
                 title="Sair do Portal HC"
               >
-                <img src="/icon-sair.png" alt="Sair" className="w-6 h-6" />
+                <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761568469/icon-sair_hvrt0v.png" alt="Sair" className="w-6 h-6" />
                 {isOpen && <span className="text-sm">Sair</span>}
               </Link>
             </li>
