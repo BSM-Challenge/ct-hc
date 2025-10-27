@@ -70,7 +70,7 @@ export default function ModalTreinamentoFinalizado() {
       <div className="w-1/2 max-lg:w-full">
         <figure className="flex justify-center items-center">
           <img
-            src="/check-icon.png"
+            src="/icon-check.png"
             alt="Ícone de sucesso"
             className="w-[65%] max-lg:w-[25%] max-lg:mt-2"
           />
