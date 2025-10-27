@@ -121,7 +121,7 @@ export default function HeaderHC() {
             <li>
               <Link to="/hc" className="flex flex-col items-center gap-1">
                 <img
-                  src="/icon-home-ativado-mobile.png"
+                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761569683/icon-home-ativado-mobile_amlvhj.png"
                   alt="Ícone do Início"
                   className="w-6 h-6"
                 />
@@ -131,7 +131,7 @@ export default function HeaderHC() {
             <li>
               <Link to="hc/menu" className="flex flex-col items-center gap-1">
                 <img
-                  src="/icon-menu-fechado.png"
+                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761568370/icon-menu-fechado_pehykk.png"
                   alt="Ícone do menu"
                   className="w-6 h-6"
                 />
@@ -141,7 +141,7 @@ export default function HeaderHC() {
             <li>
               <Link to="hc/avisos" className="flex flex-col items-center gap-1">
                 <img
-                  src="/icon-notificacoes.png"
+                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761569728/icon-notificacoes_nqqltk.png"
                   alt="Ícone de notificações"
                   className="w-6 h-6"
                 />
