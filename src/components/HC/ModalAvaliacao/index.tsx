@@ -15,10 +15,9 @@ export default function ModalAvaliacao() {
   return (
     <ModalBase
       minW={150}
-      px={15}
-      py={7}
       className="
           flex flex-col items-center gap-3
+          px-15 py-7
           max-md:px-10
           max-sm:min-w-90 max-sm:px-5
           max-[448px]:min-w-20
