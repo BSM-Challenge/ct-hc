@@ -113,6 +113,44 @@ export default function HeaderHC() {
           </ul>
         </nav>
       </header>
+
+      {/* Header Mobile */}
+      <header className="lg:hidden fixed bottom-0 left-0 w-full bg-white shadow-2xl z-50">
+        <nav>
+          <ul className="flex justify-around py-3">
+            <li>
+              <Link to="/hc" className="flex flex-col items-center gap-1">
+                <img
+                  src="/icon-home-ativado-mobile.png"
+                  alt="Ícone do Início"
+                  className="w-6 h-6"
+                />
+                <span className="text-xs font-medium">Início</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="hc/menu" className="flex flex-col items-center gap-1">
+                <img
+                  src="/icon-menu-fechado.png"
+                  alt="Ícone do menu"
+                  className="w-6 h-6"
+                />
+                <span className="text-xs">Menu</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="hc/avisos" className="flex flex-col items-center gap-1">
+                <img
+                  src="/icon-notificacoes.png"
+                  alt="Ícone de notificações"
+                  className="w-6 h-6"
+                />
+                <span className="text-xs">Avisos</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
     </>
   );
 }
