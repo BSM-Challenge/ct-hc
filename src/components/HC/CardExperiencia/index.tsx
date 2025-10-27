@@ -14,7 +14,7 @@ export default function CardExperiencia() {
             max-lg:w-full max-lg:flex max-lg:justify-center
             ">
                 <img 
-                src="/img-aceessibilidade.png" 
+                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761574299/img-aceessibilidade_e2tw78.png" 
                 alt=""
                 className="w-[45%] max-lg:w-[20%]"
                 />
