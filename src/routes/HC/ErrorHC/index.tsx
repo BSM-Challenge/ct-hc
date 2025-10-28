@@ -42,6 +42,9 @@ export default function ErrorHC() {
                      className="
                      bg-[var(--color-white)] text-[var(--color-blue)]
                      py-2 px-9 rounded-full font-bold text-2xl
+                     hover:text-[var(--color-white)] 
+                     hover:bg-[var(--color-blue)] 
+                     duration-300
                      max-sm:text-xl
                      "
                      title="Voltar para a página inicial"
