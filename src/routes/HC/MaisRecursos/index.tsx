@@ -7,6 +7,7 @@ export default function MaisRecursos() {
             <TitleHC 
                 title="Acessibilidade > Mais recursos"
                 subtitle="Saiba o que cada funcionalidade faz, e torne sua experiência mais acessível!"
+                line={true}
             />
             <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
                 <CardMaisRecursos 

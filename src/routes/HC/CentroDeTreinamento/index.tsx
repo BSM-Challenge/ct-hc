@@ -9,6 +9,7 @@ export default function CentroDeTreinamento() {
             <TitleHC
                 title="Centro de Treinamento"
                 subtitle="Escolha a área do site que deseja fazer o treinamento e receba instruções em cada etapa:"
+                line={true}
              />
             <ul className="
             w-full flex flex-wrap justify-center gap-2 xl:px-20 2xl:px-50 xl:gap-4
