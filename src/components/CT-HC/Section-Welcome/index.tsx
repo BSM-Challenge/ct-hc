@@ -9,7 +9,7 @@ export default function SectionWelcome() {
       id="home"
     >
       <div className="
-          flex justify-center flex-col w-full gap-3 px-4
+          flex justify-center flex-col w-full gap-3 px-4 -mt-10
           lg:w-1/2 lg:px-0
           opacity-0 animate-fade-in">
         <h1 className="
@@ -43,13 +43,13 @@ export default function SectionWelcome() {
           Um tutorial passo a passo em tempo real com instruções destacadas para
           guiar cada ação.
         </p>
-        <div className="flex justify-center mt-6 lg:mt-10">
+        <div className="flex justify-center mt-2 lg:mt-10">
           <Link
             to="/hc"
             className="
             inline-flex items-center justify-center px-5 py-2 font-semibold
-            text-sm bg-[var(--color-blue)] text-[var(--color-white)]
-            shadow-[var(--shadow-blue)]
+            text-sm bg-[var(--color-blue-2563EB)] text-[var(--color-white)]
+            shadow-[var(--shadow-blue)] hover:bg-[var(--color-blue)] duration-300
             lg:px-7 lg:py-3 rounded-full   
             md:text-base"
           >
@@ -60,7 +60,7 @@ export default function SectionWelcome() {
         </div>
       </div>
 
-      <div className="w-full flex justify-center px-4 lg:w-1/2 lg:-mt-50  lg:px-0">
+      <div className="w-full flex justify-center px-4 lg:w-1/2 lg:-mt-45  lg:px-0">
         <img 
           src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761430828/banner-ct_jyju1p.png" 
           alt="Banner Centro de Treinamento" 
