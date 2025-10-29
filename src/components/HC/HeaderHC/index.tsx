@@ -1,15 +1,25 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 
 import { menuItems } from "../../../data/HC/menuItem";
+import { FaAngleRight } from "react-icons/fa";
 
 export default function HeaderHC() {
   const [isOpen, setIsOpen] = useState(true);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const handleItemClick = (label: string, hasSubItems: boolean, e: React.MouseEvent) => {
+    if (hasSubItems) {
+      e.preventDefault();
+      setOpenSubmenu((prev) => (prev === label ? null : label));
+    }
+  };
 
   return (
     <>
@@ -33,7 +43,7 @@ export default function HeaderHC() {
               />
             </Link>
 
-            <button 
+            <button
               onClick={toggleMenu}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
             >
@@ -67,20 +77,23 @@ export default function HeaderHC() {
 
             {menuItems.map((item, index) => {
               const isActive = location.pathname === item.to;
+              const hasSubItems = !!item.subItems;
 
               return (
-                <li key={index}>
+                <li key={index} className="relative">
                   <Link
                     to={item.to}
+                    onClick={(e) => handleItemClick(item.label, hasSubItems, e)}
                     className={`
                       flex gap-3 items-center
                       rounded-lg px-2 py-2
                       transition-colors duration-300
                       hover:bg-[var(--color-grey-hover)]
                       text-sm font-medium
-                      ${isActive
-                        ? item.activeColor
-                        : "text-[var(--color-grey)]"
+                      ${
+                        isActive
+                          ? item.activeColor
+                          : "text-[var(--color-grey)]"
                       }
                     `}
                     title={item.title}
@@ -88,6 +101,31 @@ export default function HeaderHC() {
                     <img src={item.icon} alt={item.label} className="w-6 h-6" />
                     {isOpen && <span className="text-sm">{item.label}</span>}
                   </Link>
+
+                  {/* Aqui fica os submenus */}
+                  {hasSubItems && openSubmenu === item.label && (
+                    <div className="
+                    absolute left-full top-0 ml-2
+                  bg-[var(--color-white)] shadow-xl rounded-lg 
+                    w-56 py-2 z-50
+                    ">
+                      {item.subItems!.map((sub, i) => (
+                        <button
+                          key={i}
+                          onClick={() => {
+                            navigate(sub.to || "/");
+                            setOpenSubmenu(null);
+                          }}
+                          className="
+                          flex justify-between items-center w-full px-4 py-2 text-sm
+                          hover:bg-[var(--color-grey-hover-2)] duration-200 cursor-pointer"
+                        >
+                          <span>{sub.label}</span>
+                          <FaAngleRight className="text-[var(--color-blue)]" />
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </li>
               );
             })}
@@ -95,8 +133,8 @@ export default function HeaderHC() {
             <hr className="my-2" />
 
             <li>
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="
                   flex gap-3 items-center
                   rounded-lg px-2 py-2
@@ -106,7 +144,11 @@ export default function HeaderHC() {
                 "
                 title="Sair do Portal HC"
               >
-                <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761568469/icon-sair_hvrt0v.png" alt="Sair" className="w-6 h-6" />
+                <img
+                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761568469/icon-sair_hvrt0v.png"
+                  alt="Sair"
+                  className="w-6 h-6"
+                />
                 {isOpen && <span className="text-sm">Sair</span>}
               </Link>
             </li>
