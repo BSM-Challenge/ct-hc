@@ -24,6 +24,7 @@ import Teleconsulta from './routes/HC/Teleconsulta/index.tsx'
 import SolcitacaoExames from './routes/HC/SolicitacaoExames/index.tsx'
 import Documentos from './routes/HC/Documentos/index.tsx'
 import Apresentacao from './routes/HC/Apresentacao/index.tsx'
+import Ajuda from './routes/HC/Ajuda/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
       { path: "teleconsulta", element: <Teleconsulta /> },
       { path: "exames", element: <SolcitacaoExames /> },
       { path: "documentos", element: <Documentos /> },
+      { path: "ajuda", element: <Ajuda /> },
       { path: "*", element: <Navigate to="/hc/erro" replace /> },
     ],
   },
