@@ -65,10 +65,10 @@ export const menuItems: MenuItem[] = [
         ],
     },
     { 
-        to: "/hc/termos",
-        icon: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1761568501/icon-termos-de-aceite_swh47k.png",
-        label: "Termos de Aceite",
-        title: "Ver os termos de Aceite",  
+        to: "/hc/ajuda",
+        icon: "https://res.cloudinary.com/dtbgsboo5/image/upload/v1761820084/Icon_-_Ajuda_nnwew1.png",
+        label: "Preciso de Ajuda",
+        title: "Clique aqui para ajuda",  
         activeColor: "text-[var(--color-blue)]"
     },
     { 
