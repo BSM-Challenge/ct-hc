@@ -27,10 +27,4 @@ export const perguntas: PerguntasProps[] = [
     resposta:
       "Atualmente o Portal só permite o reagendamento de CONSULTAS. As solicitações de agendamento estão disponíveis apenas para os Institutos: ICHC e IOT. Não é possível solicitar a antecipação de consultas.",
   },
-  {
-    pergunta:
-      "Posso solicitar o reagendamento para uma consulta e/ou exame passada?",
-    resposta:
-      "Atualmente o Portal só permite o reagendamento de CONSULTAS. As solicitações de agendamento estão disponíveis apenas para os Institutos: ICHC e IOT. Não é possível solicitar a antecipação da consulta. O sistema não permite reagendamento se teve uma falta seguida da outra. ATENÇÃO: neste caso, NÃO é possível pedir revalidação de receita.",
-  },
 ];
