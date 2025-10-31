@@ -17,7 +17,7 @@ export default function Ajuda() {
 
       <div className="mx-10">
         <Link
-          to=""
+          to="/hc/manuaisDoPortal"
           title="Clique aqui para ver os manuais do portal"
           className="
             flex justify-center w-full py-1 rounded-full
