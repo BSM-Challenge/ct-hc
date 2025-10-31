@@ -47,7 +47,7 @@ export default function Apresentacao() {
                     bg-[var(--color-white)] text-[var(--color-blue-0077C8)]
                     px-8 py-3 rounded-full font-bold text-3xl
                     hover:text-[var(--color-white)] 
-                    hover:bg-[var(--color-blue)] 
+                    hover:bg-[var(--color-blue-2563EB)] 
                     duration-300
                     outline-none
                     ">
