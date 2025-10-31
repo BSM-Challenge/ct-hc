@@ -50,6 +50,7 @@ html {
     --color-blue-D9EDF7: #D9EDF7;
     --color-blue-31708F: #31708F;
     --color-blue-2563EB: #2563EB;
+    --color-blue-1CB1B1: #1CB1B1;
     --color-blue-C3D9FF: rgba(195, 217, 255, .2);
     --color-red: #fb2c36; 
     --color-orange: #FF5722; 
@@ -72,6 +73,7 @@ html {
     --color-grey-hover: #b0b0b0;
     --color-grey-hover-2: #b0b0b054;
     --color-blue-hover: #0991eb26;
+    --color-cyan-hover: #E9F7F8;
 
     /* Shadows */
      --shadow-black-03: rgba(0, 0, 0, 0.3);
