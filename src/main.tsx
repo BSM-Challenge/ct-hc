@@ -25,6 +25,7 @@ import SolcitacaoExames from './routes/HC/SolicitacaoExames/index.tsx'
 import Documentos from './routes/HC/Documentos/index.tsx'
 import Apresentacao from './routes/HC/Apresentacao/index.tsx'
 import Ajuda from './routes/HC/Ajuda/index.tsx'
+import ManuaisPortal from './routes/HC/ManuaisPortal/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
       { path: "exames", element: <SolcitacaoExames /> },
       { path: "documentos", element: <Documentos /> },
       { path: "ajuda", element: <Ajuda /> },
+      { path: "manuaisDoPortal", element: <ManuaisPortal /> },
       { path: "*", element: <Navigate to="/hc/erro" replace /> },
     ],
   },
