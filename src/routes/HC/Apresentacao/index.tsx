@@ -19,13 +19,16 @@ export default function Apresentacao() {
             gap-10
             "
       >
-        <h1 className="font-bold 2xl:text-8xl sm:text-7xl text-[32px]">
+        <h1 className="font-bold 2xl:text-7xl xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-[32px]">
             Seja bem-vindo!
         </h1>
         <p className="
         text-center
         text-[20px]
         sm:text-4xl
+        md:text-4xl
+        lg:text-5xl
+        xl:text-5xl
         2xl:text-6xl
         ">
             Faça Login ou cadastre-se para aproveitar os recursos disponíveis.
@@ -39,7 +42,7 @@ export default function Apresentacao() {
             src="logo-hc-verde.png" 
             alt=""
             className="
-            max:2xl:w-[90%]
+            max-2xl:w-[90%]
             " 
             />
         </span>
@@ -50,7 +53,7 @@ export default function Apresentacao() {
                     to="" 
                     className="
                     bg-[var(--color-white)] text-[var(--color-blue-0077C8)]
-                    px-3 py-1 2xl:px-8 2xl:py-3 sm:px-5 rounded-full font-bold text-[24px] sm:text-3xl 
+                    px-3 py-1 2xl:px-10 2xl:py-3 xl:px-8 xl:py-3 lg:px-7 lg:py-3 md:px-6 md:py-3 sm:px-5 rounded-full font-bold text-[24px] sm:text-3xl 
                     hover:text-[var(--color-white)] 
                     hover:bg-[var(--color-blue-2563EB)] 
                     duration-300
@@ -65,7 +68,7 @@ export default function Apresentacao() {
                     className="
                     text-[var(--color-white)]
                     border-1
-                    px-3 py-1 2xl:px-8 2xl:py-3 sm:px-5 rounded-full font-bold text-[24px] sm:text-3xl 
+                    px-3 py-1 2xl:px-10 2xl:py-3 xl:px-8 xl:py-3 lg:px-7 lg:py-3 md:px-6 md:py-3 sm:px-5 rounded-full font-bold text-[24px] sm:text-3xl 
                     hover:bg-[var(--color-white-button-hover)] 
                     duration-300
                     outline-none
