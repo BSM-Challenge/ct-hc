@@ -4,4 +4,6 @@ export interface TitleHCProps {
     tamanho?: string;
     font?: string;
     line?: boolean;
+    icon?: boolean;
+    link?: string;
 }
