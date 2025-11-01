@@ -26,6 +26,7 @@ import Documentos from './routes/HC/Documentos/index.tsx'
 import Apresentacao from './routes/HC/Apresentacao/index.tsx'
 import Ajuda from './routes/HC/Ajuda/index.tsx'
 import ManuaisPortal from './routes/HC/ManuaisPortal/index.tsx'
+import CriarConta from './routes/HC/CriarConta/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,13 @@ const router = createBrowserRouter([
     element: <Apresentacao />,
     children: [
       { path: "", element: <Apresentacao /> },
+    ],
+  },
+  {
+    path: "/criarConta",
+    element: <CriarConta />,
+    children: [
+      { path: "", element: <CriarConta /> },
     ],
   },
   {

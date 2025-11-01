@@ -4,7 +4,7 @@ export default function Apresentacao() {
   return (
     <section
       className="
-            w-full min-h-screen bg-background-linear justify-center px-15 py-18 text-[var(--color-white)]
+            w-full min-h-screen bg-background-linear px-15 py-18 text-[var(--color-white)]
             xl:px-45
             lg:px-20
             md:px-0
