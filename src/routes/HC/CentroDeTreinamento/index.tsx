@@ -9,6 +9,8 @@ export default function CentroDeTreinamento() {
             <TitleHC
                 title="Centro de Treinamento"
                 subtitle="Escolha a área do site que deseja fazer o treinamento e receba instruções em cada etapa:"
+                icon={true}
+                link="/hc"
                 line={true}
              />
             <ul className="
