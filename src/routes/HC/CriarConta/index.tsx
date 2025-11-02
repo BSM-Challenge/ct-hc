@@ -19,31 +19,64 @@ export default function CriarConta() {
                     />
                 </span>
             </div>
-            <form className="flex flex-col gap-5 items-start px-28">
-                <label 
-                className="text-white text-4xl font-bold"
-                htmlFor="">Nome:</label>
-                <input
-                type="text"
-                placeholder="Digite seu nome completo"
-                className="w-[430px] px-5 py-3.5 rounded-[20px] 
-                border-2 border-[var(--color-blue-0077C8)] 
-                bg-[var(--color-white-04)] 
-                placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
-                /> 
-                <label 
-                className="text-white text-4xl font-bold"
-                htmlFor="">E-mail:</label>
-                <input
-                type="text"
-                placeholder="Digite seu E-mail"
-                className="w-[430px] px-5 py-3.5 rounded-[20px] 
-                border-2 border-[var(--color-blue-0077C8)] 
-                bg-[var(--color-white-04)] 
-                placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
-                /> 
-                
-            </form>
+            <div className="flex flex-col gap-[70px]">
+                <form className="flex flex-row justify-between gap-10 items-start px-28">
+                    <div className="flex flex-col gap-5">
+                        <label 
+                        className="text-white text-4xl font-bold"
+                        htmlFor="">Nome:</label>
+                        <input
+                        type="text"
+                        placeholder="Digite seu nome completo"
+                        className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        /> 
+                    </div>
+                    <div className="flex flex-col gap-5">
+                        <label 
+                        className="text-white text-4xl font-bold"
+                        htmlFor="">E-mail:</label>
+                        <input
+                        type="text"
+                        placeholder="Digite seu E-mail"
+                        className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        /> 
+                    </div>
+                </form>
+                <form className="flex flex-row justify-between gap-10 items-start px-28">
+                    <div className="flex flex-col gap-5">
+                        <label 
+                        className="text-white text-4xl font-bold"
+                        htmlFor="">Senha:</label>
+                        <input
+                        type="text"
+                        placeholder="Digite sua senha"
+                        className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        /> 
+                    </div>
+                    <div className="flex flex-col gap-5">
+                        <label 
+                        className="text-white text-4xl font-bold"
+                        htmlFor="">CPF:</label>
+                        <input
+                        type="text"
+                        placeholder="Digite seu CPF"
+                        className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        /> 
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
     )
