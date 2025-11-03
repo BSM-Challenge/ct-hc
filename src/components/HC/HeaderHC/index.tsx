@@ -61,7 +61,7 @@ export default function HeaderHC() {
             </button>
           </figure>
 
-          <ul className={`mt-2 flex flex-col ${isOpen ? "gap-3" : "gap-4"} text-lg font-medium`}>
+          <ul className={`mt-2 flex flex-col ${isOpen ? "gap-4" : "gap-4"} text-lg font-medium`}>
             <li>
               <Link
                 to="/perfil"
@@ -85,7 +85,7 @@ export default function HeaderHC() {
                     to={item.to}
                     onClick={(e) => handleItemClick(item.label, hasSubItems, e)}
                     className={`
-                      flex gap-3 items-center
+                      flex gap-5 items-center
                       rounded-lg px-2 py-2
                       transition-colors duration-300
                       hover:bg-[var(--color-grey-hover)]
@@ -101,31 +101,6 @@ export default function HeaderHC() {
                     <img src={item.icon} alt={item.label} className="w-6 h-6" />
                     {isOpen && <span className="text-sm">{item.label}</span>}
                   </Link>
-
-                  {/* Aqui fica os submenus */}
-                  {hasSubItems && openSubmenu === item.label && (
-                    <div className="
-                    absolute left-full top-0 ml-2
-                  bg-[var(--color-white)] shadow-xl rounded-lg 
-                    w-56 py-2 z-50
-                    ">
-                      {item.subItems!.map((sub, i) => (
-                        <button
-                          key={i}
-                          onClick={() => {
-                            navigate(sub.to || "/");
-                            setOpenSubmenu(null);
-                          }}
-                          className="
-                          flex justify-between items-center w-full px-4 py-2 text-sm
-                          hover:bg-[var(--color-grey-hover-2)] duration-200 cursor-pointer"
-                        >
-                          <span>{sub.label}</span>
-                          <FaAngleRight className="text-[var(--color-blue)]" />
-                        </button>
-                      ))}
-                    </div>
-                  )}
                 </li>
               );
             })}
