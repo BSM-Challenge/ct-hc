@@ -21,7 +21,7 @@ export default function MeusResultados() {
     { label: "Últimos 12 meses", value: "12", mensagem: "Nenhuma imagem disponível no momento" },
   ];
 
-  // 👇 Steps do tutorial explicativo
+  // Steps do tutorial explicativo
   const steps = [
     {
       target: ".btn-lab",
