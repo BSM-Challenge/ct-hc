@@ -2,6 +2,7 @@ import { useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
 import { RiCheckLine } from "react-icons/ri";
 import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
+import TutorialHC from "../../../components/HC/TutorialHC";
 
 type Filtro = "3" | "6" | "12" | "6a";
 
@@ -15,10 +16,20 @@ export default function MinhasAgendas() {
     { label: "Últimos 6 meses", value: "6a", mensagem: "Você não possui agendas nos últimos 6 meses." },
   ];
 
+  // Tutorial configurado para esta página
+  const steps = [    {
+      target: ".filtro-agenda",
+      content: "Você pode filtrar as suas agendas por período.",
+    },
+  ];
+
   return (
     <section className="flex flex-col min-h-full">
       <TitleHC title="Minhas agendas e reagendamentos" />
-      <ul className="flex justify-center gap-7">
+
+      <TutorialHC steps={steps} />
+
+      <ul className="filtro-agenda flex justify-center gap-7">
         {botoes.map((botao) => (
           <li key={botao.value}>
             <button
