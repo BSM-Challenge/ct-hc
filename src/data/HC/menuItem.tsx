@@ -51,20 +51,6 @@ export const menuItems: MenuItem[] = [
         activeColor: "text-[var(--color-blue)]"
     },
     { 
-        to: "/hc/pesquisa",
-        icon: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1761568417/icon-pesquisa-de-satisfacao_cblpth.png",
-        label: "Pesquisa de Satisfação",
-        title: "Ver a pesquisa de satisfação",  
-        activeColor: "text-[var(--color-blue)]",
-        subItems: [
-            { label: "Ambulatorial", to: "/hc/pesquisa/ambulatorial" },
-            { label: "Internação", to: "/hc/pesquisa/internacao" },
-            { label: "Pronto Socorro", to: "/hc/pesquisa/pronto-socorro" },
-            { label: "Teleconsulta", to: "/hc/pesquisa/teleconsulta" },
-            { label: "Farmácia Ambulatorial", to: "/hc/pesquisa/farmacia" },
-        ],
-    },
-    { 
         to: "/hc/ajuda",
         icon: "https://res.cloudinary.com/dtbgsboo5/image/upload/v1761820084/Icon_-_Ajuda_nnwew1.png",
         label: "Preciso de Ajuda",
