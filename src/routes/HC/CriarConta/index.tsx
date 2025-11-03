@@ -1,6 +1,6 @@
 export default function CriarConta() {
     return (
-    <section className="w-full min-h-screen bg-background-linear flex justify-center items-center px-80">
+    <section className="w-full min-h-screen bg-background-linear flex justify-center items-center px-70">
         <div className="w-full bg-[var(--color-white-button-hover)] rounded-[20px] border-2 border-white pr-7.5 pl-5 pt-7.5 pb-5">
             <div className="flex">
                 <span className="w-1/2 flex flex-col items-center gap-5">
@@ -20,7 +20,7 @@ export default function CriarConta() {
                 </span>
             </div>
             <div className="flex flex-col gap-[70px]">
-                <form className="flex flex-row justify-between gap-10 items-start px-28">
+                <form className="flex flex-wrap justify-between gap-10 items-start">
                     <div className="flex flex-col gap-5">
                         <label 
                         className="text-white text-4xl font-bold"
@@ -31,7 +31,7 @@ export default function CriarConta() {
                         className="w-[430px] px-5 py-3.5 rounded-[20px] 
                         border-2 border-[var(--color-blue-0077C8)] 
                         bg-[var(--color-white-04)] 
-                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none" 
                         /> 
                     </div>
                     <div className="flex flex-col gap-5">
@@ -44,11 +44,9 @@ export default function CriarConta() {
                         className="w-[430px] px-5 py-3.5 rounded-[20px] 
                         border-2 border-[var(--color-blue-0077C8)] 
                         bg-[var(--color-white-04)] 
-                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none" 
                         /> 
                     </div>
-                </form>
-                <form className="flex flex-row justify-between gap-10 items-start px-28">
                     <div className="flex flex-col gap-5">
                         <label 
                         className="text-white text-4xl font-bold"
@@ -59,7 +57,7 @@ export default function CriarConta() {
                         className="w-[430px] px-5 py-3.5 rounded-[20px] 
                         border-2 border-[var(--color-blue-0077C8)] 
                         bg-[var(--color-white-04)] 
-                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none" 
                         /> 
                     </div>
                     <div className="flex flex-col gap-5">
@@ -72,7 +70,7 @@ export default function CriarConta() {
                         className="w-[430px] px-5 py-3.5 rounded-[20px] 
                         border-2 border-[var(--color-blue-0077C8)] 
                         bg-[var(--color-white-04)] 
-                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold" 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none" 
                         /> 
                     </div>
                 </form>
