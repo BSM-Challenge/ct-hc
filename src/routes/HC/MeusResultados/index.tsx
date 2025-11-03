@@ -26,7 +26,6 @@ export default function MeusResultados() {
     {
       target: ".btn-lab",
       content: "Aqui você acessa seus resultados de laboratório.",
-      showOverlay: false,
     },
     {
       target: ".btn-img",
