@@ -19,10 +19,20 @@ export default function Apresentacao() {
             gap-10
             "
       >
-        <h1 className="font-bold 2xl:text-7xl xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-[32px]">
+        <h1 
+        className="
+        font-bold 
+        2xl:text-7xl 
+        xl:text-6xl 
+        lg:text-6xl 
+        md:text-6xl 
+        sm:text-6xl 
+        text-[30px]"
+        >
             Seja bem-vindo!
         </h1>
-        <p className="
+        <p 
+        className="
         text-center
         text-[20px]
         sm:text-4xl
@@ -33,7 +43,8 @@ export default function Apresentacao() {
         ">
             Faça Login ou cadastre-se para aproveitar os recursos disponíveis.
         </p>
-        <span className="
+        <span 
+        className="
         bg-[var(--color-white-button-hover)] rounded-[10px] my-3 sm:my-14
         flex justify-center
         max-2xl:max-w-[397px]
@@ -47,18 +58,25 @@ export default function Apresentacao() {
             />
         </span>
         <nav className="mt-3">
-            <ul className="flex flex-col sm:flex-row gap-10 sm:gap-12">
+            <ul 
+            className="
+            flex flex-col 
+            sm:flex-row 
+            gap-10 sm:gap-12"
+            >
                 <li>
                     <Link 
                     to="" 
                     className="
                     bg-[var(--color-white)] text-[var(--color-blue-0077C8)]
-                    px-3 py-1 2xl:px-10 2xl:py-3 xl:px-8 xl:py-3 lg:px-7 lg:py-3 md:px-6 md:py-3 sm:px-5 rounded-full font-bold text-[24px] sm:text-3xl 
+                    px-3 py-1 2xl:px-10 2xl:py-3 xl:px-8 xl:py-3 lg:px-7 lg:py-3 md:px-6 md:py-3 sm:px-5 
+                    rounded-full font-bold text-[24px] sm:text-3xl 
                     hover:text-[var(--color-white)] 
                     hover:bg-[var(--color-blue-2563EB)] 
                     duration-300
                     outline-none
-                    ">
+                    "
+                    >
                         Entrar na conta
                     </Link>
                 </li>
@@ -68,11 +86,13 @@ export default function Apresentacao() {
                     className="
                     text-[var(--color-white)]
                     border-1
-                    px-3 py-1 2xl:px-10 2xl:py-3 xl:px-8 xl:py-3 lg:px-7 lg:py-3 md:px-6 md:py-3 sm:px-5 rounded-full font-bold text-[24px] sm:text-3xl 
+                    px-3 py-1 2xl:px-10 2xl:py-3 xl:px-8 xl:py-3 lg:px-7 lg:py-3 md:px-6 md:py-3 sm:px-5 
+                    rounded-full font-bold text-[24px] sm:text-3xl 
                     hover:bg-[var(--color-white-button-hover)] 
                     duration-300
                     outline-none
-                    ">
+                    "
+                    >
                         Criar uma conta
                     </Link>
                 </li>
