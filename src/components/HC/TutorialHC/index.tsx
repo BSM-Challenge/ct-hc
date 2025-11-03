@@ -42,20 +42,28 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
   const targetEl = document.querySelector(step.target) as HTMLElement | null;
   const rect = targetEl?.getBoundingClientRect();
 
-  const tooltipStyle: React.CSSProperties = rect
-    ? {
-        top: rect.bottom + 10 + window.scrollY,
-        left: rect.left + window.scrollX,
-        position: "absolute",
-        background: "white",
-        color: "black",
-        padding: "12px 16px",
-        borderRadius: "10px",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-        zIndex: 10001,
-        maxWidth: "300px",
-      }
-    : { display: "none" };
+const tooltipStyle: React.CSSProperties = rect
+  ? {
+      position: "absolute",
+      background: "white",
+      color: "black",
+      padding: "12px 16px",
+      borderRadius: "10px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+      zIndex: 10001,
+      maxWidth: "300px",
+      transition: "all 0.3s ease",
+
+      // posição padrão
+      top: rect.bottom + 10 + window.scrollY,
+      left: rect.left + window.scrollX,
+
+      ...(step.target === ".filtro-agenda" && {
+        top: rect.bottom + 40 + window.scrollY, // move o balão mais pra baixo
+        left: rect.left + window.scrollX - 100, // move um pouco pra esquerda
+      }),
+    }
+  : { display: "none" };
 
   return (
     <>
@@ -77,16 +85,26 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
         <div
           style={{
             position: "absolute",
-            top: rect.top + window.scrollY - 40,
-            left: rect.left + window.scrollX - 350,
-            width: rect.width + 10,
-            height: rect.height + 10,
-            border: "3px solid var(--color-blue)",
-            borderRadius: "10px",
-            boxShadow: "0 0 20px rgba(255,255,255,0.9)",
             zIndex: 10002,
             pointerEvents: "none",
+            borderRadius: "10px",
+            width: rect.width + 10,
+            height: rect.height + 10,
+            // comportamento padrão do destaque
+            border: "3px solid var(--color-blue)",
+            boxShadow: "0 0 20px rgba(255,255,255,0.9)",
             background: "rgba(255,255,255,0.1)",
+
+            top: rect.top + window.scrollY - 40,
+            left: rect.left + window.scrollX - 350,
+
+            // ajustes específicos por elemento:
+            ...(step.target === ".filtro-agenda" && {
+              top: rect.top + window.scrollY + 20, // controla posição vertical
+              left: rect.left + window.scrollX + 20, // controla posição horizontal
+              width: rect.width - 50,
+              height: rect.height + 5,
+            }),
           }}
         ></div>
       )}
