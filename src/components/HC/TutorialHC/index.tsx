@@ -62,6 +62,12 @@ const tooltipStyle: React.CSSProperties = rect
         top: rect.bottom + 40 + window.scrollY, // move o balão mais pra baixo
         left: rect.left + window.scrollX - 100, // move um pouco pra esquerda
       }),
+
+      ...(step.target === ".conteudo-dinamico" && {
+        top: rect.bottom - 650 + window.scrollY, // move o balão mais pra baixo
+        left: rect.left + window.scrollX - 300, // move um pouco pra esquerda
+      }),
+
     }
   : { display: "none" };
 
@@ -105,6 +111,15 @@ const tooltipStyle: React.CSSProperties = rect
               width: rect.width - 50,
               height: rect.height + 5,
             }),
+
+            ...(step.target === ".conteudo-dinamico" && {
+              top: rect.top + window.scrollY + 20, // controla posição vertical
+              left: rect.left + window.scrollX + 20, // controla posição horizontal
+              width: rect.width - 50,
+              height: rect.height + 5,
+            }),
+
+            
           }}
         ></div>
       )}
