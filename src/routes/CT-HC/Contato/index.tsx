@@ -170,16 +170,16 @@ export default function Contato() {
               xl:w-[90%]">
                 <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
                 <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]" {...register("nome")} />
-                {errors.nome && (<p>{errors.nome.message}</p>)}
+                {errors.nome && (<p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>)}
 
                 <label htmlFor="email" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">E-mail:</label>
                 <input type="email" placeholder="Digite o seu e-mail" className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]" {...register("email")} />
-                {errors.email && (<p>{errors.email.message}</p>)}
+                {errors.email && (<p className="text-red-500 font-semibold text-sm">{errors.email.message}</p>)}
 
                 <label htmlFor="mensagem" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Mensagem:</label>
                 <textarea placeholder="Digite sua mensagem..."
                   className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none border-b-4 border-[var(--dark-blue-title)] lg:h-40 lg:mb-5 xl:mb-8" {...register("mensagem")} />
-                {errors.mensagem && (<p>{errors.mensagem.message}</p>)}
+                {errors.mensagem && (<p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>)}
 
                 <button type="submit" className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[45%] mb-5 self-center hover:bg-[var(--light-blue)] hover:text-[var(--color-blue-2)] hover:border-[var(--color-blue-2)] cursor-pointer transition-colors duration-300 xl:mb-0 xl:text-3xl"> {carregando ? "Enviando..." : "Enviar"}</button>
               </form>
