@@ -133,6 +133,26 @@ const tooltipStyle: React.CSSProperties = rect
               height: rect.height + 5,
             }),
 
+            ...(step.target === ".manual-portal" && {
+              top: rect.top + window.scrollY - 3, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
+
+            ...(step.target === ".accordion-ajuda" && {
+              top: rect.top + window.scrollY - 3, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
+            
+            ...(step.target === ".abrir-accordion" && {
+              top: rect.top + window.scrollY - 3, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
           }}
         ></div>
       )}
