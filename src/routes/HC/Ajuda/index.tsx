@@ -24,7 +24,7 @@ export default function Ajuda() {
       },
       {
       target: ".abrir-accordion",
-      content: "Clique em qualquel lugar desejado para abrir a pergunta",
+      content: "Clique em qualquer lugar desejado para abrir a pergunta",
       },
   ];  
 
