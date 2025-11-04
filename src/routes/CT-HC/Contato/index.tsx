@@ -190,14 +190,19 @@ export default function Contato() {
               </form>
             ) : (
               <div className="flex flex-col justify-center items-center gap-10 px-10 py-7 font-bold bg-[#FFFFFF] rounded-2xl">
-                <h4 className="text-4xl text-center text-[var(--dark-blue-title)]">
+                <h4 className="text-4xl text-center text-[var(--dark-blue-title)]
+                lg:text-3xl lg:w-full">
                   Mensagem enviada com sucesso! Obrigado pelo contato.
                 </h4>
-                <span>
-                  <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
+                <span className="flex justify-center items-center">
+                  <img
+                  src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png"
+                  alt="Imagem de check com a cor verde"
+                  className="w-[60%]"/>
                 </span>
                 <h5 className="text-3xl text-center">Deseja fazer outra pergunta?</h5>
-                <ul className="flex flex-col justify-center items-center w-full gap-5">
+                <ul className="flex flex-col justify-center items-center w-full gap-5
+                md:flex-row">
                   <li>
                     <button
                       title="Clique aqui para voltar"
@@ -222,9 +227,7 @@ export default function Contato() {
                       className="px-7 py-3 border-3  rounded-[10px]
                       bg-[var(--dark-blue-title)] text-[#FFFFFF] text-lg cursor-pointer
                       hover:bg-[var(--hover-button)] duration-500
-                    max-[870px]:w-full
-                    "
-                      >
+                      max-[870px]:w-full">
                       Sim, quero
                     </button>
                   </li>
