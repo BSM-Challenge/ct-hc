@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 
 export default function CriarConta() {
     return (
-    <section className="w-full min-h-screen bg-background-linear flex justify-center items-center px-70">
+    <section 
+    className="
+    w-full min-h-screen bg-background-linear 
+    flex justify-center items-center
+    px-70"
+    >
         <div className="w-full bg-[var(--color-white-button-hover)] rounded-[20px] border-2 border-white pr-7.5 pl-5 pt-7.5 pb-9">
             <div className="flex">
                 <span className="w-1/2 flex flex-col items-center gap-5">
