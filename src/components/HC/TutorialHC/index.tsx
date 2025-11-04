@@ -107,8 +107,8 @@ const tooltipStyle: React.CSSProperties = rect
             // ajustes específicos por elemento:
             ...(step.target === ".filtro-agenda" && {
               top: rect.top + window.scrollY + 20, // controla posição vertical
-              left: rect.left + window.scrollX + 20, // controla posição horizontal
-              width: rect.width - 50,
+              left: rect.left + window.scrollX + 150, // controla posição horizontal
+              width: rect.width - 300,
               height: rect.height + 5,
             }),
 
