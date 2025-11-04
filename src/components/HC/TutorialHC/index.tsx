@@ -119,7 +119,13 @@ const tooltipStyle: React.CSSProperties = rect
               height: rect.height + 5,
             }),
 
-            
+            ...(step.target === ".button-buscar" && {
+              top: rect.top + window.scrollY - 1, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
+
           }}
         ></div>
       )}
