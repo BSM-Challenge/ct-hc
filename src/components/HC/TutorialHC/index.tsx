@@ -72,6 +72,11 @@ const tooltipStyle: React.CSSProperties = rect
         top: rect.bottom - 650 + window.scrollY, // move o balão mais pra baixo
         left: rect.left + window.scrollX - 500, // move um pouco pra esquerda
       }),
+      
+      ...(step.target === ".conteudo-dinamico-receita" && {
+        top: rect.bottom - 650 + window.scrollY, // move o balão mais pra baixo
+        left: rect.left + window.scrollX - 500, // move um pouco pra esquerda
+      }),
 
     }
   : { display: "none" };
@@ -125,6 +130,13 @@ const tooltipStyle: React.CSSProperties = rect
             }),
             
             ...(step.target === ".conteudo-dinamico-resultados" && {
+              top: rect.top + window.scrollY - 40, // controla posição vertical
+              left: rect.left + window.scrollX - 300, // controla posição horizontal
+              width: rect.width - 50,
+              height: rect.height + 5,
+            }),
+            
+            ...(step.target === ".conteudo-dinamico-receita" && {
               top: rect.top + window.scrollY - 40, // controla posição vertical
               left: rect.left + window.scrollX - 300, // controla posição horizontal
               width: rect.width - 50,
