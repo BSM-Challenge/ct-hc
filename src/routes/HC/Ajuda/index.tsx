@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import TitleHC from "../../../components/HC/TitleHC";
 import { perguntas } from "../../../data/HC/perguntas";
 import { IoIosArrowDown } from "react-icons/io";
+import TutorialHC from "../../../components/HC/TutorialHC";
 
 export default function Ajuda() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -11,15 +12,34 @@ export default function Ajuda() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Tutorial configurado para esta página
+  const steps = [
+      {
+      target: ".manual-portal",
+      content: "Clicando aqui aparecerá os manuais do portal HC",
+      },
+      {
+      target: ".accordion-ajuda",
+      content: "Aqui estão algumas dúvidas frequentes do portal",
+      },
+      {
+      target: ".abrir-accordion",
+      content: "Clique em qualquel lugar desejado para abrir a pergunta",
+      },
+  ];  
+
   return (
     <section className="flex flex-col gap-3">
       <TitleHC title="Ajuda / Manuais" />
+
+      <TutorialHC steps={steps} />
 
       <div className="mx-10">
         <Link
           to="/hc/manuaisDoPortal"
           title="Clique aqui para ver os manuais do portal"
           className="
+            manual-portal
             flex justify-center w-full py-1 rounded-full
             text-[var(--color-blue-1CB1B1)] border-2 
             hover:bg-[var(--color-cyan-hover)] duration-300
@@ -28,12 +48,13 @@ export default function Ajuda() {
           Manuais do Portal
         </Link>
 
-        <ul className="mt-4 flex flex-col gap-2">
+        <ul className="accordion-ajuda mt-4 flex flex-col gap-2">
             {perguntas.map((item, index) => (
             <li key={index}>
                 <button
                 onClick={() => toggleCard(index)}
                 className={`
+                    abrir-accordion
                     w-full text-left p-4 rounded-lg shadow-sm 
                     flex justify-between items-center cursor-pointer
                     hover:bg-gray-50 duration-200
