@@ -1,11 +1,28 @@
 import { FaUserDoctor } from "react-icons/fa6";
 import TitleHC from "../../../components/HC/TitleHC";
 import { IoSearch } from "react-icons/io5";
+import TutorialHC from "../../../components/HC/TutorialHC";
 
 export default function SolcitacaoExames() {
+
+      // Tutorial configurado para esta página
+        const steps = [
+            {
+            target: ".input",
+            content: "Aqui você digita o seu CPF ou RGHC",
+            },
+            {
+            target: ".button-buscar",
+            content: "Clique aqui para buscar os exames",
+            },
+        ];
+
     return (
         <section className="flex flex-col gap-5 min-h-full">
             <TitleHC title="Solicitação de exames" />
+
+            <TutorialHC steps={steps} />
+
             <div className="
             w-full px-4 flex-grow
             max-lg:px-0
@@ -48,6 +65,7 @@ export default function SolcitacaoExames() {
                                    type="text"
                                    placeholder="RGHC ou CPF" 
                                    className="
+                                   input
                                    px-1 py-1 outline-none
                                    border-1 border-[var(--color-grey-818181)]
                                    focus:border-[var(--color-yellow)]
@@ -56,6 +74,7 @@ export default function SolcitacaoExames() {
                                  <button 
                                  title="Clique aqui para buscar"
                                  className="
+                                 button-buscar
                                  flex justify-center items-center gap-1 py-2 mt-3
                                  bg-[var(--color-blue-428BCA)] text-[var(--color-white)]
                                  hover:bg-[var(--color-blue)] duration-300 cursor-pointer
