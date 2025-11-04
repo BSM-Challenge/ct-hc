@@ -118,7 +118,13 @@ const tooltipStyle: React.CSSProperties = rect
               width: rect.width - 50,
               height: rect.height + 5,
             }),
-
+            
+            ...(step.target === ".conteudo-dinamico-resultados" && {
+              top: rect.top + window.scrollY - 40, // controla posição vertical
+              left: rect.left + window.scrollX - 300, // controla posição horizontal
+              width: rect.width - 50,
+              height: rect.height + 5,
+            }),
             ...(step.target === ".input" && {
               top: rect.top + window.scrollY - 1, // controla posição vertical
               left: rect.left + window.scrollX + 0, // controla posição horizontal
