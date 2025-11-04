@@ -209,7 +209,9 @@ export default function Contato() {
                           mensagem: "",
                         })
                       }}
-                      >
+                      className="p-3 border-4 border-[var(--dark-blue-title)] rounded-[10px]
+                    text-[var(--dark-blue-title)] text-lg cursor-pointer
+                    hover:bg-[var(--hover-button)] hover:text-[var(--color-white)] duration-500">
                       Não, obrigado
                     </button>
                   </li>
@@ -217,8 +219,13 @@ export default function Contato() {
                     <button
                       title="Clique aqui para fazer outra pergunta"
                       onClick={fazerOutraPergunta}
+                      className="px-7 py-3 border-3  rounded-[10px]
+                      bg-[var(--dark-blue-title)] text-[#FFFFFF] text-lg cursor-pointer
+                      hover:bg-[var(--hover-button)] duration-500
+                    max-[870px]:w-full
+                    "
                       >
-                      Sim, gostaria
+                      Sim, quero
                     </button>
                   </li>
                 </ul>
