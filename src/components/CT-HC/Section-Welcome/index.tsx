@@ -43,21 +43,46 @@ export default function SectionWelcome() {
           Um tutorial passo a passo em tempo real com instruções destacadas para
           guiar cada ação.
         </p>
-        <div className="flex justify-center mt-2 lg:mt-10">
-          <Link
-            to="/hc"
+        <ul className="mx-20 flex justify-between mt-2 lg:mt-10">
+          <li className="">
+            <Link
+              to="/hc"
+              title="Clique aqui para ir ao portal com treinamento"
+              className="
+              flex bg-white text-[var(--color-blue-0077C8)] py-4
+              rounded-[20px] shadow-[2px_2px_20px_var(--color-blue-0077C8)]
+              hover:bg-[var(--color-cyan-hover)] duration-300
+              lg:text-xl
+              "
+            >
+              <figure className="flex justify-center items-center">
+                <figcaption className="font-bold">Portal do <br /> paciente HC</figcaption>
+                <img 
+                src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1762224323/logoBotao_wfgyuo.png" 
+                alt="Logo do HC"
+                className="w-[45%]"
+                />
+              </figure>
+            </Link>
+          </li>
+          <li>
+          <a
+            href="#sobre"
+            title="Clique aqui para saber mais sobre o projeto"
             className="
-            inline-flex items-center justify-center px-5 py-2 font-semibold
-            text-sm bg-[var(--color-blue-2563EB)] text-[var(--color-white)]
-            shadow-[var(--shadow-blue)] hover:bg-[var(--color-blue)] duration-300
-            lg:px-7 lg:py-3 rounded-full   
-            md:text-base"
+              flex flex-col sm:flex-col items-center justify-center
+              px-5 py-2 text-sm 
+              bg-[var(--color-blue-2563EB)] text-[var(--color-white)]
+              shadow-[var(--shadow-blue)] hover:bg-[var(--color-blue)] duration-300
+              lg:px-12 lg:py-4 lg:text-xl
+               rounded-[20px] md:text-base
+            "
           >
-            Clique aqui e <br className="hidden sm:block" />
-            Saiba mais!
-            <FaCircleArrowRight className="text-lg ml-2 sm:text-xl lg:text-2xl " />
-          </Link>
-        </div>
+            Clique aqui e
+            <span className="sm:ml-2 font-bold">Saiba mais!</span>
+          </a>
+          </li>
+        </ul>
       </div>
 
       <div className="w-full flex justify-center px-4 lg:w-1/2 lg:-mt-45  lg:px-0">
