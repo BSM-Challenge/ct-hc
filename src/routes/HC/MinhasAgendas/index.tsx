@@ -17,9 +17,14 @@ export default function MinhasAgendas() {
   ];
 
   // Tutorial configurado para esta página
-  const steps = [    {
+  const steps = [    
+    {
       target: ".filtro-agenda",
       content: "Você pode filtrar as suas agendas por período.",
+    },
+    {
+      target: ".conteudo-dinamico",
+      content: "Aqui onde será apresentado as suas agendas.",
     },
   ];
 
