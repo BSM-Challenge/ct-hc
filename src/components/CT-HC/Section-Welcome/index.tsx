@@ -1,4 +1,3 @@
-import { FaCircleArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 export default function SectionWelcome() {
@@ -43,7 +42,11 @@ export default function SectionWelcome() {
           Um tutorial passo a passo em tempo real com instruções destacadas para
           guiar cada ação.
         </p>
-        <ul className="mx-20 flex justify-between mt-2 lg:mt-10">
+        <ul className="
+        mx-20 flex justify-between mt-2 min-[1093px]:mt-10
+        max-[1360px]:mx-10
+        max-[1093px]:flex-col max-[1093px]:gap-5 max-[1093px]:mb-8
+        ">
           <li className="">
             <Link
               to="/hc"
@@ -52,15 +55,25 @@ export default function SectionWelcome() {
               flex bg-white text-[var(--color-blue-0077C8)] py-4
               rounded-[20px] shadow-[2px_2px_20px_var(--color-blue-0077C8)]
               hover:bg-[var(--color-cyan-hover)] duration-300
-              lg:text-xl
+              xl:text-xl
+              max-[1210px]:text-sm
               "
             >
-              <figure className="flex justify-center items-center">
+              <figure className="
+              flex justify-center items-center
+              max-[1093px]:w-full
+              ">
                 <figcaption className="font-bold">Portal do <br /> paciente HC</figcaption>
                 <img 
                 src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1762224323/logoBotao_wfgyuo.png" 
                 alt="Logo do HC"
-                className="w-[45%]"
+                className="
+                w-[45%]
+                max-[1093px]:w-[30%]
+                max-lg:w-[15%]
+                max-md:w-[20%]
+                max-sm:w-[30%]
+                "
                 />
               </figure>
             </Link>
@@ -74,8 +87,11 @@ export default function SectionWelcome() {
               px-5 py-2 text-sm 
               bg-[var(--color-blue-2563EB)] text-[var(--color-white)]
               shadow-[var(--shadow-blue)] hover:bg-[var(--color-blue)] duration-300
-              lg:px-12 lg:py-4 lg:text-xl
-               rounded-[20px] md:text-base
+              rounded-[20px]
+              lg:px-12 lg:py-4 
+              xl:text-xl
+              max-[1210px]:text-sm
+              md:text-base
             "
           >
             Clique aqui e
