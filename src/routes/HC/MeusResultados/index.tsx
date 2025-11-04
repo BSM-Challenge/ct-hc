@@ -35,6 +35,10 @@ export default function MeusResultados() {
       target: ".filtro-meses",
       content: "Você pode filtrar os resultados por período.",
     },
+    {
+      target: ".conteudo-dinamico",
+      content: "Aqui onde será apresentado os seus resultados.",
+    },
   ];
 
   return (
