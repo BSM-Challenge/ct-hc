@@ -93,15 +93,21 @@ export default function CriarConta() {
                 >
                 <Link 
                 to="#"
+                title="Clique aqui para seguir para a página de login da conta."
                 className="text-white text-xl"
                 >
-                    Já tem uma conta? <span className="font-bold">Clique aqui.</span>
+                    Já tem uma conta? <span className="font-bold hover:underline duration-300">Clique aqui.</span>
                 </Link>
                 </li>
                 <div className="pt-16 pl-3">
                 <Link 
                 to=""
-                className="text-white text-center px-7 py-3 border-2 border-white rounded-[30px] text-[24px]"
+                title="Clique aqui para entrar."
+                className="
+                text-white text-center px-7 py-3 
+                border-2 border-white 
+                rounded-[30px] text-[24px] 
+                hover:bg-[var(--color-white-button-hover)] duration-300"
                 >
                     Entrar
                 </Link>
@@ -110,4 +116,4 @@ export default function CriarConta() {
         </div>
     </section>
     )
-}
+} 
