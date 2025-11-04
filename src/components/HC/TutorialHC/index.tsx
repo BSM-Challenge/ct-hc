@@ -68,6 +68,11 @@ const tooltipStyle: React.CSSProperties = rect
         left: rect.left + window.scrollX - 300, // move um pouco pra esquerda
       }),
 
+      ...(step.target === ".conteudo-dinamico-resultados" && {
+        top: rect.bottom - 650 + window.scrollY, // move o balão mais pra baixo
+        left: rect.left + window.scrollX - 500, // move um pouco pra esquerda
+      }),
+
     }
   : { display: "none" };
 
@@ -125,6 +130,7 @@ const tooltipStyle: React.CSSProperties = rect
               width: rect.width - 50,
               height: rect.height + 5,
             }),
+
             ...(step.target === ".input" && {
               top: rect.top + window.scrollY - 1, // controla posição vertical
               left: rect.left + window.scrollX + 0, // controla posição horizontal
