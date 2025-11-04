@@ -101,7 +101,7 @@ export default function CriarConta() {
                 <div className="pt-16 pl-3">
                 <Link 
                 to=""
-                className="text-white text-center p-5 border-2 border-white rounded-[100%]"
+                className="text-white text-center px-7 py-3 border-2 border-white rounded-[30px] text-[24px]"
                 >
                     Entrar
                 </Link>
