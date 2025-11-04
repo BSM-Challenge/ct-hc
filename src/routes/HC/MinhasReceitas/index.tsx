@@ -31,6 +31,10 @@ export default function MinhasReceitas() {
       target: ".filtro-meses",
       content: "Você pode filtrar as receitas por período.",
     },
+    {
+      target: ".conteudo-dinamico-receita",
+      content: "Aqui onde será apresentado as suas receitas.",
+    },
   ];
 
   return (
