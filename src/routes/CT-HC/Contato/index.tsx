@@ -1,6 +1,30 @@
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 
 export default function Contato() {
+
+  const mensagemSchema = z.object({
+    nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
+    email: z.email({ message: "E-mail deve conter '@' e '.', insira um e-mail válido." }),
+    mensagem: z
+      .string()
+      .min(10, "Mensagem deve conter no mínimo 10 caracteres."),
+  });
+
+  type MensagemInput = z.infer<typeof mensagemSchema>;
+
+  const { register, handleSubmit, formState: { errors }, reset} = useForm<MensagemInput>({
+    resolver: zodResolver(mensagemSchema),
+    mode: "onChange",
+  });
+
+  const onSubmit = () => {
+    reset();
+  }
+  
   return (
     <main className="pt-30 pb-5 bg-[var(--light-blue)] flex-grow max-w-screen px-[40px]
     sm:pt-30 sm:px-15 lg:pt-40 2xl:px-40">
@@ -118,19 +142,22 @@ export default function Contato() {
             <h2 className="text-[var(--dark-blue-title)] text-4xl text-center font-bold mb-8
             sm:text-center sm:text-3xl md:text-4xl lg:self-center lg:mb-5">Mande uma mensagem!</h2>
 
-            <form className="flex flex-col w-[80%] h-[100%]
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-[80%] h-[100%]
             sm:w-[80%] md:w-[70%] lg:py-0 lg:px-10 lg:w-[100%] xl:w-[90%]">
               <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
-              <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)] "/>
+              <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]" {...register("nome")} />
+              {errors.nome && (<p>{errors.nome.message}</p>)}
 
               <label htmlFor="email" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">E-mail:</label>
-              <input type="email" placeholder="Digite o seu e-mail" className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]" />
+              <input type="email" placeholder="Digite o seu e-mail" className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]" {...register("email")} />
+              {errors.email && (<p>{errors.email.message}</p>)}
 
               <label htmlFor="mensagem" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Mensagem:</label>
               <textarea placeholder="Digite sua mensagem..."
-              className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none border-b-4 border-[var(--dark-blue-title)] lg:h-40 lg:mb-5 xl:mb-8" />
+              className="bg-[var(--light-blue)] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-8 w-[100%] h-40 resize-none border-b-4 border-[var(--dark-blue-title)] lg:h-40 lg:mb-5 xl:mb-8" {...register("mensagem")} />
+              {errors.mensagem && (<p>{errors.mensagem.message}</p>)}
 
-              <button className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[45%] mb-5 self-center hover:bg-[var(--light-blue)] hover:text-[var(--color-blue-2)] hover:border-[var(--color-blue-2)] cursor-pointer transition-colors duration-300 xl:mb-0 xl:text-3xl">Enviar</button>
+              <button type="submit" className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[45%] mb-5 self-center hover:bg-[var(--light-blue)] hover:text-[var(--color-blue-2)] hover:border-[var(--color-blue-2)] cursor-pointer transition-colors duration-300 xl:mb-0 xl:text-3xl">Enviar</button>
             </form>
           </div>
           
