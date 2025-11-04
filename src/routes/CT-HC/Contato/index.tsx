@@ -159,15 +159,20 @@ export default function Contato() {
         lg:rounded-bl-none lg:rounded-tl-none lg:mb-0 lg:w-1/2">
 
           <div className="flex flex-col items-center w-[100%] h-[100%] pt-6 sm:items-center xl:py-13">
-            <h2 className="text-[var(--dark-blue-title)] text-4xl text-center font-bold mb-8
-            sm:text-center sm:text-3xl md:text-4xl lg:self-center lg:mb-5">Mande uma mensagem!</h2>
-
+            
 
             {!mensagem ? (
               <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-[80%] h-[100%]
               sm:w-[80%] md:w-[70%]
               lg:py-0 lg:px-10 lg:w-[100%]
               xl:w-[90%]">
+                <h2 className="text-[var(--dark-blue-title)] text-4xl text-center font-bold mb-8
+                sm:text-center sm:text-3xl
+                md:text-4xl
+                lg:self-center lg:mb-5">
+                  Mande uma mensagem!
+                </h2>
+
                 <label htmlFor="nome" className="text-[var(--dark-blue-title)] font-bold text-3xl mb-1">Nome:</label>
                 <input type="text" placeholder="Digite o seu nome" className="bg-[var(--light-blue)] w-[100%] placeholder:text-[var(--dark-blue-2)] placeholder:font-bold rounded-md py-[5px] pl-3 mb-5 border-b-4 border-[var(--dark-blue-title)]" {...register("nome")} />
                 {errors.nome && (<p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>)}
@@ -184,15 +189,15 @@ export default function Contato() {
                 <button type="submit" className="text-[var(--dark-blue-title)] text-2xl font-bold border-4 border-[var(--dark-blue-title)] rounded-xl p-2 w-[45%] mb-5 self-center hover:bg-[var(--light-blue)] hover:text-[var(--color-blue-2)] hover:border-[var(--color-blue-2)] cursor-pointer transition-colors duration-300 xl:mb-0 xl:text-3xl"> {carregando ? "Enviando..." : "Enviar"}</button>
               </form>
             ) : (
-              <div>
-                <h4 className="text-4xl text-center">
+              <div className="flex flex-col justify-center items-center gap-10 px-10 py-7 font-bold bg-[#FFFFFF] rounded-2xl">
+                <h4 className="text-4xl text-center text-[var(--dark-blue-title)]">
                   Mensagem enviada com sucesso! Obrigado pelo contato.
                 </h4>
                 <span>
                   <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
                 </span>
                 <h5 className="text-3xl text-center">Deseja fazer outra pergunta?</h5>
-                <ul className="flex justify-around w-full">
+                <ul className="flex flex-col justify-center items-center w-full gap-5">
                   <li>
                     <button
                       title="Clique aqui para voltar"
