@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 export default function CriarConta() {
     return (
     <section 
-    className="
-    w-full min-h-screen bg-background-linear 
-    flex justify-center items-center
-    px-70"
-    >
+    className="w-full min-h-screen bg-background-linear flex justify-center items-center px-70">
         <div className="w-full bg-[var(--color-white-button-hover)] rounded-[20px] border-2 border-white pr-7.5 pl-5 pt-7.5 pb-9">
             <div className="flex">
                 <span className="w-1/2 flex flex-col items-center gap-5">
@@ -27,7 +23,7 @@ export default function CriarConta() {
                 </span>
             </div>
             <div className="flex flex-col gap-[70px]">
-                <form className="flex flex-wrap justify-around gap-10 items-start">
+                <form className="flex flex-wrap justify-around gap-10">
                     <div className="flex flex-col gap-5">
                         <label 
                         className="text-white text-4xl font-bold"
