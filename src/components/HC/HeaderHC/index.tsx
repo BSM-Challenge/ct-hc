@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { MdMenu, MdMenuOpen } from "react-icons/md";
+import { MdMenu, MdMenuOpen, MdOutlineMenu } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 
 import { menuItems } from "../../../data/HC/menuItem";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaRegBell } from "react-icons/fa";
+import { GoHome } from "react-icons/go";
 
 export default function HeaderHC() {
   const [isOpen, setIsOpen] = useState(true);
@@ -134,34 +135,22 @@ export default function HeaderHC() {
       {/* Header Mobile */}
       <header className="lg:hidden fixed bottom-0 left-0 w-full bg-white shadow-2xl z-50">
         <nav>
-          <ul className="flex justify-around py-3">
+          <ul className="flex justify-around items-center py-3">
             <li>
               <Link to="/hc" className="flex flex-col items-center gap-1">
-                <img
-                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761569683/icon-home-ativado-mobile_amlvhj.png"
-                  alt="Ícone do Início"
-                  className="w-6 h-6"
-                />
+                <GoHome size={25} />
                 <span className="text-xs font-medium">Início</span>
               </Link>
             </li>
             <li>
               <Link to="hc/menu" className="flex flex-col items-center gap-1">
-                <img
-                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761568370/icon-menu-fechado_pehykk.png"
-                  alt="Ícone do menu"
-                  className="w-6 h-6"
-                />
+                <MdOutlineMenu size={25} />
                 <span className="text-xs">Menu</span>
               </Link>
             </li>
             <li>
               <Link to="hc/avisos" className="flex flex-col items-center gap-1">
-                <img
-                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761569728/icon-notificacoes_nqqltk.png"
-                  alt="Ícone de notificações"
-                  className="w-6 h-6"
-                />
+                <FaRegBell size={30} />
                 <span className="text-xs">Avisos</span>
               </Link>
             </li>
