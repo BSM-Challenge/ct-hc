@@ -28,6 +28,8 @@ import Ajuda from './routes/HC/Ajuda/index.tsx'
 import ManuaisPortal from './routes/HC/ManuaisPortal/index.tsx'
 import CriarConta from './routes/HC/CriarConta/index.tsx'
 import EntrarConta from './routes/HC/EntrarConta/index.tsx'
+import MenuMobile from './routes/HC/MenuMobile/index.tsx'
+import AvisosMobile from './routes/HC/AvisosMobile/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,8 @@ const router = createBrowserRouter([
       { path: "documentos", element: <Documentos /> },
       { path: "ajuda", element: <Ajuda /> },
       { path: "manuaisDoPortal", element: <ManuaisPortal /> },
+      { path: "menuMobile", element: <MenuMobile /> },
+      { path: "avisosMobile", element: <AvisosMobile /> },
       { path: "*", element: <Navigate to="/hc/erro" replace /> },
     ],
   },
