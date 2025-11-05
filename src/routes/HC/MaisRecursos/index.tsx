@@ -8,6 +8,8 @@ export default function MaisRecursos() {
                 title="Acessibilidade > Mais recursos"
                 subtitle="Saiba o que cada funcionalidade faz, e torne sua experiência mais acessível!"
                 line={true}
+                icon={true}
+                link="/hc"
             />
             <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
                 <CardMaisRecursos 
