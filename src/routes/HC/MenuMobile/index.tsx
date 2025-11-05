@@ -1,6 +1,4 @@
 import { IoPersonCircle } from "react-icons/io5";
-import { Pdfs } from "../../../data/HC/pdfs";
-import { MdPictureAsPdf } from "react-icons/md";
 import { menuItems } from "../../../data/HC/menuItem";
 import { Link } from "react-router-dom";
 
