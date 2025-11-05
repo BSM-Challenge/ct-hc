@@ -129,6 +129,70 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
             background: "rgba(255,255,255,0.1)",
             top: rect.top + window.scrollY - 40,
             left: rect.left + window.scrollX - 350,
+          
+            // ajustes específicos por elemento:
+            ...(step.target === ".filtro-agenda" && {
+              top: rect.top + window.scrollY + 20, // controla posição vertical
+              left: rect.left + window.scrollX + 150, // controla posição horizontal
+              width: rect.width - 300,
+              height: rect.height + 5,
+            }),
+
+            ...(step.target === ".conteudo-dinamico" && {
+              top: rect.top + window.scrollY + 20, // controla posição vertical
+              left: rect.left + window.scrollX + 20, // controla posição horizontal
+              width: rect.width - 50,
+              height: rect.height + 5,
+            }),
+            
+            ...(step.target === ".conteudo-dinamico-resultados" && {
+              top: rect.top + window.scrollY - 40, // controla posição vertical
+              left: rect.left + window.scrollX - 300, // controla posição horizontal
+              width: rect.width - 50,
+              height: rect.height + 5,
+            }),
+            
+            ...(step.target === ".conteudo-dinamico-receita" && {
+              top: rect.top + window.scrollY - 40, // controla posição vertical
+              left: rect.left + window.scrollX - 300, // controla posição horizontal
+              width: rect.width - 50,
+              height: rect.height + 5,
+            }),
+
+            ...(step.target === ".input" && {
+              top: rect.top + window.scrollY - 1, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
+
+            ...(step.target === ".button-buscar" && {
+              top: rect.top + window.scrollY - 1, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
+
+            ...(step.target === ".manual-portal" && {
+              top: rect.top + window.scrollY - 3, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
+
+            ...(step.target === ".accordion-ajuda" && {
+              top: rect.top + window.scrollY - 3, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
+            
+            ...(step.target === ".abrir-accordion" && {
+              top: rect.top + window.scrollY - 3, // controla posição vertical
+              left: rect.left + window.scrollX + 0, // controla posição horizontal
+              width: rect.width - 0,
+              height: rect.height + 5,
+            }),
           }}
         ></div>
       )}
