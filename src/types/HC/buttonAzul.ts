@@ -4,4 +4,5 @@ export interface ButtonAzulProps {
     py?: number;
     titleMessage: string;
     children: React.ReactNode;
+    className: string;
 }
