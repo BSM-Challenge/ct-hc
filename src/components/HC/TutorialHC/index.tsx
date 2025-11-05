@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import ModalTreinamentoFinalizado from "../ModalTreinamentoFinalizado";
+import ModalAvaliacao from "../ModalAvaliacao";
+import { IoMdClose } from "react-icons/io";
 
 interface Step {
-  target: string; // seletor CSS do elemento (ex: ".btn-consultar")
-  content: string; // texto explicativo
+  target: string;
+  content: string;
 }
 
 interface TutorialHCProps {
@@ -13,50 +15,66 @@ interface TutorialHCProps {
 export default function TutorialHC({ steps }: TutorialHCProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [show, setShow] = useState(true);
-  const [showModal, setShowModal] = useState(false);
+  const [showModalFinalizado, setShowModalFinalizado] = useState(false);
+  const [showModalAvaliacao, setShowModalAvaliacao] = useState(false);
   const [ready, setReady] = useState(false);
 
-  // Espera o DOM renderizar completamente
+  // Aguarda o DOM renderizar completamente
   useEffect(() => {
     const timeout = setTimeout(() => setReady(true), 300);
     return () => clearTimeout(timeout);
   }, []);
 
+  // Faz scroll até o elemento atual
   useEffect(() => {
     if (!show || !ready) return;
-
     const step = steps[currentStep];
     const targetEl = document.querySelector(step.target) as HTMLElement | null;
-
     if (!targetEl) return;
-
-    // Rolagem automática até o elemento
     targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, [currentStep, show, ready]);
+  }, [currentStep, show, ready, steps]);
 
-  if (!show || !ready) return null;
+  // só checa se o DOM está pronto
+  if (!ready) return null;
 
-  if (showModal) return <ModalTreinamentoFinalizado />;
+  // Mostra o modal de "Treinamento Finalizado"
+  if (showModalFinalizado)
+    return (
+      <ModalTreinamentoFinalizado
+        onClose={() => setShowModalFinalizado(false)}
+        onFeedback={() => {
+          setShowModalFinalizado(false);
+          setShowModalAvaliacao(true);
+        }}
+      />
+    );
+
+  // Mostra o modal de "Avaliação"
+  if (showModalAvaliacao)
+    return <ModalAvaliacao onClose={() => setShowModalAvaliacao(false)} />;
+
+  // Tutorial normal (balão e destaque)
+  if (!show) return null;
 
   const step = steps[currentStep];
   const targetEl = document.querySelector(step.target) as HTMLElement | null;
   const rect = targetEl?.getBoundingClientRect();
 
-const tooltipStyle: React.CSSProperties = rect
-  ? {
-      position: "absolute",
-      background: "white",
-      color: "black",
-      padding: "12px 16px",
-      borderRadius: "10px",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-      zIndex: 10001,
-      maxWidth: "300px",
-      transition: "all 0.3s ease",
+  const tooltipStyle: React.CSSProperties = rect
+    ? {
+        position: "absolute",
+        background: "white",
+        color: "black",
+        padding: "12px 16px",
+        borderRadius: "10px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+        zIndex: 10001,
+        maxWidth: "300px",
+        transition: "all 0.3s ease",
 
-      // posição padrão
-      top: rect.bottom + 10 + window.scrollY,
-      left: rect.left + window.scrollX,
+        // posição padrão
+        top: rect.bottom + 10 + window.scrollY,
+        left: rect.left + window.scrollX,
 
       ...(step.target === ".filtro-agenda" && {
         top: rect.bottom + 40 + window.scrollY, // move o balão mais pra baixo
@@ -78,8 +96,8 @@ const tooltipStyle: React.CSSProperties = rect
         left: rect.left + window.scrollX - 500, // move um pouco pra esquerda
       }),
 
-    }
-  : { display: "none" };
+      }
+    : { display: "none" };
 
   return (
     <>
@@ -106,103 +124,35 @@ const tooltipStyle: React.CSSProperties = rect
             borderRadius: "10px",
             width: rect.width + 10,
             height: rect.height + 10,
-            // comportamento padrão do destaque
             border: "3px solid var(--color-blue)",
             boxShadow: "0 0 20px rgba(255,255,255,0.9)",
             background: "rgba(255,255,255,0.1)",
-
             top: rect.top + window.scrollY - 40,
             left: rect.left + window.scrollX - 350,
-
-            // ajustes específicos por elemento:
-            ...(step.target === ".filtro-agenda" && {
-              top: rect.top + window.scrollY + 20, // controla posição vertical
-              left: rect.left + window.scrollX + 150, // controla posição horizontal
-              width: rect.width - 300,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".conteudo-dinamico" && {
-              top: rect.top + window.scrollY + 20, // controla posição vertical
-              left: rect.left + window.scrollX + 20, // controla posição horizontal
-              width: rect.width - 50,
-              height: rect.height + 5,
-            }),
-            
-            ...(step.target === ".conteudo-dinamico-resultados" && {
-              top: rect.top + window.scrollY - 40, // controla posição vertical
-              left: rect.left + window.scrollX - 300, // controla posição horizontal
-              width: rect.width - 50,
-              height: rect.height + 5,
-            }),
-            
-            ...(step.target === ".conteudo-dinamico-receita" && {
-              top: rect.top + window.scrollY - 40, // controla posição vertical
-              left: rect.left + window.scrollX - 300, // controla posição horizontal
-              width: rect.width - 50,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".input" && {
-              top: rect.top + window.scrollY - 1, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".button-buscar" && {
-              top: rect.top + window.scrollY - 1, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".manual-portal" && {
-              top: rect.top + window.scrollY - 3, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".accordion-ajuda" && {
-              top: rect.top + window.scrollY - 3, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-            
-            ...(step.target === ".abrir-accordion" && {
-              top: rect.top + window.scrollY - 3, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
           }}
         ></div>
       )}
 
-      {/* Balão com instrução */}
+      {/* Balão de instrução */}
       <div style={tooltipStyle}>
         <p className="mb-3">{step.content}</p>
+
         <div className="flex justify-end gap-2">
+          {/* Botão Voltar */}
           {currentStep > 0 && (
             <button
               onClick={() => setCurrentStep((s) => s - 1)}
-              className="
-              px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)]
-              cursor-pointer text-[var(--color-white)]
-              "
+              className="px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)] cursor-pointer text-[var(--color-white)]"
             >
               Voltar
             </button>
           )}
+
+          {/* Botão Próximo ou Concluir */}
           {currentStep < steps.length - 1 ? (
             <button
               onClick={() => setCurrentStep((s) => s + 1)}
-              className="
-                 px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)]
-               text-[var(--color-white)] cursor-pointer
-               "
+              className="px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)] text-[var(--color-white)] cursor-pointer"
             >
               Próximo
             </button>
@@ -210,19 +160,22 @@ const tooltipStyle: React.CSSProperties = rect
             <button
               onClick={() => {
                 setShow(false);
-                setShowModal(true);
+                setShowModalFinalizado(true); // Abre o modal no final
               }}
-              className="px-3 py-1 rounded bg-[var(--color-blue)] text-[var(--color-white)]"
+              className="px-3 py-1 rounded bg-[var(--color-blue)] text-[var(--color-white)] cursor-pointer"
             >
               Concluir
             </button>
           )}
         </div>
+
+        {/* Botão Fechar (X) */}
         <button
           onClick={() => setShow(false)}
-          className="absolute top-1 right-2 text-sm text-gray-500"
+          title="Fechar o treinamento"
+          className="absolute top-1 right-1 text-sm text-[var(--color-grey)] cursor-pointer"
         >
-          ✕
+          <IoMdClose size={20} />
         </button>
       </div>
     </>
