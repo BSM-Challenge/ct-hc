@@ -4,14 +4,13 @@ import { MdMenu, MdMenuOpen, MdOutlineMenu } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 
 import { menuItems } from "../../../data/HC/menuItem";
-import { FaAngleRight, FaRegBell } from "react-icons/fa";
+import { FaRegBell } from "react-icons/fa";
 import { GoHome } from "react-icons/go";
 
 export default function HeaderHC() {
   const [isOpen, setIsOpen] = useState(true);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -138,20 +137,63 @@ export default function HeaderHC() {
           <ul className="flex justify-around items-center py-3">
             <li>
               <Link to="/hc" className="flex flex-col items-center gap-1">
-                <GoHome size={25} />
-                <span className="text-xs font-medium">Início</span>
+                <GoHome
+                  size={25}
+                  className={`${
+                    location.pathname === "/hc" ? "text-[var(--color-active)]" : "text-[var(--color-grey)]"
+                  }`}
+                />
+                <span
+                  className={`text-xs font-medium ${
+                    location.pathname === "/hc" ? "text-[var(--color-active)]" : "text-[var(--color-grey)]"
+                  }`}
+                >
+                  Início
+                </span>
               </Link>
             </li>
+
             <li>
-              <Link to="hc/menu" className="flex flex-col items-center gap-1">
-                <MdOutlineMenu size={25} />
-                <span className="text-xs">Menu</span>
+              <Link to="/hc/menuMobile" className="flex flex-col items-center gap-1">
+                <MdOutlineMenu
+                  size={25}
+                  className={`${
+                    location.pathname === "/hc/menuMobile"
+                      ? "text-[var(--color-active)]"
+                      : "text-[var(--color-grey)]"
+                  }`}
+                />
+                <span
+                  className={`text-xs font-medium ${
+                    location.pathname === "/hc/menuMobile"
+                      ? "text-[var(--color-active)]"
+                      : "text-[var(--color-grey)]"
+                  }`}
+                >
+                  Menu
+                </span>
               </Link>
             </li>
+
             <li>
-              <Link to="hc/avisos" className="flex flex-col items-center gap-1">
-                <FaRegBell size={30} />
-                <span className="text-xs">Avisos</span>
+              <Link to="/hc/avisosMobile" className="flex flex-col items-center gap-1">
+                <FaRegBell
+                  size={25}
+                  className={`${
+                    location.pathname === "/hc/avisosMobile"
+                      ? "text-[var(--color-active)]"
+                      : "text-[var(--color-grey)]"
+                  }`}
+                />
+                <span
+                  className={`text-xs font-medium ${
+                    location.pathname === "/hc/avisosMobile"
+                      ? "text-[var(--color-active)]"
+                      : "text-[var(--color-grey)]"
+                  }`}
+                >
+                  Avisos
+                </span>
               </Link>
             </li>
           </ul>
