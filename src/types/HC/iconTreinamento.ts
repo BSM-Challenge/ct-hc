@@ -3,4 +3,5 @@ export interface IconsTreinamentoProps {
     link?: string
     label: string
     titleMessage: string
+    modoTreinamento?: string;
 }
