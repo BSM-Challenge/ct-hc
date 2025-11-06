@@ -82,7 +82,10 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
 
   const step = steps[currentStep];
   const isMobile1280 = window.innerWidth < 1280;
+  const isMobile1024 = window.innerWidth < 1024;
   const isMobile768 = window.innerWidth < 768;
+  const isMobile640 = window.innerWidth < 640;
+  const isMobile510 = window.innerWidth < 510;
 
   // Estilo do balão (tooltip)
   const tooltipStyle: React.CSSProperties = {
@@ -93,7 +96,7 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
     borderRadius: "10px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
     zIndex: 10001,
-    maxWidth: isMobile768 ? "240px" : "300px",
+    maxWidth: "300px",
     transition: "all 0.3s ease",
 
     top: rect.bottom + 10 + window.scrollY,
@@ -103,6 +106,44 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
     ),
 
     // seus breakpoints continuam valendo:
+
+    // Página de Meus Resultados
+    // Botão da imagem
+    ...(step.target === ".btn-img" && {
+      top: rect.bottom + 50 + window.scrollY,
+      left: rect.left + window.scrollX - 300,
+    }),
+
+    ...(isMobile768 && step.target === ".btn-img" && {
+      top: rect.bottom + 50 + window.scrollY,
+      left: rect.left + window.scrollX - 200,
+    }),
+
+    // conteudo-dinamico-resultados
+    ...(step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.bottom - 670 + window.scrollY,
+      left: rect.left + window.scrollX - 500,
+    }),
+
+    ...(isMobile1024 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.bottom - 680 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile768 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.bottom - 610 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile640 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.bottom - 610 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+    
+    ...(isMobile510 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.bottom - 580 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
 
     // Agenda
     ...(step.target === ".filtro-agenda" && {
@@ -115,14 +156,25 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       left: rect.left + window.scrollX - 10,
     }),
 
+    // Conteúdo dinâmico
     ...(step.target === ".conteudo-dinamico" && {
       top: rect.bottom - 650 + window.scrollY,
       left: rect.left + window.scrollX - 300,
     }),
 
-    ...(step.target === ".conteudo-dinamico-resultados" && {
-      top: rect.bottom - 650 + window.scrollY,
-      left: rect.left + window.scrollX - 500,
+    ...(isMobile1024 && step.target === ".conteudo-dinamico" && {
+      top: rect.bottom - 680 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile768 && step.target === ".conteudo-dinamico" && {
+      top: rect.bottom - 580 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile510 && step.target === ".conteudo-dinamico" && {
+      top: rect.bottom - 580 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
     }),
 
     ...(step.target === ".conteudo-dinamico-receita" && {
@@ -147,8 +199,78 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
     top: rect.top + window.scrollY - 40,
     left: rect.left + window.scrollX - 350,
 
+    ...(isMobile1280 && {
+      width: rect.width + 10,
+      height: rect.height + 10,
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX - 400,
+    }),
+
     // seus breakpoints específicos:
 
+    // Página de Meus Resultados
+    // btn.lab
+    ...(isMobile1024 && step.target === ".btn-lab" && {
+      top: rect.top + window.scrollY - 30,
+      left: rect.left + window.scrollX - 30,
+      width: rect.width - 0,
+      height: rect.height + 5,
+    }),
+
+    // btn.img
+    ...(isMobile1024 && step.target === ".btn-img" && {
+      top: rect.top + window.scrollY - 30,
+      left: rect.left + window.scrollX - 30,
+      width: rect.width - 0,
+      height: rect.height + 5,
+    }),
+
+    // filtro-meses
+    ...(isMobile1024 && step.target === ".filtro-meses" && {
+      top: rect.top + window.scrollY - 30,
+      left: rect.left + window.scrollX - 30,
+      width: rect.width - 0,
+      height: rect.height + 5,
+    }),
+
+    // Conteúdo Dinâmico Resultados
+    ...(step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX - 300,
+      width: rect.width - 50,
+      height: rect.height + 5,
+    }),
+
+    
+    ...(isMobile1280 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX - 350,
+      width: rect.width - 50,
+      height: rect.height + 5,
+    }),
+    
+    ...(isMobile1024 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX + 30,
+      width: rect.width - 150,
+      height: rect.height + 5,
+    }),
+
+    ...(isMobile640 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX - 30,
+      width: rect.width + 20,
+      height: rect.height + 5,
+    }),
+
+    ...(isMobile510 && step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX - 30,
+      width: rect.width + 10,
+      height: rect.height + 5,
+    }),
+
+    // Minhas Agendas
     // Agenda
     ...(step.target === ".filtro-agenda" && {
       top: rect.top + window.scrollY + 20,
@@ -164,8 +286,7 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       height: rect.height + 5,
     }),
 
-
-
+    // Conteúdo dinâmico
     ...(step.target === ".conteudo-dinamico" && {
       top: rect.top + window.scrollY + 20,
       left: rect.left + window.scrollX + 20,
@@ -173,12 +294,20 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       height: rect.height + 5,
     }),
 
-    ...(step.target === ".conteudo-dinamico-resultados" && {
-      top: rect.top + window.scrollY - 40,
-      left: rect.left + window.scrollX - 300,
-      width: rect.width - 50,
+    ...(isMobile1024 && step.target === ".conteudo-dinamico" && {
+      top: rect.top + window.scrollY + 20,
+      left: rect.left + window.scrollX + 100,
+      width: rect.width - 0,
       height: rect.height + 5,
     }),
+    
+    ...(isMobile510 && step.target === ".conteudo-dinamico" && {
+      top: rect.top + window.scrollY + 20,
+      left: rect.left + window.scrollX + 0,
+      width: rect.width - 0,
+      height: rect.height + 5,
+    }),
+
 
     ...(step.target === ".conteudo-dinamico-receita" && {
       top: rect.top + window.scrollY - 40,
