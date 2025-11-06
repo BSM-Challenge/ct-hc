@@ -6,6 +6,7 @@ export default function ConteudoDinamico({children}: ConteudoDinamicoProps) {
      conteudo-dinamico-receita
      conteudo-dinamico-resultados
      conteudo-dinamico-agenda
+     conteudo-dinamico-teleconsulta
     w-full flex justify-center flex-grow items-center
      ">
         <p className="text-center">
