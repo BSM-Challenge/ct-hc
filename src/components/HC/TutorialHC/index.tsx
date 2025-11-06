@@ -86,6 +86,7 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
   const isMobile768 = window.innerWidth < 768;
   const isMobile640 = window.innerWidth < 640;
   const isMobile510 = window.innerWidth < 510;
+  const isMobile400 = window.innerWidth < 400;
 
   // Estilo do balão (tooltip)
   const tooltipStyle: React.CSSProperties = {
@@ -253,6 +254,18 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       top: rect.bottom - 580 + window.scrollY,
       left: rect.left + window.scrollX - 0,
     }),
+    
+    // Página Preciso de Ajuda
+    ...(isMobile510 && step.target === ".accordion-ajuda" && {
+      top: rect.bottom - 0 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile400 && step.target === ".accordion-ajuda" && {
+      top: rect.bottom - 30 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
   };
 
   // Estilo do destaque do elemento
@@ -515,6 +528,8 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       height: rect.height - 200,
     }),
 
+
+    // Página Preciso de Ajuda
     ...(step.target === ".manual-portal" && {
       top: rect.top + window.scrollY - 3,
       left: rect.left + window.scrollX,
