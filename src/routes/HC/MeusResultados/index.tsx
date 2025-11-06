@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
 import { FaMicroscope } from "react-icons/fa";
 import { BiSolidImageAlt } from "react-icons/bi";
@@ -8,6 +8,18 @@ import TutorialHC from "../../../components/HC/TutorialHC";
 export default function MeusResultados() {
   const [abaAtiva, setAbaAtiva] = useState<"laboratorio" | "imagem">("laboratorio");
   const [filtroAtivo, setFiltroAtivo] = useState<"3" | "6" | "12">("3");
+
+  const [isTreinamento, setIsTreinamento] = useState(false);
+
+  console.log("localStorage modoTreinamento = ", localStorage.getItem("modoTreinamento"));
+
+  useEffect(() => {
+    const modoTreinamento = localStorage.getItem("modoTreinamento");
+    if (modoTreinamento === "resultados") {
+      setIsTreinamento(true);
+      localStorage.removeItem("modoTreinamento");
+    }
+  }, []);
 
   const botoes: { label: string; value: "3" | "6" | "12"; mensagem: string }[] = [
     { label: "Últimos 3 meses", value: "3", mensagem: "Não foi localizado nada no momento." },
@@ -46,7 +58,7 @@ export default function MeusResultados() {
       <TitleHC title="Meus Resultados" />
 
       {/* TutorialHC - exibe o guia passo a passo */}
-      <TutorialHC steps={steps} />
+      {isTreinamento && <TutorialHC steps={steps} />}
 
       <div className="flex">
         <button
@@ -94,7 +106,6 @@ export default function MeusResultados() {
       </ul>
 
       <ConteudoDinamico>
-        <p>
           {abaAtiva === "laboratorio"
             ? {
                 "3": "Não foi localizado nada no momento.",
@@ -106,7 +117,6 @@ export default function MeusResultados() {
                 "6": "Nenhuma imagem disponível no momento",
                 "12": "Nenhuma imagem disponível no momento",
               }[filtroAtivo]}
-        </p>
       </ConteudoDinamico>
     </section>
   );
