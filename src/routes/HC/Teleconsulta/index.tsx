@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
 import TitleHC from "../../../components/HC/TitleHC";
 import TutorialHC from "../../../components/HC/TutorialHC";
 
 export default function Teleconsulta() {
+
+    const [isTreinamento, setIsTreinamento] = useState(false);
+    
+    useEffect(() => {
+    const modoTreinamento = localStorage.getItem("modoTreinamento");
+    if (modoTreinamento === "teleconsulta") {
+        setIsTreinamento(true);
+        localStorage.removeItem("modoTreinamento");
+    }
+    }, []);
 
     const steps = [
         {
@@ -15,7 +26,8 @@ export default function Teleconsulta() {
         <section className="flex flex-col min-h-full">
             <TitleHC title="Teleconsulta" />
 
-            <TutorialHC steps={steps} />
+            {/* Tutorial explicativo */}
+            {isTreinamento && <TutorialHC steps={steps} />}
 
             <ConteudoDinamico>
                 Você não possui agendamentos de teleconsulta no momento
