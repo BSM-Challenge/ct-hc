@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MdMenu, MdMenuOpen, MdOutlineMenu } from "react-icons/md";
 import { IoPersonCircle } from "react-icons/io5";
 
