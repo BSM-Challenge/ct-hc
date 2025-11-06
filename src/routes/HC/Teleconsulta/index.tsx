@@ -17,7 +17,7 @@ export default function Teleconsulta() {
 
     const steps = [
         {
-            target: ".conteudo-dinamico",
+            target: ".conteudo-dinamico-teleconsulta",
             content: "Aqui aonde vai aparecer suas teleconsultas"
         }
     ]
