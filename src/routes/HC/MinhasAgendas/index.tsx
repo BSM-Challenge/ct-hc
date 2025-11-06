@@ -34,7 +34,7 @@ export default function MinhasAgendas() {
       content: "Você pode filtrar as suas agendas por período.",
     },
     {
-      target: ".conteudo-dinamico",
+      target: ".conteudo-dinamico-agenda",
       content: "Aqui onde será apresentado as suas agendas.",
     },
   ];
