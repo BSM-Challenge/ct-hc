@@ -20,10 +20,10 @@ export default function Footer() {
               <h4 className="font-bold text-2xl">Links Rápidos</h4>
             </li>
             <li>
-              <Link to="">Portal do Paciente HC</Link>
+              <Link to="/">Portal do Paciente HC</Link>
             </li>
             <li>
-              <Link to="">Teleatendimento</Link>
+              <Link to="/">Teleatendimento</Link>
             </li>
             <li>
               <Link to="">Rede Lucy Montoro</Link>
@@ -34,10 +34,10 @@ export default function Footer() {
               <h4 className="font-bold text-2xl">Sobre nós</h4>
             </li>
             <li>
-              <Link to="">Nosso time</Link>
+              <Link to="/integrantes">Nosso time</Link>
             </li>
             <li>
-              <Link to="">Contate-nos</Link>
+              <Link to="/contato">Contate-nos</Link>
             </li>
           </ul>
           <ul className="flex flex-col items-start gap-2 lg:items-center">
@@ -45,7 +45,7 @@ export default function Footer() {
               <h4 className="font-bold text-2xl">Dúvidas</h4>
             </li>
             <li>
-              <Link to="">Perguntas Frequentes</Link>
+              <Link to="/faq">Perguntas Frequentes</Link>
             </li>
           </ul>
         </div>
