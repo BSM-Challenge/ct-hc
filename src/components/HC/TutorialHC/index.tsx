@@ -188,7 +188,7 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       left: rect.left + window.scrollX - 10,
     }),
 
-    // Conteúdo dinâmico
+    // Conteúdo dinâmico Agenda
     ...(step.target === ".conteudo-dinamico-agenda" && {
       top: rect.bottom - 650 + window.scrollY,
       left: rect.left + window.scrollX - 300,
@@ -205,6 +205,28 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
     }),
 
     ...(isMobile510 && step.target === ".conteudo-dinamico-agenda" && {
+      top: rect.bottom - 580 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    // Teleconsulta
+    // Conteúdo dinâmico Teleconsulta
+    ...(step.target === ".conteudo-dinamico-teleconsulta" && {
+      top: rect.bottom - 650 + window.scrollY,
+      left: rect.left + window.scrollX - 300,
+    }),
+
+    ...(isMobile1024 && step.target === ".conteudo-dinamico-teleconsulta" && {
+      top: rect.bottom - 680 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile768 && step.target === ".conteudo-dinamico-teleconsulta" && {
+      top: rect.bottom - 580 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile510 && step.target === ".conteudo-dinamico-teleconsulta" && {
       top: rect.bottom - 580 + window.scrollY,
       left: rect.left + window.scrollX - 0,
     }),
@@ -360,6 +382,7 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       height: rect.height + 5,
     }),
 
+
     // Minhas Agendas
     // Agenda
     ...(step.target === ".filtro-agenda" && {
@@ -390,7 +413,38 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       width: rect.width - 10,
       height: rect.height - 5,
     }),
+
+
+    // Teleconsulta
+    // Conteúdo Dinâmico Teleconsulta
+    ...(step.target === ".conteudo-dinamico-teleconsulta" && {
+      top: rect.top + window.scrollY + 10,
+      left: rect.left + window.scrollX - 0,
+      width: rect.width - 10,
+      height: rect.height + 5,
+    }),
     
+    ...(isMobile1280 && step.target === ".conteudo-dinamico-teleconsulta" && {
+      top: rect.top + window.scrollY + 15,
+      left: rect.left + window.scrollX + 10,
+      width: rect.width - 10,
+      height: rect.height - 5,
+    }),
+
+    ...(isMobile1024 && step.target === ".conteudo-dinamico-teleconsulta" && {
+      top: rect.top + window.scrollY + 85,
+      left: rect.left + window.scrollX + 10,
+      width: rect.width - 10,
+      height: rect.height - 100,
+    }),
+
+    ...(isMobile768 && step.target === ".conteudo-dinamico-teleconsulta" && {
+      top: rect.top + window.scrollY + 185,
+      left: rect.left + window.scrollX + 10,
+      width: rect.width - 10,
+      height: rect.height - 200,
+    }),
+
 
     ...(step.target === ".input" && {
       top: rect.top + window.scrollY - 1,
