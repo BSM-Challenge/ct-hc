@@ -11,8 +11,6 @@ export default function MeusResultados() {
 
   const [isTreinamento, setIsTreinamento] = useState(false);
 
-  console.log("localStorage modoTreinamento = ", localStorage.getItem("modoTreinamento"));
-
   useEffect(() => {
     const modoTreinamento = localStorage.getItem("modoTreinamento");
     if (modoTreinamento === "resultados") {
