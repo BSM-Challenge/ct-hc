@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
 import TitleHC from "../../../components/HC/TitleHC";
 import TutorialHC from "../../../components/HC/TutorialHC";
 
 export default function Documentos() {
+
+    const [isTreinamento, setIsTreinamento] = useState(false);
+    
+    useEffect(() => {
+        const modoTreinamento = localStorage.getItem("modoTreinamento");
+        if (modoTreinamento === "documentos") {
+        setIsTreinamento(true);
+        localStorage.removeItem("modoTreinamento");
+        }
+    }, []);
 
     // Tutorial configurado para esta página
     const steps = [
@@ -16,7 +27,8 @@ export default function Documentos() {
         <section className="flex flex-col min-h-full">
             <TitleHC title="Meus Documentos" />
 
-            <TutorialHC steps={steps} />
+            {/* Tutorial explicativo */}
+            {isTreinamento && <TutorialHC steps={steps} />}
 
             <ConteudoDinamico>
                 <p>Nenhum documento disponível no momento.</p>
