@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
 import { LuSquareMenu } from "react-icons/lu";
 import { AiFillCloseSquare } from "react-icons/ai";
@@ -6,6 +6,17 @@ import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
 import TutorialHC from "../../../components/HC/TutorialHC";
 
 export default function MinhasReceitas() {
+
+  const [isTreinamento, setIsTreinamento] = useState(false);
+  
+    useEffect(() => {
+      const modoTreinamento = localStorage.getItem("modoTreinamento");
+      if (modoTreinamento === "receitas") {
+        setIsTreinamento(true);
+        localStorage.removeItem("modoTreinamento");
+      }
+    }, []);
+
   type Filtro = "3" | "6" | "12";
 
   const [abaAtiva, setAbaAtiva] = useState<"ativas" | "inativas">("ativas");
@@ -42,7 +53,7 @@ export default function MinhasReceitas() {
       <TitleHC title="Minhas Receitas" />
 
       {/* Tutorial explicativo */}
-      <TutorialHC steps={steps} />
+      {isTreinamento && <TutorialHC steps={steps} />}
 
       <div className="flex">
         <button
