@@ -189,22 +189,22 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
     }),
 
     // Conteúdo dinâmico
-    ...(step.target === ".conteudo-dinamico" && {
+    ...(step.target === ".conteudo-dinamico-agenda" && {
       top: rect.bottom - 650 + window.scrollY,
       left: rect.left + window.scrollX - 300,
     }),
 
-    ...(isMobile1024 && step.target === ".conteudo-dinamico" && {
+    ...(isMobile1024 && step.target === ".conteudo-dinamico-agenda" && {
       top: rect.bottom - 680 + window.scrollY,
       left: rect.left + window.scrollX - 0,
     }),
 
-    ...(isMobile768 && step.target === ".conteudo-dinamico" && {
+    ...(isMobile768 && step.target === ".conteudo-dinamico-agenda" && {
       top: rect.bottom - 580 + window.scrollY,
       left: rect.left + window.scrollX - 0,
     }),
 
-    ...(isMobile510 && step.target === ".conteudo-dinamico" && {
+    ...(isMobile510 && step.target === ".conteudo-dinamico-agenda" && {
       top: rect.bottom - 580 + window.scrollY,
       left: rect.left + window.scrollX - 0,
     }),
@@ -376,27 +376,21 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       height: rect.height + 5,
     }),
 
-    // Conteúdo dinâmico
-    ...(step.target === ".conteudo-dinamico" && {
-      top: rect.top + window.scrollY + 20,
-      left: rect.left + window.scrollX + 20,
-      width: rect.width - 50,
-      height: rect.height + 5,
-    }),
-
-    ...(isMobile1024 && step.target === ".conteudo-dinamico" && {
-      top: rect.top + window.scrollY + 20,
-      left: rect.left + window.scrollX + 100,
-      width: rect.width - 0,
+    // Conteúdo Dinâmico Agenda
+    ...(step.target === ".conteudo-dinamico-agenda" && {
+      top: rect.top + window.scrollY + 10,
+      left: rect.left + window.scrollX - 0,
+      width: rect.width - 10,
       height: rect.height + 5,
     }),
     
-    ...(isMobile510 && step.target === ".conteudo-dinamico" && {
-      top: rect.top + window.scrollY + 20,
-      left: rect.left + window.scrollX + 0,
-      width: rect.width - 0,
-      height: rect.height + 5,
+    ...(isMobile1280 && step.target === ".conteudo-dinamico-agenda" && {
+      top: rect.top + window.scrollY + 15,
+      left: rect.left + window.scrollX + 10,
+      width: rect.width - 10,
+      height: rect.height - 5,
     }),
+    
 
     ...(step.target === ".input" && {
       top: rect.top + window.scrollY - 1,
