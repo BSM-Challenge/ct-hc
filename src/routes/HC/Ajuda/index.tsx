@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TitleHC from "../../../components/HC/TitleHC";
 import { perguntas } from "../../../data/HC/perguntas";
@@ -6,6 +6,17 @@ import { IoIosArrowDown } from "react-icons/io";
 import TutorialHC from "../../../components/HC/TutorialHC";
 
 export default function Ajuda() {
+
+  const [isTreinamento, setIsTreinamento] = useState(false);
+  
+  useEffect(() => {
+      const modoTreinamento = localStorage.getItem("modoTreinamento");
+      if (modoTreinamento === "ajuda") {
+      setIsTreinamento(true);
+      localStorage.removeItem("modoTreinamento");
+      }
+  }, []);
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleCard = (index: number) => {
@@ -32,7 +43,8 @@ export default function Ajuda() {
     <section className="flex flex-col gap-3">
       <TitleHC title="Ajuda / Manuais" />
 
-      <TutorialHC steps={steps} />
+      {/* TutorialHC - exibe o guia passo a passo */}
+      {isTreinamento && <TutorialHC steps={steps} />}
 
       <div className="mx-10">
         <Link
