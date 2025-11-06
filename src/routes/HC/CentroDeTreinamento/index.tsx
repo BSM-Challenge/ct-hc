@@ -28,7 +28,13 @@ export default function CentroDeTreinamento() {
                         max-[474px]:w-full
                         "
                     >
-                    <Link to={i.link || ""} title={i.titleMessage} className="
+                    <Link 
+                    to={i.link || ""}
+                    title={i.titleMessage}
+                    onClick={() => {
+                        localStorage.setItem("modoTreinamento", i.modoTreinamento || "");
+                    }}
+                    className="
                     py-4 min-w-[200px] 
                     ">
                         <figure className="flex flex-col items-center gap-2">
