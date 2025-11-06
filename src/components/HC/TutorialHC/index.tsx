@@ -230,6 +230,29 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       top: rect.bottom - 580 + window.scrollY,
       left: rect.left + window.scrollX - 0,
     }),
+
+
+    // Documentos
+    // Conteúdo dinâmico Documentos
+    ...(step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.bottom - 650 + window.scrollY,
+      left: rect.left + window.scrollX - 300,
+    }),
+
+    ...(isMobile1024 && step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.bottom - 680 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile768 && step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.bottom - 580 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
+
+    ...(isMobile510 && step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.bottom - 580 + window.scrollY,
+      left: rect.left + window.scrollX - 0,
+    }),
   };
 
   // Estilo do destaque do elemento
@@ -446,6 +469,7 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
     }),
 
 
+    // Página de Solicitação de exames
     ...(step.target === ".input" && {
       top: rect.top + window.scrollY - 1,
       left: rect.left + window.scrollX,
@@ -458,6 +482,37 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       left: rect.left + window.scrollX,
       width: rect.width,
       height: rect.height + 5,
+    }),
+
+
+    // Página de Documentos
+     // Conteúdo Dinâmico Documentos
+    ...(step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.top + window.scrollY + 10,
+      left: rect.left + window.scrollX - 0,
+      width: rect.width - 10,
+      height: rect.height + 5,
+    }),
+    
+    ...(isMobile1280 && step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.top + window.scrollY + 15,
+      left: rect.left + window.scrollX + 10,
+      width: rect.width - 10,
+      height: rect.height - 5,
+    }),
+
+    ...(isMobile1024 && step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.top + window.scrollY + 85,
+      left: rect.left + window.scrollX + 10,
+      width: rect.width - 10,
+      height: rect.height - 100,
+    }),
+
+    ...(isMobile768 && step.target === ".conteudo-dinamico-documentos" && {
+      top: rect.top + window.scrollY + 185,
+      left: rect.left + window.scrollX + 10,
+      width: rect.width - 10,
+      height: rect.height - 200,
     }),
 
     ...(step.target === ".manual-portal" && {
