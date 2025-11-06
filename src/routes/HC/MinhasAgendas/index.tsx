@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TitleHC from "../../../components/HC/TitleHC";
 import { RiCheckLine } from "react-icons/ri";
 import ConteudoDinamico from "../../../components/HC/ConteudoDinamico";
@@ -7,6 +7,17 @@ import TutorialHC from "../../../components/HC/TutorialHC";
 type Filtro = "3" | "6" | "12" | "6a";
 
 export default function MinhasAgendas() {
+
+  const [isTreinamento, setIsTreinamento] = useState(false);
+    
+  useEffect(() => {
+    const modoTreinamento = localStorage.getItem("modoTreinamento");
+    if (modoTreinamento === "agenda") {
+      setIsTreinamento(true);
+      localStorage.removeItem("modoTreinamento");
+    }
+  }, []);
+
   const [filtroAtivo, setFiltroAtivo] = useState<Filtro>("3");
 
   const botoes: { label: string; value: Filtro; mensagem:string }[] = [
@@ -32,7 +43,8 @@ export default function MinhasAgendas() {
     <section className="flex flex-col min-h-full">
       <TitleHC title="Minhas agendas e reagendamentos" />
 
-      <TutorialHC steps={steps} />
+      {/* Tutorial explicativo */}
+      {isTreinamento && <TutorialHC steps={steps} />}
 
       <ul className="filtro-agenda flex justify-center gap-7">
         {botoes.map((botao) => (
