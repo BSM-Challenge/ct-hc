@@ -18,12 +18,39 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
   const [showModalFinalizado, setShowModalFinalizado] = useState(false);
   const [showModalAvaliacao, setShowModalAvaliacao] = useState(false);
   const [ready, setReady] = useState(false);
+  const [rect, setRect] = useState<DOMRect | null>(null);
 
   // Aguarda o DOM renderizar completamente
   useEffect(() => {
     const timeout = setTimeout(() => setReady(true), 300);
     return () => clearTimeout(timeout);
   }, []);
+
+  // Observa o elemento atual e acompanha mudanças em tempo real
+  useEffect(() => {
+    if (!ready || !show) return;
+
+    const step = steps[currentStep];
+    const targetEl = document.querySelector(step.target) as HTMLElement | null;
+    if (!targetEl) return;
+
+    const updateRect = () => setRect(targetEl.getBoundingClientRect());
+    updateRect();
+
+    // Observa mudanças de tamanho do elemento
+    const resizeObserver = new ResizeObserver(updateRect);
+    resizeObserver.observe(targetEl);
+
+    // Observa scroll e resize da janela
+    window.addEventListener("scroll", updateRect);
+    window.addEventListener("resize", updateRect);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("scroll", updateRect);
+      window.removeEventListener("resize", updateRect);
+    };
+  }, [currentStep, ready, show, steps]);
 
   // Faz scroll até o elemento atual
   useEffect(() => {
@@ -34,10 +61,9 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
     targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
   }, [currentStep, show, ready, steps]);
 
-  // só checa se o DOM está pronto
   if (!ready) return null;
 
-  // Mostra o modal de "Treinamento Finalizado"
+  // Modais
   if (showModalFinalizado)
     return (
       <ModalTreinamentoFinalizado
@@ -49,55 +75,153 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
       />
     );
 
-  // Mostra o modal de "Avaliação"
   if (showModalAvaliacao)
     return <ModalAvaliacao onClose={() => setShowModalAvaliacao(false)} />;
 
-  // Tutorial normal (balão e destaque)
-  if (!show) return null;
+  if (!show || !rect) return null;
 
   const step = steps[currentStep];
-  const targetEl = document.querySelector(step.target) as HTMLElement | null;
-  const rect = targetEl?.getBoundingClientRect();
+  const isMobile1280 = window.innerWidth < 1280;
+  const isMobile768 = window.innerWidth < 768;
 
-  const tooltipStyle: React.CSSProperties = rect
-    ? {
-        position: "absolute",
-        background: "white",
-        color: "black",
-        padding: "12px 16px",
-        borderRadius: "10px",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-        zIndex: 10001,
-        maxWidth: "300px",
-        transition: "all 0.3s ease",
+  // Estilo do balão (tooltip)
+  const tooltipStyle: React.CSSProperties = {
+    position: "absolute",
+    background: "white",
+    color: "black",
+    padding: isMobile768 ? "8px 10px" : "12px 16px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+    zIndex: 10001,
+    maxWidth: isMobile768 ? "240px" : "300px",
+    transition: "all 0.3s ease",
 
-        // posição padrão
-        top: rect.bottom + 10 + window.scrollY,
-        left: rect.left + window.scrollX,
+    top: rect.bottom + 10 + window.scrollY,
+    left: Math.min(
+      rect.left + window.scrollX,
+      window.innerWidth - (isMobile768 ? 240 : 300)
+    ),
 
-      ...(step.target === ".filtro-agenda" && {
-        top: rect.bottom + 40 + window.scrollY, // move o balão mais pra baixo
-        left: rect.left + window.scrollX - 100, // move um pouco pra esquerda
-      }),
+    // seus breakpoints continuam valendo:
 
-      ...(step.target === ".conteudo-dinamico" && {
-        top: rect.bottom - 650 + window.scrollY, // move o balão mais pra baixo
-        left: rect.left + window.scrollX - 300, // move um pouco pra esquerda
-      }),
+    // Agenda
+    ...(step.target === ".filtro-agenda" && {
+      top: rect.bottom + 40 + window.scrollY,
+      left: rect.left + window.scrollX - 100,
+    }),
 
-      ...(step.target === ".conteudo-dinamico-resultados" && {
-        top: rect.bottom - 650 + window.scrollY, // move o balão mais pra baixo
-        left: rect.left + window.scrollX - 500, // move um pouco pra esquerda
-      }),
-      
-      ...(step.target === ".conteudo-dinamico-receita" && {
-        top: rect.bottom - 650 + window.scrollY, // move o balão mais pra baixo
-        left: rect.left + window.scrollX - 500, // move um pouco pra esquerda
-      }),
+    ...(isMobile1280 && step.target === ".filtro-agenda" && {
+      top: rect.bottom + 40 + window.scrollY,
+      left: rect.left + window.scrollX - 10,
+    }),
 
-      }
-    : { display: "none" };
+    ...(step.target === ".conteudo-dinamico" && {
+      top: rect.bottom - 650 + window.scrollY,
+      left: rect.left + window.scrollX - 300,
+    }),
+
+    ...(step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.bottom - 650 + window.scrollY,
+      left: rect.left + window.scrollX - 500,
+    }),
+
+    ...(step.target === ".conteudo-dinamico-receita" && {
+      top: rect.bottom - 650 + window.scrollY,
+      left: rect.left + window.scrollX - 500,
+    }),
+  };
+
+  // Estilo do destaque do elemento
+  const highlightStyle: React.CSSProperties = {
+    position: "absolute",
+    zIndex: 10002,
+    pointerEvents: "none",
+    borderRadius: "10px",
+    border: "3px solid var(--color-blue)",
+    boxShadow: "0 0 20px rgba(255,255,255,0.9)",
+    background: "rgba(255,255,255,0.1)",
+    transition: "all 0.2s ease-out",
+
+    width: rect.width + 10,
+    height: rect.height + 10,
+    top: rect.top + window.scrollY - 40,
+    left: rect.left + window.scrollX - 350,
+
+    // seus breakpoints específicos:
+
+    // Agenda
+    ...(step.target === ".filtro-agenda" && {
+      top: rect.top + window.scrollY + 20,
+      left: rect.left + window.scrollX + 50,
+      width: rect.width - 100,
+      height: rect.height + 5,
+    }),
+
+    ...(isMobile1280 && step.target === ".filtro-agenda" && {
+      top: rect.top + window.scrollY + 20,
+      left: rect.left + window.scrollX + 0,
+      width: rect.width + 0,
+      height: rect.height + 5,
+    }),
+
+
+
+    ...(step.target === ".conteudo-dinamico" && {
+      top: rect.top + window.scrollY + 20,
+      left: rect.left + window.scrollX + 20,
+      width: rect.width - 50,
+      height: rect.height + 5,
+    }),
+
+    ...(step.target === ".conteudo-dinamico-resultados" && {
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX - 300,
+      width: rect.width - 50,
+      height: rect.height + 5,
+    }),
+
+    ...(step.target === ".conteudo-dinamico-receita" && {
+      top: rect.top + window.scrollY - 40,
+      left: rect.left + window.scrollX - 300,
+      width: rect.width - 50,
+      height: rect.height + 5,
+    }),
+
+    ...(step.target === ".input" && {
+      top: rect.top + window.scrollY - 1,
+      left: rect.left + window.scrollX,
+      width: rect.width,
+      height: rect.height + 5,
+    }),
+
+    ...(step.target === ".button-buscar" && {
+      top: rect.top + window.scrollY - 1,
+      left: rect.left + window.scrollX,
+      width: rect.width,
+      height: rect.height + 5,
+    }),
+
+    ...(step.target === ".manual-portal" && {
+      top: rect.top + window.scrollY - 3,
+      left: rect.left + window.scrollX,
+      width: rect.width,
+      height: rect.height + 5,
+    }),
+
+    ...(step.target === ".accordion-ajuda" && {
+      top: rect.top + window.scrollY - 3,
+      left: rect.left + window.scrollX,
+      width: rect.width,
+      height: rect.height + 5,
+    }),
+
+    ...(step.target === ".abrir-accordion" && {
+      top: rect.top + window.scrollY - 3,
+      left: rect.left + window.scrollX,
+      width: rect.width,
+      height: rect.height + 5,
+    }),
+  };
 
   return (
     <>
@@ -112,111 +236,29 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
           background: "rgba(0, 0, 0, 0.6)",
           zIndex: 10000,
         }}
-      ></div>
+      />
 
       {/* Destaque do elemento */}
-      {rect && (
-        <div
-          style={{
-            position: "absolute",
-            zIndex: 10002,
-            pointerEvents: "none",
-            borderRadius: "10px",
-            width: rect.width + 10,
-            height: rect.height + 10,
-            border: "3px solid var(--color-blue)",
-            boxShadow: "0 0 20px rgba(255,255,255,0.9)",
-            background: "rgba(255,255,255,0.1)",
-            top: rect.top + window.scrollY - 40,
-            left: rect.left + window.scrollX - 350,
-          
-            // ajustes específicos por elemento:
-            ...(step.target === ".filtro-agenda" && {
-              top: rect.top + window.scrollY + 20, // controla posição vertical
-              left: rect.left + window.scrollX + 150, // controla posição horizontal
-              width: rect.width - 300,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".conteudo-dinamico" && {
-              top: rect.top + window.scrollY + 20, // controla posição vertical
-              left: rect.left + window.scrollX + 20, // controla posição horizontal
-              width: rect.width - 50,
-              height: rect.height + 5,
-            }),
-            
-            ...(step.target === ".conteudo-dinamico-resultados" && {
-              top: rect.top + window.scrollY - 40, // controla posição vertical
-              left: rect.left + window.scrollX - 300, // controla posição horizontal
-              width: rect.width - 50,
-              height: rect.height + 5,
-            }),
-            
-            ...(step.target === ".conteudo-dinamico-receita" && {
-              top: rect.top + window.scrollY - 40, // controla posição vertical
-              left: rect.left + window.scrollX - 300, // controla posição horizontal
-              width: rect.width - 50,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".input" && {
-              top: rect.top + window.scrollY - 1, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".button-buscar" && {
-              top: rect.top + window.scrollY - 1, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".manual-portal" && {
-              top: rect.top + window.scrollY - 3, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-
-            ...(step.target === ".accordion-ajuda" && {
-              top: rect.top + window.scrollY - 3, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-            
-            ...(step.target === ".abrir-accordion" && {
-              top: rect.top + window.scrollY - 3, // controla posição vertical
-              left: rect.left + window.scrollX + 0, // controla posição horizontal
-              width: rect.width - 0,
-              height: rect.height + 5,
-            }),
-          }}
-        ></div>
-      )}
+      <div style={highlightStyle}></div>
 
       {/* Balão de instrução */}
       <div style={tooltipStyle}>
         <p className="mb-3">{step.content}</p>
 
         <div className="flex justify-end gap-2">
-          {/* Botão Voltar */}
           {currentStep > 0 && (
             <button
               onClick={() => setCurrentStep((s) => s - 1)}
-              className="px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)] cursor-pointer text-[var(--color-white)]"
+              className="px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)] text-[var(--color-white)]"
             >
               Voltar
             </button>
           )}
 
-          {/* Botão Próximo ou Concluir */}
           {currentStep < steps.length - 1 ? (
             <button
               onClick={() => setCurrentStep((s) => s + 1)}
-              className="px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)] text-[var(--color-white)] cursor-pointer"
+              className="px-3 py-1 rounded bg-[var(--color-blue)] hover:bg-[var(--color-blue-0077C8)] text-[var(--color-white)]"
             >
               Próximo
             </button>
@@ -224,16 +266,16 @@ export default function TutorialHC({ steps }: TutorialHCProps) {
             <button
               onClick={() => {
                 setShow(false);
-                setShowModalFinalizado(true); // Abre o modal no final
+                setShowModalFinalizado(true);
               }}
-              className="px-3 py-1 rounded bg-[var(--color-blue)] text-[var(--color-white)] cursor-pointer"
+              className="px-3 py-1 rounded bg-[var(--color-blue)] text-[var(--color-white)]"
             >
               Concluir
             </button>
           )}
         </div>
 
-        {/* Botão Fechar (X) */}
+        {/* Botão fechar */}
         <button
           onClick={() => setShow(false)}
           title="Fechar o treinamento"
