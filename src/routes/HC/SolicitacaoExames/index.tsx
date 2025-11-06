@@ -2,8 +2,19 @@ import { FaUserDoctor } from "react-icons/fa6";
 import TitleHC from "../../../components/HC/TitleHC";
 import { IoSearch } from "react-icons/io5";
 import TutorialHC from "../../../components/HC/TutorialHC";
+import { useEffect, useState } from "react";
 
 export default function SolcitacaoExames() {
+
+    const [isTreinamento, setIsTreinamento] = useState(false);
+    
+    useEffect(() => {
+        const modoTreinamento = localStorage.getItem("modoTreinamento");
+        if (modoTreinamento === "exames") {
+        setIsTreinamento(true);
+        localStorage.removeItem("modoTreinamento");
+        }
+    }, []);
 
       // Tutorial configurado para esta página
         const steps = [
@@ -21,7 +32,8 @@ export default function SolcitacaoExames() {
         <section className="flex flex-col gap-5 min-h-full">
             <TitleHC title="Solicitação de exames" />
 
-            <TutorialHC steps={steps} />
+            {/* Tutorial explicativo */}
+            {isTreinamento && <TutorialHC steps={steps} />}
 
             <div className="
             w-full px-4 flex-grow
