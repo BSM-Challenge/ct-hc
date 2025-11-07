@@ -33,6 +33,11 @@ export default function Contato() {
 
     await new Promise((resolve) => setTimeout(resolve, 800));
 
+    const currentDate = new Date().toLocaleString("pt-BR", {
+    dateStyle: "short",
+    timeStyle: "short",
+  });
+
     try {
       const response = await emailjs.send(
         "service_b4gaw42",
@@ -41,6 +46,7 @@ export default function Contato() {
           nome: data.nome,
           email: data.email,
           mensagem: data.mensagem,
+          data: currentDate,
         },
         "Lq8PxBEF42WbgxFg4"
       );
