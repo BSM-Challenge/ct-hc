@@ -34,7 +34,7 @@ export default function MinhasAgendas() {
       content: "Você pode filtrar as suas agendas por período.",
     },
     {
-      target: ".conteudo-dinamico",
+      target: ".conteudo-dinamico-agenda",
       content: "Aqui onde será apresentado as suas agendas.",
     },
   ];
@@ -46,7 +46,7 @@ export default function MinhasAgendas() {
       {/* Tutorial explicativo */}
       {isTreinamento && <TutorialHC steps={steps} />}
 
-      <ul className="filtro-agenda flex justify-center gap-7">
+      <ul className="filtro-agenda flex flex-wrap justify-center gap-7 max-sm:gap-4">
         {botoes.map((botao) => (
           <li key={botao.value}>
             <button

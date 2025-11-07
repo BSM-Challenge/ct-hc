@@ -18,7 +18,7 @@ export default function Documentos() {
     // Tutorial configurado para esta página
     const steps = [
         {
-        target: ".conteudo-dinamico",
+        target: ".conteudo-dinamico-documentos",
         content: "Aqui será apresentado todos os documentos",
         },
     ];
