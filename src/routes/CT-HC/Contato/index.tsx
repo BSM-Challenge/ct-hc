@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 
 export default function Contato() {
@@ -27,21 +28,49 @@ export default function Contato() {
   });
 
   const onSubmit = async (data: MensagemInput) => {
-    setDadosUsuario(data)
-    setCarregando(true)
+    setDadosUsuario(data);
+    setCarregando(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 800))
+    await new Promise((resolve) => setTimeout(resolve, 800));
 
-    setCarregando(false)
-    setMensagem(true)
-    reset()
-  }
+    try {
+      const response = await emailjs.send(
+        "service_b4gaw42",
+        "template_f8vj1va",
+        {
+          nome: data.nome,
+          email: data.email,
+          mensagem: data.mensagem,
+        },
+        "Lq8PxBEF42WbgxFg4"
+      );
+
+      console.log("Resposta do EmailJS:", response);
+
+      if (response.status === 200) {
+        setMensagem(true);
+        setCarregando(false);
+        reset();
+      } else {
+        alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
+        setCarregando(false);
+      }
+    } catch (error) {
+      alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
+    } finally {
+      setCarregando(false);
+    }
+  };
 
   const fazerOutraPergunta = () => {
     if (dadosUsuario) {
-      reset(dadosUsuario)
+      reset({
+        nome: dadosUsuario.nome,
+        email: dadosUsuario.email,
+        mensagem: ""
+      });
     }
-    setMensagem(false)
+    setMensagem(false);
   };
 
 
