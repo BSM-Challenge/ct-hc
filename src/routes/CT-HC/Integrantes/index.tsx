@@ -3,7 +3,11 @@ import Card from "../../../components/CT-HC/Card";
 export default function Integrantes() {
   return (
     <main className="pt-28 sm:pt-32 md:pt-40 bg-[var(--light-blue)] min-h-screen">
-      <section className="flex flex-col items-center px-6 sm:px-12 md:px-20">
+      <section className="
+      flex flex-col items-center px-6
+      max-lg:px-12 
+      max-sm:px-6     
+      ">
         {/* Título */}
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[var(--dark-blue-title)]">
           Conheça nossa equipe
@@ -23,8 +27,16 @@ export default function Integrantes() {
           />
         </div>
       </section>
-      <section className="py-10">
-        <div className="flex justify-start mt-20 w-full px-30">
+
+      <section className="
+      py-10 
+      max-lg:px-12
+      max-sm:px-6
+      ">
+        <div className="
+        flex justify-start mt-20 w-full
+        lg:pl-10
+        ">
           <Card
             nome="Sofia Siqueira Fontes"
             img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761424173/foto-sofia_gmsdkr.jpg"
@@ -37,8 +49,14 @@ export default function Integrantes() {
           />
         </div>
       </section>
-      <section className="py-10">
-        <div className="flex justify-end mt-20 w-full px-20">
+
+      <section className="
+      py-10 
+      max-lg:px-12
+      max-sm:px-6
+      lg:pr-10
+      ">
+        <div className="flex justify-end mt-20 w-full">
           <Card
             nome="Felipe Kirschner Modesto"
             img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761424173/foto-felipe_vbootl.jpg"

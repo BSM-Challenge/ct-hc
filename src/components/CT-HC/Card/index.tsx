@@ -39,10 +39,13 @@ export default function Card({
       {/* Card */}
       <div
         className="
-          relative flex flex-col lg:flex-row items-center lg:items-start max-w-6xl w-full p-6 sm:p-8
-          bg-[var(--Color-blue-709CFF)] rounded-[40px] sm:rounded-[60px]
+          relative flex flex-col items-center max-w-6xl w-full p-0
+          bg-[var(--Color-blue-709CFF)] rounded-[40px] 
           shadow-[15px_15px_20px_var(--shadow-blue-70)]
-          opacity-0 card-observe transition-all"
+          opacity-0 card-observe transition-all
+          lg:flex-row lg:items-start lg:p-8
+          sm:rounded-[60px]
+          "
       >
         {/* Foto */}
         <div
@@ -61,15 +64,41 @@ export default function Card({
         <div
           className={`flex flex-col text-white w-full ${
             posicaoImg === "right" ? "mr-36" : "ml-36"
-          }`}
+          }
+          max-lg:${
+            posicaoImg === "right" ? "mr-0" : "ml-0"
+          }
+
+          `}
         >
+        
           {/* Nome */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-[var(--color-blue)] -ml-5 px-4 py-2 rounded-[10px] inline-block text-center">
-            {nome}
-          </h2>
+          <div className={`
+            flex w-full ${posicaoImg === "right" ? "justify-end" : "justify-start"}
+            max-lg:justify-center
+            `}>
+            <h2 
+            className={`
+              lg:${posicaoImg === "right" ? "ml-20" : "text-start"}
+              lg:w-full
+            -ml-5 px-4 py-2  
+            text-2xl font-bold bg-[var(--color-blue)]
+            rounded-[10px] inline-block text-center
+            max-lg:bg-none
+            max-lg:w-[70%]
+            sm:text-3xl lg:text-4xl
+          `}>
+              {nome}
+            </h2>
+          </div>
 
           {/* Descrição */}
-          <p className="ml-4 mt-4 sm:text-lg lg:text-xl leading-relaxed px-1 sm:px-4">{descricao}</p>
+          <p className={` ml-4 mt-4 leading-relaxed px-1 
+          lg:text-xl
+          sm:px-4 sm:text-lg
+          `}>
+            {descricao}
+          </p>
 
           {/* RM e Turma + Contato */}
           <div className="flex flex-col lg:flex-row justify-between gap-6 px-1 sm:px-4 max-w-[95%] ml-4 mt-10">
@@ -84,7 +113,11 @@ export default function Card({
               </p>
             </div>
 
-            <div className="flex flex-col gap-4 items-center">
+            <div className="
+            flex flex-col gap-4 items-center
+            max-lg:items-end
+            max-lg:py-5
+            ">
               <span className="font-bold text-base sm:text-lg lg:text-xl">
                 Entre em contato comigo:
               </span>
