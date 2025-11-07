@@ -46,6 +46,7 @@ export default function Contato() {
           nome: data.nome,
           email: data.email,
           mensagem: data.mensagem,
+          subject: "Página de contato",
           data: currentDate,
         },
         "Lq8PxBEF42WbgxFg4"
