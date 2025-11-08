@@ -52,6 +52,13 @@ export default function FAQ() {
     reset()
   };
 
+  const fazerOutraPergunta = () => {
+    if (dadosUsuario) {
+      reset(dadosUsuario)
+    }
+    setMensagem(false)
+  };
+
   return (
     <main className="bg-[var(--light-blue)]">
       <section
@@ -284,8 +291,39 @@ export default function FAQ() {
                 </div>
               ) : (
                 <div>
-                  <p>Mensagem enviada com sucesso!</p>
-                </div>
+                <h4>
+                  Mensagem enviada com sucesso! Obrigado pelo contato.
+                </h4>
+                <span>
+                  <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
+                </span>
+                <h5>Deseja fazer outra pergunta?</h5>
+                <ul>
+                  <li>
+                    <button
+                      title="Clique aqui para voltar"
+                      onClick={() => {
+                        setMensagem(false)
+                        reset({
+                          nome: "",
+                          email: "",
+                          mensagem: "",
+                        })
+                      }}
+                      >
+                      Não, obrigado
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      title="Clique aqui para fazer outra pergunta"
+                      onClick={fazerOutraPergunta}
+                      >
+                      Sim, gostaria
+                    </button>
+                  </li>
+                </ul>
+              </div>
               )}
             </div>
           </div>
