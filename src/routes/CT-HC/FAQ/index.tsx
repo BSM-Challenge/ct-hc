@@ -232,98 +232,146 @@ export default function FAQ() {
               className="bg-[var(--color-white)] flex flex-col items-center w-full p-8
             border-[4px] border-[var(--color-blue-2)] rounded-[20px] h-full xl:w-[70%]"
             >
-              <h3
-                className="text-3xl text-center font-bold text-[var(--dark-blue-title)] mb-5 
-              md:w-[80%] 2xl:text-4xl 2xl:w-[50%]"
-              >
-                Tem alguma outra pergunta? Mande para nós!
-              </h3>
+              {!mensagem && (
+                <h3
+                  className="text-3xl text-center font-bold text-[var(--dark-blue-title)] mb-5
+                md:w-[80%] 2xl:text-4xl 2xl:w-[50%]"
+                >
+                  Tem alguma outra pergunta? Mande para nós!
+                </h3>
+              )}
 
               {!mensagem ? (
-                <div className="flex justify-center items-center flex-col-reverse
-                lg:flex-row lg:w-full">
-                  <form onSubmit={handleSubmit(onSubmit)} method="POST" className="flex flex-col h-fit mt-10
-                  xl:w-[50%]">
-                    <label htmlFor="name" className="text-2xl font-bold text-[var(--dark-blue-title)] mb-2">
+                <div
+                  className="flex justify-center items-center flex-col-reverse
+                lg:flex-row lg:w-full"
+                >
+                  <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    method="POST"
+                    className="flex flex-col h-fit mt-10
+                  xl:w-[50%]"
+                  >
+                    <label
+                      htmlFor="name"
+                      className="text-2xl font-bold text-[var(--dark-blue-title)] mb-2"
+                    >
                       Nome:
                     </label>
-                    <input type="text" placeholder="Digite seu nome" className="w-full px-4 py-3 rounded-[10px]
+                    <input
+                      type="text"
+                      placeholder="Digite seu nome"
+                      className="w-full px-4 py-3 rounded-[10px]
                     bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3
                     border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
                     min-[450px]:w-[340px] sm:w-[450px]
                     lg:w-[250px] xl:w-[90%]"
-                    {...register("nome")}/>
-                    {errors.nome && <p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>}
+                      {...register("nome")}
+                    />
+                    {errors.nome && (
+                      <p className="text-red-500 font-semibold text-sm">
+                        {errors.nome.message}
+                      </p>
+                    )}
 
-                    <label htmlFor="e-mail" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">
+                    <label
+                      htmlFor="e-mail"
+                      className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2"
+                    >
                       E-mail:
                     </label>
-                    <input type="text" placeholder="Digite seu e-mail" className="w-full px-4 py-3 rounded-[10px]
+                    <input
+                      type="text"
+                      placeholder="Digite seu e-mail"
+                      className="w-full px-4 py-3 rounded-[10px]
                     bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3
                     border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
                     lg:w-[250px] xl:w-[90%]"
-                    {...register("email")}/>
-                    {errors.email && <p className="text-red-500 font-semibold text-sm">{errors.email.message}</p>}
+                      {...register("email")}
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 font-semibold text-sm">
+                        {errors.email.message}
+                      </p>
+                    )}
 
-                    <label htmlFor="pergunta" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">
+                    <label
+                      htmlFor="pergunta"
+                      className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2"
+                    >
                       Qual a sua pergunta?
                     </label>
-                    <textarea placeholder="Digite sua mensagem..." className=" resize-none w-full h-[120px] px-4 py-3 rounded-[10px]
+                    <textarea
+                      placeholder="Digite sua mensagem..."
+                      className=" resize-none w-full h-[120px] px-4 py-3 rounded-[10px]
                     bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-l-3 border-r-3
                     border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
                     lg:w-[250px] xl:w-[90%]"
-                    {...register("mensagem")}/>
-                    {errors.mensagem && <p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>}
+                      {...register("mensagem")}
+                    />
+                    {errors.mensagem && (
+                      <p className="text-red-500 font-semibold text-sm">
+                        {errors.mensagem.message}
+                      </p>
+                    )}
 
-                    <button type="submit" className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)]
+                    <button
+                      type="submit"
+                      className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)]
                     mt-8 rounded-[10px] font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)]
                     hover:bg-[var(--hover-button)] transition-colors duration-300
                     sm:w-[30%]
                     lg:w-[60%]
-                    xl:w-[30%] xl:self-start xl:ml-35">
+                    xl:w-[30%] xl:self-start xl:ml-35"
+                    >
                       {carregando ? "Enviando..." : "Enviar"}
                     </button>
                   </form>
                   <figcaption>
-                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761434429/img-question_m7yane.png"
-                    alt="Pessoa fazendo uma pergunta."/>
+                    <img
+                      src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761434429/img-question_m7yane.png"
+                      alt="Pessoa fazendo uma pergunta."
+                    />
                   </figcaption>
                 </div>
               ) : (
-                <div>
-                <h4>
-                  Mensagem enviada com sucesso! Obrigado pelo contato.
-                </h4>
-                <span>
-                  <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
-                </span>
-                <h5>Deseja fazer outra pergunta?</h5>
-                <ul>
-                  <li>
-                    <button
-                      title="Clique aqui para voltar"
-                      onClick={() => {
-                        setMensagem(false)
-                        reset({
-                          nome: "",
-                          email: "",
-                          mensagem: "",
-                        })
-                      }}
+                <div
+                  className="text-center text-[var(--dark-blue-title)]">
+                  <h4 className="text-3xl font-bold">Pergunta enviada com sucesso! Obrigado pelo contato.</h4>
+                  <span>
+                    <img
+                      src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png"
+                      alt="Imagem de check com a cor verde"
+                      className="my-6"
+                    />
+                  </span>
+                  <h5 className="text-3xl font-semibold">Deseja fazer outra pergunta?</h5>
+                  <ul>
+                    <li>
+                      <button
+                        title="Clique aqui para voltar"
+                        onClick={() => {
+                          setMensagem(false);
+                          reset({
+                            nome: "",
+                            email: "",
+                            mensagem: "",
+                          });
+                        }}
                       >
-                      Não, obrigado
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      title="Clique aqui para fazer outra pergunta"
-                      onClick={fazerOutraPergunta}
+                        Não, obrigado
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        title="Clique aqui para fazer outra pergunta"
+                        onClick={fazerOutraPergunta}
                       >
-                      Sim, gostaria
-                    </button>
-                  </li>
-                </ul>
-              </div>
+                        Sim, gostaria
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               )}
             </div>
           </div>
