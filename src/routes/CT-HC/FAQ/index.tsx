@@ -217,33 +217,35 @@ export default function FAQ() {
 
               <div className="flex justify-center items-center flex-col-reverse
               lg:flex-row lg:w-full">
-                <form method="POST" className="flex flex-col h-fit mt-10
+                <form onSubmit={handleSubmit(onSubmit)} method="POST" className="flex flex-col h-fit mt-10
                 xl:w-[50%]">
 
                   <label htmlFor="name" className="text-2xl font-bold text-[var(--dark-blue-title)] mb-2">Nome:</label>
                   <input type="text" placeholder="Digite seu nome" className="w-full px-4 py-3 rounded-[10px]
                   bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
                   placeholder-[--color-gray] placeholder:font-semibold outline-none
-                  min-[450px]:w-[340px]
-                  sm:w-[450px]
-                  lg:w-[250px]
-                  xl:w-[90%]"/>
+                  min-[450px]:w-[340px] sm:w-[450px]
+                  lg:w-[250px] xl:w-[90%]"
+                  {...register("nome")}/>
+                  {errors.nome && (<p>{errors.nome.message}</p>)}
 
                   <label htmlFor="e-mail" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">E-mail:</label>
                   <input type="text" placeholder="Digite seu e-mail" className="w-full px-4 py-3 rounded-[10px]
                   bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
                   placeholder-[--color-gray] placeholder:font-semibold outline-none
-                  lg:w-[250px]
-                  xl:w-[90%]"/>
+                  lg:w-[250px] xl:w-[90%]"
+                  {...register("email")}/>
+                  {errors.email && (<p>{errors.email.message}</p>)}
 
                   <label htmlFor="pergunta" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">Qual a sua pergunta?</label>
                   <textarea placeholder="Digite sua mensagem..." className=" resize-none w-full h-[120px] px-4 py-3 rounded-[10px]
                   bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-l-3 border-r-3 border-[var(--dark-blue-title)]
                   placeholder-[--color-gray] placeholder:font-semibold outline-none
-                  lg:w-[250px]
-                  xl:w-[90%]"/>
+                  lg:w-[250px] xl:w-[90%]"
+                  {...register("mensagem")}/>
+                  {errors.mensagem && (<p>{errors.mensagem.message}</p>)}
 
-                  <button className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)] mt-8 rounded-[10px]
+                  <button type="submit" className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)] mt-8 rounded-[10px]
                   font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)] hover:bg-[var(--hover-button)] transition-colors duration-300
                   sm:w-[30%]
                   lg:w-[60%]
