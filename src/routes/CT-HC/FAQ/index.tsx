@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDown } from 'react-icons/fa';
-import { faqData } from '../../../data/CT-HC/faqData';
+import { faqData } from '../../../data/CT-HC/faqData';import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState<string | null>(null);
@@ -19,6 +21,25 @@ export default function FAQ() {
       }
     }, 100);
   };
+
+  const mensagemSchema = z.object({
+    nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
+    email: z.email({ message: "E-mail deve conter '@' e '.', insira um e-mail válido." }),
+    mensagem: z
+      .string()
+      .min(10, "Mensagem deve conter no mínimo 10 caracteres."),
+  });
+
+  type MensagemInput = z.infer<typeof mensagemSchema>;
+
+  const { register, handleSubmit, formState: { errors }, reset} = useForm<MensagemInput>({
+    resolver: zodResolver(mensagemSchema),
+    mode: "onChange",
+  });
+
+  const onSubmit = () => {
+    reset();
+  }
 
   return (
     <main className="bg-[var(--light-blue)]">
