@@ -349,7 +349,7 @@ export default function FAQ() {
                   </span>
                   <h5 className="text-3xl font-semibold 2xl:text-4xl">Deseja fazer outra pergunta?</h5>
                   <ul className="flex items-center
-                  sm:flex-row sm:gap-10 lg:gap-20">
+                  sm:flex-row sm:gap-10 lg:gap-25">
                     <li>
                       <button
                         title="Clique aqui para voltar"
