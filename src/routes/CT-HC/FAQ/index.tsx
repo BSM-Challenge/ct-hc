@@ -246,7 +246,7 @@ export default function FAQ() {
                     min-[450px]:w-[340px] sm:w-[450px]
                     lg:w-[250px] xl:w-[90%]"
                     {...register("nome")}/>
-                    {errors.nome && <p>{errors.nome.message}</p>}
+                    {errors.nome && <p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>}
 
                     <label htmlFor="e-mail" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">
                       E-mail:
@@ -256,7 +256,7 @@ export default function FAQ() {
                     border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
                     lg:w-[250px] xl:w-[90%]"
                     {...register("email")}/>
-                    {errors.email && <p>{errors.email.message}</p>}
+                    {errors.email && <p className="text-red-500 font-semibold text-sm">{errors.email.message}</p>}
 
                     <label htmlFor="pergunta" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">
                       Qual a sua pergunta?
@@ -266,7 +266,7 @@ export default function FAQ() {
                     border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
                     lg:w-[250px] xl:w-[90%]"
                     {...register("mensagem")}/>
-                    {errors.mensagem && <p>{errors.mensagem.message}</p>}
+                    {errors.mensagem && <p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>}
 
                     <button type="submit" className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)]
                     mt-8 rounded-[10px] font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)]
