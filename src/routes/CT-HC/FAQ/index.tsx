@@ -63,6 +63,7 @@ export default function FAQ() {
           nome: data.nome,
           email: data.email,
           mensagem: data.mensagem,
+          subject: "Página de FAQ",
           data: currentDate,
         },
         "Lq8PxBEF42WbgxFg4"
