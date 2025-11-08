@@ -336,17 +336,20 @@ export default function FAQ() {
                 </div>
               ) : (
                 <div
-                  className="text-center text-[var(--dark-blue-title)]">
-                  <h4 className="text-3xl font-bold">Pergunta enviada com sucesso! Obrigado pelo contato.</h4>
+                  className="flex flex-col items-center text-center text-[var(--dark-blue-title)]">
+                  <h4 className="text-3xl font-bold sm:text-4xl xl:w-[80%] 2xl:text-5xl">
+                    Pergunta enviada com sucesso! Obrigado pelo contato.
+                  </h4>
                   <span>
                     <img
                       src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png"
                       alt="Imagem de check com a cor verde"
-                      className="my-6"
+                      className="my-6 lg:my-10"
                     />
                   </span>
-                  <h5 className="text-3xl font-semibold">Deseja fazer outra pergunta?</h5>
-                  <ul>
+                  <h5 className="text-3xl font-semibold 2xl:text-4xl">Deseja fazer outra pergunta?</h5>
+                  <ul className="flex items-center
+                  sm:flex-row sm:gap-10 lg:gap-20">
                     <li>
                       <button
                         title="Clique aqui para voltar"
@@ -358,6 +361,10 @@ export default function FAQ() {
                             mensagem: "",
                           });
                         }}
+                        className="border-[var(--color-blue-2)] border-4 p-3 text-[var(--color-blue-2)]
+                        my-8 rounded-[10px] font-bold text-xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)]
+                        hover:bg-[var(--color-blue-2)] hover:text-[var(--color-white)] transition-colors duration-300
+                        lg:text-2xl"
                       >
                         Não, obrigado
                       </button>
@@ -366,6 +373,10 @@ export default function FAQ() {
                       <button
                         title="Clique aqui para fazer outra pergunta"
                         onClick={fazerOutraPergunta}
+                        className="bg-[var(--color-blue-2)] p-4 text-[var(--color-white)]
+                        rounded-[10px] font-bold text-xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)]
+                        hover:bg-[var(--hover-button)] transition-colors duration-300
+                        lg:text-2xl"
                       >
                         Sim, gostaria
                       </button>
