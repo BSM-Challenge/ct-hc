@@ -22,6 +22,10 @@ export default function FAQ() {
     }, 100);
   };
 
+  const [mensagem, setMensagem] = useState<boolean>(false);
+  const [dadosUsuario, setDadosUsuario] = useState<MensagemInput | null>(null);
+  const [carregando, setCarregando] = useState<boolean>(false);
+
   const mensagemSchema = z.object({
     nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
     email: z.email({ message: "E-mail deve conter '@' e '.', insira um e-mail válido." }),
@@ -37,16 +41,24 @@ export default function FAQ() {
     mode: "onChange",
   });
 
-  const onSubmit = () => {
-    reset();
-  }
+  const onSubmit = async (data: MensagemInput) => {
+    setDadosUsuario(data)
+    setCarregando(true)
+
+    await new Promise((resolve) => setTimeout(resolve, 800))
+
+    setCarregando(false)
+    setMensagem(true)
+    reset()
+  };
 
   return (
     <main className="bg-[var(--light-blue)]">
       <section
         className="px-10 pt-30 min-h-screen max-[500px]:px-5
       lg:pt-40 lg:px-0 lg:pr-10
-      xl:pt-45 2xl:pr-35">
+      xl:pt-45 2xl:pr-35"
+      >
         <div className="w-full flex flex-col gap-5">
           <div
             className="h-full flex justify-center items-center 
@@ -69,7 +81,8 @@ export default function FAQ() {
             <div className="w-full md:w-[70%] lg:w-[50%] xl:w-[25%] 2xl:w-[20%]">
               <nav
                 className="bg-[var(--color-blue-2)] rounded-[20px] p-6 text-[var(--color-white)] flex flex-col gap-8 w-full
-                lg:rounded-l-[0]">
+                lg:rounded-l-[0]"
+              >
                 <ul className="flex flex-col gap-[.6rem] text-[var(--color-white)]">
                   <li className="border-b-2 border-[var(--color-white)]">
                     <h2 className="text-xl font-bold">Sobre o Projeto</h2>
@@ -208,55 +221,72 @@ export default function FAQ() {
               </nav>
             </div>
 
-            <div className="bg-[var(--color-white)] flex flex-col items-center w-full p-8
-            border-[4px] border-[var(--color-blue-2)] rounded-[20px] h-full xl:w-[70%]">
-              <h3 className="text-3xl text-center font-bold text-[var(--dark-blue-title)] mb-5 
-              md:w-[80%] 2xl:text-4xl 2xl:w-[50%]">
+            <div
+              className="bg-[var(--color-white)] flex flex-col items-center w-full p-8
+            border-[4px] border-[var(--color-blue-2)] rounded-[20px] h-full xl:w-[70%]"
+            >
+              <h3
+                className="text-3xl text-center font-bold text-[var(--dark-blue-title)] mb-5 
+              md:w-[80%] 2xl:text-4xl 2xl:w-[50%]"
+              >
                 Tem alguma outra pergunta? Mande para nós!
               </h3>
 
-              <div className="flex justify-center items-center flex-col-reverse
-              lg:flex-row lg:w-full">
-                <form onSubmit={handleSubmit(onSubmit)} method="POST" className="flex flex-col h-fit mt-10
-                xl:w-[50%]">
+              {!mensagem ? (
+                <div className="flex justify-center items-center flex-col-reverse
+                lg:flex-row lg:w-full">
+                  <form onSubmit={handleSubmit(onSubmit)} method="POST" className="flex flex-col h-fit mt-10
+                  xl:w-[50%]">
+                    <label htmlFor="name" className="text-2xl font-bold text-[var(--dark-blue-title)] mb-2">
+                      Nome:
+                    </label>
+                    <input type="text" placeholder="Digite seu nome" className="w-full px-4 py-3 rounded-[10px]
+                    bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3
+                    border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
+                    min-[450px]:w-[340px] sm:w-[450px]
+                    lg:w-[250px] xl:w-[90%]"
+                    {...register("nome")}/>
+                    {errors.nome && <p>{errors.nome.message}</p>}
 
-                  <label htmlFor="name" className="text-2xl font-bold text-[var(--dark-blue-title)] mb-2">Nome:</label>
-                  <input type="text" placeholder="Digite seu nome" className="w-full px-4 py-3 rounded-[10px]
-                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
-                  placeholder-[--color-gray] placeholder:font-semibold outline-none
-                  min-[450px]:w-[340px] sm:w-[450px]
-                  lg:w-[250px] xl:w-[90%]"
-                  {...register("nome")}/>
-                  {errors.nome && (<p>{errors.nome.message}</p>)}
+                    <label htmlFor="e-mail" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">
+                      E-mail:
+                    </label>
+                    <input type="text" placeholder="Digite seu e-mail" className="w-full px-4 py-3 rounded-[10px]
+                    bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3
+                    border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
+                    lg:w-[250px] xl:w-[90%]"
+                    {...register("email")}/>
+                    {errors.email && <p>{errors.email.message}</p>}
 
-                  <label htmlFor="e-mail" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">E-mail:</label>
-                  <input type="text" placeholder="Digite seu e-mail" className="w-full px-4 py-3 rounded-[10px]
-                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-[var(--dark-blue-title)]
-                  placeholder-[--color-gray] placeholder:font-semibold outline-none
-                  lg:w-[250px] xl:w-[90%]"
-                  {...register("email")}/>
-                  {errors.email && (<p>{errors.email.message}</p>)}
+                    <label htmlFor="pergunta" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">
+                      Qual a sua pergunta?
+                    </label>
+                    <textarea placeholder="Digite sua mensagem..." className=" resize-none w-full h-[120px] px-4 py-3 rounded-[10px]
+                    bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-l-3 border-r-3
+                    border-[var(--dark-blue-title)] placeholder-[--color-gray] placeholder:font-semibold outline-none
+                    lg:w-[250px] xl:w-[90%]"
+                    {...register("mensagem")}/>
+                    {errors.mensagem && <p>{errors.mensagem.message}</p>}
 
-                  <label htmlFor="pergunta" className="text-2xl font-bold text-[var(--dark-blue-title)] mt-10 mb-2">Qual a sua pergunta?</label>
-                  <textarea placeholder="Digite sua mensagem..." className=" resize-none w-full h-[120px] px-4 py-3 rounded-[10px]
-                  bg-gradient-to-b from-[var(--color-white)] to-gray-200 border-b-3 border-l-3 border-r-3 border-[var(--dark-blue-title)]
-                  placeholder-[--color-gray] placeholder:font-semibold outline-none
-                  lg:w-[250px] xl:w-[90%]"
-                  {...register("mensagem")}/>
-                  {errors.mensagem && (<p>{errors.mensagem.message}</p>)}
-
-                  <button type="submit" className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)] mt-8 rounded-[10px]
-                  font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)] hover:bg-[var(--hover-button)] transition-colors duration-300
-                  sm:w-[30%]
-                  lg:w-[60%]
-                  xl:w-[30%] xl:self-start xl:ml-35">
-                    Enviar
-                  </button>
-                </form>
-                <figcaption>
-                  <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761434429/img-question_m7yane.png" alt="Pessoa fazendo uma pergunta."/>
-                </figcaption>
-              </div>
+                    <button type="submit" className="bg-[var(--color-blue-2)] p-2 w-[50%] self-center text-[var(--color-white)]
+                    mt-8 rounded-[10px] font-bold text-2xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)]
+                    hover:bg-[var(--hover-button)] transition-colors duration-300
+                    sm:w-[30%]
+                    lg:w-[60%]
+                    xl:w-[30%] xl:self-start xl:ml-35">
+                      {carregando ? "Enviando..." : "Enviar"}
+                    </button>
+                  </form>
+                  <figcaption>
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761434429/img-question_m7yane.png"
+                    alt="Pessoa fazendo uma pergunta."/>
+                  </figcaption>
+                </div>
+              ) : (
+                <div>
+                  <p>Mensagem enviada com sucesso!</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -266,8 +296,10 @@ export default function FAQ() {
           {/* Categoria: Sobre o projeto */}
           <ul className="flex flex-col gap-8">
             <li>
-              <h3 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">Sobre o projeto</h3>
-              <hr className="border-b-4 border-[var(--dark-blue-title)]"/>
+              <h3 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">
+                Sobre o projeto
+              </h3>
+              <hr className="border-b-4 border-[var(--dark-blue-title)]" />
             </li>
 
             {faqData[0].itens.map((item, index) => {
@@ -290,9 +322,12 @@ export default function FAQ() {
                     <div
                       className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
-                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${isOpen ? 'rotate-180' : ''}
-                      `}>
-                      <FaAngleDown className="text-[var(--color-white)] text-4xl"/>
+                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${
+                        isOpen ? "rotate-180" : ""
+                      }
+                      `}
+                    >
+                      <FaAngleDown className="text-[var(--color-white)] text-4xl" />
                     </div>
                   </div>
 
@@ -300,8 +335,9 @@ export default function FAQ() {
                   <div
                     className={`
                     overflow-hidden transition-all duration-500 ease-in-out 
-                    ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
-                    `}>
+                    ${isOpen ? "max-h-96 mt-4" : "max-h-0"}
+                    `}
+                  >
                     <div className="p-4 bg-[var(--light-blue-2)] rounded-2xl text-[var(--dark-blue-title)]">
                       <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
@@ -314,8 +350,10 @@ export default function FAQ() {
           {/* Categoria: Dados e Segurança */}
           <ul className="flex flex-col gap-8">
             <li>
-              <h4 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">Dados e Segurança</h4>
-              <hr className="border-b-4 border-[var(--dark-blue-title)]"/>
+              <h4 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">
+                Dados e Segurança
+              </h4>
+              <hr className="border-b-4 border-[var(--dark-blue-title)]" />
             </li>
 
             {faqData[1].itens.map((item, index) => {
@@ -338,9 +376,12 @@ export default function FAQ() {
                     <div
                       className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
-                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${isOpen ? 'rotate-180' : ''}
-                      `}>
-                      <FaAngleDown className="text-[var(--color-white)] text-4xl"/>
+                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${
+                        isOpen ? "rotate-180" : ""
+                      }
+                      `}
+                    >
+                      <FaAngleDown className="text-[var(--color-white)] text-4xl" />
                     </div>
                   </div>
 
@@ -348,8 +389,9 @@ export default function FAQ() {
                   <div
                     className={`
                     overflow-hidden transition-all duration-500 ease-in-out 
-                    ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
-                    `}>
+                    ${isOpen ? "max-h-96 mt-4" : "max-h-0"}
+                    `}
+                  >
                     <div className="p-4 bg-[var(--light-blue-2)] rounded-2xl text-[var(--dark-blue-title)]">
                       <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
@@ -362,8 +404,10 @@ export default function FAQ() {
           {/* Categoria: Uso do Tutorial */}
           <ul className="flex flex-col gap-8">
             <li>
-              <h5 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">Uso do Tutorial</h5>
-              <hr className="border-b-4 border-[var(--dark-blue-title)]"/>
+              <h5 className="text-4xl text-[var(--dark-blue-title)] font-bold mb-3">
+                Uso do Tutorial
+              </h5>
+              <hr className="border-b-4 border-[var(--dark-blue-title)]" />
             </li>
 
             {faqData[2].itens.map((item, index) => {
@@ -386,9 +430,12 @@ export default function FAQ() {
                     <div
                       className={`
                       mr-4 p-2 bg-[var(--color-blue)] rounded-full 
-                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${isOpen ? 'rotate-180' : ''}
-                      `}>
-                      <FaAngleDown className="text-[var(--color-white)] text-2xl"/>
+                      transition-transform duration-300 hover:bg-[var(--color-blue-2)] ${
+                        isOpen ? "rotate-180" : ""
+                      }
+                      `}
+                    >
+                      <FaAngleDown className="text-[var(--color-white)] text-2xl" />
                     </div>
                   </div>
 
@@ -396,8 +443,9 @@ export default function FAQ() {
                   <div
                     className={`
                     overflow-hidden transition-all duration-500 ease-in-out 
-                    ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}
-                    `}>
+                    ${isOpen ? "max-h-96 mt-4" : "max-h-0"}
+                    `}
+                  >
                     <div className="p-4 bg-[var(--light-blue-2)] rounded-2xl text-[var(--dark-blue-title)]">
                       <p className="text-lg font-bold">{item.resposta}</p>
                     </div>
