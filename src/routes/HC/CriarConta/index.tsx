@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IMaskInput } from "react-imask";
+import { useState } from "react";
 
 const schema = z.object({
   nome: z
@@ -25,6 +26,9 @@ const schema = z.object({
 type CriarContaFormData = z.infer<typeof schema>;
 
 export default function CriarConta() {
+  const navigate = useNavigate();
+  const [mensagem, setMensagem] = useState("");
+
   const {
     control,
     register,
@@ -35,13 +39,34 @@ export default function CriarConta() {
   });
 
   const onSubmit = (data: CriarContaFormData) => {
-    console.log("Dados válidos:", data);
-    // Jogar a api aqui
+    // Obtém a lista de usuários já existentes no localStorage
+    const usuariosExistentes = JSON.parse(localStorage.getItem("usuariosHC") || "[]");
+
+    // Verifica se já existe um usuário com o mesmo CPF
+    const usuarioExistente = usuariosExistentes.find(
+      (usuario: CriarContaFormData) => usuario.cpf === data.cpf
+    );
+
+    if (usuarioExistente) {
+      setMensagem("Já existe uma conta cadastrada com este CPF.");
+      return;
+    }
+
+    // Adiciona o novo usuário à lista e salva no localStorage
+    usuariosExistentes.push(data);
+    localStorage.setItem("usuariosHC", JSON.stringify(usuariosExistentes));
+
+    // Salva também o usuário logado
+    localStorage.setItem("usuarioHC", JSON.stringify(data));
+
+    setMensagem(""); 
+    navigate("/hc");
   };
 
   return (
     <section className="w-full min-h-screen bg-background-linear flex justify-center items-center px-70">
-      <div className="
+      <div
+        className="
       w-full bg-[var(--color-white-button-hover)] rounded-[20px]
       border-2 border-[var(--color-white)] pr-7.5 pl-5 pt-7.5 pb-9"
       >
@@ -55,7 +80,11 @@ export default function CriarConta() {
             </p>
           </span>
           <span className="w-1/2 flex justify-end">
-            <img src="logo-hc-verde.png" alt="Logo do HC" className="2xl:w-[90%]" />
+            <img
+              src="logo-hc-verde.png"
+              alt="Logo do HC"
+              className="2xl:w-[90%]"
+            />
           </span>
         </div>
 
@@ -71,7 +100,7 @@ export default function CriarConta() {
               </label>
               <input
                 type="text"
-                placeholder="Digite seu nome completo"
+                placeholder="Digite seu nome"
                 {...register("nome")}
                 className={`w-[430px] px-5 py-3.5 rounded-[20px] border-2 ${
                   errors.nome
@@ -194,6 +223,12 @@ export default function CriarConta() {
                 </button>
               </li>
             </ul>
+
+            {mensagem && (
+              <p className="w-full text-center text-[var(--color-red)] text-2xl font-semibold mt-2">
+                {mensagem}
+              </p>
+            )}
           </form>
         </div>
       </div>
