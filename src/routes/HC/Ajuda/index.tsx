@@ -4,10 +4,12 @@ import TitleHC from "../../../components/HC/TitleHC";
 import { perguntas } from "../../../data/HC/perguntas";
 import { IoIosArrowDown } from "react-icons/io";
 import TutorialHC from "../../../components/HC/TutorialHC";
+import { useContraste } from "../../../context/ContrasteContext";
 
 export default function Ajuda() {
 
   const [isTreinamento, setIsTreinamento] = useState(false);
+  const { alternarContraste, contrasteAtivo } = useContraste(); 
   
   useEffect(() => {
       const modoTreinamento = localStorage.getItem("modoTreinamento");
@@ -69,15 +71,24 @@ export default function Ajuda() {
                     abrir-accordion
                     w-full text-left p-4 rounded-lg shadow-sm 
                     flex justify-between items-center cursor-pointer
-                    hover:bg-gray-50 duration-200
+                     duration-200
+                    ${contrasteAtivo ? "hover:bg-[var(--color-grey-1e2939)]" : "hover:bg-[var(--color-gray)]"}
                 `}
                 >
                 <span
-                    className={`font-medium ${
-                    openIndex === index ? "text-[var(--color-blue)]" : "text-[var(--color-grey-1e2939)]"
-                    }`}
+                  className={`font-medium transition-colors duration-300
+                    ${
+                      contrasteAtivo
+                        ? openIndex === index
+                          ? "text-[var(--color-blue)]" 
+                          : "text-[var(--color-white)]"
+                        : openIndex === index
+                        ? "text-[var(--color-blue)]"
+                        : "text-[var(--color-grey-1e2939)]" 
+                    }
+                  `}
                 >
-                    {item.pergunta}
+                  {item.pergunta}
                 </span>
                 <span
                     className={`transform transition-transform duration-300 ${
@@ -92,12 +103,19 @@ export default function Ajuda() {
 
                 <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    openIndex === index
+                  contrasteAtivo
+                  ? openIndex === index
+                    ? "max-h-96 opacity-100 py-4 px-6 border-b bg-[var(--color-gray)]"
+                    : "max-h-0 opacity-0 py-0 px-6"
+                  : openIndex === index
                     ? "max-h-96 opacity-100 py-4 px-6 border-b bg-[var(--color-white)]"
                     : "max-h-0 opacity-0 py-0 px-6"
                 }`}
                 >
-                <p className="text-[var(--color-grey-1e2939)] text-[15px] leading-relaxed">
+                <p className={`
+                  text-[var(--color-grey-1e2939)] text-[15px] leading-relaxed
+                  ${contrasteAtivo ? "text-[var(--color-white)]" : "text-[var(--color-grey-1e2939)]"}
+                  `}>
                     {item.resposta}
                 </p>
                 </div>
