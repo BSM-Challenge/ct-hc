@@ -12,7 +12,7 @@ export default function HomeHC() {
             line={true}
              />
             <CardTreinamento />
-            <div className="flex flex-wrap gap-3 justify-between">
+            <div className="flex flex-wrap gap-10">
                 <CardAcessibilidade 
                     img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761572476/icon-acessibilidade_jq0dzu.png"
                     title="Acessibilidade"
@@ -26,13 +26,6 @@ export default function HomeHC() {
                     description="Navegue pelo site com a sua voz, clique para ativar."
                     link="/hc/maisRecursos"
                     titleMessage="Clique para aqui para ver a navegação por voz"
-                />
-                <CardAcessibilidade 
-                    img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761572488/icon-aumentar-fonte_r6kood.png"
-                    title="Aumentar Fonte"
-                    description="Melhore a leitura ajustando o tamanho das letras."
-                    link="/hc/maisRecursos"
-                    titleMessage="Clique aqui para ver como aumentar fonte"
                 />
             </div>
         </div>
