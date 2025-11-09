@@ -1,15 +1,31 @@
-# 🏨 CT-HC - Centro de Treinamento do Hospital das Clínicas
+<p align="center">
+  <img 
+    src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png" 
+    alt="Logo CT-HC" 
+    width="180"
+  />
+</p>
+
+<h2 align="center">🏥 CT-HC — Centro de Treinamento do Hospital das Clínicas</h2>
+
+<p align="center">
+  Plataforma digital desenvolvida para apoiar o <strong>IMREA-HCFMUSP</strong>, com o objetivo de 
+  reduzir o absenteísmo e aumentar a adesão aos atendimentos de reabilitação, oferecendo uma 
+  interface acessível e interativa, especialmente voltada para pacientes com baixa afinidade tecnológica.
+</p>
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-🔹 **HTML** → Estruturação do conteúdo  
-🔹 **CSS** → Estilização e design  
-🔹 **JavaScript** → Interatividade e lógica  
-🔹 **TypeScript** → Tipagem estática e segurança  
-🔹 **React** → Criação de interfaces dinâmicas  
-🔹 **Vite** → Build rápido e ambiente de desenvolvimento  
-🔹 **Tailwind** → Framework - Estilização responsiva com classes utilitárias  
+
+| Categoria                   | Tecnologias                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| **Frontend**                | React • TypeScript • Tailwind CSS • React Router DOM                           |
+| **Validação e Formulários** | React Hook Form • Zod                                                          |
+| **Utilitários e UI**        | React Icons • React IMask • EmailJS                                            |
+| **Build & Dev Tools**       | Vite • ESLint • TypeScript ESLint                                              |
+| **Backend (consumo)**       | APIs desenvolvidas em **Java**                                    |
+
 
 ---
 
