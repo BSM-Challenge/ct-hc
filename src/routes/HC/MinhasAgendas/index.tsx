@@ -74,9 +74,7 @@ export default function MinhasAgendas() {
       </ul>
 
       <ConteudoDinamico>
-        <p>
             {botoes.find(botao => botao.value === filtroAtivo)?.mensagem}
-        </p>
       </ConteudoDinamico>
     </section>
   );
