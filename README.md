@@ -68,9 +68,19 @@
 
 ---
 
-##  📷 Imagens do projeto 
-🔹 **Logo**:   
-<img width="200" height="200" alt="logo-ct-hc" src="https://github.com/user-attachments/assets/7e4f1626-2efc-46c9-a784-5c4c2c430d09" />
+### 🏠 Tela Inicial — CT-HC
+
+A tela inicial dá acesso rápido às funcionalidades principais do CT-HC e demonstra os recursos de acessibilidade do portal HC criado pela nossa equipe e controles pensados para usuários com baixa familiaridade digital.
+
+<p align="center">
+  <img
+    src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1762722894/tela_cthc_yw857v.png"
+    alt="Tela inicial do CT-HC"
+    width="680"
+  />
+  <br/>
+  <em>Tela inicial do CT-HC</em>
+</p>
 
 
 🔹 **Logo com texto**:   
