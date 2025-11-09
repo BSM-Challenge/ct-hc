@@ -5,7 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function MaisRecursos() {
   const navigate = useNavigate();
-  const [isVoiceActive, setIsVoiceActive] = useState(false);
+  const [isVoiceActive, setIsVoiceActive] = useState<boolean>(() => {
+    return localStorage.getItem("vozAtiva") === "true";
+  });
   const [recognition, setRecognition] = useState<any>(null);
 
   useEffect(() => {
@@ -36,10 +38,22 @@ export default function MaisRecursos() {
     };
 
     recog.onend = () => {
-      setIsVoiceActive(false);
+      // Só desativa se o usuário realmente clicou no botão para parar
+      if (localStorage.getItem("vozAtiva") === "true") {
+        recog.start();
+      } else {
+        setIsVoiceActive(false);
+      }
     };
 
     setRecognition(recog);
+
+    // Se estava ativo antes, reativa automaticamente
+    if (localStorage.getItem("vozAtiva") === "true") {
+      setIsVoiceActive(true);
+      recog.start();
+      console.log("🔊 Navegação por voz reativada automaticamente.");
+    }
   }, []);
 
   const interpretarComando = async (texto: string) => {
@@ -69,11 +83,13 @@ export default function MaisRecursos() {
     if (!isVoiceActive) {
       recognition.start();
       setIsVoiceActive(true);
-      console.log("Navegação por voz ativada.");
+      localStorage.setItem("vozAtiva", "true"); 
+      console.log("Navegação por voz ativada e salva no localStorage.");
     } else {
       recognition.stop();
       setIsVoiceActive(false);
-      console.log("Navegação por voz desativada.");
+      localStorage.setItem("vozAtiva", "false"); 
+      console.log("Navegação por voz desativada e salva no localStorage.");
     }
   };
 
