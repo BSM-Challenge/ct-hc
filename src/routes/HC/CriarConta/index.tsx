@@ -86,17 +86,8 @@ export default function CriarConta() {
                         placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none"
               />
             </div>
-          </form>
-        </div>
-        <ul
-          className="
-            flex justify-between 
-            "
-        >
-          <li
-            className="
-                pt-16 pl-3"
-          >
+        <ul className="flex justify-between items-center w-full ">
+          <li className=" pl-3">
             <Link
               to="/entrarConta"
               title="Clique aqui para seguir para a página de login da conta."
@@ -108,20 +99,22 @@ export default function CriarConta() {
               </span>
             </Link>
           </li>
-          <li className="pt-16 pl-3">
-            <Link
-              to="/hc"
+          <li className="pl-3">
+            <button
+              type="submit"
               title="Clique aqui para entrar."
               className="
-                text-[var(--color-white)] text-center px-7 py-3 
+                text-[var(--color-white)] text-center px-12 py-2
                 border-2 border-[var(--color-white)] 
                 rounded-[30px] text-[24px] 
                 hover:bg-[var(--color-white-button-hover)] duration-300"
             >
-              Entrar
-            </Link>
+              Criar Conta
+            </button>
           </li>
         </ul>
+          </form>
+        </div>
       </div>
     </section>
   );
