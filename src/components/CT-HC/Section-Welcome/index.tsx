@@ -49,7 +49,7 @@ export default function SectionWelcome() {
         ">
           <li className="">
             <Link
-              to="/hc"
+              to="/bemVindo"
               title="Clique aqui para ir ao portal com treinamento"
               className="
               flex bg-white text-[var(--color-blue-0077C8)] py-4
