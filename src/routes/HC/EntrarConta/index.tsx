@@ -60,11 +60,15 @@ export default function EntrarConta() {
                 type="text"
                 {...register("emailOuCpf")}
                 placeholder="Digite seu E-mail ou CPF"
-                className="mb-10 rounded-[20px]
-                  border-2 border-[var(--color-blue-0077C8)] p-3
+                className={`mb-10 rounded-[20px] p-3
+                border-2 ${
+                    errors.emailOuCpf
+                      ? "border-[var(--color-red)]"
+                      : "border-[var(--color-blue-0077C8)]"
+                  } 
                   bg-[var(--color-white-04)] 
                   placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none
-                  md:px-4"
+                  md:px-4`}
               />
               {errors.emailOuCpf && (
                 <span className="text-[var(--color-red)] text-sm -mt-8 mb-5 ml-2">
@@ -78,11 +82,15 @@ export default function EntrarConta() {
                 type="password"
                 {...register("senha")}
                 placeholder="Digite sua senha"
-                className="mb-10 rounded-[20px]
-                  border-2 border-[var(--color-blue-0077C8)] p-3
+                className={`mb-10 rounded-[20px] p-3
+                border-2 ${
+                    errors.senha
+                      ? "border-[var(--color-red)]"
+                      : "border-[var(--color-blue-0077C8)]"
+                  } 
                   bg-[var(--color-white-04)] 
                   placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none
-                  md:px-4"
+                  md:px-4`}
               />
               {errors.senha && (
                 <span className="text-[var(--color-red)] text-sm -mt-8 mb-5 ml-2">
