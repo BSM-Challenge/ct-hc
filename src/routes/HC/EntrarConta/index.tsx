@@ -49,19 +49,18 @@ export default function EntrarConta() {
                     </form>
                 </div>
                 <ul className="flex flex-col-reverse md:flex-row md:justify-between">
-                    <li 
-                        className="pt-8 text-center">
+                    <li className="pt-8 text-center">
                         <Link 
-                        to="#"
+                        to="/criarConta"
                         title="Clique aqui para seguir para a página de criar conta."
                         className="text-white text-2xl"
                         >
                             Não tem uma conta? <span className="font-bold md:hover:underline">Clique aqui.</span>
                         </Link>
                     </li>
-                    <div className="">
+                    <li className="">
                         <Link 
-                        to=""
+                        to="/hc"
                         title="Clique aqui para entrar."
                         className="
                         text-white text-center px-7 py-3 flex justify-self-center
@@ -71,7 +70,7 @@ export default function EntrarConta() {
                         >
                             Entrar
                         </Link>
-                    </div>
+                    </li>
                 </ul>
             </div>
         </section>
