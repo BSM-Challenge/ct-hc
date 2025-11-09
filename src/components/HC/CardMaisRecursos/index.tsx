@@ -4,7 +4,7 @@ export default function CardMaisRecursos( {titleMessage, img, title, text}: Card
   return (
     <div
       className="
-            bg-[var(--light-blue)] px-3 py-3 rounded-[10px]
+            bg-[var(--light-blue)] px-3 py-3 rounded-[10px] min-h-[150px]
             shadow-[4px_4px_10px_var(--shadow-black-03)]
             flex flex-col gap-3
             cursor-pointer hover:bg-[var(--light-blue-2)]
