@@ -54,7 +54,10 @@ export default function Card({
           }`}
         >
           <img
-            className="w-40 h-40 sm:w-60 sm:h-60 lg:w-[300px] lg:h-[300px] object-cover rounded-full border-[6px] sm:border-[8px] border-[var(--color-blue)] shadow-2xl z-10"
+            className="
+            w-40 h-40 sm:w-60 sm:h-60 lg:w-[300px] lg:h-[300px]
+            object-cover rounded-full border-[6px] sm:border-[8px]
+            border-[var(--color-blue)] shadow-2xl z-10"
             src={img}
             alt={`Foto de ${nome}`}
           />
@@ -62,7 +65,7 @@ export default function Card({
 
         {/* Conteúdo */}
         <div
-          className={`flex flex-col text-white w-full ${
+          className={`flex flex-col text-[var(--color-white)] w-full ${
             posicaoImg === "right" ? "mr-36" : "ml-36"
           }
           max-lg:${
@@ -101,7 +104,10 @@ export default function Card({
           </p>
 
           {/* RM e Turma + Contato */}
-          <div className="flex flex-col lg:flex-row justify-between gap-6 px-1 sm:px-4 max-w-[95%] ml-4 mt-10">
+          <div className="
+          flex flex-col lg:flex-row justify-between gap-6
+          px-1 sm:px-4 max-w-[95%] ml-4 mt-10
+          ">
             <div>
               <p className="text-base sm:text-lg lg:text-xl">
                 <span className="font-bold">RM: </span>
@@ -125,14 +131,20 @@ export default function Card({
                 <a
                   href={linkGithub}
                   target="_blank"
-                  className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-lg hover:opacity-80 transition font-bold"
+                  className="
+                  flex items-center gap-2
+                  bg-[var(--color-black)] text-[var(--color-white)]
+                  px-3 py-2 rounded-lg hover:opacity-80 transition font-bold"
                 >
                   <FaGithub /> GitHub
                 </a>
                 <a
                   href={linkLinkedin}
                   target="_blank"
-                  className="flex items-center gap-2 bg-[#0077B5] text-white px-3 py-2 rounded-lg hover:opacity-80 transition font-bold"
+                  className="
+                  flex items-center gap-2 bg-[var(--color-blue-0077B5)]
+                  text-[var(--color-white)] px-3 py-2 rounded-lg hover:opacity-80
+                   transition font-bold"
                 >
                   <FaLinkedin /> LinkedIn
                 </a>
