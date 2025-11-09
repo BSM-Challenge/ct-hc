@@ -1,74 +1,77 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IMaskInput } from "react-imask";
+
 import { useState } from "react";
+import { apiService } from "../../../services/api-java";
 
 const schema = z.object({
-  nome: z
-    .string()
-    .min(3, "O nome deve ter pelo menos 3 caracteres.")
-    .max(100, "O nome deve ter no máximo 100 caracteres."),
-  email: z
-    .string()
-    .min(1, "O e-mail é obrigatório.")
-    .email("Formato de e-mail inválido."),
-  senha: z
-    .string()
-    .min(6, "A senha deve ter no mínimo 6 caracteres.")
-    .max(20, "A senha deve ter no máximo 20 caracteres."),
-  cpf: z
-    .string()
-    .regex(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, "O CPF deve estar no formato 000.000.000-00."),
+  nome: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
+  email: z.string().email("Email inválido"),
+  senha: z.string().min(6, "Senha deve ter pelo menos 6 caracteres"),
+  cpf: z.string().length(11, "CPF deve ter exatamente 11 dígitos"),
 });
 
-type CriarContaFormData = z.infer<typeof schema>;
+type FormData = z.infer<typeof schema>;
 
 export default function CriarConta() {
-  const navigate = useNavigate();
-  const [mensagem, setMensagem] = useState("");
-
   const {
-    control,
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<CriarContaFormData>({
-    resolver: zodResolver(schema),
+  } = useForm<FormData>({
+    resolver: zodResolver(schema)
   });
 
-  const onSubmit = (data: CriarContaFormData) => {
-    // Obtém a lista de usuários já existentes no localStorage
-    const usuariosExistentes = JSON.parse(localStorage.getItem("usuariosHC") || "[]");
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-    // Verifica se já existe um usuário com o mesmo CPF
-    const usuarioExistente = usuariosExistentes.find(
-      (usuario: CriarContaFormData) => usuario.cpf === data.cpf
-    );
+  const onSubmit = async (data: FormData) => {
+    setLoading(true);
+    setSubmitError(null);
+    setSuccessMessage(null);
 
-    if (usuarioExistente) {
-      setMensagem("Já existe uma conta cadastrada com este CPF.");
-      return;
+    try {
+      console.log("Enviando dados para API:", data);
+      
+      const result = await apiService.criarUsuario({
+        cpf: data.cpf,
+        nome: data.nome,
+        email: data.email,
+        senha: data.senha
+      });
+
+      if (result.error) {
+        setSubmitError(result.error);
+        console.error("Erro da API:", result.error);
+      } else if (result.data) {
+        setSuccessMessage("Conta criada com sucesso! Redirecionando para login...");
+        console.log("Usuário criado:", result.data);
+        
+        setTimeout(() => {
+          navigate("/entrarConta");
+        }, 800);
+      } else {
+        setSubmitError("Erro desconhecido ao criar conta");
+      }
+    } catch (error) {
+      console.error("Erro completo:", error);
+      setSubmitError("Erro de conexão com o servidor");
+    } finally {
+      setLoading(false);
     }
-
-    // Adiciona o novo usuário à lista e salva no localStorage
-    usuariosExistentes.push(data);
-    localStorage.setItem("usuariosHC", JSON.stringify(usuariosExistentes));
-
-    // Salva também o usuário logado
-    localStorage.setItem("usuarioHC", JSON.stringify(data));
-
-    setMensagem(""); 
-    navigate("/hc");
   };
 
   return (
     <section className="w-full min-h-screen bg-background-linear flex justify-center items-center px-70">
       <div
         className="
-      w-full bg-[var(--color-white-button-hover)] rounded-[20px]
-      border-2 border-[var(--color-white)] pr-7.5 pl-5 pt-7.5 pb-9"
+        w-full bg-[var(--color-white-button-hover)] rounded-[20px] border-2
+        border-[var(--color-white)] pr-7.5 pl-5 pt-7.5 pb-9
+        "
       >
         <div className="flex">
           <span className="w-1/2 flex flex-col items-center gap-5">
@@ -80,157 +83,145 @@ export default function CriarConta() {
             </p>
           </span>
           <span className="w-1/2 flex justify-end">
-            <img
-              src="logo-hc-verde.png"
-              alt="Logo do HC"
-              className="2xl:w-[90%]"
-            />
+            <img src="logo-hc-verde.png" alt="Logo HC" className="2xl:w-[90%]" />
           </span>
         </div>
 
+        {/* Mensagens de erro */}
+        {submitError && (
+          <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded text-center">
+            {submitError}
+          </div>
+        )}
+
+        {successMessage && (
+          <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded text-center">
+            {successMessage}
+          </div>
+        )}
+
         <div className="flex flex-col gap-[70px]">
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-wrap justify-around gap-10"
-          >
-            {/* Nome */}
-            <div className="flex flex-col">
-              <label className="text-[var(--color-white)] text-4xl font-bold mb-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-wrap justify-around gap-10">
+            {/* Campo Nome */}
+            <div className="flex flex-col gap-5">
+              <label className="text-[var(--color-white)] text-4xl font-bold">
                 Nome:
               </label>
               <input
                 type="text"
-                placeholder="Digite seu nome"
                 {...register("nome")}
-                className={`w-[430px] px-5 py-3.5 rounded-[20px] border-2 ${
-                  errors.nome
-                    ? "border-[var(--color-red)]"
-                    : "border-[var(--color-blue-0077C8)]"
-                } 
-                bg-[var(--color-white-04)] 
-                placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none`}
+                placeholder="Digite seu nome completo"
+                className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none"
+                disabled={loading}
               />
               {errors.nome && (
-                <span className="text-[var(--color-red)] text-lg font-semibold ml-2">
+                <span className="text-red-400 text-sm mt-1">
                   {errors.nome.message}
                 </span>
               )}
             </div>
 
-            {/* CPF */}
-            <div className="flex flex-col">
-              <label className="text-[var(--color-white)] text-4xl font-bold mb-5">
-                CPF:
-              </label>
-              <Controller
-                name="cpf"
-                control={control}
-                render={({ field }) => (
-                  <IMaskInput
-                    {...field}
-                    mask="000.000.000-00"
-                    placeholder="Digite seu CPF"
-                    className={`w-[430px] px-5 py-3.5 rounded-[20px] border-2 ${
-                      errors.cpf
-                        ? "border-[var(--color-red)]"
-                        : "border-[var(--color-blue-0077C8)]"
-                    } 
-                    bg-[var(--color-white-04)] 
-                    placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none`}
-                  />
-                )}
-              />
-              {errors.cpf && (
-                <span className="text-[var(--color-red)] text-lg font-semibold ml-2">
-                  {errors.cpf.message}
-                </span>
-              )}
-            </div>
-
-            {/* Email */}
-            <div className="flex flex-col">
-              <label className="text-[var(--color-white)] text-4xl font-bold mb-5">
+            {/* Campo Email */}
+            <div className="flex flex-col gap-5">
+              <label className="text-[var(--color-white)] text-4xl font-bold">
                 E-mail:
               </label>
               <input
-                type="text"
-                placeholder="Digite seu e-mail"
+                type="email"
                 {...register("email")}
-                className={`w-[430px] px-5 py-3.5 rounded-[20px] border-2 ${
-                  errors.email
-                    ? "border-[var(--color-red)]"
-                    : "border-[var(--color-blue-0077C8)]"
-                } 
-                bg-[var(--color-white-04)] 
-                placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none`}
+                placeholder="Digite seu E-mail"
+                className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none"
+                disabled={loading}
               />
               {errors.email && (
-                <span className="text-[var(--color-red)] text-lg font-semibold ml-2">
+                <span className="text-red-400 text-sm mt-1">
                   {errors.email.message}
                 </span>
               )}
             </div>
 
-            {/* Senha */}
-            <div className="flex flex-col">
-              <label className="text-[var(--color-white)] text-4xl font-bold mb-5">
+            {/* Campo Senha */}
+            <div className="flex flex-col gap-5">
+              <label className="text-[var(--color-white)] text-4xl font-bold">
                 Senha:
               </label>
               <input
                 type="password"
-                placeholder="Digite sua senha"
                 {...register("senha")}
-                className={`w-[430px] px-5 py-3.5 rounded-[20px] border-2 ${
-                  errors.senha
-                    ? "border-[var(--color-red)]"
-                    : "border-[var(--color-blue-0077C8)]"
-                } 
-                bg-[var(--color-white-04)] 
-                placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none`}
+                placeholder="Digite sua senha"
+                className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none"
+                disabled={loading}
               />
               {errors.senha && (
-                <span className="text-[var(--color-red)] text-lg font-semibold ml-2">
+                <span className="text-red-400 text-sm mt-1">
                   {errors.senha.message}
                 </span>
               )}
             </div>
 
-            {/* Link e o Botão */}
-            <ul className="flex justify-between items-center w-full ">
-              <li className="pl-3">
-                <Link
-                  to="/entrarConta"
-                  title="Clique aqui para seguir para a página de login da conta."
-                  className="text-[var(--color-white)] text-xl"
-                >
-                  Já tem uma conta?{" "}
-                  <span className="font-bold hover:underline duration-300">
-                    Clique aqui.
-                  </span>
-                </Link>
-              </li>
-              <li className="pl-3">
-                <button
-                  type="submit"
-                  title="Clique aqui para criar sua conta."
-                  className="
-                  text-[var(--color-white)] text-center px-12 py-2 
-                  border-2 border-[var(--color-white)] rounded-[30px]
-                  text-[24px] cursor-pointer hover:bg-[var(--color-white-button-hover)]
-                  duration-300"
-                >
-                  Criar Conta
-                </button>
-              </li>
-            </ul>
-
-            {mensagem && (
-              <p className="w-full text-center text-[var(--color-red)] text-2xl font-semibold mt-2">
-                {mensagem}
-              </p>
-            )}
+            {/* Campo CPF */}
+            <div className="flex flex-col gap-5">
+              <label className="text-[var(--color-white)] text-4xl font-bold">
+                CPF:
+              </label>
+              <input
+                type="text"
+                {...register("cpf")}
+                placeholder="Digite seu CPF (apenas números)"
+                className="w-[430px] px-5 py-3.5 rounded-[20px] 
+                        border-2 border-[var(--color-blue-0077C8)] 
+                        bg-[var(--color-white-04)] 
+                        placeholder:text-[var(--color-white-075)] text-[18px] font-bold outline-none"
+                disabled={loading}
+              />
+              {errors.cpf && (
+                <span className="text-red-400 text-sm mt-1">
+                  {errors.cpf.message}
+                </span>
+              )}
+            </div>
           </form>
         </div>
+
+        <ul className="flex justify-between">
+          <li className="pt-16 pl-3">
+            <Link
+              to="/entrarConta"
+              title="Clique aqui para seguir para a página de login da conta."
+              className="text-[var(--color-white)] text-xl"
+            >
+              Já tem uma conta?{" "}
+              <span className="font-bold hover:underline duration-300">
+                Clique aqui.
+              </span>
+            </Link>
+          </li>
+          <li className="pt-16 pl-3">
+            <button
+              type="submit"
+              onClick={handleSubmit(onSubmit)}
+              title="Clique aqui para criar conta."
+              disabled={loading}
+              className="
+                text-[var(--color-white)] text-center px-7 py-3 
+                border-2 border-[var(--color-white)] 
+                rounded-[30px] text-[24px] 
+                hover:bg-[var(--color-white-button-hover)] duration-300
+                disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? "Criando..." : "Criar Conta"}
+            </button>
+          </li>
+        </ul>
       </div>
     </section>
   );
