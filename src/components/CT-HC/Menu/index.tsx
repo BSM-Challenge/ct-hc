@@ -18,8 +18,8 @@ export function Menu() {
   // Garantir que estamos na Home antes de tentar rolar
   const handleScrollLink = (sectionId: string) => {
     if (window.location.pathname !== "/") {
-      navigate("/"); // vai pra Home
-      setTimeout(() => scrollToSection(sectionId), 100); // espera renderizar
+      navigate("/");
+      setTimeout(() => scrollToSection(sectionId), 100);
     } else {
       // Verifica se já está na seção alvo
       const currentSection = document.getElementById(sectionId);
@@ -33,7 +33,7 @@ export function Menu() {
           // Se já está na seção, volta para o topo (welcome)
           scrollToSection("welcome");
         } else {
-          // Se não está na seção, vai para ela
+          // Se não está na seção, vai pra ela
           scrollToSection(sectionId);
         }
       } else {
@@ -49,7 +49,11 @@ export function Menu() {
         <ul className="bg-[var(--color-white)] flex items-center mt-[55px] rounded-full shadow-lg">
           <li className="ml-4">
             <Link to="/">
-              <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png" alt="CT-HC" className="h-12 m-2" />
+              <img
+               src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png"
+               alt="CT-HC" 
+               className="h-12 m-2"
+              />
             </Link>
           </li>
           <li className="ml-8 xl:ml-15 text-lg xl:text-2xl">
@@ -102,7 +106,11 @@ export function Menu() {
       {/* Menu Mobile */}
       <nav className="lg:hidden flex justify-between items-center p-4 bg-[var(--color-white)] shadow-md relative">
         <Link to="/">
-          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png" alt="Logo do CT-HC" className="h-10" />
+          <img 
+           src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png"
+           alt="Logo do CT-HC" 
+           className="h-10" 
+          />
         </Link>
 
         <button
