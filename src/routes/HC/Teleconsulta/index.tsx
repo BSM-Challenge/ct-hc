@@ -33,6 +33,5 @@ export default function Teleconsulta() {
                 Você não possui agendamentos de teleconsulta no momento
             </ConteudoDinamico>
         </section>
-
     )
 }

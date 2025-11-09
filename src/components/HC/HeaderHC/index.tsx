@@ -14,7 +14,11 @@ export default function HeaderHC() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const handleItemClick = (label: string, hasSubItems: boolean, e: React.MouseEvent) => {
+  const handleItemClick = (
+    label: string,
+    hasSubItems: boolean,
+    e: React.MouseEvent
+  ) => {
     if (hasSubItems) {
       e.preventDefault();
       setOpenSubmenu((prev) => (prev === label ? null : label));
@@ -61,7 +65,11 @@ export default function HeaderHC() {
             </button>
           </figure>
 
-          <ul className={`mt-2 flex flex-col ${isOpen ? "gap-4" : "gap-4"} text-lg font-medium`}>
+          <ul
+            className={`mt-2 flex flex-col ${
+              isOpen ? "gap-4" : "gap-4"
+            } text-lg font-medium`}
+          >
             <li>
               <Link
                 to="/perfil"
@@ -69,7 +77,9 @@ export default function HeaderHC() {
                 title="Ir para a página do usuário"
               >
                 <IoPersonCircle className="text-[var(--color-grey)] text-4xl" />
-                {isOpen && <span className="text-sm font-medium">Olá, Moisés</span>}
+                {isOpen && (
+                  <span className="text-sm font-medium">Olá, Moisés</span>
+                )}
               </Link>
             </li>
 
@@ -91,9 +101,7 @@ export default function HeaderHC() {
                       hover:bg-[var(--color-grey-hover)]
                       text-sm font-medium
                       ${
-                        isActive
-                          ? item.activeColor
-                          : "text-[var(--color-grey)]"
+                        isActive ? item.activeColor : "text-[var(--color-grey)]"
                       }
                     `}
                     title={item.title}
@@ -140,12 +148,16 @@ export default function HeaderHC() {
                 <GoHome
                   size={25}
                   className={`${
-                    location.pathname === "/hc" ? "text-[var(--color-active)]" : "text-[var(--color-grey)]"
+                    location.pathname === "/hc"
+                      ? "text-[var(--color-active)]"
+                      : "text-[var(--color-grey)]"
                   }`}
                 />
                 <span
                   className={`text-xs font-medium ${
-                    location.pathname === "/hc" ? "text-[var(--color-active)]" : "text-[var(--color-grey)]"
+                    location.pathname === "/hc"
+                      ? "text-[var(--color-active)]"
+                      : "text-[var(--color-grey)]"
                   }`}
                 >
                   Início
@@ -154,7 +166,10 @@ export default function HeaderHC() {
             </li>
 
             <li>
-              <Link to="/hc/menuMobile" className="flex flex-col items-center gap-1">
+              <Link
+                to="/hc/menuMobile"
+                className="flex flex-col items-center gap-1"
+              >
                 <MdOutlineMenu
                   size={25}
                   className={`${
@@ -176,7 +191,10 @@ export default function HeaderHC() {
             </li>
 
             <li>
-              <Link to="/hc/avisosMobile" className="flex flex-col items-center gap-1">
+              <Link
+                to="/hc/avisosMobile"
+                className="flex flex-col items-center gap-1"
+              >
                 <FaRegBell
                   size={25}
                   className={`${

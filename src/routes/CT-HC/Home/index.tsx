@@ -4,10 +4,10 @@ import SectionSobre from "../../../components/CT-HC/Section-Pitch";
 
 export default function Home() {
   return (
-    <main>
+    <section>
       <SectionWelcome />
       <SectionPitch />
       <SectionSobre />
-    </main>
+    </section>
   );
 }

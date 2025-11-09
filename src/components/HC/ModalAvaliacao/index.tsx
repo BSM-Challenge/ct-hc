@@ -64,9 +64,7 @@ export default function ModalAvaliacao({ onClose }: ModalAvaliacaoProps) {
               >
                 {avaliacao.icon}
               </div>
-              <figcaption className="text-base">
-                {avaliacao.text}
-              </figcaption>
+              <figcaption className="text-base">{avaliacao.text}</figcaption>
             </figure>
           </li>
         ))}

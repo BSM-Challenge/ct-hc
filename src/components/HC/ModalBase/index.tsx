@@ -29,11 +29,8 @@ export default function ModalBase({minW, px, py, className, children, onClose,}:
       ref={dialog}
       onClose={fechar}
       className={`
-        dialog-modal 
-        min-w-[${minW}px]
-        px-${px} py-${py}
-        rounded-2xl inset-0
-        m-auto outline-none
+        dialog-modal min-w-[${minW}px] px-${px} py-${py}
+        rounded-2xl inset-0 m-auto outline-none
         flex flex-col items-center gap-3
         max-md:px-10 max-sm:min-w-90 max-sm:px-5
         max-[448px]:min-w-20 

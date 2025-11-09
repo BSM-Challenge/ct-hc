@@ -2,7 +2,7 @@ import Card from "../../../components/CT-HC/Card";
 
 export default function Integrantes() {
   return (
-    <main className="pt-28 sm:pt-32 md:pt-40 bg-[var(--light-blue)] min-h-screen">
+    <section className="pt-28 sm:pt-32 md:pt-40 bg-[var(--light-blue)] min-h-screen">
       <section className="
       flex flex-col items-center px-6
       max-lg:px-12 
@@ -69,6 +69,6 @@ export default function Integrantes() {
           />
         </div>
       </section>
-    </main>
+    </section>
   );
 }

@@ -6,8 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-
-
 export default function FAQ() {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
@@ -99,7 +97,7 @@ export default function FAQ() {
   };
 
   return (
-    <main className="bg-[var(--light-blue)]">
+    <section className="bg-[var(--light-blue)]">
       <section
         className="px-10 pt-30 min-h-screen max-[500px]:px-5
       lg:pt-40 lg:px-0 lg:pr-10
@@ -308,7 +306,7 @@ export default function FAQ() {
                       {...register("nome")}
                     />
                     {errors.nome && (
-                      <p className="text-red-500 font-semibold text-sm">
+                      <p className="text-[var(--color-red)] font-semibold text-sm">
                         {errors.nome.message}
                       </p>
                     )}
@@ -329,7 +327,7 @@ export default function FAQ() {
                       {...register("email")}
                     />
                     {errors.email && (
-                      <p className="text-red-500 font-semibold text-sm">
+                      <p className="text-[var(--color-red)] font-semibold text-sm">
                         {errors.email.message}
                       </p>
                     )}
@@ -349,7 +347,7 @@ export default function FAQ() {
                       {...register("mensagem")}
                     />
                     {errors.mensagem && (
-                      <p className="text-red-500 font-semibold text-sm">
+                      <p className="text-[var(--color-red)] font-semibold text-sm"> 
                         {errors.mensagem.message}
                       </p>
                     )}
@@ -592,6 +590,6 @@ export default function FAQ() {
           </ul>
         </div>
       </section>
-    </main>
+    </section>
   );
 }
