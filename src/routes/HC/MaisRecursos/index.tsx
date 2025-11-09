@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContraste } from "../../../context/ContrasteContext";
 import CardMaisRecursos from "../../../components/HC/CardMaisRecursos";
 import TitleHC from "../../../components/HC/TitleHC";
-import { useNavigate } from "react-router-dom";
+
 const URL_API_VOZ = import.meta.env.VITE_API_URL_VOZ as string;
 
 export default function MaisRecursos() {
   const navigate = useNavigate();
+  const { alternarContraste, contrasteAtivo } = useContraste(); 
+
   const [isVoiceActive, setIsVoiceActive] = useState<boolean>(() => {
     return localStorage.getItem("vozAtiva") === "true";
   });
@@ -39,7 +43,6 @@ export default function MaisRecursos() {
     };
 
     recog.onend = () => {
-      // Só desativa se o usuário realmente clicou no botão para parar
       if (localStorage.getItem("vozAtiva") === "true") {
         recog.start();
       } else {
@@ -49,11 +52,10 @@ export default function MaisRecursos() {
 
     setRecognition(recog);
 
-    // Se estava ativo antes, reativa automaticamente
     if (localStorage.getItem("vozAtiva") === "true") {
       setIsVoiceActive(true);
       recog.start();
-      console.log("🔊 Navegação por voz reativada automaticamente.");
+      console.log("Navegação por voz reativada automaticamente.");
     }
   }, []);
 
@@ -84,12 +86,12 @@ export default function MaisRecursos() {
     if (!isVoiceActive) {
       recognition.start();
       setIsVoiceActive(true);
-      localStorage.setItem("vozAtiva", "true"); 
+      localStorage.setItem("vozAtiva", "true");
       console.log("Navegação por voz ativada e salva no localStorage.");
     } else {
       recognition.stop();
       setIsVoiceActive(false);
-      localStorage.setItem("vozAtiva", "false"); 
+      localStorage.setItem("vozAtiva", "false");
       console.log("Navegação por voz desativada e salva no localStorage.");
     }
   };
@@ -105,13 +107,6 @@ export default function MaisRecursos() {
       />
 
       <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
-        <CardMaisRecursos
-          titleMessage="Clique aqui para aumentar a fonte"
-          img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573149/icon-aumentar-fonte-2_japh83.png"
-          title="Aumentar Fonte"
-          text="Amplia ou diminui o tamanho do texto para facilitar a leitura."
-        />
-
         <div onClick={ativarNavegacaoPorVoz}>
           <CardMaisRecursos
             titleMessage="Clique aqui para ativar a navegação por voz"
@@ -125,42 +120,18 @@ export default function MaisRecursos() {
           />
         </div>
 
-        <CardMaisRecursos
-          titleMessage="Clique aqui para mudar o contraste"
-          img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573295/icon-contraste_txxb1t.png"
-          title="Mudar contraste"
-          text="Ajusta o contraste da tela para melhorar a visibilidade."
-        />
-      </div>
-
-      <div className="hidden lg:flex flex-col gap-3">
-        <figure className="flex items-center gap-4">
-          <img
-            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573306/icon-teclado_tjyl7n.png"
-            alt="ícone de teclado"
+        <div onClick={alternarContraste}>
+          <CardMaisRecursos
+            titleMessage="Clique aqui para mudar o contraste"
+            img="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761573295/icon-contraste_txxb1t.png"
+            title="Mudar contraste"
+            text={
+              contrasteAtivo
+                ? "Clique para voltar ao normal"
+                : "Ajusta o contraste da tela para melhorar a visibilidade."
+            }
           />
-          <figcaption className="text-3xl font-bold">
-            Atalhos de teclado:
-          </figcaption>
-        </figure>
-        <ul className="flex flex-col gap-4">
-          <li className="text-xl">
-            <span className="font-bold">Ctrl + Alt + 1:</span> Aumenta o tamanho
-            das letras.
-          </li>
-          <li className="text-xl">
-            <span className="font-bold">Ctrl + Alt + 2:</span> Diminui o tamanho
-            das letras.
-          </li>
-          <li className="text-xl">
-            <span className="font-bold">Ctrl + Alt + 3:</span> Ativa a navegação
-            por voz.
-          </li>
-          <li className="text-xl">
-            <span className="font-bold">Ctrl + Alt + 4:</span> Abre as
-            configurações de contraste.
-          </li>
-        </ul>
+        </div>
       </div>
     </div>
   );
