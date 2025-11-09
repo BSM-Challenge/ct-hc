@@ -66,7 +66,7 @@ export default function Apresentacao() {
             >
                 <li>
                     <Link 
-                    to="" 
+                    to="/entrarConta" 
                     className="
                     bg-[var(--color-white)] text-[var(--color-blue-0077C8)]
                     px-3 py-1 2xl:px-10 2xl:py-3 xl:px-8 xl:py-3 lg:px-7 lg:py-3 md:px-6 md:py-3 sm:px-5 
@@ -82,7 +82,7 @@ export default function Apresentacao() {
                 </li>
                 <li>
                     <Link 
-                    to="" 
+                    to="/criarConta" 
                     className="
                     text-[var(--color-white)]
                     border-1
