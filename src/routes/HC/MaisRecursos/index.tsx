@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CardMaisRecursos from "../../../components/HC/CardMaisRecursos";
 import TitleHC from "../../../components/HC/TitleHC";
 import { useNavigate } from "react-router-dom";
+const URL_API_VOZ = import.meta.env.VITE_API_URL_VOZ as string;
 
 export default function MaisRecursos() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ export default function MaisRecursos() {
 
   const interpretarComando = async (texto: string) => {
     try {
-      const response = await fetch("https://api-comando-voz-ia.onrender.com/voz", {
+      const response = await fetch(URL_API_VOZ, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ comando: texto }),
