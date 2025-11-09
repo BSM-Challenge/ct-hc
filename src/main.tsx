@@ -31,6 +31,7 @@ import EntrarConta from './routes/HC/EntrarConta/index.tsx'
 import MenuMobile from './routes/HC/MenuMobile/index.tsx'
 import AvisosMobile from './routes/HC/AvisosMobile/index.tsx'
 import GerenciarPerguntas from './routes/CT-HC/FAQ/GerenciarPerguntas/index.tsx'
+import VisualizarPergunta from './routes/CT-HC/FAQ/VisualizarPerguntas/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: "/integrantes", element: <Integrantes /> },
       { path: "/faq", element: <FAQ /> },
       { path: "/gerenciarPerguntas", element: <GerenciarPerguntas /> },
+      { path: "/visualizar-pergunta/:id", element: <VisualizarPergunta /> },
     ],
   },
   {
