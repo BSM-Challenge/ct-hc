@@ -1,35 +1,42 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './globals.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.tsx";
+import { ContrasteProvider } from "./context/ContrasteContext.tsx";
+import "./globals.css";
 
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
-import Error from './routes/CT-HC/Error/index.tsx'
-import Home from './routes/CT-HC/Home/index.tsx'
-import FAQ from './routes/CT-HC/FAQ/index.tsx'
-import Integrantes from './routes/CT-HC/Integrantes/index.tsx'
-import Contato from './routes/CT-HC/Contato/index.tsx'
+// CT-HC
+import Error from "./routes/CT-HC/Error/index.tsx";
+import Home from "./routes/CT-HC/Home/index.tsx";
+import FAQ from "./routes/CT-HC/FAQ/index.tsx";
+import Integrantes from "./routes/CT-HC/Integrantes/index.tsx";
+import Contato from "./routes/CT-HC/Contato/index.tsx";
 
 // HC
-import AppHC from './AppHC.tsx'
-import HomeHC from './routes/HC/HomeHC/index.tsx'
-import MaisRecursos from './routes/HC/MaisRecursos/index.tsx'
-import CentroDeTreinamento from './routes/HC/CentroDeTreinamento/index.tsx'
-import ErrorHC from './routes/HC/ErrorHC/index.tsx'
-import MeusResultados from './routes/HC/MeusResultados/index.tsx'
-import MinhasReceitas from './routes/HC/MinhasReceitas/index.tsx'
-import MinhasAgendas from './routes/HC/MinhasAgendas/index.tsx'
-import Teleconsulta from './routes/HC/Teleconsulta/index.tsx'
-import SolcitacaoExames from './routes/HC/SolicitacaoExames/index.tsx'
-import Documentos from './routes/HC/Documentos/index.tsx'
-import Apresentacao from './routes/HC/Apresentacao/index.tsx'
-import Ajuda from './routes/HC/Ajuda/index.tsx'
-import ManuaisPortal from './routes/HC/ManuaisPortal/index.tsx'
-import CriarConta from './routes/HC/CriarConta/index.tsx'
-import EntrarConta from './routes/HC/EntrarConta/index.tsx'
-import MenuMobile from './routes/HC/MenuMobile/index.tsx'
-import AvisosMobile from './routes/HC/AvisosMobile/index.tsx'
+import AppHC from "./AppHC.tsx";
+import HomeHC from "./routes/HC/HomeHC/index.tsx";
+import MaisRecursos from "./routes/HC/MaisRecursos/index.tsx";
+import CentroDeTreinamento from "./routes/HC/CentroDeTreinamento/index.tsx";
+import ErrorHC from "./routes/HC/ErrorHC/index.tsx";
+import MeusResultados from "./routes/HC/MeusResultados/index.tsx";
+import MinhasReceitas from "./routes/HC/MinhasReceitas/index.tsx";
+import MinhasAgendas from "./routes/HC/MinhasAgendas/index.tsx";
+import Teleconsulta from "./routes/HC/Teleconsulta/index.tsx";
+import SolcitacaoExames from "./routes/HC/SolicitacaoExames/index.tsx";
+import Documentos from "./routes/HC/Documentos/index.tsx";
+import Apresentacao from "./routes/HC/Apresentacao/index.tsx";
+import Ajuda from "./routes/HC/Ajuda/index.tsx";
+import ManuaisPortal from "./routes/HC/ManuaisPortal/index.tsx";
+import CriarConta from "./routes/HC/CriarConta/index.tsx";
+import EntrarConta from "./routes/HC/EntrarConta/index.tsx";
+import MenuMobile from "./routes/HC/MenuMobile/index.tsx";
+import AvisosMobile from "./routes/HC/AvisosMobile/index.tsx";
+
 
 const router = createBrowserRouter([
   {
@@ -66,23 +73,17 @@ const router = createBrowserRouter([
   {
     path: "/bemVindo",
     element: <Apresentacao />,
-    children: [
-      { path: "", element: <Apresentacao /> },
-    ],
+    children: [{ path: "", element: <Apresentacao /> }],
   },
   {
     path: "/criarConta",
     element: <CriarConta />,
-    children: [
-      { path: "", element: <CriarConta /> },
-    ],
+    children: [{ path: "", element: <CriarConta /> }],
   },
   {
     path: "/entrarConta",
     element: <EntrarConta />,
-    children: [
-      { path: "", element: <EntrarConta /> },
-    ],
+    children: [{ path: "", element: <EntrarConta /> }],
   },
   {
     path: "/hc/erro",
@@ -90,8 +91,10 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ContrasteProvider>
+      <RouterProvider router={router} />
+    </ContrasteProvider>
   </StrictMode>
-)
+);
