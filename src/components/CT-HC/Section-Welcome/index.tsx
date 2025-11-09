@@ -2,16 +2,20 @@ import { Link } from "react-router-dom";
 
 export default function SectionWelcome() {
   return (
-    <section className="
+    <section
+      className="
       bg-[var(--light-blue)] min-h-screen 
       flex flex-col pt-30 lg:pt-50 lg:flex-row"
       id="home"
     >
-      <div className="
+      <div
+        className="
           flex justify-center flex-col w-full gap-3 px-4 -mt-10
           lg:w-1/2 lg:px-0
-          opacity-0 animate-fade-in">
-        <h1 className="
+          opacity-0 animate-fade-in"
+      >
+        <h1
+          className="
           text-3xl text-center text-[var(--dark-blue-title)] font-bold sm:text-left
           sm:w-[100%] sm:text-4xl
           lg:text-[2.30rem] lg:text-center lg:w-full
@@ -20,7 +24,8 @@ export default function SectionWelcome() {
         >
           Bem-vindo ao Centro de Treinamento do Hospital das Clínicas!
         </h1>
-        <p className="
+        <p
+          className="
         text-xl mt-4 indent-4 text-justify
         sm:text-3xl 
         md:text-left md:w-[90%]
@@ -28,10 +33,11 @@ export default function SectionWelcome() {
         xl:text-2xl
         2xl:2xl"
         >
-          Um ambiente interativo criado para ajudar você a usar o Portal
-          do Paciente HC de forma simples, segura e sem preocupações.
+          Um ambiente interativo criado para ajudar você a usar o Portal do
+          Paciente HC de forma simples, segura e sem preocupações.
         </p>
-        <p className="
+        <p
+          className="
         text-xl mt-4 indent-4 text-justify
         sm:text-3xl 
         md:text-left md:w-[90%]
@@ -42,12 +48,14 @@ export default function SectionWelcome() {
           Um tutorial passo a passo em tempo real com instruções destacadas para
           guiar cada ação.
         </p>
-        <ul className="
+        <ul
+          className="
         mx-20 flex justify-between mt-2 min-[1093px]:mt-10
         max-[1360px]:mx-10
         max-[1093px]:flex-col max-[1093px]:gap-5 max-[1093px]:mb-8
-        ">
-          <li className="">
+        "
+        >
+          <li>
             <Link
               to="/bemVindo"
               title="Clique aqui para ir ao portal com treinamento"
@@ -59,15 +67,19 @@ export default function SectionWelcome() {
               max-[1210px]:text-sm
               "
             >
-              <figure className="
+              <figure
+                className="
               flex justify-center items-center
               max-[1093px]:w-full
-              ">
-                <figcaption className="font-bold">Portal do <br /> paciente HC</figcaption>
-                <img 
-                src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1762224323/logoBotao_wfgyuo.png" 
-                alt="Logo do HC"
-                className="
+              "
+              >
+                <figcaption className="font-bold">
+                  Portal do <br /> paciente HC
+                </figcaption>
+                <img
+                  src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1762224323/logoBotao_wfgyuo.png"
+                  alt="Logo do HC"
+                  className="
                 w-[45%]
                 max-[1093px]:w-[30%]
                 max-lg:w-[15%]
@@ -79,10 +91,10 @@ export default function SectionWelcome() {
             </Link>
           </li>
           <li>
-          <a
-            href="#sobre"
-            title="Clique aqui para saber mais sobre o projeto"
-            className="
+            <a
+              href="#sobre"
+              title="Clique aqui para saber mais sobre o projeto"
+              className="
               flex flex-col sm:flex-col items-center justify-center
               px-5 py-2 text-sm 
               bg-[var(--color-blue-2563EB)] text-[var(--color-white)]
@@ -93,18 +105,18 @@ export default function SectionWelcome() {
               max-[1210px]:text-sm
               md:text-base
             "
-          >
-            Clique aqui e
-            <span className="sm:ml-2 font-bold">Saiba mais!</span>
-          </a>
+            >
+              Clique aqui e
+              <span className="sm:ml-2 font-bold">Saiba mais!</span>
+            </a>
           </li>
         </ul>
       </div>
 
       <div className="w-full flex justify-center px-4 lg:w-1/2 lg:-mt-45  lg:px-0">
-        <img 
-          src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761430828/banner-ct_jyju1p.png" 
-          alt="Banner Centro de Treinamento" 
+        <img
+          src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761430828/banner-ct_jyju1p.png"
+          alt="Banner Centro de Treinamento"
           className="
           w-full max-w-[260px] 
           md:max-w-[250px] 
