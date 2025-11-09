@@ -29,16 +29,42 @@
 
 ---
 
-## 👥 Integrantes do Projeto
+## 👥 Integrantes do Projeto  
 
-📌 **Moisés Barsoti Andrade de Oliveira**  
-  - **RM:** 565049   ||   **Turma:** 1TDSPG
+<table>
+  <tr>
+    <td width="130">
+      <img src="https://github.com/moisesBarsoti.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>👨‍💻 Moisés Barsoti Andrade de Oliveira</b><br/>
+      🆔 <b>RM:</b> 565049 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Desenvolvimento Fullstack / DBA / IA
+    </td>
+  </tr>
 
-📌 **Sofia Siqueira Fontes**  
-  -  RM: 563829   ||   **Turma:** 1TDSPG    
+  <tr>
+    <td width="130">
+      <img src="https://github.com/sSofia-s.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>🎨 Sofia Siqueira Fontes</b><br/>
+      🆔 <b>RM:</b> 563829 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Design UX/UI e Validações de Forms
+    </td>
+  </tr>
 
-📌 **Felipe Kirschner Modesto**  
-  - RM: 561810   ||   **Turma:** 1TDSPG  
+  <tr>
+    <td width="130">
+      <img src="https://github.com/FeKiModesto.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>⚙️ Felipe Kirschner Modesto</b><br/>
+      🆔 <b>RM:</b> 561810 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Integração com APIs Java
+    </td>
+  </tr>
+</table>
 
 ---
 
