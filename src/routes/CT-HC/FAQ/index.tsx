@@ -5,6 +5,8 @@ import { faqData } from '../../../data/CT-HC/faqData';import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { apiService } from '../../../services/api-python';
+
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState<string | null>(null);
@@ -43,18 +45,24 @@ export default function FAQ() {
   });
 
   const onSubmit = async (data: MensagemInput) => {
-    setDadosUsuario(data);
-    setCarregando(true);
+  setDadosUsuario(data);
+  setCarregando(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 800));
+  try {
+    await apiService.enviarPergunta({
+      nome: data.nome,
+      email: data.email,
+      pergunta: data.mensagem
+    });
 
-    const currentDate = new Date().toLocaleString("pt-BR", {
-    dateStyle: "short",
-    timeStyle: "short",
-  });
-
+    let emailEnviado = false;
     try {
-      const response = await emailjs.send(
+      const currentDate = new Date().toLocaleString("pt-BR", {
+        dateStyle: "short",
+        timeStyle: "short",
+      });
+
+      const emailResult = await emailjs.send(
         "service_b4gaw42",
         "template_f8vj1va",
         {
@@ -66,24 +74,28 @@ export default function FAQ() {
         },
         "Lq8PxBEF42WbgxFg4"
       );
+      
+      emailEnviado = true;
+      console.log('Email enviado com sucesso:', emailResult);
 
-      if (response.status === 200) {
-        setMensagem(true);
-        setCarregando(false);
-        reset();
-
-      } else {
-        alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
-        setCarregando(false);
-      }
-
-    } catch (error) {
-      alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
-
-    } finally {
-      setCarregando(false);
+    } catch (emailError) {
+      console.warn('Email não enviado, mas dados salvos:', emailError);
     }
-  };
+
+    setMensagem(true);
+    reset();
+    
+    if (!emailEnviado) {
+      console.log('Dados salvos, mas email não enviado - verifique configurações do EmailJS');
+    }
+
+  } catch (error) {
+    console.error('Erro ao salvar no banco:', error);
+    alert('Erro ao enviar pergunta. Tente novamente.');
+  } finally {
+    setCarregando(false);
+  }
+};
 
   const fazerOutraPergunta = () => {
     if (dadosUsuario) {
