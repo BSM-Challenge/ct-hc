@@ -26,18 +26,18 @@ export default function SectionPitch() {
         e <span className="font-bold text-[var(--dark-blue-title)]"> acessível.</span>
       </p>
 
-      <div className="flex justify-center">
+      <article className="flex justify-center">
         <div className="
-        w-[660px] max-w-full aspect-video rounded-2xl shadow-lg overflow-hidden
-        max-md:w-[90%]
+        w-[660px] max-w-full aspect-video rounded-2xl
+        shadow-lg overflow-hidden max-md:w-[90%]
         ">
-            <video
+          <video
             className="w-full h-full object-cover"
             src="https://res.cloudinary.com/dt26mfzpw/video/upload/v1761425921/video-pitch_jgvfq0.mp4"
-            controls
-            ></video>
+            controls >  
+          </video>
         </div>
-      </div>
+      </article>
 
       <aside className="
       flex flex-col gap-4 w-[100%]
