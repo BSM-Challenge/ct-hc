@@ -31,7 +31,7 @@ export default function Documentos() {
             {isTreinamento && <TutorialHC steps={steps} />}
 
             <ConteudoDinamico>
-                <p>Nenhum documento disponível no momento.</p>
+                Nenhum documento disponível no momento.
             </ConteudoDinamico>
         </section>
     )
