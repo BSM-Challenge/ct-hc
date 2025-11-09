@@ -1,4 +1,9 @@
+import { useContraste } from "../../../context/ContrasteContext";
+
 export default function CardExperiencia() {
+
+  const { alternarContraste, contrasteAtivo } = useContraste(); 
+
   return (
     <div
       className="
@@ -24,9 +29,14 @@ export default function CardExperiencia() {
         />
       </figure>
       <div
-        className="
-             w-full flex flex-col gap-5 
-            "
+        className={`
+            w-full flex flex-col gap-5
+            ${
+              contrasteAtivo
+              ? "text-[var(--color-black)]"
+              : "text-[var(--color-black)]"
+            }
+          `}
       >
         <h3
           className="
