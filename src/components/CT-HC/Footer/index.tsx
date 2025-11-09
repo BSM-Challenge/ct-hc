@@ -9,7 +9,10 @@ export default function Footer() {
     >
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <figcaption className="flex justify-center lg:justify-start">
-          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431081/logo-ct-hc-com-texto_hokz7m.png" alt="" />
+          <img 
+          src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431081/logo-ct-hc-com-texto_hokz7m.png"
+          alt="Logo do HC" 
+          />
         </figcaption>
         <div className="
         flex flex-wrap items-start gap-10 mt-5 justify-between 
@@ -20,13 +23,13 @@ export default function Footer() {
               <h4 className="font-bold text-2xl">Links Rápidos</h4>
             </li>
             <li>
-              <Link to="/">Portal do Paciente HC</Link>
+              <Link to="/bemVindo">Portal do Paciente HC</Link>
             </li>
             <li>
-              <Link to="/">Teleatendimento</Link>
+              <Link to="/bemVindo">Teleatendimento</Link>
             </li>
             <li>
-              <Link to="">Rede Lucy Montoro</Link>
+              <Link to="https://redelucymontoro.org.br/site/">Rede Lucy Montoro</Link>
             </li>
           </ul>
           <ul className="flex flex-col items-start gap-2 lg:items-center">
