@@ -88,16 +88,16 @@ export default function CriarConta() {
                 pt-16 pl-3"
                 >
                 <Link 
-                to="#"
+                to="/entrarConta"
                 title="Clique aqui para seguir para a página de login da conta."
                 className="text-white text-xl"
                 >
                     Já tem uma conta? <span className="font-bold hover:underline duration-300">Clique aqui.</span>
                 </Link>
                 </li>
-                <div className="pt-16 pl-3">
+                <li className="pt-16 pl-3">
                 <Link 
-                to=""
+                to="/hc"
                 title="Clique aqui para entrar."
                 className="
                 text-white text-center px-7 py-3 
@@ -107,7 +107,7 @@ export default function CriarConta() {
                 >
                     Entrar
                 </Link>
-                </div>
+                </li>
             </ul>
         </div>
     </section>
