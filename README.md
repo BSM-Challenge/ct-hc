@@ -1,34 +1,86 @@
-# 🏨 CT-HC - Centro de Treinamento do Hospital das Clínicas
+<p align="center">
+  <img 
+    src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1761431079/logo-ct-hc_vy3yit.png" 
+    alt="Logo CT-HC" 
+    width="180"
+  />
+</p>
+
+<h2 align="center">🏥 CT-HC — Centro de Treinamento do Hospital das Clínicas</h2>
+
+<p align="center">
+  Plataforma digital desenvolvida para apoiar o <strong>IMREA-HCFMUSP</strong>, com o objetivo de 
+  reduzir o absenteísmo e aumentar a adesão aos atendimentos de reabilitação, oferecendo uma 
+  interface acessível e interativa, especialmente voltada para pacientes com baixa afinidade tecnológica.
+</p>
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-🔹 **HTML** → Estruturação do conteúdo  
-🔹 **CSS** → Estilização e design  
-🔹 **JavaScript** → Interatividade e lógica  
-🔹 **TypeScript** → Tipagem estática e segurança  
-🔹 **React** → Criação de interfaces dinâmicas  
-🔹 **Vite** → Build rápido e ambiente de desenvolvimento  
-🔹 **Tailwind** → Framework - Estilização responsiva com classes utilitárias  
+
+| Categoria                   | Tecnologias                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| **Frontend**                | React • TypeScript • Tailwind CSS • React Router DOM                           |
+| **Validação e Formulários** | React Hook Form • Zod                                                          |
+| **Utilitários e UI**        | React Icons • React IMask • EmailJS                                            |
+| **Build & Dev Tools**       | Vite • ESLint • TypeScript ESLint                                              |
+| **Backend (consumo)**       | APIs desenvolvidas em **Java**                                    |
+
 
 ---
 
-## 👥 Integrantes do Projeto
+## 👥 Integrantes do Projeto  
 
-📌 **Moisés Barsoti Andrade de Oliveira**  
-  - **RM:** 565049   ||   **Turma:** 1TDSPG
+<table>
+  <tr>
+    <td width="130">
+      <img src="https://github.com/moisesBarsoti.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>👨‍💻 Moisés Barsoti Andrade de Oliveira</b><br/>
+      🆔 <b>RM:</b> 565049 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Desenvolvimento Fullstack / DBA / IA
+    </td>
+  </tr>
 
-📌 **Sofia Siqueira Fontes**  
-  -  RM: 563829   ||   **Turma:** 1TDSPG    
+  <tr>
+    <td width="130">
+      <img src="https://github.com/sSofia-s.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>🎨 Sofia Siqueira Fontes</b><br/>
+      🆔 <b>RM:</b> 563829 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Design UX/UI e Validações de Forms
+    </td>
+  </tr>
 
-📌 **Felipe Kirschner Modesto**  
-  - RM: 561810   ||   **Turma:** 1TDSPG  
+  <tr>
+    <td width="130">
+      <img src="https://github.com/FeKiModesto.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>⚙️ Felipe Kirschner Modesto</b><br/>
+      🆔 <b>RM:</b> 561810 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Integração com APIs Java
+    </td>
+  </tr>
+</table>
 
 ---
 
-##  📷 Imagens do projeto 
-🔹 **Logo**:   
-<img width="200" height="200" alt="logo-ct-hc" src="https://github.com/user-attachments/assets/7e4f1626-2efc-46c9-a784-5c4c2c430d09" />
+### 🏠 Tela Inicial — CT-HC
+
+A tela inicial dá acesso rápido às funcionalidades principais do CT-HC e demonstra os recursos de acessibilidade do portal HC criado pela nossa equipe e controles pensados para usuários com baixa familiaridade digital.
+
+<p align="center">
+  <img
+    src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1762722894/tela_cthc_yw857v.png"
+    alt="Tela inicial do CT-HC"
+    width="680"
+  />
+  <br/>
+  <em>Tela inicial do CT-HC</em>
+</p>
 
 
 🔹 **Logo com texto**:   
