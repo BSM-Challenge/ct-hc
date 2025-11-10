@@ -1,15 +1,24 @@
+import { useContraste } from "../../../context/ContrasteContext";
 import type { CardMaisRecursosProps } from "../../../types/HC/cardMaisRecursos";
 
 export default function CardMaisRecursos( {titleMessage, img, title, text}: CardMaisRecursosProps ) {
+
+  const { alternarContraste, contrasteAtivo } = useContraste(); 
+
   return (
     <div
-      className="
+      className={`
             bg-[var(--light-blue)] px-3 py-3 rounded-[10px] min-h-[150px]
             shadow-[4px_4px_10px_var(--shadow-black-03)]
             flex flex-col gap-3
             cursor-pointer hover:bg-[var(--light-blue-2)]
             duration-300
-            "
+            ${
+              contrasteAtivo
+                ? "text-black hover:bg-gray-200" 
+                : "bg-[var(--light-blue)] text-[var(--color-black)] hover:bg-[var(--light-blue-2)]"
+            }
+            `}
       title={titleMessage}
     >
       <figure className="flex items-center gap-5">

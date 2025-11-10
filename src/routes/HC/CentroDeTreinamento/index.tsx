@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import TitleHC from "../../../components/HC/TitleHC";
 import { iconsTreinamento } from "../../../data/HC/iconsTreinamento";
 import CardExperiencia from "../../../components/HC/CardExperiencia";
+import { useContraste } from "../../../context/ContrasteContext";
 
 export default function CentroDeTreinamento() {
+    
+    const { alternarContraste, contrasteAtivo } = useContraste(); 
+    
     return (
         <section className="flex flex-col gap-6 max-lg:gap-10">
             <TitleHC
@@ -21,12 +25,17 @@ export default function CentroDeTreinamento() {
                 {iconsTreinamento.map((i) => (
                     <li
                         key={i.label}
-                        className="
+                        className={`
                         bg-[var(--light-blue)] rounded-[10px]
                         flex justify-center items-center 
                         hover:bg-[var(--light-blue-2)] duration-300
                         max-[474px]:w-full
-                        "
+                        ${
+                        contrasteAtivo
+                            ? "text-[var(--color-black)] hover:bg-gray-200" 
+                            : "bg-[var(--light-blue)] text-[var(--color-black)] hover:bg-[var(--light-blue-2)]"
+                        }
+                        `}
                     >
                     <Link 
                     to={i.link || ""}

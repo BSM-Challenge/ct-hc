@@ -82,21 +82,20 @@ A tela inicial dá acesso rápido às funcionalidades principais do CT-HC e demo
   <em>Tela inicial do CT-HC</em>
 </p>
 
+### 🌐 Tela Inicial — Portal HC
 
-🔹 **Logo com texto**:   
-<img width="250" height="250" alt="logo-ct-hc-com-texto" src="https://github.com/user-attachments/assets/38d1b5f8-5d30-4ac2-98ac-b865e2cc2715" />
+Essa tela é o início do nosso projeto de acessibilidade no Portal do Hospital das Clínicas
 
+<p align="center">
+  <img
+    src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1762731661/tela_portalHC_zojydc.png"
+    alt="Tela inicial do Portal HC"
+    width="680"
+  />
+  <br/>
+  <em>Tela inicial do Portal HC</em>
+</p>
 
-🔹 **Integrante 1 (Moisés Barsoti)**:   
-
-<img width="200" height="200" alt="foto-moises" src="https://github.com/user-attachments/assets/7d89c8dc-94dc-4edd-8e2a-99c65b2fbd8d" />
-
-🔹 **Integrante 2 (Sofia Siqueira)**:   
-<img width="200" height="200" alt="foto-sofia" src="https://github.com/user-attachments/assets/1b923e4f-b280-4801-aeb5-754e1038a3aa" />
-
-
-🔹 **Integrante 3 (Felipe Kirschner)**:   
-<img width="200" height="200" alt="foto-felipe" src="https://github.com/user-attachments/assets/15f18cf7-070a-4faa-8fb0-d0c36aab98a1" />
 
 ---
 
