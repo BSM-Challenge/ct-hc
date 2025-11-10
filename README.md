@@ -255,7 +255,7 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
 
 Você pode visualizar o projeto acessando o link abaixo:
 
-🔗 [Clique aqui para acessar o projeto no GitHub!](https://github.com/BSM-Challenge/ct-hc)
+🔗 [Clique aqui para acessar o projeto no GitHub!](https://ct-hc.vercel.app/)
 
 ---
 
