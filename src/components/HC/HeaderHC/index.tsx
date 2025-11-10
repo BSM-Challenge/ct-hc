@@ -9,7 +9,7 @@ import { GoHome } from "react-icons/go";
 
 export default function HeaderHC() {
   const [isOpen, setIsOpen] = useState(true);
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);

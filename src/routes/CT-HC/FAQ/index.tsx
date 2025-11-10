@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaAngleDown } from 'react-icons/fa';
 import { faqData } from '../../../data/CT-HC/faqData';import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";

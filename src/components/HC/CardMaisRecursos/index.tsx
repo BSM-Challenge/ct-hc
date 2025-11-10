@@ -3,7 +3,7 @@ import type { CardMaisRecursosProps } from "../../../types/HC/cardMaisRecursos";
 
 export default function CardMaisRecursos( {titleMessage, img, title, text}: CardMaisRecursosProps ) {
 
-  const { alternarContraste, contrasteAtivo } = useContraste(); 
+  const {  contrasteAtivo } = useContraste(); 
 
   return (
     <div

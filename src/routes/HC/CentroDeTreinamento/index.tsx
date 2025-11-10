@@ -6,7 +6,7 @@ import { useContraste } from "../../../context/ContrasteContext";
 
 export default function CentroDeTreinamento() {
     
-    const { alternarContraste, contrasteAtivo } = useContraste(); 
+    const {  contrasteAtivo } = useContraste(); 
     
     return (
         <section className="flex flex-col gap-6 max-lg:gap-10">

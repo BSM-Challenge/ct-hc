@@ -9,7 +9,7 @@ import { useContraste } from "../../../context/ContrasteContext";
 export default function Ajuda() {
 
   const [isTreinamento, setIsTreinamento] = useState(false);
-  const { alternarContraste, contrasteAtivo } = useContraste(); 
+  const {  contrasteAtivo } = useContraste(); 
   
   useEffect(() => {
       const modoTreinamento = localStorage.getItem("modoTreinamento");

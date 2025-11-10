@@ -2,7 +2,7 @@ import { useContraste } from "../../../context/ContrasteContext";
 
 export default function CardExperiencia() {
 
-  const { alternarContraste, contrasteAtivo } = useContraste(); 
+  const { contrasteAtivo } = useContraste(); 
 
   return (
     <div
