@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { FaAngleDown } from 'react-icons/fa';
 import { faqData } from '../../../data/CT-HC/faqData';import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -359,7 +359,7 @@ export default function FAQ() {
                       {...register("mensagem")}
                     />
                     {errors.mensagem && (
-                      <p className="text-[var(--color-red)] font-semibold text-sm"> 
+                      <p className="text-[var(--color-red)] font-semibold text-sm">
                         {errors.mensagem.message}
                       </p>
                     )}
@@ -384,8 +384,7 @@ export default function FAQ() {
                   </figcaption>
                 </div>
               ) : (
-                <div
-                  className="flex flex-col items-center text-center text-[var(--dark-blue-title)]">
+                <div className="flex flex-col items-center text-center text-[var(--dark-blue-title)]">
                   <h4 className="text-3xl font-bold sm:text-4xl xl:w-[80%] 2xl:text-5xl">
                     Pergunta enviada com sucesso! Obrigado pelo contato.
                   </h4>
@@ -396,9 +395,13 @@ export default function FAQ() {
                       className="my-6 lg:my-10"
                     />
                   </span>
-                  <h5 className="text-3xl font-semibold 2xl:text-4xl">Deseja fazer outra pergunta?</h5>
-                  <ul className="flex items-center
-                  sm:flex-row sm:gap-10 lg:gap-25">
+                  <h5 className="text-3xl font-semibold 2xl:text-4xl">
+                    Deseja fazer outra pergunta?
+                  </h5>
+                  <ul
+                    className="flex items-center
+                  sm:flex-row sm:gap-10 lg:gap-25"
+                  >
                     <li>
                       <button
                         title="Clique aqui para voltar"
@@ -429,6 +432,13 @@ export default function FAQ() {
                       >
                         Sim, gostaria
                       </button>
+                    </li>
+                    <li>
+                      <Link to="/gerenciarPerguntas" title="Clique aqui para visualizar suas perguntas"
+                        className="bg-[var(--color-blue-2)] p-4 text-[var(--color-white)]
+                        rounded-[10px] font-bold text-xl cursor-pointer shadow-[4px_4px_15px_var(--color-blue)]
+                        hover:bg-[var(--hover-button)] transition-colors duration-300
+                        lg:text-2xl">Minhas perguntas</Link>
                     </li>
                   </ul>
                 </div>
