@@ -115,13 +115,33 @@ Essa tela é o início do nosso projeto de acessibilidade no Portal do Hospital 
  ┃ ┃ ┃ ┣ 📂 Section-Sobre
  ┃ ┃ ┃ ┗ 📂 Section-Welcome
  ┃ ┃ ┣ 📂 HC
+ ┃ ┃ ┃ ┣ 📂 ButtonAzul
+ ┃ ┃ ┃ ┣ 📂 ButtonAzulAcao
+ ┃ ┃ ┃ ┣ 📂 ButtonCinza
  ┃ ┃ ┃ ┣ 📂 Card-Acessibilidade
  ┃ ┃ ┃ ┣ 📂 Card-Treinamento
+ ┃ ┃ ┃ ┣ 📂 CardExperiencia
+ ┃ ┃ ┃ ┣ 📂 CardMaisRecursos
+ ┃ ┃ ┃ ┣ 📂 ConteudoDinamico
  ┃ ┃ ┃ ┣ 📂 HeaderHC
- ┃ ┃ ┃ ┗ 📂 TitleHC
+ ┃ ┃ ┃ ┣ 📂 ModalAvaliacao
+ ┃ ┃ ┃ ┣ 📂 ModalBase
+ ┃ ┃ ┃ ┣ 📂 ModalTreinamentoFinalizado
+ ┃ ┃ ┃ ┣ 📂 TitleHC
+ ┃ ┃ ┃ ┗ 📂 TutorialHC
+ ┃ ┣ 📂 context
+ ┃ ┃ ┗ 📄 ContrasteContext.tsx
  ┃ ┣ 📂 data
  ┃ ┃ ┣ 📂 CT-HC
  ┃ ┃ ┃ ┗ 📄 faqData.ts
+ ┃ ┃ ┣ 📂 HC
+ ┃ ┃ ┃ ┣ 📄 avaliacoes.tsx
+ ┃ ┃ ┃ ┣ 📄 iconsTreinamento.ts
+ ┃ ┃ ┃ ┣ 📄 menuItem.tsx
+ ┃ ┃ ┃ ┣ 📄 pdfs.ts
+ ┃ ┃ ┃ ┗ 📄 perguntas.ts
+ ┃ ┣ 📂 hooks
+ ┃ ┃ ┗ 📄 useAuth.ts
  ┃ ┣ 📂 routes
  ┃ ┃ ┣ 📂 CT-HC
  ┃ ┃ ┃ ┣ 📂 Contato
@@ -130,19 +150,46 @@ Essa tela é o início do nosso projeto de acessibilidade no Portal do Hospital 
  ┃ ┃ ┃ ┣ 📂 Home
  ┃ ┃ ┃ ┗ 📂 Integrantes
  ┃ ┃ ┣ 📂 HC
+ ┃ ┃ ┃ ┣ 📂 Ajuda
+ ┃ ┃ ┃ ┣ 📂 Apresentacao
+ ┃ ┃ ┃ ┣ 📂 AvisosMobile
+ ┃ ┃ ┃ ┣ 📂 CentroDeTreinamento
+ ┃ ┃ ┃ ┣ 📂 CriarConta
+ ┃ ┃ ┃ ┣ 📂 Documentos
+ ┃ ┃ ┃ ┣ 📂 EntrarConta
+ ┃ ┃ ┃ ┣ 📂 ErrorHC
  ┃ ┃ ┃ ┣ 📂 HomeHC
- ┃ ┃ ┃ ┃ ┗ 📄 index.tsx
+ ┃ ┃ ┃ ┣ 📂 MaisRecursos
+ ┃ ┃ ┃ ┣ 📂 ManuaisPortal
+ ┃ ┃ ┃ ┣ 📂 MenuMobile
+ ┃ ┃ ┃ ┣ 📂 MeusResultados
+ ┃ ┃ ┃ ┣ 📂 MinhasAgendas
+ ┃ ┃ ┃ ┣ 📂 MinhasReceitas
+ ┃ ┃ ┃ ┣ 📂 SolicitacaoExames
+ ┃ ┃ ┃ ┗ 📂 Teleconsulta
+ ┃ ┣ 📂 services
+ ┃ ┃ ┗ 📄 api-java.ts
  ┃ ┣ 📂 types
  ┃ ┃ ┣ 📂 CT-HC
- ┃ ┃ ┃ ┗ 📄 faq.ts
+ ┃ ┃ ┃ ┣ 📄 faq.ts
+ ┃ ┃ ┃ ┗ 📄 integrante.ts
  ┃ ┃ ┣ 📂 HC
- ┃ ┃ ┃ ┗ 📄 card-acessibilidade.ts
- ┃ ┃ ┗ 📄 integrante.ts
+ ┃ ┃ ┃ ┣ 📄 buttonAzul.ts
+ ┃ ┃ ┃ ┣ 📄 buttonCinza.ts
+ ┃ ┃ ┃ ┣ 📄 card-acessibilidade.ts
+ ┃ ┃ ┃ ┣ 📄 cardMaisRecursos.ts
+ ┃ ┃ ┃ ┣ 📄 conteudoDinamico.ts
+ ┃ ┃ ┃ ┣ 📄 iconTreinamento.ts
+ ┃ ┃ ┃ ┣ 📄 modalBase.ts
+ ┃ ┃ ┃ ┣ 📄 pdfs.ts
+ ┃ ┃ ┃ ┣ 📄 perguntas.ts
+ ┃ ┃ ┃ ┗ 📄 title.ts
  ┃ ┣ 📄 App.tsx
  ┃ ┣ 📄 AppHC.tsx
- ┃ ┣ 📄 global.css
+ ┃ ┣ 📄 env.d.ts
+ ┃ ┣ 📄 globals.css
  ┃ ┣ 📄 main.tsx
- ┃ ┣ 📄 vite-env.d.ts
+ ┣ 📄 .env
  ┣ 📄 .gitignore
  ┣ 📄 eslint.config.js
  ┣ 📄 index.html
