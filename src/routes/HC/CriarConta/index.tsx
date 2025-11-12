@@ -51,6 +51,8 @@ export default function CriarConta() {
         setSuccessMessage("Conta criada com sucesso! Redirecionando para login...");
         console.log("Usuário criado:", result.data);
         
+        localStorage.setItem("nome", result.data.nome);
+
         setTimeout(() => {
           navigate("/entrarConta");
         }, 800);
