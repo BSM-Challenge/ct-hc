@@ -251,6 +251,21 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
 
 ---
 
+## ⚙️ Arquivo `.env`
+
+Antes de executar o projeto, é importante configurar as variáveis de ambiente.  
+Crie um arquivo chamado **`.env`** na raiz do projeto e adicione as variáveis abaixo:
+
+```bash
+# 🌐 URL da API de Voz (IA com Python)
+VITE_API_URL_VOZ=https://api-comando-voz-ia.onrender.com/voz
+
+# ☕ URL da API Java (Login / Conta / Acessos)
+VITE_API_JAVA=https://api-java-login-cthc.onrender.com/ct-hc
+```
+
+---
+
 ## 🌐 Acesse o Projeto Online
 
 Você pode visualizar o projeto acessando o link abaixo:
