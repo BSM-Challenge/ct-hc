@@ -12,6 +12,8 @@ export default function HeaderHC() {
   const [, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
 
+  const usuario = localStorage.getItem("nome")
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const handleItemClick = (
@@ -78,7 +80,7 @@ export default function HeaderHC() {
               >
                 <IoPersonCircle className="text-[var(--color-grey)] text-4xl" />
                 {isOpen && (
-                  <span className="text-sm font-medium">Olá, Moisés</span>
+                  <span className="text-sm font-medium">Olá, {usuario}</span>  
                 )}
               </Link>
             </li>
