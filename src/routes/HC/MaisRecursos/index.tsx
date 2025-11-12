@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useContraste } from "../../../context/ContrasteContext";
 import CardMaisRecursos from "../../../components/HC/CardMaisRecursos";
 import TitleHC from "../../../components/HC/TitleHC";
-
-const URL_API_VOZ = import.meta.env.VITE_API_URL_VOZ as string;
+import { enviarComandoVoz } from "../../../services/api-voz-IA";
 
 export default function MaisRecursos() {
   const navigate = useNavigate();
-  const { alternarContraste, contrasteAtivo } = useContraste(); 
+  const { alternarContraste, contrasteAtivo } = useContraste();
 
   const [isVoiceActive, setIsVoiceActive] = useState<boolean>(() => {
     return localStorage.getItem("vozAtiva") === "true";
@@ -29,25 +28,19 @@ export default function MaisRecursos() {
     recog.continuous = true;
     recog.interimResults = false;
 
-    recog.onresult = (event: any) => {
-      const command = event.results[event.resultIndex][0].transcript
-        .toLowerCase()
-        .trim();
-
+    recog.onresult = async (event: any) => {
+      const command = event.results[event.resultIndex][0].transcript.toLowerCase().trim();
       console.log("Comando reconhecido:", command);
-      interpretarComando(command);
+
+      const data = await enviarComandoVoz(command); 
+      if (data?.acao) navigate(data.acao);
     };
 
-    recog.onerror = (event: any) => {
-      console.error("Erro no reconhecimento:", event.error);
-    };
+    recog.onerror = (event: any) => console.error("Erro no reconhecimento:", event.error);
 
     recog.onend = () => {
-      if (localStorage.getItem("vozAtiva") === "true") {
-        recog.start();
-      } else {
-        setIsVoiceActive(false);
-      }
+      if (localStorage.getItem("vozAtiva") === "true") recog.start();
+      else setIsVoiceActive(false);
     };
 
     setRecognition(recog);
@@ -57,43 +50,18 @@ export default function MaisRecursos() {
       recog.start();
       console.log("Navegação por voz reativada automaticamente.");
     }
-  }, []);
-
-  const interpretarComando = async (texto: string) => {
-    try {
-      const response = await fetch(URL_API_VOZ, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ comando: texto }),
-      });
-
-      if (!response.ok) return;
-
-      const data = await response.json();
-      console.log("IA respondeu:", data);
-
-      if (data.acao && typeof data.acao === "string") {
-        navigate(data.acao);
-      }
-    } catch (error) {
-      console.error("Erro na navegação por voz:", error);
-    }
-  };
+  }, [navigate]);
 
   const ativarNavegacaoPorVoz = () => {
     if (!recognition) return;
+    const ativo = !isVoiceActive;
 
-    if (!isVoiceActive) {
-      recognition.start();
-      setIsVoiceActive(true);
-      localStorage.setItem("vozAtiva", "true");
-      console.log("Navegação por voz ativada e salva no localStorage.");
-    } else {
-      recognition.stop();
-      setIsVoiceActive(false);
-      localStorage.setItem("vozAtiva", "false");
-      console.log("Navegação por voz desativada e salva no localStorage.");
-    }
+    if (ativo) recognition.start();
+    else recognition.stop();
+
+    setIsVoiceActive(ativo);
+    localStorage.setItem("vozAtiva", ativo.toString());
+    console.log(`Navegação por voz ${ativo ? "ativada" : "desativada"}.`);
   };
 
   return (
