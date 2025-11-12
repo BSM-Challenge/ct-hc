@@ -17,7 +17,7 @@ export interface ApiResponse<T> {
 }
 
 class ApiService {
-  private baseURL = 'https://api-java-login-cthc.onrender.com/ct-hc';
+  private baseURL = import.meta.env.VITE_API_JAVA as string;
 
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
     try {
