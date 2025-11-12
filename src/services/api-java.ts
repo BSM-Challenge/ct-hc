@@ -17,7 +17,7 @@ export interface ApiResponse<T> {
 }
 
 class ApiService {
-  private baseURL = 'http://localhost:8080/ct-hc';
+  private baseURL = 'https://api-java-login-cthc.onrender.com/ct-hc';
 
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
     try {
