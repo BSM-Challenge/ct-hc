@@ -1,4 +1,3 @@
-// src/services/api-voz.ts
 const URL_API_VOZ = import.meta.env.VITE_API_URL_VOZ as string;
 
 interface ComandoVozResponse {
